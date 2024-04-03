@@ -1,3 +1,3 @@
 # Christopher Pinedo - Frontend Developer
 
-## Portfolio & Curriculum
+## Web personal, portafolio y curriculum
