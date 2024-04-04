@@ -12,7 +12,7 @@ const personalInfo = {
     shortName: 'Christopher Pinedo',
     mainRole: 'Frontend Developer',
     presentationMessage:
-      'Soy un desarrollador de software especializado en Frontend orientado a web usando React.js. Me considero una persona proactiva, resiliente y entusiasta por la tecnología que busca aprender constantemente.',
+      'Soy un desarrollador frontend con mas de 2 años de expriencia en la creación de sitios y apliacaciones web. Me considero una persona proactiva, resiliente y entusiasta por la tecnología que busca aprender constantemente.',
     telephone: {
       number: '978544045',
       countryCode: '+51'

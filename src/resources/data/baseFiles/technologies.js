@@ -11,8 +11,8 @@ const technologies = {
     miro: { name: 'Miro' },
     azureDO: { name: 'Azure DevOps' },
     mgtAgile: { name: 'Agile management' },
-    mgtScrum: { name: 'SCRUM' },
-    mgtKanaban: { name: 'KANBAN' },
+    mgtScrum: { name: 'Scrum' },
+    mgtKanaban: { name: 'Kanban' },
     mgtWater: { name: 'WaterFall' }
   },
   development: {
@@ -23,7 +23,7 @@ const technologies = {
     reactJsx: { name: 'React JSX' },
     reactHooks: { name: 'React Hooks' },
     reactRouter: { name: 'React Router DOM' },
-    reactJest: { name: 'React JEST' },
+    reactJest: { name: 'JEST' },
     reactTestingLib: { name: 'React Testing Library' },
     node: { name: 'NodeJs' },
     firebase: { name: 'Firebase' },

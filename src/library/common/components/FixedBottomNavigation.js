@@ -7,7 +7,7 @@ import { dashboardMainRoutes } from '../../../main/router/routes/dashboardMainRo
 import { Link as RouterLink } from 'react-router-dom';
 import { AppBar, Button, CssBaseline, Toolbar } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import pdfFile from '../../../resources/data/curriculum/ChristopherPinedoCV.pdf';
+import pdfFile from '../../../resources/data/curriculum/cv.pdf';
 import { handleDescargarCV } from '../utils/functionUtils';
 
 // eslint-disable-next-line react/prop-types
