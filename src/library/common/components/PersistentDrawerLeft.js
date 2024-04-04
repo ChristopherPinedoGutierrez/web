@@ -17,6 +17,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { dashboardMainRoutes } from '../../../main/router/routes/dashboardMainRoutes';
 import { Link as RouterLink } from 'react-router-dom';
+import { Button } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
+import pdfFile from '../../../resources/data/curriculum/ChristopherPinedoCV.pdf';
+import { handleDescargarCV } from '../utils/functionUtils';
 
 const drawerWidth = 240;
 
@@ -66,7 +70,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 // eslint-disable-next-line react/prop-types
 export default function PersistentDrawerLeft({ children }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -80,19 +84,24 @@ export default function PersistentDrawerLeft({ children }) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: 'space-between', backgroundColor: 'grey.700' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            sx={{ ml: 10, mr: 2, ...(open && { display: 'none' }) }}
           >
             <MenuIcon />
           </IconButton>
-          {/* <Typography variant="h6" noWrap component="div">
-            Web personal, Portafolio y Curriculum
-          </Typography> */}
+          <Button
+            sx={{ mr: 10 }}
+            variant="contained"
+            endIcon={<DownloadIcon />}
+            onClick={() => handleDescargarCV(pdfFile)}
+          >
+            Descargar CV
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer

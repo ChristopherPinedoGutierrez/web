@@ -1,37 +1,27 @@
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  Chip,
-  Container,
-  Divider,
-  Grid,
-  IconButton,
-  Stack,
-  Typography
-} from '@mui/material';
+/* eslint-disable react/prop-types */
+import { Card, CardContent, Container, Divider, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 import { workExperienceInfo } from '../../../resources/data/workExperienceInfo';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { renderChips } from '../../../library/common/utils/jsxUtils';
+
+function CardItem({ title, content }) {
+  return (
+    <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
+      <Typography variant="caption">{title}</Typography>
+      <Typography variant="body1">{content}</Typography>
+    </Stack>
+  );
+}
 
 function WorkExperiencePage() {
-  const renderChips = (key, array) => {
-    if (array.length === 0) return null;
-    return (
-      <Box key={key}>
-        {array.map((item, index) => (
-          <Chip key={index} label={item} />
-        ))}
-      </Box>
-    );
-  };
+  const theme = useTheme();
+  const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
 
   return (
     <Container>
-      <Grid container spacing={6} mb={12}>
+      <Grid container spacing={6} {...(matchesXS && { sx: { mt: 3, mb: 9 } })}>
         <Grid item xs={12} md={12}>
-          <Stack mt={4} spacing={4}>
+          <Stack spacing={4}>
             <Typography align={'center'} variant="h4">
               Experiencia laboral
             </Typography>
@@ -39,39 +29,21 @@ function WorkExperiencePage() {
           </Stack>
         </Grid>
         {workExperienceInfo.map((item, i) => (
-          <Grid key={i} item xs={12} md={6} lg={4}>
+          <Grid key={i} item xs={12} md={6}>
             <Card>
               <CardContent>
                 <Stack spacing={1}>
                   <Typography mb={2} variant="h5">
                     {item.role}
                   </Typography>
-                  <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                    <Typography variant="caption">Empresa:</Typography>
-                    <Typography variant="body1">{item.company}</Typography>
-                  </Stack>
-                  <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                    <Typography variant="caption">Cargo:</Typography>
-                    <Typography variant="body1">{item.role}</Typography>
-                  </Stack>
-                  <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                    <Typography variant="caption">Funciones:</Typography>
-                    <Typography variant="body1">{item.jobFunctions}</Typography>
-                  </Stack>
+                  <CardItem title={'Empresa:'} content={item.company} />
+                  <CardItem title={'Cargo:'} content={item.role} />
+                  <CardItem title={'Funciones:'} content={item.jobFunctions} />
                   <Stack direction={'row'} spacing={6}>
-                    <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                      <Typography variant="caption">Fecha de inicio:</Typography>
-                      <Typography variant="body1">{item.period.startDate}</Typography>
-                    </Stack>
-                    <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                      <Typography variant="caption">Fecha de término:</Typography>
-                      <Typography variant="body1">{item.period.endDate}</Typography>
-                    </Stack>
+                    <CardItem title={'Fecha de inicio:'} content={item.period.startDate} />
+                    <CardItem title={'Fecha de término:'} content={item.period.endDate} />
                   </Stack>
-                  <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                    <Typography variant="caption">Duración:</Typography>
-                    <Typography variant="body1">{item.period.duration}</Typography>
-                  </Stack>
+                  <CardItem title={'Duración:'} content={item.period.duration} />
                 </Stack>
               </CardContent>
               <Divider variant="middle" />
@@ -80,7 +52,7 @@ function WorkExperiencePage() {
                   <Typography variant="h6">Aptitudes</Typography>
                 </Stack>
                 <Stack spacing={1}>
-                  {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value))}
+                  {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value, 'secondary'))}
                 </Stack>
               </CardContent>
               <Divider variant="middle" />
@@ -89,15 +61,9 @@ function WorkExperiencePage() {
                   <Typography variant="h6">Tecnologias</Typography>
                 </Stack>
                 <Stack spacing={1}>
-                  {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value))}
+                  {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value, 'primary'))}
                 </Stack>
               </CardContent>
-              <Divider variant="middle" />
-              <CardActions>
-                <IconButton href={item.repository} target="_blank">
-                  <GitHubIcon />
-                </IconButton>
-              </CardActions>
             </Card>
           </Grid>
         ))}

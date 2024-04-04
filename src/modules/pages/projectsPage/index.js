@@ -10,30 +10,25 @@ import {
   Grid,
   IconButton,
   Stack,
-  Typography
+  Typography,
+  useMediaQuery,
+  useTheme
 } from '@mui/material';
 import React from 'react';
 import { projectsInfo } from '../../../resources/data/projectsInfo';
 // import { AccordionFilter } from '../../../library/common/components/AccordionFilter';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-const renderChips = (key, array) => {
-  if (array.length === 0) return null;
-  return (
-    <Box key={key}>
-      {array.map((item, index) => (
-        <Chip key={index} label={item} />
-      ))}
-    </Box>
-  );
-};
+import { renderChips } from '../../../library/common/utils/jsxUtils';
 
 function ProjectsPage() {
+  const theme = useTheme();
+  const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
+
   return (
     <Container>
-      <Grid container spacing={6} mb={12}>
+      <Grid container spacing={6} {...(matchesXS && { sx: { mt: 3, mb: 9 } })}>
         <Grid item xs={12} md={12}>
-          <Stack mt={4} spacing={4}>
+          <Stack spacing={4}>
             <Typography align="center" variant="h4">
               Proyectos
             </Typography>
@@ -41,7 +36,7 @@ function ProjectsPage() {
           </Stack>
         </Grid>
         {projectsInfo.map((item, i) => (
-          <Grid key={i} item xs={12} md={6} lg={4}>
+          <Grid key={i} item xs={12} md={6}>
             <Card>
               <CardContent>
                 <Stack spacing={1}>
@@ -64,7 +59,7 @@ function ProjectsPage() {
                   <Typography variant="h6">Aptitudes</Typography>
                 </Stack>
                 <Stack spacing={1}>
-                  {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value))}
+                  {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value, 'secondary'))}
                 </Stack>
               </CardContent>
               <Divider variant="middle" />
@@ -73,7 +68,7 @@ function ProjectsPage() {
                   <Typography variant="h6">Tecnologias</Typography>
                 </Stack>
                 <Stack spacing={1}>
-                  {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value))}
+                  {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value, 'primary'))}
                 </Stack>
               </CardContent>
               <Divider variant="middle" />

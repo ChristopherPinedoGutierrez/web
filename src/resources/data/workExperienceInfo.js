@@ -19,7 +19,7 @@ const workExperienceInfo = [
       startDate: 'Nov/2021',
       inProgress: false,
       endDate: 'Mar/2024',
-      duration: '2 años, 5 meses'
+      duration: '2 años 5 meses'
     },
     jobFunctions:
       'Gestión y control de procesos e información cumpliendo la función de vinculo entre mi sede y el area de recursos humanos, producción y procesos. Gestión de planillas y bonificaciones de producción',

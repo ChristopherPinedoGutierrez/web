@@ -1,20 +1,53 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Box, Card, CardActions, CardContent, Container, Grid, IconButton, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  Grid,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from '@mui/material';
 import profileFace1 from '../../../resources/images/ProfileFace1.jpeg';
 import Image from 'mui-image';
 import { personalInfo } from '../../../resources/data/personalInfo';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import ReactWhatsapp from 'react-whatsapp';
+
+function CardItemText({ title, content }) {
+  return (
+    <Grid container spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
+      <Grid item xs={12} md={2.5}>
+        <Typography variant="caption">{title}</Typography>
+      </Grid>
+      <Grid item xs={12} md={'auto'}>
+        <Typography variant="body1">{content}</Typography>
+      </Grid>
+    </Grid>
+  );
+}
 
 function ProfilePage() {
+  const theme = useTheme();
+  const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
+
   return (
     <Container>
-      <Grid container spacing={6} mt={1} mb={12}>
+      <Grid container spacing={6} mt={1} {...(matchesXS && { sx: { mt: 3, mb: 9 } })}>
         <Grid item xs={12} md={6}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
               <Stack direction="column" justifyContent="center" alignItems="center">
-                <Typography variant="h4">{personalInfo.variable.shortName}</Typography>
+                <Typography align="center" variant="h4">
+                  {personalInfo.variable.shortName}
+                </Typography>
                 <Typography variant="h5">{personalInfo.variable.mainRole}</Typography>
               </Stack>
             </Grid>
@@ -33,39 +66,18 @@ function ProfilePage() {
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography mb={2} variant="h6">
+              <Typography align="center" mb={2} variant="h6">
                 Datos personales
               </Typography>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">Apellidos:</Typography>
-                <Typography variant="body1">{personalInfo.fixed.surnames}</Typography>
-              </Stack>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">Nombres:</Typography>
-                <Typography variant="body1">{personalInfo.fixed.names}</Typography>
-              </Stack>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">Telefono:</Typography>
-                <Typography variant="body1">
-                  {personalInfo.variable.telephone.countryCode + ' / ' + personalInfo.variable.telephone.number}
-                </Typography>
-              </Stack>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">Email:</Typography>
-                <Typography variant="body1">{personalInfo.variable.email}</Typography>
-              </Stack>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">País:</Typography>
-                <Typography variant="captbody1ion">{personalInfo.fixed.country}</Typography>
-              </Stack>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">Nro DNI:</Typography>
-                <Typography variant="body1">{personalInfo.fixed.docIdNumber}</Typography>
-              </Stack>
-              <Stack direction={'row'} spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                <Typography variant="caption">Genero:</Typography>
-                <Typography variant="body1">{personalInfo.fixed.gender}</Typography>
-              </Stack>
+              <CardItemText title={'Apellidos:'} content={personalInfo.fixed.surnames} />
+              <CardItemText title={'Nombres:'} content={personalInfo.fixed.names} />
+              <CardItemText title={'Email:'} content={personalInfo.variable.email} />
+              <CardItemText
+                title={'Telefono:'}
+                content={personalInfo.variable.telephone.countryCode + ' ' + personalInfo.variable.telephone.number}
+              />
+              <CardItemText title={'DNI:'} content={personalInfo.fixed.docIdNumber} />
+              <CardItemText title={'País:'} content={personalInfo.fixed.country} />
             </CardContent>
             <CardActions>
               <IconButton href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
@@ -74,14 +86,13 @@ function ProfilePage() {
               <IconButton href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
                 <GitHubIcon />
               </IconButton>
-              {/* <ReactWhatsapp
-                number={`${personalInfo.variable.telephone.countryCode}${personalInfo.variable.telephone.number}`}
-                message="Hola. Tengo interes en tu perfil"
+              <IconButton
+                component={ReactWhatsapp}
+                number={`${personalInfo.variable.telephone.countryCode} ${personalInfo.variable.telephone.number}`}
+                message={'Saludos. Me interesa tu perfil ...'}
               >
-                <IconButton>
-                  <WhatsAppIcon />
-                </IconButton>
-              </ReactWhatsapp> */}
+                <WhatsAppIcon />
+              </IconButton>
             </CardActions>
           </Card>
         </Grid>
