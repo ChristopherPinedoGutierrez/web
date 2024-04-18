@@ -18,7 +18,9 @@ const projectsInfo = [
     goal: 'Sitio web que me permite gestionar proyectos e informacion personal y laboral a travez del tiempo.',
     status: 'En desarrollo',
     ranking: '2',
-    repository: 'https://github.com/ChristopherPinedo/WEB',
+    rating: '2',
+    repository: 'https://github.com/ChristopherPinedo/WEB/',
+    url: 'https://christopherpinedo.github.io/WEB/',
     aptitudes: {
       management: [aptMgt.gestionProyectos.name],
       development: [],
@@ -42,9 +44,11 @@ const projectsInfo = [
     date: '01/12/2023',
     name: 'Production System Control',
     goal: 'Plataforma que permite gestionar producción y asignacion del personal a cargo estructurado por sedes en tiempo real',
-    status: 'En refactorización',
+    status: 'En desarrollo',
     ranking: '1',
+    rating: '3',
     repository: 'https://github.com/ChristopherPinedo/PRODUCTION-SYSTEM',
+    url: '',
     aptitudes: {
       management: [aptMgt.gestionProyectos.name],
       development: [aptDev.progFuncional.name],

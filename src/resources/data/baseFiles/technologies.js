@@ -13,6 +13,8 @@ const technologies = {
     mgtAgile: { name: 'Agile management' },
     mgtScrum: { name: 'Scrum' },
     mgtKanaban: { name: 'Kanban' },
+    oficceGoogle: { name: 'Google office suite' },
+    oficceMicro: { name: 'Microsoft office suite' },
     mgtWater: { name: 'WaterFall' }
   },
   development: {

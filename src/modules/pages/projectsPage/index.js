@@ -9,6 +9,7 @@ import {
   Divider,
   Grid,
   IconButton,
+  Rating,
   Stack,
   Typography,
   useMediaQuery,
@@ -40,13 +41,19 @@ function ProjectsPage() {
             <Card>
               <CardContent>
                 <Stack spacing={1}>
+                  <Stack direction={'row'} justifyContent={'space-between'} pb={2}>
+                    <Stack direction={'row'} alignItems={'baseline'} spacing={1}>
+                      {/* <Typography variant="caption">Estado:</Typography> */}
+                      <Chip label={item.status} size="small" />
+                    </Stack>
+                    <Stack direction={'row'} alignItems={'flex-end'} spacing={1}>
+                      {/* <Typography variant="caption">Dificultad:</Typography> */}
+                      <Rating readOnly precision={0.5} value={item.rating} />
+                    </Stack>
+                  </Stack>
                   <Typography mb={2} variant="h5">
                     {item.name}
                   </Typography>
-                  <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                    <Typography variant="caption">Estado:</Typography>
-                    <Typography variant="body1">{item.status}</Typography>
-                  </Stack>
                   <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
                     <Typography variant="caption">Objetivo:</Typography>
                     <Typography variant="body1">{item.goal}</Typography>

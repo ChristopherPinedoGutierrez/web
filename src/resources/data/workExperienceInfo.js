@@ -22,7 +22,7 @@ const workExperienceInfo = [
       duration: '2 años 5 meses'
     },
     jobFunctions:
-      'Gestión y control de procesos e información cumpliendo la función de vinculo entre mi sede y las areas de recursos humanos, producción y procesos. Gestión de planillas y bonificaciones de producción',
+      'Gestión y control de procesos e información. Se cumplió la función de vinculo entre mi sede y las areas de recursos humanos, producción y procesos. Gestión de planillas y bonificaciones de producción',
     aptitudes: {
       management: [
         aptMgt.gestionProyectos.name,
