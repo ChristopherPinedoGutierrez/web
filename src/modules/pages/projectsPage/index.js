@@ -43,17 +43,26 @@ function ProjectsPage() {
                 <Stack spacing={1}>
                   <Stack direction={'row'} justifyContent={'space-between'} pb={2}>
                     <Stack direction={'row'} alignItems={'baseline'} spacing={1}>
-                      {/* <Typography variant="caption">Estado:</Typography> */}
-                      <Chip label={item.status} size="small" />
+                      <Chip label={item.area.name} color={item.area.color} size="small" />
                     </Stack>
                     <Stack direction={'row'} alignItems={'flex-end'} spacing={1}>
-                      {/* <Typography variant="caption">Dificultad:</Typography> */}
+                      <Typography variant="caption">Dificultad:</Typography>
                       <Rating readOnly precision={0.5} value={item.rating} />
                     </Stack>
                   </Stack>
                   <Typography mb={2} variant="h5">
                     {item.name}
                   </Typography>
+                  <Stack direction={'row'} spacing={{ xs: 4, md: 12 }}>
+                    <Stack alignItems={'baseline'} spacing={{ xs: 1, md: 2 }}>
+                      <Typography variant="caption">Estado:</Typography>
+                      <Chip label={item.status} size="small" />
+                    </Stack>
+                    <Stack alignItems={'baseline'} spacing={{ xs: 1, md: 2 }}>
+                      <Typography variant="caption">Fuente:</Typography>
+                      <Chip label={item.source} size="small" />
+                    </Stack>
+                  </Stack>
                   <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
                     <Typography variant="caption">Objetivo:</Typography>
                     <Typography variant="body1">{item.goal}</Typography>

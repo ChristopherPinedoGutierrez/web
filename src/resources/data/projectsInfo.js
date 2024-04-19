@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { aptitudes } from './baseFiles/aptitudes';
 import { technologies } from './baseFiles/technologies';
+import { areas } from './baseFiles/areas';
 
 const aptMgt = aptitudes.management;
 const aptDev = aptitudes.development;
@@ -11,13 +12,19 @@ const tecMgt = technologies.management;
 const tecDev = technologies.development;
 const tecDes = technologies.design;
 
+const areaFront = areas.frontend;
+const areaBack = areas.backend;
+const areaFull = areas.fullstack;
+const areaDes = areas.design;
+const areaMgt = areas.management;
+
 const projectsInfo = [
   {
-    date: '01/04/2024',
+    area: areaFront,
     name: 'Web personal, portafolio y curriculum',
     goal: 'Sitio web que me permite gestionar proyectos e informacion personal y laboral a travez del tiempo.',
     status: 'En desarrollo',
-    ranking: '2',
+    source: 'Iniciativa personal',
     rating: '2',
     repository: 'https://github.com/ChristopherPinedo/WEB/',
     url: 'https://christopherpinedo.github.io/WEB/',
@@ -41,11 +48,11 @@ const projectsInfo = [
     }
   },
   {
-    date: '01/12/2023',
+    area: areaFull,
     name: 'Production System Control',
     goal: 'Plataforma que permite gestionar producción y asignacion del personal a cargo estructurado por sedes en tiempo real',
     status: 'En desarrollo',
-    ranking: '1',
+    source: 'Iniciativa personal',
     rating: '3',
     repository: 'https://github.com/ChristopherPinedo/PRODUCTION-SYSTEM',
     url: '',

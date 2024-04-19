@@ -23,8 +23,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ReactWhatsapp from 'react-whatsapp';
-import { Gauge } from '@mui/x-charts';
+import { Gauge, gaugeClasses } from '@mui/x-charts';
 import { technologiesInfo } from '../../../resources/data/technologiesInfo';
+import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 
 function CardItemText({ title, content }) {
   return (
@@ -86,6 +88,9 @@ function KnowledgeCard({ data }) {
                   valueMax={progressCounter.total}
                   startAngle={-90}
                   endAngle={90}
+                  sx={{
+                    [`& .${gaugeClasses.valueText}`]: { fontSize: 12 }
+                  }}
                   text={() => `${progressCounter.counter} / ${progressCounter.total}`}
                 />
               </div>
@@ -187,15 +192,9 @@ function ProfilePage() {
             </CardActions>
           </Card>
         </Grid>
-        {/* Sección: Disclaimer */}
+        {/* Sección: Divider */}
         <Grid item width={1}>
-          <Divider sx={{ mt: 5 }} />
-          <Stack alignItems={'center'} pt={2}>
-            <Typography variant="caption">
-              ** La infomación en los siguientes graficos es orientativa, los porcentajes son calculados en base a mi
-              percepción de la tecnologia usando un sistema de puntos.**
-            </Typography>
-          </Stack>
+          <Divider sx={{ mt: 1 }} />
         </Grid>
         {/* Sección: Conocimiento */}
         <Grid item xs={12}>
@@ -217,6 +216,40 @@ function ProfilePage() {
               <KnowledgeCard data={data} key={data.id} />
             ))}
           </Grid>
+        </Grid>
+        {/* Sección: Disclaimer */}
+        <Grid item width={1}>
+          <Stack spacing={2}>
+            <Stack spacing={1} direction={'row'}>
+              <AnnouncementIcon fontSize="small" />
+              <Typography variant="body1">Disclaimer</Typography>
+            </Stack>
+            <Typography variant="caption">
+              ** 1. La infomación en los gráficos es orientativa, los porcentajes son calculados en base a mi percepción
+              de la tecnologia usando un sistema de puntos.**
+            </Typography>
+            <Typography variant="caption">
+              ** 2. Los elementos en las columnas de &quot;Completado&quot; indican que se conoce el concepto y se ha
+              realizado proyectos utilizandolos. En cambio los elementos de las columas &quot;En curso&quot; indican que
+              si bien se conoce el concepto aun no se ha implementado.**
+            </Typography>
+          </Stack>
+          {/* <SimpleTreeView>
+            <TreeItem itemId="title" label="Disclaimer">
+              <Stack spacing={2} pt={2}>
+                <Typography variant="caption">
+                  ** 1. La infomación en los gráficos es orientativa, los porcentajes son calculados en base a mi
+                  percepción de la tecnologia usando un sistema de puntos.**
+                </Typography>
+                <Typography variant="caption">
+                  ** 2. Los elementos en las columnas de &quot;Completado&quot; indican que se conoce el concepto y se
+                  ha realizado proyectos utilizandolos. En cambio los de las columas &quot;En curso&quot; indican que si
+                  bien se conoce el concepto aun no se ha implementado.**
+                </Typography>
+              </Stack>
+            </TreeItem>
+          </SimpleTreeView> */}
+          <Divider sx={{ pt: 2 }} />
         </Grid>
       </Grid>
     </Container>
