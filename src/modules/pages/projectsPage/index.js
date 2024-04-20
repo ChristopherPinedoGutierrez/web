@@ -5,12 +5,14 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardMedia,
   Chip,
   Container,
   Divider,
   Grid,
   IconButton,
   Rating,
+  Skeleton,
   Stack,
   Typography,
   useMediaQuery,
@@ -53,13 +55,18 @@ function ProjectsPage() {
                       <Rating readOnly precision={0.5} value={item.rating} />
                     </Stack>
                   </Stack>
+                  {item.image ? (
+                    <CardMedia component={'img'} height={200} image={item.image} alt={`Image ${item.name}`} />
+                  ) : (
+                    <Skeleton animation={false} sx={{ height: 200 }} variant="rectangular" />
+                  )}
                   <Typography mb={2} variant="h5">
                     {item.name}
                   </Typography>
                   <Stack direction={'row'} spacing={{ xs: 4, md: 12 }}>
                     <Stack alignItems={'baseline'} spacing={{ xs: 1, md: 2 }}>
                       <Typography variant="caption">Estado:</Typography>
-                      <Chip label={item.status} size="small" />
+                      <Chip label={item.status.name} color={item.status.color} size="small" />
                     </Stack>
                     <Stack alignItems={'baseline'} spacing={{ xs: 1, md: 2 }}>
                       <Typography variant="caption">Fuente:</Typography>

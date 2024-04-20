@@ -2,6 +2,8 @@
 import { aptitudes } from './baseFiles/aptitudes';
 import { technologies } from './baseFiles/technologies';
 import { areas } from './baseFiles/areas';
+import portfolioImage from '../images/portfolioweb.jpg';
+import sistemaProduccionImage from '../images/sistemaProduccion.jpg';
 
 const aptMgt = aptitudes.management;
 const aptDev = aptitudes.development;
@@ -18,14 +20,26 @@ const areaFull = areas.fullstack;
 const areaDes = areas.design;
 const areaMgt = areas.management;
 
+const projectStatuses = {
+  dev: {
+    name: 'Desarrollo',
+    color: 'error'
+  },
+  prod: {
+    name: 'Producción',
+    color: 'success'
+  }
+};
+
 const projectsInfo = [
   {
     area: areaFront,
+    image: portfolioImage,
     name: 'Web personal, portafolio y curriculum',
     goal: 'Sitio web que me permite gestionar proyectos e información personal y laboral a travez del tiempo.',
-    status: 'En desarrollo',
+    status: projectStatuses.prod,
     source: 'Iniciativa personal',
-    rating: '2',
+    rating: '3',
     repository: 'https://github.com/ChristopherPinedo/WEB/',
     url: 'https://christopherpinedo.github.io/WEB/',
     aptitudes: {
@@ -49,11 +63,12 @@ const projectsInfo = [
   },
   {
     area: areaFull,
+    image: sistemaProduccionImage,
     name: 'Control de personal y producción.',
     goal: 'Plataforma en tiempo real que permite gestionar producción y personal a cargo estructurado por sedes.',
-    status: 'En desarrollo',
+    status: projectStatuses.dev,
     source: 'Iniciativa personal',
-    rating: '3',
+    rating: '4',
     repository: 'https://github.com/ChristopherPinedo/PRODUCTION-SYSTEM',
     url: '',
     aptitudes: {
@@ -88,12 +103,79 @@ const projectsInfo = [
       design: [tecDes.metAtomicDesign.name]
     }
   },
+  // {
+  //   area: areaBack,
+  //   image: '',
+  //   name: 'API Whatsapp Chatbot',
+  //   goal: '',
+  //   status: projectStatuses.dev,
+  //   source: 'Iniciativa personal',
+  //   rating: '3',
+  //   repository: '',
+  //   url: '',
+  //   aptitudes: {
+  //     management: [],
+  //     development: [],
+  //     design: [],
+  //     softSkills: []
+  //   },
+  //   technologies: {
+  //     management: [],
+  //     development: [],
+  //     design: []
+  //   }
+  // },
+  // {
+  //   area: areaFront,
+  //   image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/pzkdrqu0lizrk8qgmiti.jpg',
+  //   name: 'Pricing component with toggle',
+  //   goal: '',
+  //   status: projectStatuses.dev,
+  //   source: 'Frontend Mentor',
+  //   rating: '1',
+  //   repository: '',
+  //   url: '',
+  //   aptitudes: {
+  //     management: [],
+  //     development: [],
+  //     design: [],
+  //     softSkills: []
+  //   },
+  //   technologies: {
+  //     management: [],
+  //     development: [],
+  //     design: []
+  //   }
+  // },
   {
-    area: areaBack,
-    name: 'API Whatsapp Chatbot',
+    area: areaFront,
+    image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/q7yvs5yvgchjhjs2znay.jpg',
+    name: 'Newsletter sign-up form with success message',
     goal: '',
-    status: 'En desarrollo',
-    source: 'Iniciativa personal',
+    status: projectStatuses.dev,
+    source: 'Frontend Mentor',
+    rating: '1',
+    repository: '',
+    url: '',
+    aptitudes: {
+      management: [],
+      development: [],
+      design: [],
+      softSkills: []
+    },
+    technologies: {
+      management: [],
+      development: [],
+      design: []
+    }
+  },
+  {
+    area: areaFront,
+    image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/kbiajeinu576ltgcclbt.jpg',
+    name: 'Calculator app',
+    goal: '',
+    status: projectStatuses.dev,
+    source: 'Frontend Mentor',
     rating: '2',
     repository: '',
     url: '',
@@ -111,11 +193,56 @@ const projectsInfo = [
   },
   {
     area: areaFront,
-    name: 'Frontend: Desafíos Básicos',
+    image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/x8skdsukkmwiwxejthio.jpg',
+    name: 'Space tourism multi-page website',
     goal: '',
-    status: 'En desarrollo',
+    status: projectStatuses.dev,
     source: 'Frontend Mentor',
-    rating: '1',
+    rating: '2',
+    repository: '',
+    url: '',
+    aptitudes: {
+      management: [],
+      development: [],
+      design: [],
+      softSkills: []
+    },
+    technologies: {
+      management: [],
+      development: [],
+      design: []
+    }
+  },
+  // {
+  //   area: areaFront,
+  //   image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/vxqbpnpbamodg5ioplbj.jpg',
+  //   name: 'Multi-step form',
+  //   goal: '',
+  //   status: projectStatuses.dev,
+  //   source: 'Frontend Mentor',
+  //   rating: '3',
+  //   repository: '',
+  //   url: '',
+  //   aptitudes: {
+  //     management: [],
+  //     development: [],
+  //     design: [],
+  //     softSkills: []
+  //   },
+  //   technologies: {
+  //     management: [],
+  //     development: [],
+  //     design: []
+  //   }
+  // },
+  {
+    area: areaFront,
+    image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/wirxeocmd6tpnn9c5oqc.jpg',
+    name: 'REST Countries API with color theme switcher',
+    goal: '',
+    status: projectStatuses.dev,
+    source: 'Frontend Mentor',
+    rating: '3',
     repository: '',
     url: '',
     aptitudes: {

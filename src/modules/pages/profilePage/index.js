@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -27,6 +28,7 @@ import { Gauge, gaugeClasses } from '@mui/x-charts';
 import { technologiesInfo } from '../../../resources/data/technologiesInfo';
 import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
 import AnnouncementIcon from '@mui/icons-material/Announcement';
+import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 
 function CardItemText({ title, content }) {
   return (
@@ -41,7 +43,7 @@ function CardItemText({ title, content }) {
   );
 }
 
-function KnowledgeCard({ data }) {
+function KnowledgeCard({ data, tempWidth = 6 }) {
   const [progressCounter, setProgressCounter] = useState({
     counter: 0,
     total: 0
@@ -74,7 +76,7 @@ function KnowledgeCard({ data }) {
   }, []);
 
   return (
-    <Grid item xs={12} md={4}>
+    <Grid item xs={12} md={tempWidth}>
       <Card>
         <CardContent>
           <Stack direction={'column'} spacing={1} divider={<Divider />}>
@@ -103,7 +105,7 @@ function KnowledgeCard({ data }) {
                 <Stack spacing={1}>
                   {rowsContent.completed.map((ele) => (
                     <Stack key={ele.id} direction={'row'} alignItems={'baseline'} spacing={1}>
-                      <Chip label={ele.value} size="small" />
+                      <Chip label={ele.value < 10 ? `0${ele.value}` : ele.value} size="small" />
                       <Typography variant="caption">{ele.name}</Typography>
                     </Stack>
                   ))}
@@ -116,7 +118,7 @@ function KnowledgeCard({ data }) {
                 <Stack spacing={1}>
                   {rowsContent.inProgress.map((ele) => (
                     <Stack key={ele.id} direction={'row'} alignItems={'baseline'} spacing={1}>
-                      <Chip label={ele.value} size="small" />
+                      <Chip label={ele.value < 10 ? `0${ele.value}` : ele.value} size="small" />
                       <Typography variant="caption">{ele.name}</Typography>
                     </Stack>
                   ))}
@@ -125,6 +127,11 @@ function KnowledgeCard({ data }) {
             </Grid>
           </Stack>
         </CardContent>
+        <CardActions sx={{ justifyContent: 'flex-end', padding: 2 }}>
+          <Button variant="contained" size="small" color="inherit" disabled endIcon={<OpenInFullIcon />}>
+            Expandir
+          </Button>
+        </CardActions>
       </Card>
     </Grid>
   );
@@ -197,7 +204,7 @@ function ProfilePage() {
           <Divider sx={{ mt: 1 }} />
         </Grid>
         {/* Sección: Conocimiento */}
-        <Grid item xs={12}>
+        <Grid item xs={12} md={8}>
           <Typography variant="h4" pb={2}>
             Frontend
           </Typography>
@@ -207,13 +214,13 @@ function ProfilePage() {
             ))}
           </Grid>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={4}>
           <Typography variant="h4" pb={2}>
             Backend
           </Typography>
           <Grid container spacing={2}>
             {technologiesInfo.backEnd.map((data) => (
-              <KnowledgeCard data={data} key={data.id} />
+              <KnowledgeCard data={data} key={data.id} tempWidth={12} />
             ))}
           </Grid>
         </Grid>
