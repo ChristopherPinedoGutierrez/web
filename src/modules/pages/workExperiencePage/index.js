@@ -1,8 +1,20 @@
 /* eslint-disable react/prop-types */
-import { Card, CardContent, Container, Divider, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from '@mui/material';
 import React from 'react';
 import { workExperienceInfo } from '../../../resources/data/workExperienceInfo';
 import { renderChips } from '../../../library/common/utils/jsxUtils';
+import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
 
 function CardItem({ title, content }) {
   return (
@@ -31,11 +43,9 @@ function WorkExperiencePage() {
         {workExperienceInfo.map((item, i) => (
           <Grid key={i} item xs={12} md={6}>
             <Card>
+              <CardHeader title={item.role} sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }} />
               <CardContent>
                 <Stack spacing={1}>
-                  <Typography mb={2} variant="h5">
-                    {item.role}
-                  </Typography>
                   <CardItem title={'Empresa:'} content={item.company} />
                   <CardItem title={'Cargo:'} content={item.role} />
                   <CardItem title={'Funciones:'} content={item.jobFunctions} />
@@ -48,21 +58,23 @@ function WorkExperiencePage() {
               </CardContent>
               <Divider variant="middle" />
               <CardContent>
-                <Stack spacing={1}>
-                  <Typography variant="h6">Aptitudes</Typography>
-                </Stack>
-                <Stack spacing={1}>
-                  {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value, 'secondary'))}
-                </Stack>
+                <SimpleTreeView>
+                  <TreeItem itemId="Aptitudes" label="Aptitudes">
+                    <Stack spacing={1} pt={2}>
+                      {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value, 'secondary'))}
+                    </Stack>
+                  </TreeItem>
+                </SimpleTreeView>
               </CardContent>
               <Divider variant="middle" />
               <CardContent>
-                <Stack spacing={1}>
-                  <Typography variant="h6">Tecnologias</Typography>
-                </Stack>
-                <Stack spacing={1}>
-                  {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value, 'primary'))}
-                </Stack>
+                <SimpleTreeView>
+                  <TreeItem itemId="Tecnologias" label="Tecnologías">
+                    <Stack spacing={1} pt={2}>
+                      {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value, 'primary'))}
+                    </Stack>
+                  </TreeItem>
+                </SimpleTreeView>
               </CardContent>
             </Card>
           </Grid>

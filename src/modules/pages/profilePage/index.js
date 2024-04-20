@@ -230,25 +230,10 @@ function ProfilePage() {
             </Typography>
             <Typography variant="caption">
               ** 2. Los elementos en las columnas de &quot;Completado&quot; indican que se conoce el concepto y se ha
-              realizado proyectos utilizandolos. En cambio los elementos de las columas &quot;En curso&quot; indican que
-              si bien se conoce el concepto aun no se ha implementado.**
+              utilizado en proyectos; En cambio los elementos de las columas &quot;En curso&quot; indican que si bien se
+              conoce el concepto aun no se ha implementado.**
             </Typography>
           </Stack>
-          {/* <SimpleTreeView>
-            <TreeItem itemId="title" label="Disclaimer">
-              <Stack spacing={2} pt={2}>
-                <Typography variant="caption">
-                  ** 1. La infomación en los gráficos es orientativa, los porcentajes son calculados en base a mi
-                  percepción de la tecnologia usando un sistema de puntos.**
-                </Typography>
-                <Typography variant="caption">
-                  ** 2. Los elementos en las columnas de &quot;Completado&quot; indican que se conoce el concepto y se
-                  ha realizado proyectos utilizandolos. En cambio los de las columas &quot;En curso&quot; indican que si
-                  bien se conoce el concepto aun no se ha implementado.**
-                </Typography>
-              </Stack>
-            </TreeItem>
-          </SimpleTreeView> */}
           <Divider sx={{ pt: 2 }} />
         </Grid>
       </Grid>

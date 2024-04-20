@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -19,7 +20,9 @@ import React from 'react';
 import { projectsInfo } from '../../../resources/data/projectsInfo';
 // import { AccordionFilter } from '../../../library/common/components/AccordionFilter';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { renderChips } from '../../../library/common/utils/jsxUtils';
+import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
 
 function ProjectsPage() {
   const theme = useTheme();
@@ -46,7 +49,7 @@ function ProjectsPage() {
                       <Chip label={item.area.name} color={item.area.color} size="small" />
                     </Stack>
                     <Stack direction={'row'} alignItems={'flex-end'} spacing={1}>
-                      <Typography variant="caption">Dificultad:</Typography>
+                      {/* <Typography variant="caption">Dificultad:</Typography> */}
                       <Rating readOnly precision={0.5} value={item.rating} />
                     </Stack>
                   </Stack>
@@ -71,27 +74,40 @@ function ProjectsPage() {
               </CardContent>
               <Divider variant="middle" />
               <CardContent>
-                <Stack spacing={1}>
-                  <Typography variant="h6">Aptitudes</Typography>
-                </Stack>
-                <Stack spacing={1}>
-                  {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value, 'secondary'))}
-                </Stack>
+                <SimpleTreeView>
+                  <TreeItem itemId="Aptitudes" label="Aptitudes">
+                    <Stack spacing={1} pt={2}>
+                      {Object.entries(item.aptitudes).map(([key, value]) => renderChips(key, value, 'secondary'))}
+                    </Stack>
+                  </TreeItem>
+                </SimpleTreeView>
               </CardContent>
               <Divider variant="middle" />
               <CardContent>
-                <Stack spacing={1}>
-                  <Typography variant="h6">Tecnologias</Typography>
-                </Stack>
-                <Stack spacing={1}>
-                  {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value, 'primary'))}
-                </Stack>
+                <SimpleTreeView>
+                  <TreeItem itemId="Tecnologias" label="Tecnologías">
+                    <Stack spacing={1} pt={2}>
+                      {Object.entries(item.technologies).map(([key, value]) => renderChips(key, value, 'primary'))}
+                    </Stack>
+                  </TreeItem>
+                </SimpleTreeView>
               </CardContent>
               <Divider variant="middle" />
-              <CardActions>
-                <IconButton href={item.repository} target="_blank">
+              <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>
+                <IconButton href={item.repository} target="_blank" disabled={item.url ? false : true}>
                   <GitHubIcon />
                 </IconButton>
+                <Button
+                  variant="contained"
+                  size="small"
+                  color="inherit"
+                  disabled={item.url ? false : true}
+                  href={item.url}
+                  target="_blank"
+                  endIcon={<OpenInBrowserIcon />}
+                >
+                  Visitar
+                </Button>
               </CardActions>
             </Card>
           </Grid>

@@ -22,7 +22,7 @@ const projectsInfo = [
   {
     area: areaFront,
     name: 'Web personal, portafolio y curriculum',
-    goal: 'Sitio web que me permite gestionar proyectos e informacion personal y laboral a travez del tiempo.',
+    goal: 'Sitio web que me permite gestionar proyectos e información personal y laboral a travez del tiempo.',
     status: 'En desarrollo',
     source: 'Iniciativa personal',
     rating: '2',
@@ -49,8 +49,8 @@ const projectsInfo = [
   },
   {
     area: areaFull,
-    name: 'Production System Control',
-    goal: 'Plataforma que permite gestionar producción y asignacion del personal a cargo estructurado por sedes en tiempo real',
+    name: 'Control de personal y producción.',
+    goal: 'Plataforma en tiempo real que permite gestionar producción y personal a cargo estructurado por sedes.',
     status: 'En desarrollo',
     source: 'Iniciativa personal',
     rating: '3',
@@ -86,6 +86,48 @@ const projectsInfo = [
         tecDev.fibFirestore.name
       ],
       design: [tecDes.metAtomicDesign.name]
+    }
+  },
+  {
+    area: areaBack,
+    name: 'API Whatsapp Chatbot',
+    goal: '',
+    status: 'En desarrollo',
+    source: 'Iniciativa personal',
+    rating: '2',
+    repository: '',
+    url: '',
+    aptitudes: {
+      management: [],
+      development: [],
+      design: [],
+      softSkills: []
+    },
+    technologies: {
+      management: [],
+      development: [],
+      design: []
+    }
+  },
+  {
+    area: areaFront,
+    name: 'Frontend: Desafíos Básicos',
+    goal: '',
+    status: 'En desarrollo',
+    source: 'Frontend Mentor',
+    rating: '1',
+    repository: '',
+    url: '',
+    aptitudes: {
+      management: [],
+      development: [],
+      design: [],
+      softSkills: []
+    },
+    technologies: {
+      management: [],
+      development: [],
+      design: []
     }
   }
 ];
