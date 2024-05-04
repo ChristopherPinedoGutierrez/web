@@ -42,7 +42,7 @@ const workExperienceInfo = [
       ]
     },
     technologies: {
-      management: [tecMgt.github.name, tecMgt.notion.name, tecMgt.mgtKanaban.name],
+      management: [],
       development: [],
       design: []
     },

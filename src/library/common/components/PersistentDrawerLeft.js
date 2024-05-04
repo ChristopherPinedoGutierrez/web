@@ -17,7 +17,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { dashboardMainRoutes } from '../../../main/router/routes/dashboardMainRoutes';
 import { Link as RouterLink } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, Container, Stack } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import pdfFile from '../../../resources/data/curriculum/cv.pdf';
 import { handleDescargarCV } from '../utils/functionUtils';
@@ -26,7 +26,7 @@ const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  // padding: theme.spacing(3),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
@@ -70,7 +70,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 // eslint-disable-next-line react/prop-types
 export default function PersistentDrawerLeft({ children }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -83,25 +83,31 @@ export default function PersistentDrawerLeft({ children }) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar sx={{ justifyContent: 'space-between', backgroundColor: 'grey.700' }}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ ml: 10, mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Button
-            sx={{ mr: 10 }}
-            variant="contained"
-            endIcon={<DownloadIcon />}
-            onClick={() => handleDescargarCV(pdfFile)}
-          >
-            Descargar CV
-          </Button>
+      <AppBar position="absolute" open={open}>
+        <Toolbar sx={{ backgroundColor: 'background.default' }}>
+          <Container maxWidth="xl">
+            <Stack
+              direction={'row'}
+              sx={{ ...(open ? { justifyContent: 'flex-end' } : { justifyContent: 'space-between' }) }}
+            >
+              <IconButton
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{ ...(open && { display: 'none' }) }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Button
+                sx={{ height: 40 }}
+                variant="contained"
+                endIcon={<DownloadIcon />}
+                onClick={() => handleDescargarCV(pdfFile)}
+              >
+                Descargar CV
+              </Button>
+            </Stack>
+          </Container>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -136,7 +142,7 @@ export default function PersistentDrawerLeft({ children }) {
         <Divider />
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
+        {/* <DrawerHeader /> */}
         {children}
       </Main>
     </Box>

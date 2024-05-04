@@ -30,15 +30,12 @@ function WorkExperiencePage() {
   const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
 
   return (
-    <Container>
-      <Grid container spacing={6} {...(matchesXS && { sx: { mt: 3, mb: 9 } })}>
-        <Grid item xs={12} md={12}>
-          <Stack spacing={4}>
-            <Typography align={'center'} variant="h4">
-              Experiencia laboral
-            </Typography>
-            {/* <AccordionFilter /> */}
-          </Stack>
+    <Container maxWidth="xl">
+      <Grid container spacing={4} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
+        <Grid item xs={12}>
+          <Typography align={'center'} variant="h4">
+            Experiencia laboral
+          </Typography>
         </Grid>
         {workExperienceInfo.map((item, i) => (
           <Grid key={i} item xs={12} md={6}>

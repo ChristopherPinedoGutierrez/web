@@ -31,15 +31,12 @@ function ProjectsPage() {
   const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
 
   return (
-    <Container>
-      <Grid container spacing={6} {...(matchesXS && { sx: { mt: 3, mb: 9 } })}>
-        <Grid item xs={12} md={12}>
-          <Stack spacing={4}>
-            <Typography align="center" variant="h4">
-              Proyectos
-            </Typography>
-            {/* <AccordionFilter /> */}
-          </Stack>
+    <Container maxWidth="xl">
+      <Grid container spacing={4} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
+        <Grid item xs={12}>
+          <Typography align="center" variant="h4">
+            Proyectos
+          </Typography>
         </Grid>
         {projectsInfo.map((item, i) => (
           <Grid key={i} item xs={12} md={6}>
@@ -51,7 +48,6 @@ function ProjectsPage() {
                       <Chip label={item.area.name} color={item.area.color} size="small" />
                     </Stack>
                     <Stack direction={'row'} alignItems={'flex-end'} spacing={1}>
-                      {/* <Typography variant="caption">Dificultad:</Typography> */}
                       <Rating readOnly precision={0.5} value={item.rating} />
                     </Stack>
                   </Stack>

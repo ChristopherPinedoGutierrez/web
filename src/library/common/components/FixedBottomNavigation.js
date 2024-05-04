@@ -17,8 +17,8 @@ export default function FixedBottomNavigation({ children }) {
   return (
     <>
       <CssBaseline />
-      <AppBar position="fixed">
-        <Toolbar sx={{ justifyContent: 'flex-end', backgroundColor: 'grey.700', alignContent: 'center' }}>
+      <AppBar position="absolute">
+        <Toolbar sx={{ justifyContent: 'flex-end', backgroundColor: 'background.paper', alignContent: 'center' }}>
           <Button
             size="small"
             variant="contained"

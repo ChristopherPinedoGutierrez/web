@@ -16,13 +16,13 @@ const technologiesInfo = {
           id: uuidV4(),
           name: 'Recursión y pila',
           value: 5,
-          completed: false
+          completed: true
         },
         {
           id: uuidV4(),
           name: 'Scope y closures',
           value: 5,
-          completed: false
+          completed: true
         },
         {
           id: uuidV4(),
@@ -38,7 +38,7 @@ const technologiesInfo = {
         },
         {
           id: uuidV4(),
-          name: 'Prototype',
+          name: 'Prototype en JS',
           value: 10,
           completed: true
         },
@@ -50,8 +50,8 @@ const technologiesInfo = {
         },
         {
           id: uuidV4(),
-          name: 'Promise API',
-          value: 10,
+          name: 'Asincronismo',
+          value: 20,
           completed: true
         },
         {
@@ -62,31 +62,19 @@ const technologiesInfo = {
         },
         {
           id: uuidV4(),
-          name: 'Eventos: Propagación y captura',
-          value: 5,
-          completed: true
-        },
-        {
-          id: uuidV4(),
           name: 'DOM: Optimización de carga',
           value: 15,
           completed: false
         },
         {
           id: uuidV4(),
-          name: 'Fetch API',
+          name: 'Data Fetching',
           value: 10,
           completed: true
         },
         {
           id: uuidV4(),
           name: 'Websockets',
-          value: 5,
-          completed: false
-        },
-        {
-          id: uuidV4(),
-          name: 'Browser Storage',
           value: 5,
           completed: true
         },
@@ -110,7 +98,7 @@ const technologiesInfo = {
       content: [
         {
           id: uuidV4(),
-          name: 'Fundamentos',
+          name: 'Principios',
           value: 20,
           completed: true
         },
@@ -128,14 +116,32 @@ const technologiesInfo = {
         },
         {
           id: uuidV4(),
-          name: 'Controladores de propagación',
+          name: 'Inmutabilidad',
           value: 5,
-          completed: false
+          completed: true
         },
         {
           id: uuidV4(),
-          name: 'Cola de actualizaciones de estado',
+          name: 'Gestión del estado.',
+          value: 20,
+          completed: true
+        },
+        {
+          id: uuidV4(),
+          name: 'Acceso al DOM.',
           value: 5,
+          completed: true
+        },
+        {
+          id: uuidV4(),
+          name: 'Control de Efectos',
+          value: 20,
+          completed: true
+        },
+        {
+          id: uuidV4(),
+          name: 'Memoization',
+          value: 10,
           completed: true
         }
       ]
@@ -196,9 +202,33 @@ const technologiesInfo = {
       content: [
         {
           id: uuidV4(),
-          name: 'Fundamentos',
+          name: 'Authentication',
+          value: 10,
+          completed: true
+        },
+        {
+          id: uuidV4(),
+          name: 'Firestore',
           value: 30,
           completed: true
+        },
+        {
+          id: uuidV4(),
+          name: 'Hosting',
+          value: 10,
+          completed: true
+        },
+        {
+          id: uuidV4(),
+          name: 'Cloud Functions',
+          value: 10,
+          completed: false
+        },
+        {
+          id: uuidV4(),
+          name: 'Realtime Database',
+          value: 30,
+          completed: false
         }
       ]
     }

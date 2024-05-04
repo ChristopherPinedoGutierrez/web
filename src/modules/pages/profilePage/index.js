@@ -25,16 +25,14 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ReactWhatsapp from 'react-whatsapp';
 import { Gauge, gaugeClasses } from '@mui/x-charts';
-import { technologiesInfo } from '../../../resources/data/technologiesInfo';
-import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
-import AnnouncementIcon from '@mui/icons-material/Announcement';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
+import { SectionKnowledge } from './SectionKnowledge';
 
 function CardItemText({ title, content }) {
   return (
-    <Grid container spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-      <Grid item xs={12} md={2.5}>
-        <Typography variant="caption">{title}</Typography>
+    <Grid container spacing={{ xs: 1, md: 0 }} alignItems={'baseline'}>
+      <Grid item xs={12} md={3}>
+        <Typography variant="body2">{title}</Typography>
       </Grid>
       <Grid item xs={12} md={'auto'}>
         <Typography variant="body1">{content}</Typography>
@@ -142,106 +140,73 @@ function ProfilePage() {
   const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
 
   return (
-    <Container>
-      <Grid container spacing={6} mt={1} {...(matchesXS && { sx: { mt: 3, mb: 9 } })}>
+    <Container maxWidth="xl">
+      <Grid container spacing={4} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
         {/* Sección: Presentación */}
-        <Grid container item xs={12} md={6} spacing={2}>
-          <Grid item xs={12} md={12}>
-            <Stack direction="column" justifyContent="center" alignItems="center">
+        <Grid item xs={12} md={6}>
+          <Stack spacing={2} sx={{ maxWidth: 500, margin: 'auto' }}>
+            <Stack direction="column" justifyContent="center" alignItems="center" width={'inherit'}>
               <Typography align="center" variant="h4">
                 {personalInfo.variable.shortName}
               </Typography>
               <Typography variant="h5">{personalInfo.variable.mainRole}</Typography>
             </Stack>
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Image src={profileFace1} height="100px" width="100px" sx={{ borderRadius: 25 }} duration={500} />
+            <Box sx={{ display: 'flex', justifyContent: 'center', width: 'inherit' }}>
+              <Image src={profileFace1} height="120px" width="120px" sx={{ borderRadius: 25 }} duration={500} />
             </Box>
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <Box sx={{ pl: 2, pr: 2, textAlign: 'center' }}>
-              <Typography variant="caption">{personalInfo.variable.presentationMessage}</Typography>
-            </Box>
-          </Grid>
+            <Stack sx={{ textAlign: 'center' }}>
+              <Typography variant="body1">{personalInfo.variable.presentationMessage1}</Typography>
+              <Typography variant="body1">{personalInfo.variable.presentationMessage2}</Typography>
+            </Stack>
+          </Stack>
         </Grid>
         {/* Sección: Información personal */}
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ maxWidth: 500, margin: 'auto' }}>
             <CardContent>
-              <Typography align="center" mb={2} variant="h6">
-                Datos personales
-              </Typography>
-              <CardItemText title={'Apellidos:'} content={personalInfo.fixed.surnames} />
-              <CardItemText title={'Nombres:'} content={personalInfo.fixed.names} />
-              <CardItemText title={'Email:'} content={personalInfo.variable.email} />
-              <CardItemText
-                title={'Telefono:'}
-                content={personalInfo.variable.telephone.countryCode + ' ' + personalInfo.variable.telephone.number}
-              />
-              <CardItemText title={'DNI:'} content={personalInfo.fixed.docIdNumber} />
-              <CardItemText title={'País:'} content={personalInfo.fixed.country} />
+              <Stack spacing={2}>
+                <Typography align="center" variant="h5">
+                  Datos personales
+                </Typography>
+                <Stack spacing={1}>
+                  <CardItemText title={'Apellidos:'} content={personalInfo.fixed.surnames} />
+                  <CardItemText title={'Nombres:'} content={personalInfo.fixed.names} />
+                  <CardItemText title={'Email:'} content={personalInfo.variable.email} />
+                  <CardItemText
+                    title={'Telefono:'}
+                    content={personalInfo.variable.telephone.countryCode + ' ' + personalInfo.variable.telephone.number}
+                  />
+                  <CardItemText title={'DNI:'} content={personalInfo.fixed.docIdNumber} />
+                  <CardItemText title={'País:'} content={personalInfo.fixed.country} />
+                </Stack>
+              </Stack>
             </CardContent>
             <CardActions>
-              <IconButton href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
-                <GitHubIcon />
-              </IconButton>
-              <IconButton
-                component={ReactWhatsapp}
-                number={`${personalInfo.variable.telephone.countryCode} ${personalInfo.variable.telephone.number}`}
-                message={'Saludos. Me interesa tu perfil ...'}
-              >
-                <WhatsAppIcon />
-              </IconButton>
+              <Stack direction={'row'} width={1} spacing={2} justifyContent={'flex-end'}>
+                <IconButton href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
+                  <LinkedInIcon />
+                </IconButton>
+                <IconButton href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
+                  <GitHubIcon />
+                </IconButton>
+                <IconButton
+                  component={ReactWhatsapp}
+                  number={`${personalInfo.variable.telephone.countryCode} ${personalInfo.variable.telephone.number}`}
+                  message={'Saludos. Me interesa tu perfil ...'}
+                >
+                  <WhatsAppIcon />
+                </IconButton>
+              </Stack>
             </CardActions>
           </Card>
         </Grid>
         {/* Sección: Divider */}
         <Grid item width={1}>
-          <Divider sx={{ mt: 1 }} />
+          <Divider />
         </Grid>
         {/* Sección: Conocimiento */}
-        <Grid item xs={12} md={8}>
-          <Typography variant="h4" pb={2}>
-            Frontend
-          </Typography>
-          <Grid container spacing={2}>
-            {technologiesInfo.frontEnd.map((data) => (
-              <KnowledgeCard data={data} key={data.id} />
-            ))}
-          </Grid>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Typography variant="h4" pb={2}>
-            Backend
-          </Typography>
-          <Grid container spacing={2}>
-            {technologiesInfo.backEnd.map((data) => (
-              <KnowledgeCard data={data} key={data.id} tempWidth={12} />
-            ))}
-          </Grid>
-        </Grid>
-        {/* Sección: Disclaimer */}
-        <Grid item width={1}>
-          <Stack spacing={2}>
-            <Stack spacing={1} direction={'row'}>
-              <AnnouncementIcon fontSize="small" />
-              <Typography variant="body1">Disclaimer</Typography>
-            </Stack>
-            <Typography variant="caption">
-              ** 1. La infomación en los gráficos es orientativa, los porcentajes son calculados en base a mi percepción
-              de la tecnologia usando un sistema de puntos.**
-            </Typography>
-            <Typography variant="caption">
-              ** 2. Los elementos en las columnas de &quot;Completado&quot; indican que se conoce el concepto y se ha
-              utilizado en proyectos; En cambio los elementos de las columas &quot;En curso&quot; indican que si bien se
-              conoce el concepto aun no se ha implementado.**
-            </Typography>
-          </Stack>
-          <Divider sx={{ pt: 2 }} />
+        <Grid item xs={12}>
+          <SectionKnowledge />
         </Grid>
       </Grid>
     </Container>
