@@ -15,12 +15,6 @@ const areas = {
     filterable: true,
     disabled: false
   },
-  fullstack: {
-    id: uuidV4(),
-    name: 'FullStack',
-    color: 'success',
-    filterable: false
-  },
   testing: {
     id: uuidV4(),
     name: 'Testing',
@@ -32,15 +26,22 @@ const areas = {
     id: uuidV4(),
     name: 'Design',
     color: 'warning',
-    filterable: false,
-    disabled: true
+    filterable: true,
+    disabled: false
   },
   management: {
     id: uuidV4(),
     name: 'Management',
     color: 'error',
-    filterable: false,
-    disabled: true
+    filterable: true,
+    disabled: false
+  },
+  // --------- NO FILTERABLE
+  fullstack: {
+    id: uuidV4(),
+    name: 'FullStack',
+    color: 'success',
+    filterable: false
   },
   development: {
     id: uuidV4(),

@@ -11,7 +11,7 @@ function RadioButtonsGroupTechAreas({ area, setArea }) {
     <FormControl>
       <RadioGroup row defaultValue={area} name="row-radio-buttons-group" sx={{ justifyContent: 'center' }}>
         <FormControlLabel
-          value="All"
+          value={'All'}
           control={<Radio />}
           label="All"
           onChange={(e) => {

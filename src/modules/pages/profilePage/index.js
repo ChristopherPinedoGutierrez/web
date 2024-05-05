@@ -141,7 +141,7 @@ function ProfilePage() {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={4} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
+      <Grid container spacing={4} mt={8} mb={12} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
         {/* Sección: Presentación */}
         <Grid item xs={12} md={6}>
           <Stack spacing={2} sx={{ maxWidth: 500, margin: 'auto' }}>
@@ -183,18 +183,19 @@ function ProfilePage() {
             </CardContent>
             <CardActions>
               <Stack direction={'row'} width={1} spacing={2} justifyContent={'flex-end'}>
-                <IconButton href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
-                  <LinkedInIcon />
+                <IconButton size="large" href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
+                  <LinkedInIcon fontSize="large" />
                 </IconButton>
-                <IconButton href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
-                  <GitHubIcon />
+                <IconButton size="large" href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
+                  <GitHubIcon fontSize="large" />
                 </IconButton>
                 <IconButton
+                  size="large"
                   component={ReactWhatsapp}
                   number={`${personalInfo.variable.telephone.countryCode} ${personalInfo.variable.telephone.number}`}
                   message={'Saludos. Me interesa tu perfil ...'}
                 >
-                  <WhatsAppIcon />
+                  <WhatsAppIcon fontSize="large" />
                 </IconButton>
               </Stack>
             </CardActions>
