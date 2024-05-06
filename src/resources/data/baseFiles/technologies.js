@@ -246,8 +246,8 @@ const technologies = {
     group: types.cloud.name,
     type: types.cloud.types.baas,
     icon: <SiFirebase />,
-    color: '#ffcd32',
-    contrastColor: 'grey.800',
+    color: 'grey.800',
+    contrastColor: '#ffcd32',
     ecosystem: ['javascript']
   },
   jest: {

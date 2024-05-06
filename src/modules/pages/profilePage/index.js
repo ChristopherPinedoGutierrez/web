@@ -41,99 +41,99 @@ function CardItemText({ title, content }) {
   );
 }
 
-function KnowledgeCard({ data, tempWidth = 6 }) {
-  const [progressCounter, setProgressCounter] = useState({
-    counter: 0,
-    total: 0
-  });
-  const [rowsContent, setRowsContent] = useState({
-    completed: [],
-    inProgress: []
-  });
+// function KnowledgeCard({ data, tempWidth = 6 }) {
+//   const [progressCounter, setProgressCounter] = useState({
+//     counter: 0,
+//     total: 0
+//   });
+//   const [rowsContent, setRowsContent] = useState({
+//     completed: [],
+//     inProgress: []
+//   });
 
-  useEffect(() => {
-    const rows = {
-      completed: [],
-      inProgress: []
-    };
-    const counter = {
-      counter: 0,
-      total: 0
-    };
-    data.content.forEach((ele) => {
-      if (ele.completed) {
-        rows.completed.push(ele);
-        counter.counter = counter.counter + ele.value;
-      } else {
-        rows.inProgress.push(ele);
-      }
-      counter.total = counter.total + ele.value;
-    });
-    setRowsContent(rows);
-    setProgressCounter(counter);
-  }, []);
+//   useEffect(() => {
+//     const rows = {
+//       completed: [],
+//       inProgress: []
+//     };
+//     const counter = {
+//       counter: 0,
+//       total: 0
+//     };
+//     data.content.forEach((ele) => {
+//       if (ele.completed) {
+//         rows.completed.push(ele);
+//         counter.counter = counter.counter + ele.value;
+//       } else {
+//         rows.inProgress.push(ele);
+//       }
+//       counter.total = counter.total + ele.value;
+//     });
+//     setRowsContent(rows);
+//     setProgressCounter(counter);
+//   }, []);
 
-  return (
-    <Grid item xs={12} md={tempWidth}>
-      <Card>
-        <CardContent>
-          <Stack direction={'column'} spacing={1} divider={<Divider />}>
-            <Stack direction={'row'} justifyContent={'space-evenly'} alignItems={'center'}>
-              <Typography variant="h6">{data?.name}</Typography>
-              <div>
-                <Gauge
-                  width={100}
-                  height={75}
-                  value={progressCounter.counter}
-                  valueMax={progressCounter.total}
-                  startAngle={-90}
-                  endAngle={90}
-                  sx={{
-                    [`& .${gaugeClasses.valueText}`]: { fontSize: 12 }
-                  }}
-                  text={() => `${progressCounter.counter} / ${progressCounter.total}`}
-                />
-              </div>
-            </Stack>
-            <Grid container spacing={1}>
-              <Grid item xs={6}>
-                <Typography variant="body1" pb={1}>
-                  Completado
-                </Typography>
-                <Stack spacing={1}>
-                  {rowsContent.completed.map((ele) => (
-                    <Stack key={ele.id} direction={'row'} alignItems={'baseline'} spacing={1}>
-                      <Chip label={ele.value < 10 ? `0${ele.value}` : ele.value} size="small" />
-                      <Typography variant="caption">{ele.name}</Typography>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant="body1" pb={1}>
-                  En curso
-                </Typography>
-                <Stack spacing={1}>
-                  {rowsContent.inProgress.map((ele) => (
-                    <Stack key={ele.id} direction={'row'} alignItems={'baseline'} spacing={1}>
-                      <Chip label={ele.value < 10 ? `0${ele.value}` : ele.value} size="small" />
-                      <Typography variant="caption">{ele.name}</Typography>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Grid>
-            </Grid>
-          </Stack>
-        </CardContent>
-        <CardActions sx={{ justifyContent: 'flex-end', padding: 2 }}>
-          <Button variant="contained" size="small" color="inherit" disabled endIcon={<OpenInFullIcon />}>
-            Expandir
-          </Button>
-        </CardActions>
-      </Card>
-    </Grid>
-  );
-}
+//   return (
+//     <Grid item xs={12} md={tempWidth}>
+//       <Card>
+//         <CardContent>
+//           <Stack direction={'column'} spacing={1} divider={<Divider />}>
+//             <Stack direction={'row'} justifyContent={'space-evenly'} alignItems={'center'}>
+//               <Typography variant="h6">{data?.name}</Typography>
+//               <div>
+//                 <Gauge
+//                   width={100}
+//                   height={75}
+//                   value={progressCounter.counter}
+//                   valueMax={progressCounter.total}
+//                   startAngle={-90}
+//                   endAngle={90}
+//                   sx={{
+//                     [`& .${gaugeClasses.valueText}`]: { fontSize: 12 }
+//                   }}
+//                   text={() => `${progressCounter.counter} / ${progressCounter.total}`}
+//                 />
+//               </div>
+//             </Stack>
+//             <Grid container spacing={1}>
+//               <Grid item xs={6}>
+//                 <Typography variant="body1" pb={1}>
+//                   Completado
+//                 </Typography>
+//                 <Stack spacing={1}>
+//                   {rowsContent.completed.map((ele) => (
+//                     <Stack key={ele.id} direction={'row'} alignItems={'baseline'} spacing={1}>
+//                       <Chip label={ele.value < 10 ? `0${ele.value}` : ele.value} size="small" />
+//                       <Typography variant="caption">{ele.name}</Typography>
+//                     </Stack>
+//                   ))}
+//                 </Stack>
+//               </Grid>
+//               <Grid item xs={6}>
+//                 <Typography variant="body1" pb={1}>
+//                   En curso
+//                 </Typography>
+//                 <Stack spacing={1}>
+//                   {rowsContent.inProgress.map((ele) => (
+//                     <Stack key={ele.id} direction={'row'} alignItems={'baseline'} spacing={1}>
+//                       <Chip label={ele.value < 10 ? `0${ele.value}` : ele.value} size="small" />
+//                       <Typography variant="caption">{ele.name}</Typography>
+//                     </Stack>
+//                   ))}
+//                 </Stack>
+//               </Grid>
+//             </Grid>
+//           </Stack>
+//         </CardContent>
+//         <CardActions sx={{ justifyContent: 'flex-end', padding: 2 }}>
+//           <Button variant="contained" size="small" color="inherit" disabled endIcon={<OpenInFullIcon />}>
+//             Expandir
+//           </Button>
+//         </CardActions>
+//       </Card>
+//     </Grid>
+//   );
+// }
 
 function ProfilePage() {
   const theme = useTheme();
@@ -141,7 +141,7 @@ function ProfilePage() {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={4} mt={8} mb={12} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
+      <Grid container spacing={8} mt={8} mb={12} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
         {/* Sección: Presentación */}
         <Grid item xs={12} md={6}>
           <Stack spacing={2} sx={{ maxWidth: 500, margin: 'auto' }}>
@@ -152,7 +152,7 @@ function ProfilePage() {
               <Typography variant="h5">{personalInfo.variable.mainRole}</Typography>
             </Stack>
             <Box sx={{ display: 'flex', justifyContent: 'center', width: 'inherit' }}>
-              <Image src={profileFace1} height="120px" width="120px" sx={{ borderRadius: 25 }} duration={500} />
+              <Image src={profileFace1} height="120px" width="120px" sx={{ borderRadius: 25 }} duration={0} />
             </Box>
             <Stack sx={{ textAlign: 'center' }}>
               <Typography variant="body1">{personalInfo.variable.presentationMessage1}</Typography>
