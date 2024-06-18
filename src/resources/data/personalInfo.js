@@ -11,8 +11,7 @@ const personalInfo = {
   variable: {
     shortName: 'Christopher Pinedo',
     mainRole: 'Desarrollador de software',
-    presentationMessage1:
-      'Soy un desarrollador de software orientado a frontend con experiencia en la creacion de aplicaciones web.',
+    presentationMessage1: 'Soy un desarrollador de software orientado a frontend web.',
     presentationMessage2:
       'Me considero una persona proactiva, resiliente y entusiasta por la tecnología que busca aprender constantemente.',
     telephone: {

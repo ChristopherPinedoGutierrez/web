@@ -10,14 +10,14 @@ function RadioButtonsGroupTechAreas({ area, setArea }) {
   return (
     <FormControl>
       <RadioGroup row defaultValue={area} name="row-radio-buttons-group" sx={{ justifyContent: 'center' }}>
-        <FormControlLabel
+        {/* <FormControlLabel
           value={'All'}
           control={<Radio />}
           label="All"
           onChange={(e) => {
             setArea(e.target.value);
           }}
-        />
+        /> */}
         {Object.values(areas).map(
           (ele) =>
             ele.filterable && (

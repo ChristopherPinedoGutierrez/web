@@ -20,7 +20,7 @@ function GridTechAreas({ element }) {
               alignItems: 'center'
             }}
           >
-            <SvgIcon sx={{ width: 48, height: 48, color: element.contrastColor }}>{element.icon}</SvgIcon>
+            <SvgIcon sx={{ width: 40, height: 40, color: element.contrastColor }}>{element.icon}</SvgIcon>
           </Box>
           <Typography variant="h6" align="center">
             {element.name}

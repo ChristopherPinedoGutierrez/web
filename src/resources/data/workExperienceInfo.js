@@ -13,8 +13,8 @@ const tecDes = technologies.design;
 
 const workExperienceInfo = [
   {
-    company: 'All The Keys Of The Marketing SAC (AKM)',
-    role: 'Supervisor de Operaciones',
+    company: 'All The Keys Of The Marketing SAC',
+    role: 'Auxiliar administrativo de operaciones',
     period: {
       startDate: 'Nov/2021',
       inProgress: false,
@@ -22,7 +22,7 @@ const workExperienceInfo = [
       duration: '2 años 5 meses'
     },
     jobFunctions:
-      'Gestión y control de procesos e información. Se cumplió la función de vinculo entre mi sede y las areas de recursos humanos, producción y procesos. Gestión de planillas y bonificaciones de producción',
+      'Gestión y control de procesos e información cumpliendo la función de vinculo entre mi sede y las areas de recursos humanos, producción y procesos. Gestión de planillas, procesos y producción.',
     aptitudes: {
       management: [
         aptMgt.gestionProyectos.name,

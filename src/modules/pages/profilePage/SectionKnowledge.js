@@ -4,7 +4,7 @@ import { RadioButtonsGroupTechAreas } from '../../../library/common/components/R
 import { GridGroupTechAreas } from '../../../library/common/components/GridGroupTechAreas';
 
 function SectionKnowledge() {
-  const [currentArea, setCurrentArea] = useState('All');
+  const [currentArea, setCurrentArea] = useState('Frontend');
 
   useEffect(() => {
     console.log(currentArea);
@@ -14,7 +14,7 @@ function SectionKnowledge() {
     <>
       <Stack spacing={2} mb={4}>
         <Typography align="center" variant="h4">
-          Conocimiento
+          Tecnologías
         </Typography>
         <RadioButtonsGroupTechAreas area={currentArea} setArea={setCurrentArea} />
       </Stack>

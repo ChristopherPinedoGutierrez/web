@@ -32,17 +32,20 @@ function ProjectsPage() {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={4} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
+      <Grid container spacing={8} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
         <Grid item xs={12}>
           <Typography align="center" variant="h4">
             Proyectos
           </Typography>
         </Grid>
+        {/* <Grid item xs={12} sm={4} md={2}>
+          asd
+        </Grid> */}
         {projectsInfo.map((item, i) => (
-          <Grid key={i} item xs={12} md={6}>
-            <Card>
+          <Grid key={i} item xs={12} md={6} xl={4}>
+            <Card sx={{ maxWidth: '500px', margin: 'auto' }}>
               <CardContent>
-                <Stack spacing={1}>
+                <Stack spacing={2}>
                   <Stack direction={'row'} justifyContent={'space-between'} pb={2}>
                     <Stack direction={'row'} alignItems={'baseline'} spacing={1}>
                       <Chip label={item.area.name} color={item.area.color} size="small" />
@@ -51,15 +54,13 @@ function ProjectsPage() {
                       <Rating readOnly precision={0.5} value={item.rating} />
                     </Stack>
                   </Stack>
-                  {item.image ? (
+                  {/* {item.image ? (
                     <CardMedia component={'img'} height={200} image={item.image} alt={`Image ${item.name}`} />
                   ) : (
                     <Skeleton animation={false} sx={{ height: 200 }} variant="rectangular" />
-                  )}
-                  <Typography mb={2} variant="h5">
-                    {item.name}
-                  </Typography>
-                  <Stack direction={'row'} spacing={{ xs: 4, md: 12 }}>
+                  )} */}
+                  <Typography variant="h5">{item.name}</Typography>
+                  {/* <Stack direction={'row'} spacing={{ xs: 4, md: 12 }}>
                     <Stack alignItems={'baseline'} spacing={{ xs: 1, md: 2 }}>
                       <Typography variant="caption">Estado:</Typography>
                       <Chip label={item.status.name} color={item.status.color} size="small" />
@@ -68,14 +69,14 @@ function ProjectsPage() {
                       <Typography variant="caption">Fuente:</Typography>
                       <Chip label={item.source} size="small" />
                     </Stack>
-                  </Stack>
+                  </Stack> */}
                   <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-                    <Typography variant="caption">Objetivo:</Typography>
-                    <Typography variant="body1">{item.goal}</Typography>
+                    <Typography variant="caption">Descripción:</Typography>
+                    <Typography variant="body1">{item.description}</Typography>
                   </Stack>
                 </Stack>
               </CardContent>
-              <Divider variant="middle" />
+              {/* <Divider variant="middle" />
               <CardContent>
                 <SimpleTreeView>
                   <TreeItem itemId="Aptitudes" label="Aptitudes">
@@ -94,7 +95,7 @@ function ProjectsPage() {
                     </Stack>
                   </TreeItem>
                 </SimpleTreeView>
-              </CardContent>
+              </CardContent> */}
               <Divider variant="middle" />
               <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>
                 <IconButton href={item.repository} target="_blank" disabled={item.url ? false : true}>

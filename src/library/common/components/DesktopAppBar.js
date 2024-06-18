@@ -18,7 +18,7 @@ function DesktopAppBar({ children }) {
         <Toolbar sx={{ backgroundColor: 'background.default' }}>
           <Container maxWidth="xl">
             <Stack direction={'row'} sx={{ justifyContent: 'space-between' }}>
-              <Stack spacing={6} direction={'row'} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+              <Stack spacing={5} direction={'row'} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
                 {/* <Box
                   sx={{
                     borderRadius: 25,
@@ -34,9 +34,9 @@ function DesktopAppBar({ children }) {
                   </SvgIcon>
                   <Typography variant="subtitle2">CDPG</Typography>
                 </Box> */}
-                <Typography color={'grey.800'} variant="subtitle2">
+                {/* <Typography color={'grey.800'} variant="subtitle2">
                   {personalInfo.variable.shortName.toUpperCase()}
-                </Typography>
+                </Typography> */}
                 {dashboardMainRoutes.map((item, i) => (
                   <Button key={i} startIcon={item.icon} component={RouterLink} to={item.route}>
                     {item.label}

@@ -24,13 +24,18 @@ import {
   SiMui,
   SiStyledcomponents,
   SiSass,
-  SiNormalizedotcss,
+  // SiNormalizedotcss,
   SiBem,
   SiTailwindcss,
+  SiVite,
   SiNextdotjs,
   SiNextui,
   SiPlaywright,
-  SiStorybook
+  SiStorybook,
+  SiCreatereactapp,
+  SiShadcnui,
+  SiReactquery,
+  SiExpo
 } from 'react-icons/si';
 
 import { TbAtom2 } from 'react-icons/tb';
@@ -54,7 +59,8 @@ const types = {
       libTesting: 'Testing Library',
       libstateMgt: 'State management library',
       libFormVal: 'Form validation library',
-      libStyle: 'Style library'
+      libStyle: 'Style library',
+      libWebRequest: 'Web request management library'
     }
   },
   frw: {
@@ -70,6 +76,12 @@ const types = {
     types: {
       rtmJsBrowser: 'Browser Js Runtime',
       rtmJsCross: 'Cross Platform Js Runtime'
+    }
+  },
+  pckRun: {
+    name: 'Package runner',
+    types: {
+      pckRunJs: 'Javascript package runner'
     }
   },
   cloud: {
@@ -208,13 +220,35 @@ const technologies = {
   },
   react: {
     id: uuidV4(),
-    name: 'React.js',
+    name: 'React',
     area: areas.frontend.name,
     group: types.lib.name,
     type: types.lib.types.libUi,
     icon: <SiReact />,
     color: 'grey.800',
     contrastColor: '#5bd9fb',
+    ecosystem: ['javascript', 'react']
+  },
+  cra: {
+    id: uuidV4(),
+    name: 'Create React App',
+    area: areas.frontend.name,
+    group: types.pckRun.name,
+    type: types.pckRun.types.pckRunJs,
+    icon: <SiCreatereactapp />,
+    color: '#09d3ac',
+    contrastColor: 'grey.800',
+    ecosystem: ['javascript', 'react']
+  },
+  vite: {
+    id: uuidV4(),
+    name: 'Vite',
+    area: areas.frontend.name,
+    group: types.pckRun.name,
+    type: types.pckRun.types.pckRunJs,
+    icon: <SiVite />,
+    color: '#a842f6',
+    contrastColor: '#f6c928',
     ecosystem: ['javascript', 'react']
   },
   ts: {
@@ -238,6 +272,28 @@ const technologies = {
     color: '#58a149',
     contrastColor: 'grey.200',
     ecosystem: ['javascript']
+  },
+  reactNative: {
+    id: uuidV4(),
+    name: 'React Native',
+    area: areas.frontend.name,
+    group: types.lib.name,
+    type: types.lib.types.libUi,
+    icon: <SiReact />,
+    color: '#5bd9fb',
+    contrastColor: 'grey.800',
+    ecosystem: ['javascript', 'react']
+  },
+  expo: {
+    id: uuidV4(),
+    name: 'Expo',
+    area: areas.frontend.name,
+    group: types.lib.name,
+    type: types.lib.types.libUi,
+    icon: <SiExpo />,
+    color: 'grey.200',
+    contrastColor: 'grey.800',
+    ecosystem: ['javascript', 'react']
   },
   firebase: {
     id: uuidV4(),
@@ -294,6 +350,17 @@ const technologies = {
     contrastColor: 'grey.200',
     ecosystem: ['javascript', 'React.js']
   },
+  tanStackQuery: {
+    id: uuidV4(),
+    name: 'TanStack Query',
+    area: areas.frontend.name,
+    group: types.lib.name,
+    type: types.lib.types.libWebRequest,
+    icon: <SiReactquery />,
+    color: '#ff4759',
+    contrastColor: '#ffda52',
+    ecosystem: ['javascript', 'React.js']
+  },
   redux: {
     id: uuidV4(),
     name: 'Redux',
@@ -316,9 +383,20 @@ const technologies = {
     contrastColor: '#007fff',
     ecosystem: ['design']
   },
+  shadcn: {
+    id: uuidV4(),
+    name: 'Shadcn/ui',
+    area: areas.frontend.name,
+    group: types.lib.name,
+    type: types.lib.types.libComp,
+    icon: <SiShadcnui />,
+    color: 'black',
+    contrastColor: 'grey.200',
+    ecosystem: ['design']
+  },
   tailwind: {
     id: uuidV4(),
-    name: 'Tailwind',
+    name: 'Tailwind Css',
     area: areas.frontend.name,
     group: types.lib.name,
     type: types.lib.types.libStyle,
@@ -389,21 +467,21 @@ const technologies = {
     group: types.lib.name,
     type: types.lib.types.libStyle,
     icon: <SiStyledcomponents />,
-    color: '#DB7093',
-    contrastColor: 'grey.200',
-    ecosystem: ['design']
-  },
-  normalCss: {
-    id: uuidV4(),
-    name: 'Normalize Css',
-    area: areas.frontend.name,
-    group: types.lib.name,
-    type: types.lib.types.libStyle,
-    icon: <SiNormalizedotcss />,
     color: 'grey.200',
-    contrastColor: '#E3695F',
+    contrastColor: '#DB7093',
     ecosystem: ['design']
   },
+  // normalCss: {
+  //   id: uuidV4(),
+  //   name: 'Normalize Css',
+  //   area: areas.frontend.name,
+  //   group: types.lib.name,
+  //   type: types.lib.types.libStyle,
+  //   icon: <SiNormalizedotcss />,
+  //   color: 'grey.200',
+  //   contrastColor: '#E3695F',
+  //   ecosystem: ['design']
+  // },
   figma: {
     id: uuidV4(),
     name: 'Figma',
@@ -459,12 +537,6 @@ const technologies = {
     contrastColor: '#bc6719',
     ecosystem: ['design methodologies']
   }
-  // design: {
-  //   metBem: { name: 'Metodologia BEM' },
-  //   metAtomicDesign: { name: 'Metodologia atomic design' },
-  //   figma: { name: 'Figma' },
-  //   illustrator: { name: 'Adobe Illuctrator' }
-  // }
 };
 
 export { technologies };

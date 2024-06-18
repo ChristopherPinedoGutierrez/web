@@ -183,19 +183,18 @@ function ProfilePage() {
             </CardContent>
             <CardActions>
               <Stack direction={'row'} width={1} spacing={2} justifyContent={'flex-end'}>
-                <IconButton size="large" href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
-                  <LinkedInIcon fontSize="large" />
+                <IconButton href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
+                  <LinkedInIcon />
                 </IconButton>
-                <IconButton size="large" href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
-                  <GitHubIcon fontSize="large" />
+                <IconButton href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
+                  <GitHubIcon />
                 </IconButton>
                 <IconButton
-                  size="large"
                   component={ReactWhatsapp}
                   number={`${personalInfo.variable.telephone.countryCode} ${personalInfo.variable.telephone.number}`}
                   message={'Saludos. Me interesa tu perfil ...'}
                 >
-                  <WhatsAppIcon fontSize="large" />
+                  <WhatsAppIcon />
                 </IconButton>
               </Stack>
             </CardActions>

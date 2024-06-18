@@ -32,43 +32,44 @@ const projectStatuses = {
 };
 
 const projectsInfo = [
-  {
-    area: areaFull,
-    image: sistemaProduccionImage,
-    name: 'Control de personal y producción.',
-    goal: 'Plataforma en tiempo real que permite gestionar producción y personal a cargo estructurado por sedes.',
-    status: projectStatuses.dev,
-    source: 'Iniciativa personal',
-    rating: '3',
-    repository: 'https://github.com/ChristopherPinedo/PRODUCTION-SYSTEM',
-    url: '',
-    aptitudes: {
-      management: [aptMgt.gestionProyectos.name],
-      development: [aptDev.progFuncional.name],
-      design: [],
-      softSkills: [
-        aptSkl.adaptabilidad.name,
-        aptSkl.gestionTiempo.name,
-        aptSkl.pensaCritico.name,
-        aptSkl.resProblemas.name
-      ]
-    },
-    technologies: {
-      management: [],
-      development: [],
-      design: []
-    }
-  },
+  // {
+  //   area: areaFull,
+  //   image: sistemaProduccionImage,
+  //   name: 'Control de personal y producción.',
+  //   goal: 'Plataforma en tiempo real que permite gestionar producción y personal a cargo estructurado por sedes.',
+  //   status: projectStatuses.dev,
+  //   source: 'Iniciativa personal',
+  //   rating: '3',
+  //   repository: 'https://github.com/ChristopherPinedo/PRODUCTION-SYSTEM',
+  //   url: '',
+  //   aptitudes: {
+  //     management: [aptMgt.gestionProyectos.name],
+  //     development: [aptDev.progFuncional.name],
+  //     design: [],
+  //     softSkills: [
+  //       aptSkl.adaptabilidad.name,
+  //       aptSkl.gestionTiempo.name,
+  //       aptSkl.pensaCritico.name,
+  //       aptSkl.resProblemas.name
+  //     ]
+  //   },
+  //   technologies: {
+  //     management: [],
+  //     development: [],
+  //     design: []
+  //   }
+  // },
   {
     area: areaFront,
     image: '',
-    name: 'Frontend Mentor challenges',
+    name: 'Entry level frontend projects',
     goal: '',
+    description: 'Compendio de proyectos frontend de baja dificultad pero relevantes en mi desarrollo profesional.',
     status: projectStatuses.dev,
     source: 'Frontend Mentor',
     rating: '2',
-    repository: '',
-    url: '',
+    repository: 'https://github.com/ChristopherPinedo/frontendProjects/',
+    url: 'https://christopherpinedo.github.io/frontendProjects/',
     aptitudes: {
       management: [],
       development: [],
