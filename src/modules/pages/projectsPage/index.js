@@ -25,6 +25,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { renderChips } from '../../../library/common/utils/jsxUtils';
 import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import CircleIcon from '@mui/icons-material/Circle';
 
 function ProjectsPage() {
   const theme = useTheme();
@@ -43,7 +45,10 @@ function ProjectsPage() {
         </Grid> */}
         {projectsInfo.map((item, i) => (
           <Grid key={i} item xs={12} md={6} xl={4}>
-            <Card sx={{ maxWidth: '500px', margin: 'auto' }}>
+            <Card
+              sx={{ maxWidth: '500px', margin: 'auto', borderColor: `projectLevels.${item.level}` }}
+              variant="outlined"
+            >
               <CardContent>
                 <Stack spacing={2}>
                   <Stack direction={'row'} justifyContent={'space-between'} pb={2}>
@@ -51,14 +56,20 @@ function ProjectsPage() {
                       <Chip label={item.area.name} color={item.area.color} size="small" />
                     </Stack>
                     <Stack direction={'row'} alignItems={'flex-end'} spacing={1}>
-                      <Rating readOnly precision={0.5} value={item.rating} />
+                      <Rating
+                        readOnly
+                        value={item.rating}
+                        sx={{ color: `projectLevels.${item.level}` }}
+                        icon={<CircleIcon />}
+                        emptyIcon={<RadioButtonUncheckedIcon />}
+                      />
                     </Stack>
                   </Stack>
-                  {/* {item.image ? (
+                  {item.image ? (
                     <CardMedia component={'img'} height={200} image={item.image} alt={`Image ${item.name}`} />
                   ) : (
                     <Skeleton animation={false} sx={{ height: 200 }} variant="rectangular" />
-                  )} */}
+                  )}
                   <Typography variant="h5">{item.name}</Typography>
                   {/* <Stack direction={'row'} spacing={{ xs: 4, md: 12 }}>
                     <Stack alignItems={'baseline'} spacing={{ xs: 1, md: 2 }}>

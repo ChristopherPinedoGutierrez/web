@@ -2,7 +2,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'light'
+    mode: 'light',
+    projectLevels: {
+      Junior: '#aad742',
+      Intermediate: '#f1b604',
+      Advanced: '#f48925',
+      Guru: '#ed2c49',
+      contrastText: '#242105'
+    }
   }
 });
 

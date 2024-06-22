@@ -27,15 +27,15 @@ import {
   // SiNormalizedotcss,
   SiBem,
   SiTailwindcss,
-  SiVite,
-  SiNextdotjs,
-  SiNextui,
-  SiPlaywright,
-  SiStorybook,
-  SiCreatereactapp,
+  // SiVite,
+  // SiNextdotjs,
+  // SiNextui,
+  // SiPlaywright,
+  // SiStorybook,
+  // SiCreatereactapp,
   SiShadcnui,
-  SiReactquery,
-  SiExpo
+  SiReactquery
+  // SiExpo
 } from 'react-icons/si';
 
 import { TbAtom2 } from 'react-icons/tb';
@@ -168,23 +168,6 @@ const technologies = {
     contrastColor: 'grey.800',
     ecosystem: ['management']
   },
-  // management: {
-  //   github: { name: 'GitHub' },
-  //   wofCentralizado: { name: 'Centralized workflow' },
-  //   wofFeatureB: { name: 'Feature branch workflow' },
-  //   wofGitflow: { name: 'GitFlow workflow' },
-  //   jira: { name: 'JIRA' },
-  //   notion: { name: 'Notion' },
-  //   miro: { name: 'Miro' },
-  //   azureDO: { name: 'Azure DevOps' },
-  //   mgtAgile: { name: 'Agile management' },
-  //   mgtScrum: { name: 'Scrum' },
-  //   mgtKanaban: { name: 'Kanban' },
-  //   oficceGoogle: { name: 'Google office suite' },
-  //   oficceMicro: { name: 'Microsoft office suite' },
-  //   mgtWater: { name: 'WaterFall' }
-  // },
-  // --------TECHNOLOGY
   html: {
     id: uuidV4(),
     name: 'Html',
@@ -229,28 +212,28 @@ const technologies = {
     contrastColor: '#5bd9fb',
     ecosystem: ['javascript', 'react']
   },
-  cra: {
-    id: uuidV4(),
-    name: 'Create React App',
-    area: areas.frontend.name,
-    group: types.pckRun.name,
-    type: types.pckRun.types.pckRunJs,
-    icon: <SiCreatereactapp />,
-    color: '#09d3ac',
-    contrastColor: 'grey.800',
-    ecosystem: ['javascript', 'react']
-  },
-  vite: {
-    id: uuidV4(),
-    name: 'Vite',
-    area: areas.frontend.name,
-    group: types.pckRun.name,
-    type: types.pckRun.types.pckRunJs,
-    icon: <SiVite />,
-    color: '#a842f6',
-    contrastColor: '#f6c928',
-    ecosystem: ['javascript', 'react']
-  },
+  // cra: {
+  //   id: uuidV4(),
+  //   name: 'Create React App',
+  //   area: areas.frontend.name,
+  //   group: types.pckRun.name,
+  //   type: types.pckRun.types.pckRunJs,
+  //   icon: <SiCreatereactapp />,
+  //   color: '#09d3ac',
+  //   contrastColor: 'grey.800',
+  //   ecosystem: ['javascript', 'react']
+  // },
+  // vite: {
+  //   id: uuidV4(),
+  //   name: 'Vite',
+  //   area: areas.frontend.name,
+  //   group: types.pckRun.name,
+  //   type: types.pckRun.types.pckRunJs,
+  //   icon: <SiVite />,
+  //   color: '#a842f6',
+  //   contrastColor: '#f6c928',
+  //   ecosystem: ['javascript', 'react']
+  // },
   ts: {
     id: uuidV4(),
     name: 'Typescript',
@@ -273,28 +256,28 @@ const technologies = {
     contrastColor: 'grey.200',
     ecosystem: ['javascript']
   },
-  reactNative: {
-    id: uuidV4(),
-    name: 'React Native',
-    area: areas.frontend.name,
-    group: types.lib.name,
-    type: types.lib.types.libUi,
-    icon: <SiReact />,
-    color: '#5bd9fb',
-    contrastColor: 'grey.800',
-    ecosystem: ['javascript', 'react']
-  },
-  expo: {
-    id: uuidV4(),
-    name: 'Expo',
-    area: areas.frontend.name,
-    group: types.lib.name,
-    type: types.lib.types.libUi,
-    icon: <SiExpo />,
-    color: 'grey.200',
-    contrastColor: 'grey.800',
-    ecosystem: ['javascript', 'react']
-  },
+  // reactNative: {
+  //   id: uuidV4(),
+  //   name: 'React Native',
+  //   area: areas.frontend.name,
+  //   group: types.lib.name,
+  //   type: types.lib.types.libUi,
+  //   icon: <SiReact />,
+  //   color: '#5bd9fb',
+  //   contrastColor: 'grey.800',
+  //   ecosystem: ['javascript', 'react']
+  // },
+  // expo: {
+  //   id: uuidV4(),
+  //   name: 'Expo',
+  //   area: areas.frontend.name,
+  //   group: types.lib.name,
+  //   type: types.lib.types.libUi,
+  //   icon: <SiExpo />,
+  //   color: 'grey.200',
+  //   contrastColor: 'grey.800',
+  //   ecosystem: ['javascript', 'react']
+  // },
   firebase: {
     id: uuidV4(),
     name: 'Firebase',
@@ -405,50 +388,50 @@ const technologies = {
     contrastColor: '#06B6D4',
     ecosystem: ['design']
   },
-  next: {
-    id: uuidV4(),
-    name: 'Next.js',
-    area: areas.frontend.name,
-    group: types.frw.name,
-    type: types.frw.types.frwReact,
-    icon: <SiNextdotjs />,
-    color: 'grey.200',
-    contrastColor: 'black',
-    ecosystem: ['design']
-  },
-  nextUi: {
-    id: uuidV4(),
-    name: 'Next UI',
-    area: areas.frontend.name,
-    group: types.lib.name,
-    type: types.lib.types.libComp,
-    icon: <SiNextui />,
-    color: 'grey.200',
-    contrastColor: 'black',
-    ecosystem: ['design']
-  },
-  playwright: {
-    id: uuidV4(),
-    name: 'Playwright',
-    area: areas.testing.name,
-    group: types.lib.name,
-    type: types.lib.types.libTesting,
-    icon: <SiPlaywright />,
-    color: '#dc594f',
-    contrastColor: '#2EAD33',
-    ecosystem: ['design']
-  },
-  storybook: {
-    id: uuidV4(),
-    name: 'Storybook',
-    area: areas.testing.name,
-    group: types.lib.name,
-    type: types.lib.types.libTesting,
-    icon: <SiStorybook />,
-    color: 'grey.200',
-    contrastColor: '#FF4785',
-    ecosystem: ['design']
-  },
+  // next: {
+  //   id: uuidV4(),
+  //   name: 'Next.js',
+  //   area: areas.frontend.name,
+  //   group: types.frw.name,
+  //   type: types.frw.types.frwReact,
+  //   icon: <SiNextdotjs />,
+  //   color: 'grey.200',
+  //   contrastColor: 'black',
+  //   ecosystem: ['design']
+  // },
+  // nextUi: {
+  //   id: uuidV4(),
+  //   name: 'Next UI',
+  //   area: areas.frontend.name,
+  //   group: types.lib.name,
+  //   type: types.lib.types.libComp,
+  //   icon: <SiNextui />,
+  //   color: 'grey.200',
+  //   contrastColor: 'black',
+  //   ecosystem: ['design']
+  // },
+  // playwright: {
+  //   id: uuidV4(),
+  //   name: 'Playwright',
+  //   area: areas.testing.name,
+  //   group: types.lib.name,
+  //   type: types.lib.types.libTesting,
+  //   icon: <SiPlaywright />,
+  //   color: '#dc594f',
+  //   contrastColor: '#2EAD33',
+  //   ecosystem: ['design']
+  // },
+  // storybook: {
+  //   id: uuidV4(),
+  //   name: 'Storybook',
+  //   area: areas.testing.name,
+  //   group: types.lib.name,
+  //   type: types.lib.types.libTesting,
+  //   icon: <SiStorybook />,
+  //   color: 'grey.200',
+  //   contrastColor: '#FF4785',
+  //   ecosystem: ['design']
+  // },
   sass: {
     id: uuidV4(),
     name: 'Sass',

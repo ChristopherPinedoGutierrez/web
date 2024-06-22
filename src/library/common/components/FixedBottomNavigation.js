@@ -4,7 +4,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 import { dashboardMainRoutes } from '../../../main/router/routes/dashboardMainRoutes';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { AppBar, Button, CssBaseline, Toolbar, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import pdfFile from '../../../resources/data/curriculum/cv.pdf';
@@ -14,15 +14,14 @@ import { personalInfo } from '../../../resources/data/personalInfo';
 // eslint-disable-next-line react/prop-types
 export default function FixedBottomNavigation({ children }) {
   const [value, setValue] = React.useState(0);
-
   return (
     <>
       <CssBaseline />
       <AppBar position="fixed">
-        <Toolbar sx={{ justifyContent: 'space-between', backgroundColor: 'background.paper', alignItems: 'center' }}>
-          <Typography color={'grey.800'} variant="subtitle2">
+        <Toolbar sx={{ justifyContent: 'flex-end', backgroundColor: 'background.paper', alignItems: 'center' }}>
+          {/* <Typography color={'grey.800'} variant="subtitle2">
             {personalInfo.variable.shortName.toUpperCase()}
-          </Typography>
+          </Typography> */}
           <Button size="small" variant="outlined" endIcon={<DownloadIcon />} onClick={() => handleDescargarCV(pdfFile)}>
             Descargar CV
           </Button>
