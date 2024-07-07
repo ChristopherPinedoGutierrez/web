@@ -2,9 +2,7 @@
 import { aptitudes } from './baseFiles/aptitudes';
 import { technologies } from './baseFiles/technologies';
 import { areas } from './baseFiles/areas';
-import portfolioImage from '../images/portfolioweb.jpg';
-import sistemaProduccionImage from '../images/sistemaProduccion.jpg';
-
+import frontendProjectsImage from '../images/frontendProjectsV1.JPG';
 const aptMgt = aptitudes.management;
 const aptDev = aptitudes.development;
 const aptDes = aptitudes.design;
@@ -68,7 +66,7 @@ const projectsInfo = [
   // },
   {
     area: areaFront,
-    image: '',
+    image: frontendProjectsImage,
     name: 'Entry level frontend projects',
     goal: '',
     description: 'Compendio de proyectos frontend de baja dificultad.',
@@ -90,21 +88,21 @@ const projectsInfo = [
       design: []
     }
   },
-  {
-    area: areaFront,
-    image:
-      'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1572259996%2FChallenges%2Fkatmpcijwnmclxyfw3wr.jpg&w=384&q=75',
-    name: 'URL Shortening API landing page',
-    goal: '',
-    description:
-      'Integrate with the Clean URI link shortening API and play with browser storage in this landing page challenge.',
-    status: projectStatuses.dev,
-    level: projectLevels[3],
-    source: 'Frontend Mentor',
-    rating: 3,
-    repository: '',
-    url: ''
-  },
+  // {
+  //   area: areaFront,
+  //   image:
+  //     'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1572259996%2FChallenges%2Fkatmpcijwnmclxyfw3wr.jpg&w=384&q=75',
+  //   name: 'URL Shortening API landing page',
+  //   goal: '',
+  //   description:
+  //     'Integrate with the Clean URI link shortening API and play with browser storage in this landing page challenge.',
+  //   status: projectStatuses.dev,
+  //   level: projectLevels[3],
+  //   source: 'Frontend Mentor',
+  //   rating: 3,
+  //   repository: '',
+  //   url: ''
+  // },
   {
     area: areaFront,
     image:
@@ -116,8 +114,8 @@ const projectsInfo = [
     level: projectLevels[3],
     source: 'Frontend Mentor',
     rating: 3,
-    repository: '',
-    url: ''
+    repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
+    url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/'
   },
   {
     area: areaFront,
@@ -133,22 +131,24 @@ const projectsInfo = [
     rating: 4,
     repository: '',
     url: ''
-  },
-  {
-    area: areaFront,
-    image:
-      'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1573656629%2FChallenges%2Fhoqxujbnnumv1ildmus4.jpg&w=384&q=75',
-    name: 'Rock, Paper, Scissors game +',
-    goal: '',
-    description:
-      "This challenge will test your HTML, CSS and JavaScript skills. There's even a Rock, Paper, Scissors, Lizard, Spock version if you really want to challenge yourself.",
-    status: projectStatuses.dev,
-    level: projectLevels[4],
-    source: 'Frontend Mentor',
-    rating: 4,
-    repository: '',
-    url: ''
+    // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
+    // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
   }
+  // {
+  //   area: areaFront,
+  //   image:
+  //     'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1573656629%2FChallenges%2Fhoqxujbnnumv1ildmus4.jpg&w=384&q=75',
+  //   name: 'Rock, Paper, Scissors game +',
+  //   goal: '',
+  //   description:
+  //     "This challenge will test your HTML, CSS and JavaScript skills. There's even a Rock, Paper, Scissors, Lizard, Spock version if you really want to challenge yourself.",
+  //   status: projectStatuses.dev,
+  //   level: projectLevels[4],
+  //   source: 'Frontend Mentor',
+  //   rating: 4,
+  //   repository: '',
+  //   url: ''
+  // }
 ];
 
 export { projectsInfo };
