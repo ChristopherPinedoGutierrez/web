@@ -34,7 +34,10 @@ import {
   // SiStorybook,
   // SiCreatereactapp,
   SiShadcnui,
-  SiReactquery
+  SiReactquery,
+  SiCreatereactapp,
+  SiVite,
+  SiNormalizedotcss
   // SiExpo
 } from 'react-icons/si';
 
@@ -43,6 +46,7 @@ import { TbAtom2 } from 'react-icons/tb';
 const types = {
   lang: {
     name: 'Language',
+    value: 70,
     types: {
       langMark: 'Markup language',
       langStyle: 'Style language',
@@ -52,6 +56,7 @@ const types = {
   },
   lib: {
     name: 'Library',
+    value: 30,
     types: {
       libUi: 'UI library',
       libComp: 'Component library',
@@ -65,6 +70,7 @@ const types = {
   },
   frw: {
     name: 'Framework',
+    value: 50,
     types: {
       frwJs: 'JS framework',
       frwNode: 'Node framework',
@@ -73,6 +79,7 @@ const types = {
   },
   rtm: {
     name: 'Runtime',
+    value: 50,
     types: {
       rtmJsBrowser: 'Browser Js Runtime',
       rtmJsCross: 'Cross Platform Js Runtime'
@@ -80,12 +87,14 @@ const types = {
   },
   pckRun: {
     name: 'Package runner',
+    value: 20,
     types: {
       pckRunJs: 'Javascript package runner'
     }
   },
   cloud: {
     name: 'Cloud computing',
+    value: 80,
     types: {
       paas: 'Platform as a service',
       iaas: 'Infrastructure as a service',
@@ -95,6 +104,7 @@ const types = {
   },
   vcs: {
     name: 'Version control system',
+    value: 50,
     types: {
       center: 'Centralized version control',
       distrib: 'Distributed version control'
@@ -102,6 +112,7 @@ const types = {
   },
   prjMgt: {
     name: 'Project Management',
+    value: 50,
     types: {
       agile: 'Agile project management',
       wfall: 'Waterfall project management'
@@ -109,6 +120,7 @@ const types = {
   },
   app: {
     name: 'App',
+    value: 80,
     types: {
       design: 'Design app',
       management: 'Management App'
@@ -116,6 +128,7 @@ const types = {
   },
   methodology: {
     name: 'Methodology',
+    value: 50,
     types: {
       design: 'Design methodology',
       development: 'Development methodology'
@@ -129,10 +142,12 @@ const technologies = {
     name: 'Git',
     area: areas.management.name,
     group: types.vcs.name,
-    type: types.vcs.types.distrib,
+    type: types.vcs,
+    typeDef: types.vcs.types.distrib,
     icon: <SiGit />,
     color: '#f05539',
-    contrastColor: 'grey.200',
+    colorlayer1: '#f05539',
+    colorLayer2: 'grey.200',
     ecosystem: ['git']
   },
   github: {
@@ -140,10 +155,12 @@ const technologies = {
     name: 'Github',
     area: areas.management.name,
     group: types.vcs.name,
-    type: types.vcs.types.distrib,
+    type: types.vcs,
+    typeDef: types.vcs.types.distrib,
     icon: <SiGithub />,
     color: 'grey.800',
-    contrastColor: 'grey.200',
+    colorlayer1: 'grey.800',
+    colorlayer2: 'grey.200',
     ecosystem: ['git']
   },
   jira: {
@@ -151,10 +168,12 @@ const technologies = {
     name: 'Jira',
     area: areas.management.name,
     group: types.prjMgt.name,
-    type: types.prjMgt.types.agile,
+    type: types.prjMgt,
+    typeDef: types.prjMgt.types.agile,
     icon: <SiJirasoftware />,
     color: '#2580f7',
-    contrastColor: 'grey.200',
+    colorLayer1: '#2580f7',
+    colorLayer2: 'grey.200',
     ecosystem: ['management']
   },
   notion: {
@@ -162,10 +181,12 @@ const technologies = {
     name: 'Notion',
     area: areas.management.name,
     group: types.app.name,
-    type: types.app.types.management,
+    type: types.app,
+    typeDef: types.app.types.management,
     icon: <SiNotion />,
     color: 'grey.200',
-    contrastColor: 'grey.800',
+    colorLayer1: 'grey.200',
+    colorLayer2: 'grey.800',
     ecosystem: ['management']
   },
   html: {
@@ -173,10 +194,12 @@ const technologies = {
     name: 'Html',
     area: areas.frontend.name,
     group: types.lang.name,
-    type: types.lang.types.langMark,
+    type: types.lang,
+    typeDef: types.lang.types.langMark,
     icon: <SiHtml5 />,
     color: '#ec7430',
-    contrastColor: 'grey.200',
+    colorLayer1: '#ec7430',
+    colorLayer2: 'grey.200',
     ecosystem: ['html']
   },
   css: {
@@ -184,10 +207,12 @@ const technologies = {
     name: 'Css',
     area: areas.frontend.name,
     group: types.lang.name,
-    type: types.lang.types.langStyle,
+    type: types.lang,
+    typeDef: types.lang.types.langStyle,
     icon: <SiCss3 />,
     color: '#2862e9',
-    contrastColor: 'grey.200',
+    colorLayer1: '#2862e9',
+    colorLayer2: 'grey.200',
     ecosystem: ['css']
   },
   js: {
@@ -195,10 +220,12 @@ const technologies = {
     name: 'Javascript',
     area: areas.frontend.name,
     group: types.lang.name,
-    type: types.lang.types.langProg,
+    type: types.lang,
+    typeDef: types.lang.types.langProg,
     icon: <SiJavascript />,
-    color: 'grey.800',
-    contrastColor: '#efd81d',
+    color: '#efd81d',
+    colorLayer1: 'grey.800',
+    colorLayer2: '#efd81d',
     ecosystem: ['javascript']
   },
   react: {
@@ -206,43 +233,51 @@ const technologies = {
     name: 'React',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libUi,
+    type: types.lib,
+    typeDef: types.lib.types.libUi,
     icon: <SiReact />,
-    color: 'grey.800',
-    contrastColor: '#5bd9fb',
+    color: '#5bd9fb',
+    colorLayer1: 'grey.800',
+    colorLayer2: '#5bd9fb',
     ecosystem: ['javascript', 'react']
   },
-  // cra: {
-  //   id: uuidV4(),
-  //   name: 'Create React App',
-  //   area: areas.frontend.name,
-  //   group: types.pckRun.name,
-  //   type: types.pckRun.types.pckRunJs,
-  //   icon: <SiCreatereactapp />,
-  //   color: '#09d3ac',
-  //   contrastColor: 'grey.800',
-  //   ecosystem: ['javascript', 'react']
-  // },
-  // vite: {
-  //   id: uuidV4(),
-  //   name: 'Vite',
-  //   area: areas.frontend.name,
-  //   group: types.pckRun.name,
-  //   type: types.pckRun.types.pckRunJs,
-  //   icon: <SiVite />,
-  //   color: '#a842f6',
-  //   contrastColor: '#f6c928',
-  //   ecosystem: ['javascript', 'react']
-  // },
+  cra: {
+    id: uuidV4(),
+    name: 'Create React App',
+    area: areas.frontend.name,
+    group: types.pckRun.name,
+    type: types.pckRun,
+    typeDef: types.pckRun.types.pckRunJs,
+    icon: <SiCreatereactapp />,
+    color: '#09d3ac',
+    colorLayer1: '#09d3ac',
+    colorLayer2: 'grey.800',
+    ecosystem: ['javascript', 'react']
+  },
+  vite: {
+    id: uuidV4(),
+    name: 'Vite',
+    area: areas.frontend.name,
+    group: types.pckRun.name,
+    type: types.pckRun,
+    typeDef: types.pckRun.types.pckRunJs,
+    icon: <SiVite />,
+    color: '#a842f6',
+    colorLayer1: '#a842f6',
+    colorLayer2: '#f6c928',
+    ecosystem: ['javascript', 'react']
+  },
   ts: {
     id: uuidV4(),
     name: 'Typescript',
     area: areas.frontend.name,
     group: types.lang.name,
-    type: types.lang.types.langSset,
+    type: types.lang,
+    typeDef: types.lang.types.langSset,
     icon: <SiTypescript />,
-    color: 'grey.200',
-    contrastColor: '#377cc8',
+    color: '#377cc8',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#377cc8',
     ecosystem: ['javascript']
   },
   node: {
@@ -250,10 +285,12 @@ const technologies = {
     name: 'Node.js',
     area: areas.backend.name,
     group: types.rtm.name,
-    type: types.rtm.types.rtmJsCross,
+    type: types.rtm,
+    typeDef: types.rtm.types.rtmJsCross,
     icon: <SiNodedotjs />,
     color: '#58a149',
-    contrastColor: 'grey.200',
+    colorLayer1: '#58a149',
+    colorLayer2: 'grey.200',
     ecosystem: ['javascript']
   },
   // reactNative: {
@@ -261,10 +298,12 @@ const technologies = {
   //   name: 'React Native',
   //   area: areas.frontend.name,
   //   group: types.lib.name,
-  //   type: types.lib.types.libUi,
+  //   type: types.lib,
+  //   typeDef: types.lib.types.libUi,
   //   icon: <SiReact />,
   //   color: '#5bd9fb',
-  //   contrastColor: 'grey.800',
+  //   colorLayer1: '#5bd9fb',
+  //   colorLayer2: 'grey.800',
   //   ecosystem: ['javascript', 'react']
   // },
   // expo: {
@@ -272,10 +311,12 @@ const technologies = {
   //   name: 'Expo',
   //   area: areas.frontend.name,
   //   group: types.lib.name,
-  //   type: types.lib.types.libUi,
+  //   type: types.lib,
+  //   typeDef: types.lib.types.libUi,
   //   icon: <SiExpo />,
   //   color: 'grey.200',
-  //   contrastColor: 'grey.800',
+  //   colorLayer1: 'grey.200',
+  //   colorLayer2: 'grey.800',
   //   ecosystem: ['javascript', 'react']
   // },
   firebase: {
@@ -283,10 +324,12 @@ const technologies = {
     name: 'Firebase',
     area: areas.backend.name,
     group: types.cloud.name,
-    type: types.cloud.types.baas,
+    type: types.cloud,
+    typeDef: types.cloud.types.baas,
     icon: <SiFirebase />,
-    color: 'grey.800',
-    contrastColor: '#ffcd32',
+    color: '#ffcd32',
+    colorLayer1: 'grey.800',
+    colorLayer2: '#ffcd32',
     ecosystem: ['javascript']
   },
   jest: {
@@ -294,10 +337,12 @@ const technologies = {
     name: 'Jest',
     area: areas.testing.name,
     group: types.lib.name,
-    type: types.lib.types.libTesting,
+    type: types.lib,
+    typeDef: types.lib.types.libTesting,
     icon: <SiJest />,
     color: '#ca451a',
-    contrastColor: 'grey.200',
+    colorLayer1: '#ca451a',
+    colorLayer2: 'grey.200',
     ecosystem: ['javascript']
   },
   reactTestingLibrary: {
@@ -305,10 +350,12 @@ const technologies = {
     name: 'React Testing Library',
     area: areas.testing.name,
     group: types.lib.name,
-    type: types.lib.types.libTesting,
+    type: types.lib,
+    typeDef: types.lib.types.libTesting,
     icon: <SiTestinglibrary />,
     color: '#ff4949',
-    contrastColor: 'grey.200',
+    colorLayer1: '#ff4949',
+    colorLayer2: 'grey.200',
     ecosystem: ['javascript', 'React.js']
   },
   reactRouter: {
@@ -316,10 +363,12 @@ const technologies = {
     name: 'React Router',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libRoute,
+    type: types.lib,
+    typeDef: types.lib.types.libRoute,
     icon: <SiReactrouter />,
-    color: 'grey.200',
-    contrastColor: '#d10a22',
+    color: '#d10a22',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#d10a22',
     ecosystem: ['javascript', 'React.js']
   },
   reactHookForm: {
@@ -327,10 +376,12 @@ const technologies = {
     name: 'React Hook Form',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libFormVal,
+    type: types.lib,
+    typeDef: types.lib.types.libFormVal,
     icon: <SiReacthookform />,
     color: '#ed5e93',
-    contrastColor: 'grey.200',
+    colorLayer1: '#ed5e93',
+    colorLayer2: 'grey.200',
     ecosystem: ['javascript', 'React.js']
   },
   tanStackQuery: {
@@ -338,10 +389,12 @@ const technologies = {
     name: 'TanStack Query',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libWebRequest,
+    type: types.lib,
+    typeDef: types.lib.types.libWebRequest,
     icon: <SiReactquery />,
     color: '#ff4759',
-    contrastColor: '#ffda52',
+    colorLayer1: '#ff4759',
+    colorLayer2: '#ffda52',
     ecosystem: ['javascript', 'React.js']
   },
   redux: {
@@ -349,10 +402,12 @@ const technologies = {
     name: 'Redux',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libstateMgt,
+    type: types.lib,
+    typeDef: types.lib.types.libstateMgt,
     icon: <SiRedux />,
-    color: 'grey.200',
-    contrastColor: '#764abc',
+    color: '#764abc',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#764abc',
     ecosystem: ['javascript', 'React.js']
   },
   mui: {
@@ -360,10 +415,12 @@ const technologies = {
     name: 'Material UI',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libComp,
+    type: types.lib,
+    typeDef: types.lib.types.libComp,
     icon: <SiMui />,
-    color: 'grey.200',
-    contrastColor: '#007fff',
+    color: '#007fff',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#007fff',
     ecosystem: ['design']
   },
   shadcn: {
@@ -371,10 +428,12 @@ const technologies = {
     name: 'Shadcn/ui',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libComp,
+    type: types.lib,
+    typeDef: types.lib.types.libComp,
     icon: <SiShadcnui />,
     color: 'black',
-    contrastColor: 'grey.200',
+    colorLayer1: 'black',
+    colorLayer2: 'grey.200',
     ecosystem: ['design']
   },
   tailwind: {
@@ -382,10 +441,12 @@ const technologies = {
     name: 'Tailwind Css',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libStyle,
+    type: types.lib,
+    typeDef: types.lib.types.libStyle,
     icon: <SiTailwindcss />,
-    color: 'grey.200',
-    contrastColor: '#06B6D4',
+    color: '#06B6D4',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#06B6D4',
     ecosystem: ['design']
   },
   // next: {
@@ -393,10 +454,12 @@ const technologies = {
   //   name: 'Next.js',
   //   area: areas.frontend.name,
   //   group: types.frw.name,
-  //   type: types.frw.types.frwReact,
+  //   type: types.frw,
+  //   typeDef: types.frw.types.frwReact,
   //   icon: <SiNextdotjs />,
-  //   color: 'grey.200',
-  //   contrastColor: 'black',
+  //   color: 'black',
+  //   colorLayer1: 'grey.200',
+  //   colorLayer2: 'black',
   //   ecosystem: ['design']
   // },
   // nextUi: {
@@ -404,10 +467,12 @@ const technologies = {
   //   name: 'Next UI',
   //   area: areas.frontend.name,
   //   group: types.lib.name,
-  //   type: types.lib.types.libComp,
+  //   type: types.lib,
+  //   typeDef: types.lib.types.libComp,
   //   icon: <SiNextui />,
-  //   color: 'grey.200',
-  //   contrastColor: 'black',
+  //   color: 'black',
+  //   colorLayer1: 'grey.200',
+  //   colorLayer2: 'black',
   //   ecosystem: ['design']
   // },
   // playwright: {
@@ -415,10 +480,12 @@ const technologies = {
   //   name: 'Playwright',
   //   area: areas.testing.name,
   //   group: types.lib.name,
-  //   type: types.lib.types.libTesting,
+  //   type: types.lib,
+  //   typeDef: types.lib.types.libTesting,
   //   icon: <SiPlaywright />,
   //   color: '#dc594f',
-  //   contrastColor: '#2EAD33',
+  //   colorLayer1: '#dc594f',
+  //   colorLayer2: '#2EAD33',
   //   ecosystem: ['design']
   // },
   // storybook: {
@@ -426,10 +493,12 @@ const technologies = {
   //   name: 'Storybook',
   //   area: areas.testing.name,
   //   group: types.lib.name,
-  //   type: types.lib.types.libTesting,
+  //   type: types.lib,
+  //   typeDef: types.lib.types.libTesting,
   //   icon: <SiStorybook />,
-  //   color: 'grey.200',
-  //   contrastColor: '#FF4785',
+  //   color: '#FF4785',
+  //   colorLayer1: 'grey.200',
+  //   colorLayer2: '#FF4785',
   //   ecosystem: ['design']
   // },
   sass: {
@@ -437,10 +506,12 @@ const technologies = {
     name: 'Sass',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libStyle,
+    type: types.lib,
+    typeDef: types.lib.types.libStyle,
     icon: <SiSass />,
-    color: 'grey.200',
-    contrastColor: '#CC6699',
+    color: '#CC6699',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#CC6699',
     ecosystem: ['design']
   },
   styledComp: {
@@ -448,32 +519,38 @@ const technologies = {
     name: 'Styled Components',
     area: areas.frontend.name,
     group: types.lib.name,
-    type: types.lib.types.libStyle,
+    type: types.lib,
+    typeDef: types.lib.types.libStyle,
     icon: <SiStyledcomponents />,
-    color: 'grey.200',
-    contrastColor: '#DB7093',
+    color: '#DB7093',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#DB7093',
     ecosystem: ['design']
   },
-  // normalCss: {
-  //   id: uuidV4(),
-  //   name: 'Normalize Css',
-  //   area: areas.frontend.name,
-  //   group: types.lib.name,
-  //   type: types.lib.types.libStyle,
-  //   icon: <SiNormalizedotcss />,
-  //   color: 'grey.200',
-  //   contrastColor: '#E3695F',
-  //   ecosystem: ['design']
-  // },
+  normalCss: {
+    id: uuidV4(),
+    name: 'Normalize Css',
+    area: areas.frontend.name,
+    group: types.lib.name,
+    type: types.lib,
+    typeDef: types.lib.types.libStyle,
+    icon: <SiNormalizedotcss />,
+    color: '#E3695F',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#E3695F',
+    ecosystem: ['design']
+  },
   figma: {
     id: uuidV4(),
     name: 'Figma',
     area: areas.design.name,
     group: types.app.name,
-    type: types.app.types.design,
+    type: types.app,
+    typeDef: types.app.types.design,
     icon: <SiFigma />,
-    color: 'grey.200',
-    contrastColor: '#5551ff',
+    color: '#5551ff',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#5551ff',
     ecosystem: ['javascript', 'React.js']
   },
   miro: {
@@ -481,10 +558,12 @@ const technologies = {
     name: 'Miro',
     area: areas.design.name,
     group: types.app.name,
-    type: types.app.types.design,
+    type: types.app,
+    typeDef: types.app.types.design,
     icon: <SiMiro />,
     color: '#ffdd33',
-    contrastColor: 'grey.800',
+    colorLayer1: '#ffdd33',
+    colorLayer2: 'grey.800',
     ecosystem: ['design']
   },
   illustrator: {
@@ -492,10 +571,12 @@ const technologies = {
     name: 'Adobe Illustrator',
     area: areas.design.name,
     group: types.app.name,
-    type: types.app.types.design,
+    type: types.app,
+    typeDef: types.app.types.design,
     icon: <SiAdobeillustrator />,
-    color: '#ff9a00',
-    contrastColor: '#330000',
+    color: '#330000',
+    colorLayer1: '#ff9a00',
+    colorLayer2: '#330000',
     ecosystem: ['design']
   },
   bem: {
@@ -503,10 +584,12 @@ const technologies = {
     name: 'BEM',
     area: areas.design.name,
     group: types.methodology.name,
-    type: types.methodology.types.design,
+    type: types.methodology,
+    typeDef: types.methodology.types.design,
     icon: <SiBem />,
     color: 'grey.200',
-    contrastColor: 'grey.800',
+    colorLayer1: 'grey.200',
+    colorLayer2: 'grey.800',
     ecosystem: ['design methodologies']
   },
   atomicDsg: {
@@ -514,10 +597,12 @@ const technologies = {
     name: 'Atomic Design',
     area: areas.design.name,
     group: types.methodology.name,
-    type: types.methodology.types.design,
+    type: types.methodology,
+    typeDef: types.methodology.types.design,
     icon: <TbAtom2 />,
-    color: 'grey.800',
-    contrastColor: '#bc6719',
+    color: '#bc6719',
+    colorLayer1: 'grey.800',
+    colorLayer2: '#bc6719',
     ecosystem: ['design methodologies']
   }
 };

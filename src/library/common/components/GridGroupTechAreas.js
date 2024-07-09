@@ -14,13 +14,13 @@ function GridTechAreas({ element }) {
               borderRadius: 25,
               width: 80,
               height: 80,
-              backgroundColor: element.color,
+              backgroundColor: element.colorLayer1,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
             }}
           >
-            <SvgIcon sx={{ width: 40, height: 40, color: element.contrastColor }}>{element.icon}</SvgIcon>
+            <SvgIcon sx={{ width: 40, height: 40, color: element.colorLayer2 }}>{element.icon}</SvgIcon>
           </Box>
           <Typography variant="h6" align="center">
             {element.name}

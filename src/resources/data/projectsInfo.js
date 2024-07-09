@@ -1,16 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { aptitudes } from './baseFiles/aptitudes';
-import { technologies } from './baseFiles/technologies';
+import { technologies as tech } from './baseFiles/technologies';
 import { areas } from './baseFiles/areas';
 import frontendProjectsImage from '../images/frontendProjectsV1.JPG';
-const aptMgt = aptitudes.management;
-const aptDev = aptitudes.development;
-const aptDes = aptitudes.design;
-const aptSkl = aptitudes.softSkills;
-
-const tecMgt = technologies.management;
-const tecDev = technologies.development;
-const tecDes = technologies.design;
 
 const areaFront = areas.frontend;
 const areaBack = areas.backend;
@@ -76,17 +67,13 @@ const projectsInfo = [
     rating: 2,
     repository: 'https://github.com/ChristopherPinedo/frontendProjects/',
     url: 'https://christopherpinedo.github.io/frontendProjects/',
-    aptitudes: {
-      management: [],
-      development: [],
-      design: [],
-      softSkills: []
-    },
-    technologies: {
-      management: [],
-      development: [],
-      design: []
-    }
+    // aptitudes: {
+    //   management: [],
+    //   development: [],
+    //   design: [],
+    //   softSkills: []
+    // },
+    technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter]
   },
   // {
   //   area: areaFront,
@@ -115,7 +102,8 @@ const projectsInfo = [
     source: 'Frontend Mentor',
     rating: 3,
     repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
-    url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/'
+    url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/',
+    technologies: [tech.js, tech.react, tech.tailwind]
   },
   {
     area: areaFront,
@@ -130,7 +118,8 @@ const projectsInfo = [
     source: 'Frontend Mentor',
     rating: 4,
     repository: '',
-    url: ''
+    url: '',
+    technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.redux, tech.tanStackQuery]
     // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
     // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
   }
