@@ -9,6 +9,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 // import { personalInfo } from '../../../resources/data/personalInfo';
 import { BiCodeAlt } from 'react-icons/bi';
 import { personalInfo } from '../../../resources/data/personalInfo';
+import { ToggleThemeSwitch } from './ToggleThemeSwitch';
 
 function DesktopAppBar({ children }) {
   const location = useLocation();
@@ -50,14 +51,17 @@ function DesktopAppBar({ children }) {
                 </Button>
               ))}
             </Stack>
-            <Button
-              sx={{ height: 40 }}
-              variant="contained"
-              endIcon={<DownloadIcon />}
-              onClick={() => handleDescargarCV(pdfFile)}
-            >
-              Descargar CV
-            </Button>
+            <Stack direction={'row'} spacing={2}>
+              <ToggleThemeSwitch />
+              <Button
+                sx={{ height: 40 }}
+                variant="contained"
+                endIcon={<DownloadIcon />}
+                onClick={() => handleDescargarCV(pdfFile)}
+              >
+                Descargar CV
+              </Button>
+            </Stack>
           </Stack>
         </Container>
         {/* <Toolbar sx={{ backgroundColor: 'background.default', padding: 0 }}>

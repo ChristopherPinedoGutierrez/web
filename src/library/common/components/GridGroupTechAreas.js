@@ -7,7 +7,7 @@ import { technologies } from '../../../resources/data/baseFiles/technologies';
 function GridTechAreas({ element }) {
   return (
     <Grid item key={element.id} xs={6} sm={4} md={3} lg={2}>
-      <Card>
+      <Card sx={{ height: 1, borderRadius: 2 }}>
         <Stack p={2} spacing={2} alignItems={'center'}>
           <Box
             sx={{

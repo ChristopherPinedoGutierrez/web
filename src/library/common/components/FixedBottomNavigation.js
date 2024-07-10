@@ -10,6 +10,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import pdfFile from '../../../resources/data/curriculum/cv.pdf';
 import { handleDescargarCV } from '../utils/functionUtils';
 import { personalInfo } from '../../../resources/data/personalInfo';
+import { ToggleThemeSwitch } from './ToggleThemeSwitch';
 
 // eslint-disable-next-line react/prop-types
 export default function FixedBottomNavigation({ children }) {
@@ -18,10 +19,11 @@ export default function FixedBottomNavigation({ children }) {
     <>
       <CssBaseline />
       <AppBar position="fixed">
-        <Toolbar sx={{ justifyContent: 'flex-end', backgroundColor: 'background.paper', alignItems: 'center' }}>
+        <Toolbar sx={{ justifyContent: 'space-between', backgroundColor: 'background.default', alignItems: 'center' }}>
           {/* <Typography color={'grey.800'} variant="subtitle2">
             {personalInfo.variable.shortName.toUpperCase()}
           </Typography> */}
+          <ToggleThemeSwitch />
           <Button size="small" variant="outlined" endIcon={<DownloadIcon />} onClick={() => handleDescargarCV(pdfFile)}>
             Descargar CV
           </Button>

@@ -29,7 +29,7 @@ import { SectionKnowledge } from './SectionKnowledge';
 
 function CardItemText({ title, content }) {
   return (
-    <Grid container spacing={{ xs: 1, md: 0 }} alignItems={'baseline'}>
+    <Grid container spacing={{ xs: 1, md: 0 }} gap={{ md: 2, lg: 4 }} alignItems={'baseline'}>
       <Grid item xs={12} md={3}>
         <Typography variant="body2">{title}</Typography>
       </Grid>
@@ -67,8 +67,8 @@ function ProfilePage() {
         </Grid>
         {/* Sección: Información personal */}
         <Grid item xs={12} md={6}>
-          <Card sx={{ maxWidth: 500, margin: 'auto' }}>
-            <CardContent>
+          <Card elevation={3} sx={{ maxWidth: 500, margin: 'auto', borderRadius: 2 }}>
+            <CardContent sx={{ pl: { md: 4 } }}>
               <Stack spacing={2}>
                 <Typography align="center" variant="h5">
                   Datos personales
