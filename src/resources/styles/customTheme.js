@@ -1,13 +1,19 @@
 /* eslint-disable react/prop-types */
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
 
 const ThemeContext = createContext();
 
 function CustomTheme({ children }) {
-  const [mode, setMode] = useState('dark');
+  const storedMode = localStorage.getItem('themeMode') || 'dark';
+
+  const [mode, setMode] = useState(storedMode);
+
+  useEffect(() => {
+    localStorage.setItem('themeMode', mode);
+  }, [mode]);
 
   const theme = createTheme({
     palette: {

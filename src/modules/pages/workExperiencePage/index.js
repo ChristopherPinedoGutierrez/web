@@ -38,7 +38,7 @@ function WorkExperiencePage() {
           </Typography>
         </Grid>
         {workExperienceInfo.map((item, i) => (
-          <Grid key={i} item xs={12} md={6} xl={4}>
+          <Grid key={i} item xs={12} md={6} lg={4}>
             <Card sx={{ maxWidth: '500px', margin: 'auto' }}>
               <CardHeader sx={{ padding: 1, backgroundColor: 'primary.main' }} />
               <CardContent>

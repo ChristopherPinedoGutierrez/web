@@ -37,11 +37,15 @@ import {
   SiReactquery,
   SiCreatereactapp,
   SiVite,
-  SiNormalizedotcss
+  SiNormalizedotcss,
+  SiVitest,
+  SiMysql,
+  SiMicrosoftsqlserver
   // SiExpo
 } from 'react-icons/si';
 
 import { TbAtom2 } from 'react-icons/tb';
+import { GiDatabase } from 'react-icons/gi';
 
 const types = {
   lang: {
@@ -51,7 +55,8 @@ const types = {
       langMark: 'Markup language',
       langStyle: 'Style language',
       langProg: 'Programing language',
-      langSset: 'Language superset'
+      langSset: 'Language superset',
+      langQuery: 'Query language'
     }
   },
   lib: {
@@ -83,6 +88,13 @@ const types = {
     types: {
       rtmJsBrowser: 'Browser Js Runtime',
       rtmJsCross: 'Cross Platform Js Runtime'
+    }
+  },
+  db: {
+    name: 'Database',
+    value: 60,
+    types: {
+      dbEngine: 'Database Engine'
     }
   },
   pckRun: {
@@ -146,7 +158,7 @@ const technologies = {
     typeDef: types.vcs.types.distrib,
     icon: <SiGit />,
     color: '#f05539',
-    colorlayer1: '#f05539',
+    colorLayer1: '#f05539',
     colorLayer2: 'grey.200',
     ecosystem: ['git']
   },
@@ -159,8 +171,8 @@ const technologies = {
     typeDef: types.vcs.types.distrib,
     icon: <SiGithub />,
     color: 'grey.800',
-    colorlayer1: 'grey.800',
-    colorlayer2: 'grey.200',
+    colorLayer1: 'grey.800',
+    colorLayer2: 'grey.200',
     ecosystem: ['git']
   },
   jira: {
@@ -293,6 +305,46 @@ const technologies = {
     colorLayer2: 'grey.200',
     ecosystem: ['javascript']
   },
+  sql: {
+    id: uuidV4(),
+    name: 'SQL',
+    area: areas.backend.name,
+    group: types.lang.name,
+    type: types.lang,
+    typeDef: types.lang.types.langQuery,
+    icon: <GiDatabase />,
+    color: '#424242',
+    colorLayer1: 'grey.800',
+    colorLayer2: 'grey.200',
+    ecosystem: ['Database']
+  },
+
+  sqlServer: {
+    id: uuidV4(),
+    name: 'SQL Server',
+    area: areas.backend.name,
+    group: types.db.name,
+    type: types.db,
+    typeDef: types.db.types.dbEngine,
+    icon: <SiMicrosoftsqlserver />,
+    color: '#ef372e',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#ef372e',
+    ecosystem: ['Database']
+  },
+  mySql: {
+    id: uuidV4(),
+    name: 'MySQL',
+    area: areas.backend.name,
+    group: types.db.name,
+    type: types.db,
+    typeDef: types.db.types.dbEngine,
+    icon: <SiMysql />,
+    color: '#e48e00',
+    colorLayer1: '#00618a',
+    colorLayer2: '#e48e00',
+    ecosystem: ['Database']
+  },
   // reactNative: {
   //   id: uuidV4(),
   //   name: 'React Native',
@@ -343,6 +395,19 @@ const technologies = {
     color: '#ca451a',
     colorLayer1: '#ca451a',
     colorLayer2: 'grey.200',
+    ecosystem: ['javascript']
+  },
+  SiVitest: {
+    id: uuidV4(),
+    name: 'Vitest',
+    area: areas.testing.name,
+    group: types.lib.name,
+    type: types.lib,
+    typeDef: types.lib.types.libTesting,
+    icon: <SiVitest />,
+    color: '#a842f6',
+    colorLayer1: '#6aa108',
+    colorLayer2: '#f6c928',
     ecosystem: ['javascript']
   },
   reactTestingLibrary: {

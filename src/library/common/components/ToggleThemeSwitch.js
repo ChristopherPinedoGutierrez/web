@@ -29,7 +29,7 @@ function ToggleThemeSwitch() {
       }
     },
     '& .MuiSwitch-thumb': {
-      backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.dark : theme.palette.primary.dark,
+      backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main,
       width: 32,
       height: 32,
       '&::before': {
