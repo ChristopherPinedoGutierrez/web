@@ -3,7 +3,7 @@ import React from 'react';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { areas } from '../../../resources/data/baseFiles/areas';
+import { areas } from '../../../../resources/data/baseFiles/areas';
 import { FormControl } from '@mui/material';
 
 function RadioButtonsGroupTechAreas({ area, setArea }) {

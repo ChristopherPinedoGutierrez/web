@@ -1,6 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { AppBar, Box, Button, Container, CssBaseline, Stack, SvgIcon, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  CssBaseline,
+  Stack,
+  SvgIcon,
+  Toolbar,
+  Typography,
+  useTheme
+} from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import { handleDescargarCV } from '../utils/functionUtils';
 import pdfFile from '../../../resources/data/curriculum/cv.pdf';
@@ -13,6 +24,9 @@ import { ToggleThemeSwitch } from './ToggleThemeSwitch';
 
 function DesktopAppBar({ children }) {
   const location = useLocation();
+  const theme = useTheme();
+  const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
+
   return (
     <Box>
       <CssBaseline />
@@ -67,7 +81,7 @@ function DesktopAppBar({ children }) {
         {/* <Toolbar sx={{ backgroundColor: 'background.default', padding: 0 }}>
         </Toolbar> */}
       </AppBar>
-      {children}
+      <Box sx={{ backgroundImage: background }}>{children}</Box>
     </Box>
   );
 }

@@ -5,7 +5,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 import { dashboardMainRoutes } from '../../../main/router/routes/dashboardMainRoutes';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { AppBar, Button, CssBaseline, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, CssBaseline, Toolbar, Typography, Box, useTheme } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import pdfFile from '../../../resources/data/curriculum/cv.pdf';
 import { handleDescargarCV } from '../utils/functionUtils';
@@ -15,6 +15,9 @@ import { ToggleThemeSwitch } from './ToggleThemeSwitch';
 // eslint-disable-next-line react/prop-types
 export default function FixedBottomNavigation({ children }) {
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
+  const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
+
   return (
     <>
       <CssBaseline />
@@ -29,7 +32,7 @@ export default function FixedBottomNavigation({ children }) {
           </Button>
         </Toolbar>
       </AppBar>
-      {children}
+      <Box sx={{ backgroundColor: background }}>{children}</Box>
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels

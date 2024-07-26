@@ -1,18 +1,8 @@
 /* eslint-disable react/prop-types */
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
-  Divider,
-  Grid,
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme
-} from '@mui/material';
+import { Card, CardContent, CardHeader, Divider, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { workExperienceInfo } from '../../../resources/data/workExperienceInfo';
+import { BasePageLayout } from '../../layouts/BasePageLayout';
 // import { renderChips } from '../../../library/common/utils/jsxUtils';
 // import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
 
@@ -26,37 +16,33 @@ function CardItem({ title, content }) {
 }
 
 function WorkExperiencePage() {
-  const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
-
   return (
-    <Container maxWidth="xl">
-      <Grid container spacing={8} mt={8} mb={4} {...(matchesXS && { sx: { mt: 7, mb: 11 } })}>
-        <Grid item xs={12}>
-          <Typography align={'center'} variant="h4">
-            Experiencia laboral
-          </Typography>
-        </Grid>
-        {workExperienceInfo.map((item, i) => (
-          <Grid key={i} item xs={12} md={6} lg={4}>
-            <Card sx={{ maxWidth: '500px', margin: 'auto' }}>
-              <CardHeader sx={{ padding: 1, backgroundColor: 'primary.main' }} />
-              <CardContent>
-                <Stack spacing={2}>
-                  <Typography variant="h5">{item.role}</Typography>
-                  <Divider variant="middle" />
-                  <CardItem title={'Empresa :'} content={item.company} />
-                  <CardItem title={'Cargo :'} content={item.role} />
-                  <CardItem title={'Funciones :'} content={item.jobFunctions} />
-                  <Stack direction={'row'} justifyContent={'space-between'}>
-                    <CardItem title={'Inicio :'} content={item.period.startDate} />
-                    <CardItem title={'Final :'} content={item.period.endDate} />
-                    <CardItem title={'Duración :'} content={item.period.duration} />
-                  </Stack>
+    <BasePageLayout>
+      <Grid item xs={12}>
+        <Typography align={'center'} variant="h4">
+          Experiencia laboral
+        </Typography>
+      </Grid>
+      {workExperienceInfo.map((item, i) => (
+        <Grid key={i} item xs={12} md={6} lg={4}>
+          <Card sx={{ maxWidth: '500px', margin: 'auto' }}>
+            <CardHeader sx={{ padding: 1, backgroundColor: 'primary.main' }} />
+            <CardContent>
+              <Stack spacing={2}>
+                <Typography variant="h5">{item.role}</Typography>
+                <Divider variant="middle" />
+                <CardItem title={'Empresa :'} content={item.company} />
+                <CardItem title={'Cargo :'} content={item.role} />
+                <CardItem title={'Funciones :'} content={item.jobFunctions} />
+                <Stack direction={'row'} justifyContent={'space-between'}>
+                  <CardItem title={'Inicio :'} content={item.period.startDate} />
+                  <CardItem title={'Final :'} content={item.period.endDate} />
+                  <CardItem title={'Duración :'} content={item.period.duration} />
                 </Stack>
-              </CardContent>
-              {/* <Divider variant="middle" /> */}
-              {/* <CardContent>
+              </Stack>
+            </CardContent>
+            {/* <Divider variant="middle" /> */}
+            {/* <CardContent>
                 <SimpleTreeView>
                   <TreeItem itemId="Aptitudes" label="Aptitudes">
                     <Stack spacing={1} pt={2}>
@@ -75,11 +61,10 @@ function WorkExperiencePage() {
                   </TreeItem>
                 </SimpleTreeView>
               </CardContent> */}
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+          </Card>
+        </Grid>
+      ))}
+    </BasePageLayout>
   );
 }
 

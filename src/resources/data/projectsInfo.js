@@ -10,6 +10,7 @@ const areaDes = areas.design;
 const areaMgt = areas.management;
 
 const projectLevels = {
+  1: 'Newbie',
   2: 'Junior',
   3: 'Intermediate',
   4: 'Advanced',
@@ -84,7 +85,7 @@ const projectsInfo = [
   //   description:
   //     'Integrate with the Clean URI link shortening API and play with browser storage in this landing page challenge.',
   //   status: projectStatuses.dev,
-  //   level: projectLevels[3],
+  //   level: projectLevels[2],
   //   source: 'Frontend Mentor',
   //   rating: 3,
   //   repository: '',
@@ -98,9 +99,9 @@ const projectsInfo = [
     goal: '',
     description: "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app.",
     status: projectStatuses.dev,
-    level: projectLevels[3],
+    level: projectLevels[1],
     source: 'Frontend Mentor',
-    rating: 3,
+    rating: 1,
     repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
     url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/',
     technologies: [tech.js, tech.react, tech.tailwind]
@@ -114,12 +115,12 @@ const projectsInfo = [
     description:
       "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
     status: projectStatuses.dev,
-    level: projectLevels[4],
+    level: projectLevels[2],
     source: 'Frontend Mentor',
-    rating: 4,
+    rating: 2,
     repository: '',
     url: '',
-    technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.redux, tech.tanStackQuery]
+    technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
     // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
     // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
   }

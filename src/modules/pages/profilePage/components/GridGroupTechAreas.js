@@ -1,14 +1,33 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Box, Card, Chip, Grid, Stack, SvgIcon, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  Chip,
+  Grid,
+  IconButton,
+  Stack,
+  styled,
+  SvgIcon,
+  Tooltip,
+  Typography,
+  useTheme
+} from '@mui/material';
 import React from 'react';
-import { technologies } from '../../../resources/data/baseFiles/technologies';
+import { technologies } from '../../../../resources/data/baseFiles/technologies';
+import FileOpenIcon from '@mui/icons-material/FileOpen';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 function GridTechAreas({ element }) {
   return (
     <Grid item key={element.id} xs={6} sm={4} md={3} lg={2}>
       <Card sx={{ height: 1, borderRadius: 2 }}>
-        <Stack p={2} spacing={2} alignItems={'center'}>
+        <Stack spacing={2} alignItems={'center'} sx={{ p: 2, position: 'relative' }}>
+          <Tooltip title="View related projects" placement="top">
+            <IconButton sx={{ position: 'absolute', top: 8, right: 8 }}>
+              <OpenInNewIcon />
+            </IconButton>
+          </Tooltip>
           <Box
             sx={{
               borderRadius: 25,
@@ -34,8 +53,11 @@ function GridTechAreas({ element }) {
 }
 
 function GridGroupTechAreas({ area }) {
+  const theme = useTheme();
+  const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
+
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={4}>
       {area === 'All'
         ? Object.values(technologies).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
         : Object.values(technologies)
