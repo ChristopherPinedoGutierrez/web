@@ -20,7 +20,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 function GridTechAreas({ element }) {
   return (
-    <Grid item key={element.id} xs={6} sm={4} md={3} lg={2}>
+    <Grid item key={element.id} xs={6} sm={4} lg={3} xl={2}>
       <Card sx={{ height: 1, borderRadius: 2 }}>
         <Stack spacing={2} alignItems={'center'} sx={{ p: 2, position: 'relative' }}>
           <Tooltip title="View related projects" placement="top">
@@ -57,7 +57,7 @@ function GridGroupTechAreas({ area }) {
   const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={2}>
       {area === 'All'
         ? Object.values(technologies).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
         : Object.values(technologies)

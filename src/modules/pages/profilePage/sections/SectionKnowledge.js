@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { RadioButtonsGroupTechAreas } from '../components/RadioButtonsGroupTechAreas';
 import { GridGroupTechAreas } from '../components/GridGroupTechAreas';
 import { ClippedDrawerTech } from '../components/ClippedDrawerTech';
+import { TechFilterMenu } from '../components/TechFilterMenu';
 
 function SectionKnowledge() {
   const [currentArea, setCurrentArea] = useState('Frontend');
@@ -13,7 +14,7 @@ function SectionKnowledge() {
   }, [currentArea]);
 
   return (
-    <ClippedDrawerTech area={currentArea} setArea={setCurrentArea}>
+    <Grid container spacing={2}>
       {/* <Stack
         spacing={2}
         mb={4}
@@ -24,8 +25,13 @@ function SectionKnowledge() {
         <Typography variant="h4">Tecnologías</Typography>
         <RadioButtonsGroupTechAreas area={currentArea} setArea={setCurrentArea} />
       </Stack> */}
-      <GridGroupTechAreas area={currentArea} />
-    </ClippedDrawerTech>
+      <Grid item md={4} lg={2}>
+        <TechFilterMenu area={currentArea} setArea={setCurrentArea} />
+      </Grid>
+      <Grid item md={8} lg={10}>
+        <GridGroupTechAreas area={currentArea} />
+      </Grid>
+    </Grid>
   );
 }
 

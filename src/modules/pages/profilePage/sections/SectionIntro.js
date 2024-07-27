@@ -76,16 +76,17 @@ function SectionIntro() {
             </CardContent>
             <CardActions sx={{ p: 2 }}>
               <Stack direction={'row'} width={1} spacing={2} justifyContent={'flex-end'}>
-                <IconButton href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
+                <IconButton size="large" href={`https://${personalInfo.variable.socialMedia.linkedin}`} target="_blank">
                   <LinkedInIcon />
                 </IconButton>
-                <IconButton href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
+                <IconButton size="large" href={`https://${personalInfo.variable.socialMedia.github}`} target="_blank">
                   <GitHubIcon />
                 </IconButton>
                 <IconButton
                   component={ReactWhatsapp}
                   number={`${personalInfo.variable.telephone.countryCode} ${personalInfo.variable.telephone.number}`}
                   message={'Saludos. Me interesa tu perfil ...'}
+                  size="large"
                 >
                   <WhatsAppIcon />
                 </IconButton>
