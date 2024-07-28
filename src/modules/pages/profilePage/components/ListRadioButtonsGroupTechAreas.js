@@ -4,11 +4,11 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { areas } from '../../../../resources/data/baseFiles/areas';
-import { List, ListItem, ListItemButton, ListSubheader } from '@mui/material';
+import { List, ListItem, ListItemButton } from '@mui/material';
 
 function ListRadioButtonsGroupTechAreas({ area, setArea }) {
   return (
-    <List subheader={<ListSubheader>Areas</ListSubheader>}>
+    <List>
       <RadioGroup value={area} name="row-radio-buttons-group">
         {/* <FormControlLabel
           value={'All'}
@@ -29,9 +29,6 @@ function ListRadioButtonsGroupTechAreas({ area, setArea }) {
                     control={<Radio />}
                     label={ele.name}
                     disabled={ele.disabled}
-                    // onChange={(e) => {
-                    //   setArea(e.target.value);
-                    // }}
                   />
                 </ListItemButton>
               </ListItem>

@@ -14,20 +14,18 @@ import {
   useTheme
 } from '@mui/material';
 import React from 'react';
-import { technologies } from '../../../../resources/data/baseFiles/technologies';
-import FileOpenIcon from '@mui/icons-material/FileOpen';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import DatasetLinkedIcon from '@mui/icons-material/DatasetLinked';
 
 function GridTechAreas({ element }) {
   return (
-    <Grid item key={element.id} xs={6} sm={4} lg={3} xl={2}>
+    <Grid item key={element.id} xs={6} sm={4} lg={3}>
       <Card sx={{ height: 1, borderRadius: 2 }}>
-        <Stack spacing={2} alignItems={'center'} sx={{ p: 2, position: 'relative' }}>
-          <Tooltip title="View related projects" placement="top">
+        <Stack spacing={2} alignItems={'center'} sx={{ p: 2, pt: 3, position: 'relative' }}>
+          {/* <Tooltip title="View related projects" placement="top">
             <IconButton sx={{ position: 'absolute', top: 8, right: 8 }}>
-              <OpenInNewIcon />
+              <DatasetLinkedIcon />
             </IconButton>
-          </Tooltip>
+          </Tooltip> */}
           <Box
             sx={{
               borderRadius: 25,
@@ -52,12 +50,9 @@ function GridTechAreas({ element }) {
   );
 }
 
-function GridGroupTechAreas({ area }) {
-  const theme = useTheme();
-  const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
-
+function GridGroupTechAreas({ area, technologies }) {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={{ xs: 2, md: 4 }}>
       {area === 'All'
         ? Object.values(technologies).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
         : Object.values(technologies)
