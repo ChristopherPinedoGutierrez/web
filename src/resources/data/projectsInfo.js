@@ -57,25 +57,25 @@ const projectsInfo = [
     repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
     url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/',
     technologies: [tech.js, tech.react, tech.tailwind]
+  },
+  {
+    area: areaFront,
+    image:
+      'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1554826345%2FChallenges%2Fyhq5ihanseyinzwblaw1.jpg&w=384&q=75',
+    name: 'REST Countries web app',
+    goal: '',
+    description:
+      "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
+    status: projectStatuses.dev,
+    level: projectLevels[2],
+    source: 'Frontend Mentor',
+    rating: 2,
+    repository: '',
+    url: '',
+    // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
+    // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
+    technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
   }
-  // {
-  //   area: areaFront,
-  //   image:
-  //     'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1554826345%2FChallenges%2Fyhq5ihanseyinzwblaw1.jpg&w=384&q=75',
-  //   name: 'REST Countries web app',
-  //   goal: '',
-  //   description:
-  //     "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
-  //   status: projectStatuses.dev,
-  //   level: projectLevels[2],
-  //   source: 'Frontend Mentor',
-  //   rating: 2,
-  //   repository: '',
-  //   url: '',
-  //   // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
-  //   // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
-  //   technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
-  // }
 ];
 
 export { projectsInfo };
