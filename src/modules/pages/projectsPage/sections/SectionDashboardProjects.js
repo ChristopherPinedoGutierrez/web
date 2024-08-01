@@ -15,35 +15,22 @@ function SectionDashboardProjects() {
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   useEffect(() => {
-    function findKeyById(obj, targetValue) {
-      for (const [key, value] of Object.entries(obj)) {
-        if (value.id === targetValue) {
-          return key;
-        }
+    const areasFilters = Object.values(areas).reduce((acc, area) => {
+      if (area.filterProjects) {
+        acc[area.id] = { name: area.name, active: true };
       }
-      return null;
-    }
+      return acc;
+    }, {});
 
-    const areasFilters = Object.entries(areas)
-      .filter(([, area]) => area.filterProjects)
-      .reduce((acc, [key, value]) => {
-        // console.log(key);
-        acc[key] = { name: value.name, active: true };
-        return acc;
-      }, {});
-
-    const levelFilters = Object.entries(projectLevels).reduce((acc, [key, value]) => {
-      acc[key] = { name: value.name, active: true };
+    const levelFilters = Object.values(projectLevels).reduce((acc, level) => {
+      acc[level.id] = { name: level.name, active: true };
       return acc;
     }, {});
 
     const techFilters = projectsInfo.reduce((acc, project) => {
       project.technologies.forEach((tech) => {
-        let currentKey = findKeyById(technologies, tech.id);
-        if (currentKey !== null) {
-          if (!acc[currentKey]) {
-            acc[currentKey] = { name: tech.name, active: true };
-          }
+        if (!acc[tech.id]) {
+          acc[tech.id] = { name: tech.name, active: true };
         }
       });
       return acc;
@@ -56,17 +43,13 @@ function SectionDashboardProjects() {
     // console.log(filters);
     const filterProjects = () => {
       return projectsInfo.filter((project) => {
-        const areaMatch = filters.Areas[project.area.name]?.active;
-        const levelMatch = filters.Niveles[project.level.name]?.active;
-        const techMatch = project.technologies.some((tech) => filters.Tecnologías[tech.name]?.active);
-
-        console.log('area: ', filters.Areas);
-        // console.log('areaMatch: ', project.area.name.active);
+        const areaMatch = filters.Areas[project.area.id]?.active;
+        const levelMatch = filters.Niveles[project.level.id]?.active;
+        const techMatch = project.technologies.every((tech) => filters.Tecnologías[tech.id]?.active);
 
         return areaMatch && levelMatch && techMatch;
       });
     };
-    console.log(filterProjects());
     setFilteredProjects(filterProjects());
   }, [filters]);
 

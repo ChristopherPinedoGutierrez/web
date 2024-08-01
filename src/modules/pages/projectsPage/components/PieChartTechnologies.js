@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useMediaQuery, useTheme } from '@mui/material';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 
@@ -30,6 +31,32 @@ const CustomizedLegend = ({ payload }) => {
   );
 };
 
+const RADIAN = Math.PI / 180;
+const RenderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.7;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  const offsetX = -20;
+  const offsetY = -5;
+
+  return (
+    <text
+      x={x + offsetX * Math.cos(-midAngle * RADIAN)}
+      y={y + offsetY * Math.cos(-midAngle * RADIAN)}
+      fill="white"
+      fontSize={isMobile ? 8 : 12}
+      textAnchor={x > cx ? 'start' : 'end'}
+      dominantBaseline="central"
+    >
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
 const PieChartTechnologies = ({ item }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -48,6 +75,8 @@ const PieChartTechnologies = ({ item }) => {
           data={data}
           dataKey="value"
           nameKey="name"
+          labelLine={false}
+          label={<RenderCustomizedLabel />}
           // cy={isMobile ? '75%' : '50%'}
           // startAngle={isMobile ? 180 : 0}
           // endAngle={isMobile ? 0 : 360}
@@ -56,7 +85,7 @@ const PieChartTechnologies = ({ item }) => {
             <Cell key={`cell-${index}`} fill={entry.color} />
           ))}
         </Pie>
-        <Tooltip />
+        {/* <Tooltip /> */}
         <Legend
           layout={isMobile ? 'horizontal' : 'vertical'}
           verticalAlign={isMobile ? 'bottom' : 'middle'}
