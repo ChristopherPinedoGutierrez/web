@@ -17,12 +17,11 @@ import {
   useMediaQuery,
   useTheme
 } from '@mui/material';
-import InboxIcon from '@mui/icons-material/Inbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { DrawerListFilters } from './DrawerListFilters';
 
 const drawerWidth = 240;
 
-function ClippedDrawerContained({ children, title }) {
+function ClippedDrawerContained({ children, title, filters, handleFilters, handleToggleAllFilters }) {
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
@@ -64,35 +63,11 @@ function ClippedDrawerContained({ children, title }) {
         }}
       >
         <Toolbar />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <Checkbox indeterminate={true} />
-              </ListItemIcon>
-              <ListItemText>ele 1</ListItemText>
-            </ListItemButton>
-          </ListItem>
-          <Box sx={{ pl: 3 }}>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Checkbox checked />
-                </ListItemIcon>
-                <ListItemText>ele 1.1</ListItemText>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Checkbox />
-                </ListItemIcon>
-                <ListItemText>ele 1.2</ListItemText>
-              </ListItemButton>
-            </ListItem>
-          </Box>
-        </List>
-        <Divider />
+        <DrawerListFilters
+          filters={filters}
+          handleFilters={handleFilters}
+          handleToggleAllFilters={handleToggleAllFilters}
+        />
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: { xs: 2, md: 4 } }}>
         {matchesMD && <Toolbar />}

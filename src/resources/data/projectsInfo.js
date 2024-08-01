@@ -2,6 +2,7 @@
 import { technologies as tech } from './baseFiles/technologies';
 import { areas } from './baseFiles/areas';
 import frontendProjectsImage from '../images/frontendProjectsV1.JPG';
+import { v4 as uuidV4 } from 'uuid';
 
 const areaFront = areas.frontend;
 const areaBack = areas.backend;
@@ -10,11 +11,11 @@ const areaDes = areas.design;
 const areaMgt = areas.management;
 
 const projectLevels = {
-  1: 'Newbie',
-  2: 'Junior',
-  3: 'Intermediate',
-  4: 'Advanced',
-  5: 'Guru'
+  1: { id: uuidV4(), name: 'Newbie', rating: 1 },
+  2: { id: uuidV4(), name: 'Junior', rating: 2 },
+  3: { id: uuidV4(), name: 'Intermediate', rating: 3 },
+  4: { id: uuidV4(), name: 'Advanced', rating: 4 },
+  5: { id: uuidV4(), name: 'Guru', rating: 5 }
 };
 
 const projectStatuses = {
@@ -38,7 +39,6 @@ const projectsInfo = [
     status: projectStatuses.dev,
     level: projectLevels[2],
     source: 'Frontend Mentor',
-    rating: 2,
     repository: 'https://github.com/ChristopherPinedo/frontendProjects/',
     url: 'https://christopherpinedo.github.io/frontendProjects/',
     technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter]
@@ -53,7 +53,6 @@ const projectsInfo = [
     status: projectStatuses.dev,
     level: projectLevels[1],
     source: 'Frontend Mentor',
-    rating: 1,
     repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
     url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/',
     technologies: [tech.js, tech.react, tech.tailwind]
@@ -69,7 +68,6 @@ const projectsInfo = [
     status: projectStatuses.dev,
     level: projectLevels[2],
     source: 'Frontend Mentor',
-    rating: 2,
     repository: '',
     url: '',
     // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
@@ -78,4 +76,4 @@ const projectsInfo = [
   }
 ];
 
-export { projectsInfo };
+export { projectsInfo, projectLevels };

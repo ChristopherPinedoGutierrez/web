@@ -20,7 +20,7 @@ function ListRadioButtonsGroupTechAreas({ area, setArea }) {
         /> */}
         {Object.values(areas).map(
           (ele, i) =>
-            ele.filterable && (
+            ele.filterProfile && (
               <ListItem disablePadding key={i}>
                 <ListItemButton onClick={() => setArea(ele.name)}>
                   <FormControlLabel

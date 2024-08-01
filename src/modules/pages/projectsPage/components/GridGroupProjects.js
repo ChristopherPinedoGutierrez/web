@@ -20,7 +20,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CircleIcon from '@mui/icons-material/Circle';
-import { projectsInfo } from '../../../../resources/data/projectsInfo';
 
 function ProjectCard({ item }) {
   return (
@@ -30,7 +29,7 @@ function ProjectCard({ item }) {
           height: 1,
           maxWidth: '500px',
           margin: 'auto',
-          // borderColor: `projectLevels.${item.level}`,
+          // borderColor: `projectLevels.${item.level.name}`,
           borderRadius: 2
         }}
         variant="outlined"
@@ -41,8 +40,8 @@ function ProjectCard({ item }) {
               <Chip label={item.area.name} color={item.area.color} size="small" />
               <Rating
                 readOnly
-                value={item.rating}
-                sx={{ color: `projectLevels.${item.level}` }}
+                value={item.level.rating}
+                sx={{ color: `projectLevels.${item.level.name}` }}
                 icon={<CircleIcon />}
                 emptyIcon={<RadioButtonUncheckedIcon />}
               />
@@ -85,10 +84,11 @@ function ProjectCard({ item }) {
   );
 }
 
-function GridGroupProjects() {
+function GridGroupProjects({ projects }) {
+  // console.log(projects);
   return (
     <Grid container spacing={{ xs: 2, md: 4 }}>
-      {projectsInfo.map((item, i) => (
+      {projects.map((item, i) => (
         <ProjectCard item={item} key={i} />
       ))}
     </Grid>

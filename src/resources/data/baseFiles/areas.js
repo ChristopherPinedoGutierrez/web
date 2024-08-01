@@ -5,35 +5,40 @@ const areas = {
     id: uuidV4(),
     name: 'Frontend',
     color: 'primary',
-    filterable: true,
+    filterProfile: true,
+    filterProjects: true,
     disabled: false
   },
   backend: {
     id: uuidV4(),
     name: 'Backend',
     color: 'secondary',
-    filterable: true,
+    filterProfile: true,
+    filterProjects: true,
     disabled: false
   },
   testing: {
     id: uuidV4(),
     name: 'Testing',
     color: 'gray',
-    filterable: true,
+    filterProfile: true,
+    filterProjects: false,
     disabled: false
   },
   design: {
     id: uuidV4(),
     name: 'Design',
     color: 'warning',
-    filterable: true,
+    filterProfile: true,
+    filterProjects: false,
     disabled: false
   },
   management: {
     id: uuidV4(),
     name: 'Management',
     color: 'error',
-    filterable: true,
+    filterProfile: true,
+    filterProjects: false,
     disabled: false
   },
   // --------- NO FILTERABLE
@@ -41,13 +46,15 @@ const areas = {
     id: uuidV4(),
     name: 'FullStack',
     color: 'success',
-    filterable: false
+    filterProfile: false,
+    filterProjects: true
   },
   development: {
     id: uuidV4(),
     name: 'Development',
     color: 'gray',
-    filterable: false
+    filterProfile: false,
+    filterProjects: false
   }
 };
 
