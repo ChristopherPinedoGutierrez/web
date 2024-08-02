@@ -14,25 +14,24 @@ import { ToggleThemeSwitch } from './ToggleThemeSwitch';
 
 // eslint-disable-next-line react/prop-types
 export default function FixedBottomNavigation({ children }) {
-  const [value, setValue] = React.useState(0);
+  const location = useLocation();
   const theme = useTheme();
   const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
+
+  const [value, setValue] = React.useState(location.pathname);
 
   return (
     <>
       <CssBaseline />
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'space-between', backgroundColor: 'background.default', alignItems: 'center' }}>
-          {/* <Typography color={'grey.800'} variant="subtitle2">
-            {personalInfo.variable.shortName.toUpperCase()}
-          </Typography> */}
           <ToggleThemeSwitch />
           <Button size="small" variant="outlined" endIcon={<DownloadIcon />} onClick={() => handleDescargarCV(pdfFile)}>
             Descargar CV
           </Button>
         </Toolbar>
       </AppBar>
-      <Box sx={{ backgroundColor: background }}>{children}</Box>
+      <Box sx={{ backgroundColor: background, minHeight: '90vh' }}>{children}</Box>
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels
@@ -45,6 +44,7 @@ export default function FixedBottomNavigation({ children }) {
             <BottomNavigationAction
               key={i}
               label={item.label}
+              value={item.route}
               icon={item.icon}
               component={RouterLink}
               to={item.route}

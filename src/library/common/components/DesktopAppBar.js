@@ -34,24 +34,6 @@ function DesktopAppBar({ children }) {
         <Container maxWidth="xl">
           <Stack direction={'row'} sx={{ justifyContent: 'space-between' }}>
             <Stack spacing={5} direction={'row'} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-              {/* <Box
-                  sx={{
-                    borderRadius: 25,
-                    width: 100,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: 'grey.800'
-                  }}
-                >
-                  <SvgIcon sx={{ width: 24, height: 24, color: 'grey.200' }}>
-                    <BiCodeAlt />
-                  </SvgIcon>
-                  <Typography variant="subtitle2">CDPG</Typography>
-                </Box> */}
-              {/* <Typography color={'grey.800'} variant="subtitle2">
-                  {personalInfo.variable.shortName.toUpperCase()}
-                </Typography> */}
               {dashboardMainRoutes.map((item, i) => (
                 <Button
                   key={i}
@@ -81,7 +63,7 @@ function DesktopAppBar({ children }) {
         {/* <Toolbar sx={{ backgroundColor: 'background.default', padding: 0 }}>
         </Toolbar> */}
       </AppBar>
-      <Box sx={{ backgroundImage: background }}>{children}</Box>
+      <Box sx={{ backgroundImage: background, minHeight: '90vh' }}>{children}</Box>
     </Box>
   );
 }

@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import { DrawerListFilters } from './DrawerListFilters';
 
-const drawerWidth = 240;
+const drawerWidth = 280;
 
 function ClippedDrawerContained({ children, title, filters, handleFilters, handleToggleAllFilters }) {
   const theme = useTheme();
@@ -56,6 +56,7 @@ function ClippedDrawerContained({ children, title, filters, handleFilters, handl
           width: { xs: 1, md: drawerWidth },
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
+            overflow: 'hidden',
             width: { xs: 1, md: drawerWidth },
             boxSizing: 'border-box',
             position: 'static'

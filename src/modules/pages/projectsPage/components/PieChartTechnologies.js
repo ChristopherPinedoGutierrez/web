@@ -76,7 +76,7 @@ const PieChartTechnologies = ({ item }) => {
           dataKey="value"
           nameKey="name"
           labelLine={false}
-          label={<RenderCustomizedLabel />}
+          // label={<RenderCustomizedLabel />}
           // cy={isMobile ? '75%' : '50%'}
           // startAngle={isMobile ? 180 : 0}
           // endAngle={isMobile ? 0 : 360}

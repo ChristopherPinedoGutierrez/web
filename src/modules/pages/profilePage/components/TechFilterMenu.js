@@ -13,7 +13,9 @@ import {
   Paper,
   Stack,
   Switch,
-  Typography
+  Typography,
+  useMediaQuery,
+  useTheme
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
@@ -40,7 +42,7 @@ function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
         <ListItemText>Aprendiendo</ListItemText>
         <Switch edge="end" checked={checkedObj.aprendiendo} onChange={handleCheck('aprendiendo')} />
       </ListItem>
-      {/* <ListItem disabled={disablePendientes}>
+      <ListItem disabled={disablePendientes}>
         <ListItemIcon>
           <PendingIcon />
         </ListItemIcon>
@@ -51,15 +53,18 @@ function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
           checked={checkedObj.pendiente}
           onChange={handleCheck('pendiente')}
         />
-      </ListItem> */}
+      </ListItem>
     </List>
   );
 }
 
 function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendientes }) {
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
+
   const [openSections, setOpenSections] = useState({
-    area: true,
-    estado: true
+    area: matchesMD,
+    estado: matchesMD
   });
 
   const handleCollapseSections = (section) => {
