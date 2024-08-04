@@ -20,31 +20,8 @@ import { useEffect, useState } from 'react';
 
 function DrawerListFilters({ filters, handleFilters, handleToggleAllFilters }) {
   const [openSections, setOpenSections] = useState({});
-  const [initialRender, setInitialRender] = useState(true);
 
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
-
-  useEffect(() => {
-    // Inicializa todas las secciones como abiertas
-    const initialOpenSections = Object.keys(filters).reduce((acc, sectionKey) => {
-      acc[sectionKey] = matchesMD;
-      return acc;
-    }, {});
-    setOpenSections(initialOpenSections);
-  }, [filters, matchesMD]);
-
-  useEffect(() => {
-    // Después del primer renderizado, permitir animaciones normales
-    const timer = setTimeout(() => {
-      setInitialRender(false);
-    }, 0); // Usar 0 para la actualización después del primer renderizado
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    console.log(openSections);
-  }, [openSections]);
 
   const handleCollapseSections = (section) => {
     setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
@@ -61,13 +38,7 @@ function DrawerListFilters({ filters, handleFilters, handleToggleAllFilters }) {
               <ListItemText primary={sectionKey} />
               {openSections[sectionKey] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </ListItemButton>
-            <Collapse
-              in={openSections[sectionKey]}
-              sx={{
-                transition: initialRender ? 'none' : undefined,
-                height: openSections[sectionKey] ? 'auto' : 0
-              }}
-            >
+            <Collapse in={openSections[sectionKey]}>
               <List>
                 {/*  */}
                 <ListItem key={`${sectionKey}-all`} disablePadding>

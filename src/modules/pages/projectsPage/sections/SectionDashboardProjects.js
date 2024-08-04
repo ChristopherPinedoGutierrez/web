@@ -1,14 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { GridGroupProjects } from '../components/GridGroupProjects';
-import { projectLevels, projectsInfo } from '../../../../resources/data/projectsInfo';
+import { projectLevels, projectsInfo, projectStates } from '../../../../resources/data/projectsInfo';
 import { areas } from '../../../../resources/data/baseFiles/areas';
-import { technologies } from '../../../../resources/data/baseFiles/technologies';
 import { ClippedDrawerContained } from '../../../../library/common/components/ClippedDrawerContained';
 
 function SectionDashboardProjects() {
   const [filters, setFilters] = useState({
     Areas: {},
+    Estados: {},
     Niveles: {},
     Tecnologías: {}
   });
@@ -22,13 +21,18 @@ function SectionDashboardProjects() {
       return acc;
     }, {});
 
+    const stateFilters = Object.values(projectStates).reduce((acc, state) => {
+      acc[state.id] = { name: state.name, active: true };
+      return acc;
+    }, {});
+
     const levelFilters = Object.values(projectLevels).reduce((acc, level) => {
       acc[level.id] = { name: level.name, active: true };
       return acc;
     }, {});
 
     const techFilters = projectsInfo.reduce((acc, project) => {
-      project.technologies.forEach((tech) => {
+      project.content.technologies.forEach((tech) => {
         if (!acc[tech.id]) {
           acc[tech.id] = { name: tech.name, active: true };
         }
@@ -36,18 +40,19 @@ function SectionDashboardProjects() {
       return acc;
     }, {});
 
-    setFilters({ Areas: areasFilters, Niveles: levelFilters, Tecnologías: techFilters });
+    setFilters({ Areas: areasFilters, Estados: stateFilters, Niveles: levelFilters, Tecnologías: techFilters });
   }, []);
 
   useEffect(() => {
     // console.log(filters);
     const filterProjects = () => {
       return projectsInfo.filter((project) => {
-        const areaMatch = filters.Areas[project.area.id]?.active;
-        const levelMatch = filters.Niveles[project.level.id]?.active;
-        const techMatch = project.technologies.every((tech) => filters.Tecnologías[tech.id]?.active);
+        const areaMatch = filters.Areas[project.config.area.id]?.active;
+        const stateMatch = filters.Estados[project.config.status.id]?.active;
+        const levelMatch = filters.Niveles[project.config.level.id]?.active;
+        const techMatch = project.content.technologies.some((tech) => filters.Tecnologías[tech.id]?.active);
 
-        return areaMatch && levelMatch && techMatch;
+        return areaMatch && stateMatch && levelMatch && techMatch;
       });
     };
     setFilteredProjects(filterProjects());

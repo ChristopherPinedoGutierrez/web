@@ -1,35 +1,118 @@
-const aptitudes = {
-  management: {
-    gestionProyectos: { name: 'Gestión de proyectos' },
-    gestionAdministrativa: { name: 'Gestión administrativa' },
-    rhSoporte: { name: 'Soporte de Recursos Humanos' },
-    gestionEquiposGrandes: { name: 'Gestion de equipos de mas de 100 personas' },
-    gestionEquiposMedianos: { name: 'Gestion de equipos de mas de 50 personas' },
-    gestionEquiposPequeños: { name: 'Gestion de equipos de mas de 10 personas' }
+import { v4 as uuidV4 } from 'uuid';
+
+const types = {
+  mgt: {
+    name: 'Management',
+    value: 10
   },
-  development: {
-    progFuncional: { name: 'Programación funcional' },
-    progPOO: { name: 'Programación orientada a objetos' },
-    progEventos: { name: 'Programación orientada a eventos' },
-    patronesDiseño: { name: 'Implementación de patrones de diseño' }
+  dev: {
+    name: 'Development',
+    value: 10
   },
-  design: {
-    wireframes: { name: 'Diseño de Wireframes' },
-    mockups: { name: 'Diseño de MockUps' }
+  des: {
+    name: 'Design',
+    value: 10
   },
-  softSkills: {
-    liderazgo: { name: 'Liderazgo' },
-    adaptabilidad: { name: 'Adaptabilidad' },
-    pensaCritico: { name: 'Pensamiento Crítico' },
-    pensaCreativo: { name: 'Pensamiento Creativo' },
-    etica: { name: 'Etica laboral' },
-    resProblemas: { name: 'Resolución de Problemas' },
-    resConflictos: { name: 'Resolución de Conflictos' },
-    trabajoEquipo: { name: 'Trabajo en Equipo' },
-    comunicacion: { name: 'Comunicación' },
-    gestionTiempo: { name: 'Gestión de tiempo' },
-    proactividad: { name: 'Proactividad' }
+  hr: {
+    name: 'Human Resources',
+    value: 10
+  },
+  fi: {
+    name: 'Finance',
+    value: 10
+  },
+  wh: {
+    name: 'Warehouse',
+    value: 10
   }
 };
 
-export { aptitudes };
+const aptitudes = {
+  mgtProj: {
+    id: uuidV4(),
+    name: 'Gestión de proyectos',
+    type: types.mgt
+  },
+  mgtProd: {
+    id: uuidV4(),
+    name: 'Gestión de producto',
+    type: types.mgt
+  },
+  mgtAdms: {
+    id: uuidV4(),
+    name: 'Gestión de Administrativa',
+    type: types.mgt
+  },
+  mgtDocs: {
+    id: uuidV4(),
+    name: 'Gestión de documentos',
+    type: types.mgt
+  },
+  mgtTeam: {
+    id: uuidV4(),
+    name: 'Gestión de equipos',
+    type: types.mgt
+  },
+  devFunc: {
+    id: uuidV4(),
+    name: 'Metodología Funcional',
+    type: types.dev
+  },
+  devOop: {
+    id: uuidV4(),
+    name: 'Metodología Orientada a Objetos',
+    type: types.dev
+  },
+  devEvent: {
+    id: uuidV4(),
+    name: 'Metodología Orientada a Eventos',
+    type: types.dev
+  },
+  desGraph: {
+    id: uuidV4(),
+    name: 'Diseño gráfico',
+    type: types.des
+  },
+  desUI: {
+    id: uuidV4(),
+    name: 'Diseño UI',
+    type: types.des
+  },
+  desUX: {
+    id: uuidV4(),
+    name: 'Diseño UX',
+    type: types.des
+  },
+  hrSche: {
+    id: uuidV4(),
+    name: 'Control de horarios',
+    type: types.hr
+  },
+  hrAtten: {
+    id: uuidV4(),
+    name: 'Control de asistencia',
+    type: types.hr
+  },
+  fiPayroll: {
+    id: uuidV4(),
+    name: 'Control de Nómina salarial',
+    type: types.fi
+  },
+  fiBonus: {
+    id: uuidV4(),
+    name: 'Control de Bonificaciones',
+    type: types.fi
+  },
+  whMgt: {
+    id: uuidV4(),
+    name: 'Administración de almacén',
+    type: types.wh
+  },
+  whInv: {
+    id: uuidV4(),
+    name: 'Control de inventario',
+    type: types.wh
+  }
+};
+
+export { aptitudes, types };

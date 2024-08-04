@@ -9,7 +9,7 @@ function SectionKnowledge() {
   const [currentArea, setCurrentArea] = useState('Frontend');
   const [checked, setChecked] = useState({
     conocida: true,
-    aprendiendo: true,
+    aprendiendo: false,
     pendiente: false
   });
   const handleCheck = (key) => (event) => {

@@ -59,12 +59,9 @@ function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
 }
 
 function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendientes }) {
-  const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
-
   const [openSections, setOpenSections] = useState({
-    area: matchesMD,
-    estado: matchesMD
+    area: false,
+    estado: false
   });
 
   const handleCollapseSections = (section) => {

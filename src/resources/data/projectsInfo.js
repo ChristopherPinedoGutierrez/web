@@ -4,12 +4,6 @@ import { areas } from './baseFiles/areas';
 import frontendProjectsImage from '../images/frontendProjectsV1.JPG';
 import { v4 as uuidV4 } from 'uuid';
 
-const areaFront = areas.frontend;
-const areaBack = areas.backend;
-const areaFull = areas.fullstack;
-const areaDes = areas.design;
-const areaMgt = areas.management;
-
 const projectLevels = {
   1: { id: uuidV4(), name: 'Newbie', rating: 1 },
   2: { id: uuidV4(), name: 'Junior', rating: 2 },
@@ -18,62 +12,88 @@ const projectLevels = {
   5: { id: uuidV4(), name: 'Guru', rating: 5 }
 };
 
-const projectStatuses = {
+const projectStates = {
   dev: {
+    id: uuidV4(),
     name: 'Desarrollo',
-    color: 'error'
+    keyName: 'DEV',
+    color: 'secondary'
   },
   prod: {
+    id: uuidV4(),
     name: 'Producción',
+    keyName: 'PROD',
     color: 'success'
+  },
+  test: {
+    id: uuidV4(),
+    name: 'Testeo',
+    keyName: 'TEST',
+    color: 'warning'
+  }
+};
+
+const projectSources = {
+  fm: {
+    name: 'Frontend Mentor'
   }
 };
 
 const projectsInfo = [
   {
-    area: areaFront,
-    image: frontendProjectsImage,
-    name: 'Entry level frontend projects',
-    goal: '',
-    description: 'Compendio de proyectos frontend de baja dificultad.',
-    status: projectStatuses.dev,
-    level: projectLevels[2],
-    source: 'Frontend Mentor',
-    repository: 'https://github.com/ChristopherPinedo/frontendProjects/',
-    url: 'https://christopherpinedo.github.io/frontendProjects/',
-    technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter]
+    id: uuidV4(),
+    config: {
+      image: frontendProjectsImage,
+      area: areas.frontend,
+      level: projectLevels[2],
+      status: projectStates.prod,
+      source: 'Frontend Mentor',
+      repository: 'https://github.com/ChristopherPinedo/frontendProjects/',
+      url: 'https://christopherpinedo.github.io/frontendProjects/'
+    },
+    content: {
+      name: 'Entry level frontend projects',
+      description: 'Compendio de proyectos frontend.',
+      technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter]
+    }
   },
   {
-    area: areaFront,
-    image:
-      'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1598711974%2FChallenges%2Fzfgce1seaqfllpuktpai.jpg&w=384&q=75',
-    name: 'IP Address tracker',
-    goal: '',
-    description: "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app.",
-    status: projectStatuses.dev,
-    level: projectLevels[1],
-    source: 'Frontend Mentor',
-    repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
-    url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/',
-    technologies: [tech.js, tech.react, tech.tailwind]
+    id: uuidV4(),
+    config: {
+      image:
+        'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1598711974%2FChallenges%2Fzfgce1seaqfllpuktpai.jpg&w=384&q=75',
+      area: areas.frontend,
+      level: projectLevels[1],
+      status: projectStates.prod,
+      source: 'Frontend Mentor',
+      repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
+      url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/'
+    },
+    content: {
+      name: 'IP Address tracker',
+      description:
+        "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app.",
+      technologies: [tech.js, tech.react, tech.tailwind]
+    }
   },
   {
-    area: areaFront,
-    image:
-      'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1554826345%2FChallenges%2Fyhq5ihanseyinzwblaw1.jpg&w=384&q=75',
-    name: 'REST Countries web app',
-    goal: '',
-    description:
-      "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
-    status: projectStatuses.dev,
-    level: projectLevels[2],
-    source: 'Frontend Mentor',
-    repository: '',
-    url: '',
-    // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
-    // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
-    technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
+    id: uuidV4(),
+    config: {
+      // image: 'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1554826345%2FChallenges%2Fyhq5ihanseyinzwblaw1.jpg&w=384&q=75',
+      area: areas.frontend,
+      level: projectLevels[2],
+      status: projectStates.dev,
+      source: projectSources.fm
+      // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
+      // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
+    },
+    content: {
+      name: 'REST Countries web app',
+      description:
+        "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
+      technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
+    }
   }
 ];
 
-export { projectsInfo, projectLevels };
+export { projectsInfo, projectLevels, projectStates };
