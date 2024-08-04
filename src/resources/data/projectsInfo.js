@@ -36,6 +36,9 @@ const projectStates = {
 const projectSources = {
   fm: {
     name: 'Frontend Mentor'
+  },
+  myself: {
+    name: 'Autónomo'
   }
 };
 
@@ -53,7 +56,7 @@ const projectsInfo = [
     },
     content: {
       name: 'Entry level frontend projects',
-      description: 'Compendio de proyectos frontend.',
+      description: 'Dashboard organizador de proyectos frontend de entrada.',
       technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter]
     }
   },
@@ -71,8 +74,7 @@ const projectsInfo = [
     },
     content: {
       name: 'IP Address tracker',
-      description:
-        "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app.",
+      description: 'Desafio de Frontend Mentor en el que se solicita una IP para obtener información sobre ella.',
       technologies: [tech.js, tech.react, tech.tailwind]
     }
   },
@@ -89,9 +91,25 @@ const projectsInfo = [
     },
     content: {
       name: 'REST Countries web app',
-      description:
-        "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
+      description: 'Desafio de Frontend Mentor en el que se muestra información sobre paises.',
       technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
+    }
+  },
+  {
+    id: uuidV4(),
+    config: {
+      image: '',
+      area: areas.fullstack,
+      level: projectLevels[3],
+      status: projectStates.dev,
+      source: projectSources.myself,
+      repository: '',
+      url: ''
+    },
+    content: {
+      name: 'Aplicación de control de gastos',
+      description: 'Aplicación de gestión y control de egresos e ingresos usando los servicios de firebase en Next.js.',
+      technologies: [tech.ts, tech.react, tech.tailwind, tech.firebase, tech.next, tech.nextUi]
     }
   }
 ];
