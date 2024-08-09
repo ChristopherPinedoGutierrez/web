@@ -109,7 +109,7 @@ const projectsInfo = [
     content: {
       name: 'Aplicación de control de gastos',
       description: 'Aplicación de gestión y control de egresos e ingresos usando los servicios de firebase en Next.js.',
-      technologies: [tech.ts, tech.react, tech.tailwind, tech.firebase, tech.next, tech.nextUi]
+      technologies: [tech.ts, tech.react, tech.tailwind, tech.firebase, tech.next, tech.nextUi, tech.redux]
     }
   }
 ];

@@ -8,13 +8,13 @@ const workExperienceInfo = [
     role: 'Desarrollador fullstack - Freelance',
     period: {
       startDate: 'Abr/2024',
-      endDate: '-',
+      endDate: 'Actualidad',
       duration: '-',
       state: 'En curso'
     },
-    jobFunctions: 'Desarrollo de aplicaciones web usando PAAS(Firebase) en el backend y React en el frontend.',
-    softSkills: [ss.ssAdapt, ss.ssCreaThink, ss.ssResProb, ss.ssResil],
-    aptitudes: [ap.mgtProj, ap.devFunc, ap.devOop, ap.desUX],
+    jobFunctions: 'Desarrollo y mantenimiento de módulos y aplicaciones web usando servicios web.',
+    softSkills: [ss.ssAdapt, ss.ssCreaThink, ss.ssCritThink, ss.ssResProb, ss.ssResil],
+    aptitudes: [ap.mgtProj, ap.desUX, ap.devFunc, ap.devOop],
     aptitudesCount: 20
   },
   {

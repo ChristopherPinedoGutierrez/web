@@ -40,7 +40,7 @@ const aptitudes = {
   },
   mgtAdms: {
     id: uuidV4(),
-    name: 'Gestión de Administrativa',
+    name: 'Gestión de administrativa',
     type: types.mgt
   },
   mgtDocs: {
@@ -55,17 +55,17 @@ const aptitudes = {
   },
   devFunc: {
     id: uuidV4(),
-    name: 'Metodología Funcional',
+    name: 'Metodología funcional',
     type: types.dev
   },
   devOop: {
     id: uuidV4(),
-    name: 'Metodología Orientada a Objetos',
+    name: 'Metodología orientada a objetos',
     type: types.dev
   },
   devEvent: {
     id: uuidV4(),
-    name: 'Metodología Orientada a Eventos',
+    name: 'Metodología orientada a eventos',
     type: types.dev
   },
   desGraph: {
@@ -95,12 +95,12 @@ const aptitudes = {
   },
   fiPayroll: {
     id: uuidV4(),
-    name: 'Control de Nómina salarial',
+    name: 'Control de nómina salarial',
     type: types.fi
   },
   fiBonus: {
     id: uuidV4(),
-    name: 'Control de Bonificaciones',
+    name: 'Control de bonificaciones',
     type: types.fi
   },
   whMgt: {

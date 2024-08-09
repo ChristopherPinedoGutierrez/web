@@ -20,12 +20,12 @@ const softSkills = {
   },
   ssCritThink: {
     id: uuidV4(),
-    name: 'Pensamiento Crítico',
+    name: 'Pensamiento crítico',
     type: types.ss
   },
   ssCreaThink: {
     id: uuidV4(),
-    name: 'Pensamiento Creativo',
+    name: 'Pensamiento creativo',
     type: types.ss
   },
   ssEthi: {
@@ -35,22 +35,22 @@ const softSkills = {
   },
   ssResProb: {
     id: uuidV4(),
-    name: 'Resolución de Problemas',
+    name: 'Resolución de problemas',
     type: types.ss
   },
   ssResConf: {
     id: uuidV4(),
-    name: 'Resolución de Conflictos',
+    name: 'Resolución de conflictos',
     type: types.ss
   },
   ssTeamW: {
     id: uuidV4(),
-    name: 'Trabajo en Equipo',
+    name: 'Trabajo en equipo',
     type: types.ss
   },
   ssCommu: {
     id: uuidV4(),
-    name: 'Comunicación Asertiva',
+    name: 'Comunicación asertiva',
     type: types.ss
   },
   ssProac: {
