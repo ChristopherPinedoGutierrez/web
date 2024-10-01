@@ -1,13 +1,16 @@
+/* eslint-disable no-unused-vars */
 import {
   Box,
   Card,
   CardActions,
   CardContent,
+  CardMedia,
   Grid,
   IconButton,
   Paper,
   Stack,
   Typography,
+  useMediaQuery,
   useTheme
 } from '@mui/material';
 import Image from 'mui-image';
@@ -15,49 +18,94 @@ import { CardItemText } from '../components/CardItemText';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
 import { personalInfo } from '../../../../resources/data/personalInfo';
-import profileFace1 from '../../../../resources/images/ProfileFace1.jpg';
+import profileFace169 from '../../../../resources/images/ProfilePic-16-9.jpg';
+import profileFace43 from '../../../../resources/images/ProfilePic-4-3.jpg';
+import profileFace11 from '../../../../resources/images/ProfilePic-1-1.jpg';
 import ReactWhatsapp from 'react-whatsapp';
 
 function SectionIntro() {
   const theme = useTheme();
   const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
+  const matchesUpXS = useMediaQuery(theme.breakpoints.up('xs'));
+  const matchesDownSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchesUpSM = useMediaQuery(theme.breakpoints.up('sm'));
+  const matchesDownMD = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesUpMD = useMediaQuery(theme.breakpoints.up('md'));
+  const matchesDownLG = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesUpLG = useMediaQuery(theme.breakpoints.up('lg'));
+  const matchesDownXL = useMediaQuery(theme.breakpoints.down('xl'));
+  const matchesUpXL = useMediaQuery(theme.breakpoints.up('xl'));
 
   return (
-    <Paper sx={{ borderRadius: 2, py: { xs: 4, md: 8 }, px: { xs: 2, md: 0 } }} elevation={1}>
-      <Grid container spacing={2}>
+    <Paper sx={{ borderRadius: 2, pt: 4 }} elevation={1}>
+      <Grid container px={4} pb={4} spacing={4}>
         {/* Sección: Presentación */}
-        <Grid item xs={12} md={6}>
-          <Stack spacing={2} sx={{ maxWidth: 500, margin: 'auto' }}>
-            <Stack direction="column" justifyContent="center" alignItems="center" width={'inherit'}>
-              <Typography align="center" variant="h4">
-                {personalInfo.variable.shortName}
-              </Typography>
-              <Typography variant="h5">{personalInfo.variable.mainRole}</Typography>
-            </Stack>
-            <Box sx={{ display: 'flex', justifyContent: 'center', width: 'inherit' }}>
-              <Image src={profileFace1} height="120px" width="120px" sx={{ borderRadius: 25 }} duration={0} />
-            </Box>
-            <Stack sx={{ textAlign: 'center' }}>
-              <Typography variant="body1">{personalInfo.variable.presentationMessage1}</Typography>
-              <Typography variant="body1">{personalInfo.variable.presentationMessage2}</Typography>
-            </Stack>
-          </Stack>
+        <Grid item xs={12} md={6} lg={7}>
+          <Card
+            sx={{
+              height: 1,
+              display: 'flex',
+              borderRadius: 2,
+              flexDirection: { xs: 'column', sm: 'row', md: 'column', lg: 'row' }
+            }}
+            elevation={0}
+          >
+            {matchesUpSM && matchesDownMD && (
+              <CardMedia component="img" sx={{ width: '150px' }} image={profileFace169} alt="Profile image" />
+            )}
+            {matchesUpLG && matchesDownXL && (
+              <CardMedia component="img" sx={{ width: '200px' }} image={profileFace169} alt="Profile image" />
+            )}
+            {matchesUpXL && (
+              <CardMedia component="img" sx={{ width: '300px' }} image={profileFace43} alt="Profile image" />
+            )}
+            <CardContent>
+              <Stack
+                spacing={{ xs: 2, md: 3, lg: 4 }}
+                sx={{
+                  alignItems: { xs: 'center', sm: 'flex-start', md: 'center', lg: 'flex-start' },
+                  textAlign: { xs: 'center', sm: 'left', md: 'center', lg: 'left' }
+                }}
+              >
+                <Stack direction="column" spacing={{ lg: 1 }}>
+                  <Typography variant="h4">{personalInfo.variable.shortName}</Typography>
+                  <Typography variant="subtitle1">
+                    {String(personalInfo.variable.mainRole).toLocaleUpperCase()}
+                  </Typography>
+                </Stack>
+                {matchesUpXS && matchesDownSM && (
+                  <Image src={profileFace11} height="120px" width="120px" sx={{ borderRadius: 25 }} duration={0} />
+                )}
+                {matchesUpMD && matchesDownLG && (
+                  <Image src={profileFace11} height="180px" width="180px" sx={{ borderRadius: 25 }} duration={0} />
+                )}
+
+                <Stack spacing={{ xs: 0.5, lg: 1 }} sx={{ color: 'grey.600' }}>
+                  <Typography variant="subtitle2">{personalInfo.variable.presentationMessage1}</Typography>
+                  <Typography variant="subtitle2">{personalInfo.variable.presentationMessage2}</Typography>
+                  <Typography variant="subtitle2">{personalInfo.variable.presentationMessage3}</Typography>
+                </Stack>
+              </Stack>
+            </CardContent>
+          </Card>
         </Grid>
         {/* Sección: Información personal */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} lg={5}>
           <Card
             elevation={0}
             sx={{
+              height: 1,
               backgroundImage: background,
-              maxWidth: 500,
-              margin: 'auto',
               borderRadius: 2,
-              pt: 2
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
             }}
           >
             <CardContent sx={{ pl: { md: 4 } }}>
-              <Stack spacing={4}>
+              <Stack spacing={{ xs: 2, md: 3, lg: 4 }}>
                 <Typography align="center" variant="h5">
                   Datos personales
                 </Typography>

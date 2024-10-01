@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Container, Grid, useMediaQuery, useTheme } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import React from 'react';
 
 function BasePageLayout({ children }) {
-  const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.only('xs'));
   return (
-    <Container maxWidth="xl">
-      <Grid container spacing={8} mt={8} pb={12} {...(matchesXS && { sx: { mt: 2, pb: 8 } })}>
+    <Container maxWidth="xxl">
+      <Grid container spacing={4} mt={8} pb={12}>
         {children}
       </Grid>
     </Container>

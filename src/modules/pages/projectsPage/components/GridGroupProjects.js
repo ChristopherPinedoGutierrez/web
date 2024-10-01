@@ -25,7 +25,7 @@ import projectUnderConstructionImg from '../../../../resources/images/underConst
 
 function ProjectCard({ item }) {
   return (
-    <Grid item xs={12} lg={6} xl={4}>
+    <Grid item xs={12} lg={6} xxl={4}>
       <Card
         sx={{
           height: 1,

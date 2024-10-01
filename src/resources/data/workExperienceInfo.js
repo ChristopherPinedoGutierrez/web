@@ -5,7 +5,7 @@ import { softSkills as ss } from './baseFiles/softSkills';
 const workExperienceInfo = [
   {
     company: 'Autonomo',
-    role: 'Desarrollador fullstack - Freelance',
+    role: 'Desarrollador frontend - Freelance',
     period: {
       startDate: 'Abr/2024',
       endDate: 'Actualidad',

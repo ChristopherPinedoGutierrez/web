@@ -15,7 +15,6 @@ import {
   useMediaQuery,
   useTheme
 } from '@mui/material';
-import profileFace1 from '../../../resources/images/ProfileFace1.jpg';
 import Image from 'mui-image';
 import { personalInfo } from '../../../resources/data/personalInfo';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
