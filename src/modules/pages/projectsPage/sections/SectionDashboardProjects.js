@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { GridGroupProjects } from '../components/GridGroupProjects';
 import { projectLevels, projectsInfo, projectStates } from '../../../../resources/data/projectsInfo';
 import { areas } from '../../../../resources/data/baseFiles/areas';
 import { ClippedDrawerContained } from '../../../../library/common/components/ClippedDrawerContained';
 
-function SectionDashboardProjects() {
+function SectionDashboardProjects({ selectedId }) {
   const [filters, setFilters] = useState({
     Areas: {},
     Estados: {},
@@ -32,9 +33,10 @@ function SectionDashboardProjects() {
     }, {});
 
     const techFilters = projectsInfo.reduce((acc, project) => {
+      const cleanSelectedId = selectedId.replace(/^:/, '');
       project.content.technologies.forEach((tech) => {
         if (!acc[tech.id]) {
-          acc[tech.id] = { name: tech.name, active: true };
+          acc[tech.id] = { name: tech.name, active: selectedId !== ':id' ? tech.id === cleanSelectedId : true };
         }
       });
       return acc;

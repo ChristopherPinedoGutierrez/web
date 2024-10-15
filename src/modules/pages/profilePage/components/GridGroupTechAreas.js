@@ -15,25 +15,21 @@ import {
   useTheme
 } from '@mui/material';
 import DatasetLinkedIcon from '@mui/icons-material/DatasetLinked';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { projectsInfo } from '../../../../resources/data/projectsInfo';
 import { Link as RouterLink } from 'react-router-dom';
 
 function GridTechAreas({ element, hasProjects }) {
-  useEffect(() => {
-    console.log(element);
-  }, [element]);
-
   return (
     <Grid item key={element.id} xs={6} sm={4} lg={3}>
       <Card sx={{ height: 1, borderRadius: 2 }}>
         <Stack spacing={2} alignItems={'center'} sx={{ p: 2, pt: 3, position: 'relative' }}>
           <Tooltip title="View related projects" placement="top">
             <IconButton
-              disabled={element.hasProjects}
+              disabled={!element.hasProjects}
               sx={{ position: 'absolute', top: 8, right: 8 }}
               component={RouterLink}
-              to={`/projects/:${element.name}`}
+              to={`/projects/:${element.id}`}
             >
               <DatasetLinkedIcon />
             </IconButton>
@@ -63,14 +59,22 @@ function GridTechAreas({ element, hasProjects }) {
 }
 
 function GridGroupTechAreas({ area, technologies, checkedObj }) {
+  const [filteredTechs, setFilteredTechs] = useState({});
+
   useEffect(() => {
-    // Agrega la propiedad `hasProjects` a cada tecnología
-    Object.values(technologies).forEach((tech) => {
-      tech.hasProjects = projectsInfo.some((project) =>
-        project.content.technologies.some((projectTech) => projectTech.name === tech.name)
-      );
+    const techlist = {};
+    Object.entries(technologies).forEach(([key, value]) => {
+      techlist[key] = {
+        ...value,
+        hasProjects: projectsInfo.some((project) =>
+          project.content.technologies.some((projectTech) => projectTech.name === value.name)
+        )
+      };
     });
+    setFilteredTechs(techlist);
   }, [projectsInfo, technologies]);
+
+  // useEffect(() => console.log(filteredTechs), [filteredTechs]);
 
   return (
     <>
@@ -103,8 +107,8 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
         </Card>
         <Grid container spacing={{ xs: 2, md: 4 }}>
           {area === 'All'
-            ? Object.values(technologies).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
-            : Object.values(technologies)
+            ? Object.values(filteredTechs).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
+            : Object.values(filteredTechs)
                 .filter((e) => e.area === area)
                 .map((ele) => <GridTechAreas key={ele.id} element={ele} />)}
         </Grid>
