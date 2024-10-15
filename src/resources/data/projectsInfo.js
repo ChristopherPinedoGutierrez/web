@@ -9,28 +9,28 @@ const projectLevels = {
   2: { id: uuidV4(), name: 'Junior', rating: 2 },
   3: { id: uuidV4(), name: 'Intermediate', rating: 3 },
   4: { id: uuidV4(), name: 'Advanced', rating: 4 },
-  5: { id: uuidV4(), name: 'Guru', rating: 5 }
+  5: { id: uuidV4(), name: 'Expert', rating: 5 }
 };
 
 const projectStates = {
   dev: {
     id: uuidV4(),
     name: 'Desarrollo',
-    keyName: 'DEV',
+    keyName: 'Development',
     color: 'secondary'
   },
   prod: {
     id: uuidV4(),
     name: 'Producción',
-    keyName: 'PROD',
+    keyName: 'Production',
     color: 'success'
-  },
-  test: {
-    id: uuidV4(),
-    name: 'Testeo',
-    keyName: 'TEST',
-    color: 'warning'
   }
+  // test: {
+  //   id: uuidV4(),
+  //   name: 'Testeo',
+  //   keyName: 'TEST',
+  //   color: 'warning'
+  // }
 };
 
 const projectSources = {

@@ -39,7 +39,11 @@ function ProjectCard({ item }) {
         <CardContent>
           <Stack spacing={2}>
             <Stack direction={'row'} justifyContent={'space-between'}>
-              <Stack direction={'row'} spacing={{ xs: 1, lg: 2 }}>
+              <Stack
+                direction={'row'}
+                spacing={{ xs: 0.5, xl: 1 }}
+                divider={<Divider orientation="vertical" flexItem />}
+              >
                 <Chip label={item.config.area.name} color={item.config.area.color} size="small" />
                 <Chip label={item.config.status.keyName} color={item.config.status.color} size="small" />
               </Stack>

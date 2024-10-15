@@ -35,7 +35,7 @@ function SectionKnowledge() {
         />
       </Grid>
       <Grid item xs={12} md={8} lg={9}>
-        <GridGroupTechAreas area={currentArea} technologies={filteredTechnologies} />
+        <GridGroupTechAreas area={currentArea} technologies={filteredTechnologies} checkedObj={checked} />
       </Grid>
     </Grid>
   );

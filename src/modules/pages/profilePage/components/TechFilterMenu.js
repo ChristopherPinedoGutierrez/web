@@ -24,39 +24,40 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ListRadioButtonsGroupTechAreas } from './ListRadioButtonsGroupTechAreas';
 import { useState } from 'react';
+import { ListSwitchGroupTech } from './ListSwitchGroupTech';
 
-function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
-  return (
-    <List sx={{ backgroundColor: 'background.paper' }}>
-      <ListItem>
-        <ListItemIcon>
-          <SchoolIcon />
-        </ListItemIcon>
-        <ListItemText>Conocidas</ListItemText>
-        <Switch edge="end" checked={checkedObj.conocida} onChange={handleCheck('conocida')} />
-      </ListItem>
-      <ListItem>
-        <ListItemIcon>
-          <LocalLibraryIcon />
-        </ListItemIcon>
-        <ListItemText>Aprendiendo</ListItemText>
-        <Switch edge="end" checked={checkedObj.aprendiendo} onChange={handleCheck('aprendiendo')} />
-      </ListItem>
-      <ListItem disabled={disablePendientes}>
-        <ListItemIcon>
-          <PendingIcon />
-        </ListItemIcon>
-        <ListItemText>Pendientes</ListItemText>
-        <Switch
-          disabled={disablePendientes}
-          edge="end"
-          checked={checkedObj.pendiente}
-          onChange={handleCheck('pendiente')}
-        />
-      </ListItem>
-    </List>
-  );
-}
+// function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
+//   return (
+//     <List sx={{ backgroundColor: 'background.paper' }}>
+//       <ListItem>
+//         <ListItemIcon>
+//           <SchoolIcon />
+//         </ListItemIcon>
+//         <ListItemText>Conocidas</ListItemText>
+//         <Switch edge="end" checked={checkedObj.conocida} onChange={handleCheck('conocida')} />
+//       </ListItem>
+//       <ListItem>
+//         <ListItemIcon>
+//           <LocalLibraryIcon />
+//         </ListItemIcon>
+//         <ListItemText>Aprendiendo</ListItemText>
+//         <Switch edge="end" checked={checkedObj.aprendiendo} onChange={handleCheck('aprendiendo')} />
+//       </ListItem>
+//       <ListItem disabled={disablePendientes}>
+//         <ListItemIcon>
+//           <PendingIcon />
+//         </ListItemIcon>
+//         <ListItemText>Pendientes</ListItemText>
+//         <Switch
+//           disabled={disablePendientes}
+//           edge="end"
+//           checked={checkedObj.pendiente}
+//           onChange={handleCheck('pendiente')}
+//         />
+//       </ListItem>
+//     </List>
+//   );
+// }
 
 function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendientes }) {
   const [openSections, setOpenSections] = useState({

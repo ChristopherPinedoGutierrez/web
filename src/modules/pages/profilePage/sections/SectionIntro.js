@@ -66,7 +66,8 @@ function SectionIntro() {
                 spacing={{ xs: 2, md: 3, lg: 4 }}
                 sx={{
                   alignItems: { xs: 'center', sm: 'flex-start', md: 'center', lg: 'flex-start' },
-                  textAlign: { xs: 'center', sm: 'left', md: 'center', lg: 'left' }
+                  textAlign: { xs: 'center', sm: 'left', md: 'center', lg: 'left' },
+                  pl: { xs: 0, sm: 1, md: 0, lg: 1 }
                 }}
               >
                 <Stack direction="column" spacing={{ lg: 1 }}>

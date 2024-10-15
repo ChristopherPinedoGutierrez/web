@@ -20,12 +20,6 @@ const dashboardMainRoutes = [
     label: 'Proyectos',
     icon: <BackupTableIcon />
   },
-  // {
-  //   route: '/curriculum',
-  //   component: <CurriculumPage />,
-  //   label: 'Curriculum',
-  //   icon: <ArticleIcon />
-  // },
   {
     route: '/work-experience',
     component: <WorkExperiencePage />,
