@@ -47,7 +47,11 @@ import {
   SiStorybook,
   SiPlaywright,
   SiNextui,
-  SiNextdotjs
+  SiNextdotjs,
+  SiCsharp,
+  SiDotnet,
+  SiBlazor,
+  SiStrapi
   // SiExpo
 } from 'react-icons/si';
 
@@ -86,7 +90,8 @@ const types = {
     types: {
       frwJs: 'JS framework',
       frwNode: 'Node framework',
-      frwReact: 'React framework'
+      frwReact: 'React framework',
+      frwCSharp: 'C# framework'
     }
   },
   rtm: {
@@ -310,6 +315,20 @@ const technologies = {
     ecosystem: ['javascript'],
     state: 'conocida'
   },
+  blazor: {
+    id: uuidV4(),
+    name: 'Blazor',
+    area: areas.frontend.name,
+    group: types.frw.name,
+    type: types.frw,
+    typeDef: types.frw.types.frwCSharp,
+    icon: <SiBlazor />,
+    color: '#592c8c',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#592c8c',
+    ecosystem: ['javascript'],
+    state: 'pendiente'
+  },
   node: {
     id: uuidV4(),
     name: 'Node.js',
@@ -338,7 +357,6 @@ const technologies = {
     ecosystem: ['Database'],
     state: 'conocida'
   },
-
   sqlServer: {
     id: uuidV4(),
     name: 'SQL Server',
@@ -351,7 +369,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#ef372e',
     ecosystem: ['Database'],
-    state: 'conocida'
+    state: 'aprendiendo'
   },
   mySql: {
     id: uuidV4(),
@@ -365,7 +383,49 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#e48e00',
     ecosystem: ['Database'],
-    state: 'conocida'
+    state: 'pendiente'
+  },
+  cSharp: {
+    id: uuidV4(),
+    name: 'C#',
+    area: areas.backend.name,
+    group: types.lang.name,
+    type: types.lang,
+    typeDef: types.lang.types.langQuery,
+    icon: <SiCsharp />,
+    color: '#9078e3',
+    colorLayer1: '#9078e3',
+    colorLayer2: 'grey.200',
+    ecosystem: ['Language'],
+    state: 'aprendiendo'
+  },
+  dotNet: {
+    id: uuidV4(),
+    name: '.NET',
+    area: areas.backend.name,
+    group: types.frw.name,
+    type: types.frw,
+    typeDef: types.frw.types.frwCSharp,
+    icon: <SiDotnet />,
+    color: '#5632d5',
+    colorLayer1: '#5632d5',
+    colorLayer2: 'grey.200',
+    ecosystem: ['Language'],
+    state: 'pendiente'
+  },
+  strapi: {
+    id: uuidV4(),
+    name: 'Strapi',
+    area: areas.backend.name,
+    group: types.frw.name,
+    type: types.frw,
+    typeDef: types.frw.types.frwJs,
+    icon: <SiStrapi />,
+    color: '#5632d5',
+    colorLayer1: 'grey.200',
+    colorLayer2: '#4f4bfe',
+    ecosystem: ['Framework'],
+    state: 'pendiente'
   },
   postgreSql: {
     id: uuidV4(),
@@ -379,7 +439,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#396c94',
     ecosystem: ['Database'],
-    state: 'aprendiendo'
+    state: 'pendiente'
   },
   reactNative: {
     id: uuidV4(),
@@ -435,7 +495,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: '#47cf93',
     ecosystem: ['javascript'],
-    state: 'aprendiendo'
+    state: 'pendiente'
   },
   jest: {
     id: uuidV4(),
@@ -617,7 +677,7 @@ const technologies = {
     colorLayer1: '#dc594f',
     colorLayer2: '#2EAD33',
     ecosystem: ['design'],
-    state: 'pendiente'
+    state: 'aprendiendo'
   },
   storybook: {
     id: uuidV4(),

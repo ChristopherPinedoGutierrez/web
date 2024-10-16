@@ -25,7 +25,7 @@ const personalInfo = {
     socialMedia: {
       linkedin: 'linkedin.com/in/christopherpinedo/',
       github: 'github.com/ChristopherPinedo/',
-      personalWeb: 'christopherpinedo.github.io/WEB/',
+      personalWeb: 'christopherpinedo.github.io/web/',
       codewars: 'codewars.com/users/ChristopherPinedo/',
       leetCode: 'leetcode.com/ChristopherPinedo/'
     }

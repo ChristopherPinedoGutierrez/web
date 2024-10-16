@@ -16,7 +16,7 @@ function SectionKnowledge() {
     setChecked({ ...checked, [key]: event.target.checked });
   };
 
-  const filteredTechnologies = Object.keys(technologies).reduce((acc, key) => {
+  const filteredTechnologiesByState = Object.keys(technologies).reduce((acc, key) => {
     if (checked[technologies[key].state]) {
       acc[key] = technologies[key];
     }
@@ -35,7 +35,7 @@ function SectionKnowledge() {
         />
       </Grid>
       <Grid item xs={12} md={8} lg={9}>
-        <GridGroupTechAreas area={currentArea} technologies={filteredTechnologies} checkedObj={checked} />
+        <GridGroupTechAreas area={currentArea} technologies={filteredTechnologiesByState} checkedObj={checked} />
       </Grid>
     </Grid>
   );

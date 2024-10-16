@@ -14,12 +14,12 @@ import {
   Typography,
   useTheme
 } from '@mui/material';
-import DatasetLinkedIcon from '@mui/icons-material/DatasetLinked';
+import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { useEffect, useState } from 'react';
 import { projectsInfo } from '../../../../resources/data/projectsInfo';
 import { Link as RouterLink } from 'react-router-dom';
 
-function GridTechAreas({ element, hasProjects }) {
+function GridTechAreas({ element }) {
   return (
     <Grid item key={element.id} xs={6} sm={4} lg={3}>
       <Card sx={{ height: 1, borderRadius: 2 }}>
@@ -31,7 +31,7 @@ function GridTechAreas({ element, hasProjects }) {
               component={RouterLink}
               to={`/projects/:${element.id}`}
             >
-              <DatasetLinkedIcon />
+              <OpenInBrowserIcon />
             </IconButton>
           </Tooltip>
           <Box
@@ -59,10 +59,11 @@ function GridTechAreas({ element, hasProjects }) {
 }
 
 function GridGroupTechAreas({ area, technologies, checkedObj }) {
-  const [filteredTechs, setFilteredTechs] = useState({});
+  const [filteredTechs, setFilteredTechs] = useState([]);
 
   useEffect(() => {
     const techlist = {};
+    let techListByArea = [];
     Object.entries(technologies).forEach(([key, value]) => {
       techlist[key] = {
         ...value,
@@ -71,10 +72,11 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
         )
       };
     });
-    setFilteredTechs(techlist);
+    techListByArea = Object.values(techlist).filter((e) => e.area === area);
+    setFilteredTechs(techListByArea);
   }, [projectsInfo, technologies]);
 
-  // useEffect(() => console.log(filteredTechs), [filteredTechs]);
+  useEffect(() => console.log(filteredTechs), [filteredTechs]);
 
   return (
     <>
@@ -90,13 +92,11 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
             gap: 2
           }}
         >
-          <Typography variant="h5">{area.toLocaleUpperCase()}</Typography>
-          <Stack
-            direction={'row'}
-            gap={2}
-            alignItems={'baseline'}
-            divider={<Divider orientation="vertical" flexItem />}
-          >
+          <Stack gap={1} direction={'row'} alignItems={'center'}>
+            <Typography variant="h5">{area.toLocaleUpperCase()}</Typography>
+            <Chip label={filteredTechs.length} />
+          </Stack>
+          <Stack direction={'row'} gap={2} alignItems={'center'} divider={<Divider orientation="vertical" flexItem />}>
             <Typography variant="subtitle2">Estado</Typography>
             <Stack direction={'row'} gap={1} flexWrap={'wrap'}>
               {Object.entries(checkedObj).map(
@@ -106,11 +106,15 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
           </Stack>
         </Card>
         <Grid container spacing={{ xs: 2, md: 4 }}>
-          {area === 'All'
+          {/* {area === 'All'
             ? Object.values(filteredTechs).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
             : Object.values(filteredTechs)
                 .filter((e) => e.area === area)
-                .map((ele) => <GridTechAreas key={ele.id} element={ele} />)}
+                .map((ele) => <GridTechAreas key={ele.id} element={ele} />)
+          } */}
+          {filteredTechs.map((ele) => (
+            <GridTechAreas key={ele.id} element={ele} />
+          ))}
         </Grid>
       </Stack>
     </>
