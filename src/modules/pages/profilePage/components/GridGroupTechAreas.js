@@ -50,8 +50,6 @@ function GridTechAreas({ element }) {
           <Typography variant="h6" align="center">
             {element.name}
           </Typography>
-          {/* <Chip label={element.group} />
-          <Chip label={element.type} /> */}
         </Stack>
       </Card>
     </Grid>

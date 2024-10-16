@@ -56,7 +56,7 @@ import {
 } from 'react-icons/si';
 
 import { TbAtom2 } from 'react-icons/tb';
-import { GiDatabase } from 'react-icons/gi';
+// import { GiDatabase } from 'react-icons/gi';
 
 const types = {
   lang: {
@@ -343,20 +343,20 @@ const technologies = {
     ecosystem: ['javascript'],
     state: 'conocida'
   },
-  sql: {
-    id: uuidV4(),
-    name: 'SQL',
-    area: areas.backend.name,
-    group: types.lang.name,
-    type: types.lang,
-    typeDef: types.lang.types.langQuery,
-    icon: <GiDatabase />,
-    color: '#424242',
-    colorLayer1: 'grey.800',
-    colorLayer2: 'grey.200',
-    ecosystem: ['Database'],
-    state: 'conocida'
-  },
+  // sql: {
+  //   id: uuidV4(),
+  //   name: 'SQL',
+  //   area: areas.backend.name,
+  //   group: types.lang.name,
+  //   type: types.lang,
+  //   typeDef: types.lang.types.langQuery,
+  //   icon: <GiDatabase />,
+  //   color: '#424242',
+  //   colorLayer1: 'grey.800',
+  //   colorLayer2: 'grey.200',
+  //   ecosystem: ['Database'],
+  //   state: 'conocida'
+  // },
   sqlServer: {
     id: uuidV4(),
     name: 'SQL Server',
