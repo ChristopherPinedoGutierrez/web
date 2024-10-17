@@ -58,6 +58,25 @@ import {
 import { TbAtom2 } from 'react-icons/tb';
 // import { GiDatabase } from 'react-icons/gi';
 
+import SchoolIcon from '@mui/icons-material/School';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import PendingIcon from '@mui/icons-material/Pending';
+
+const states = {
+  conocidas: {
+    name: 'conocidas',
+    icon: <SchoolIcon />
+  },
+  aprendiendo: {
+    name: 'aprendiendo',
+    icon: <LocalLibraryIcon />
+  },
+  pendientes: {
+    name: 'pendientes',
+    icon: <PendingIcon />
+  }
+};
+
 const types = {
   lang: {
     name: 'Language',
@@ -173,7 +192,7 @@ const technologies = {
     colorLayer1: '#f05539',
     colorLayer2: 'grey.200',
     ecosystem: ['git'],
-    state: 'conocida'
+    state: states.conocidas
   },
   github: {
     id: uuidV4(),
@@ -187,7 +206,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: 'grey.200',
     ecosystem: ['git'],
-    state: 'conocida'
+    state: states.conocidas
   },
   jira: {
     id: uuidV4(),
@@ -201,7 +220,7 @@ const technologies = {
     colorLayer1: '#2580f7',
     colorLayer2: 'grey.200',
     ecosystem: ['management'],
-    state: 'conocida'
+    state: states.conocidas
   },
   notion: {
     id: uuidV4(),
@@ -215,7 +234,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: 'grey.800',
     ecosystem: ['management'],
-    state: 'conocida'
+    state: states.conocidas
   },
   html: {
     id: uuidV4(),
@@ -229,7 +248,7 @@ const technologies = {
     colorLayer1: '#ec7430',
     colorLayer2: 'grey.200',
     ecosystem: ['html'],
-    state: 'conocida'
+    state: states.conocidas
   },
   css: {
     id: uuidV4(),
@@ -243,7 +262,7 @@ const technologies = {
     colorLayer1: '#2862e9',
     colorLayer2: 'grey.200',
     ecosystem: ['css'],
-    state: 'conocida'
+    state: states.conocidas
   },
   js: {
     id: uuidV4(),
@@ -257,7 +276,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: '#efd81d',
     ecosystem: ['javascript'],
-    state: 'conocida'
+    state: states.conocidas
   },
   react: {
     id: uuidV4(),
@@ -271,7 +290,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: '#5bd9fb',
     ecosystem: ['javascript', 'react'],
-    state: 'conocida'
+    state: states.conocidas
   },
   cra: {
     id: uuidV4(),
@@ -285,7 +304,7 @@ const technologies = {
     colorLayer1: '#09d3ac',
     colorLayer2: 'grey.800',
     ecosystem: ['javascript', 'react'],
-    state: 'conocida'
+    state: states.conocidas
   },
   vite: {
     id: uuidV4(),
@@ -299,7 +318,7 @@ const technologies = {
     colorLayer1: '#a842f6',
     colorLayer2: '#f6c928',
     ecosystem: ['javascript', 'react'],
-    state: 'conocida'
+    state: states.conocidas
   },
   ts: {
     id: uuidV4(),
@@ -313,7 +332,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#377cc8',
     ecosystem: ['javascript'],
-    state: 'conocida'
+    state: states.conocidas
   },
   blazor: {
     id: uuidV4(),
@@ -327,7 +346,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#592c8c',
     ecosystem: ['javascript'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   node: {
     id: uuidV4(),
@@ -341,7 +360,7 @@ const technologies = {
     colorLayer1: '#58a149',
     colorLayer2: 'grey.200',
     ecosystem: ['javascript'],
-    state: 'conocida'
+    state: states.conocidas
   },
   // sql: {
   //   id: uuidV4(),
@@ -355,7 +374,7 @@ const technologies = {
   //   colorLayer1: 'grey.800',
   //   colorLayer2: 'grey.200',
   //   ecosystem: ['Database'],
-  //   state: 'conocida'
+  //   state: states.conocidas
   // },
   sqlServer: {
     id: uuidV4(),
@@ -369,7 +388,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#ef372e',
     ecosystem: ['Database'],
-    state: 'aprendiendo'
+    state: states.aprendiendo
   },
   mySql: {
     id: uuidV4(),
@@ -383,7 +402,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#e48e00',
     ecosystem: ['Database'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   cSharp: {
     id: uuidV4(),
@@ -397,7 +416,7 @@ const technologies = {
     colorLayer1: '#9078e3',
     colorLayer2: 'grey.200',
     ecosystem: ['Language'],
-    state: 'aprendiendo'
+    state: states.aprendiendo
   },
   dotNet: {
     id: uuidV4(),
@@ -411,7 +430,7 @@ const technologies = {
     colorLayer1: '#5632d5',
     colorLayer2: 'grey.200',
     ecosystem: ['Language'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   strapi: {
     id: uuidV4(),
@@ -425,7 +444,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#4f4bfe',
     ecosystem: ['Framework'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   postgreSql: {
     id: uuidV4(),
@@ -439,7 +458,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#396c94',
     ecosystem: ['Database'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   reactNative: {
     id: uuidV4(),
@@ -453,7 +472,7 @@ const technologies = {
     colorLayer1: '#5bd9fb',
     colorLayer2: 'grey.800',
     ecosystem: ['javascript', 'react'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   expo: {
     id: uuidV4(),
@@ -467,7 +486,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: 'grey.800',
     ecosystem: ['javascript', 'react'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   firebase: {
     id: uuidV4(),
@@ -481,7 +500,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: '#ffcd32',
     ecosystem: ['javascript'],
-    state: 'conocida'
+    state: states.conocidas
   },
   supabase: {
     id: uuidV4(),
@@ -495,7 +514,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: '#47cf93',
     ecosystem: ['javascript'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   jest: {
     id: uuidV4(),
@@ -509,7 +528,7 @@ const technologies = {
     colorLayer1: '#ca451a',
     colorLayer2: 'grey.200',
     ecosystem: ['javascript'],
-    state: 'conocida'
+    state: states.conocidas
   },
   SiVitest: {
     id: uuidV4(),
@@ -523,7 +542,7 @@ const technologies = {
     colorLayer1: '#6aa108',
     colorLayer2: '#f6c928',
     ecosystem: ['javascript'],
-    state: 'conocida'
+    state: states.conocidas
   },
   reactTestingLibrary: {
     id: uuidV4(),
@@ -537,7 +556,7 @@ const technologies = {
     colorLayer1: '#ff4949',
     colorLayer2: 'grey.200',
     ecosystem: ['javascript', 'React.js'],
-    state: 'conocida'
+    state: states.conocidas
   },
   reactRouter: {
     id: uuidV4(),
@@ -551,7 +570,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#d10a22',
     ecosystem: ['javascript', 'React.js'],
-    state: 'conocida'
+    state: states.conocidas
   },
   reactHookForm: {
     id: uuidV4(),
@@ -565,7 +584,7 @@ const technologies = {
     colorLayer1: '#ed5e93',
     colorLayer2: 'grey.200',
     ecosystem: ['javascript', 'React.js'],
-    state: 'conocida'
+    state: states.conocidas
   },
   tanStackQuery: {
     id: uuidV4(),
@@ -579,7 +598,7 @@ const technologies = {
     colorLayer1: '#ff4759',
     colorLayer2: '#ffda52',
     ecosystem: ['javascript', 'React.js'],
-    state: 'conocida'
+    state: states.conocidas
   },
   redux: {
     id: uuidV4(),
@@ -593,7 +612,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#764abc',
     ecosystem: ['javascript', 'React.js'],
-    state: 'conocida'
+    state: states.conocidas
   },
   mui: {
     id: uuidV4(),
@@ -607,7 +626,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#007fff',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   shadcn: {
     id: uuidV4(),
@@ -621,7 +640,7 @@ const technologies = {
     colorLayer1: 'black',
     colorLayer2: 'grey.200',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   tailwind: {
     id: uuidV4(),
@@ -635,7 +654,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#06B6D4',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   next: {
     id: uuidV4(),
@@ -649,7 +668,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: 'black',
     ecosystem: ['design'],
-    state: 'aprendiendo'
+    state: states.aprendiendo
   },
   nextUi: {
     id: uuidV4(),
@@ -663,7 +682,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: 'black',
     ecosystem: ['design'],
-    state: 'aprendiendo'
+    state: states.aprendiendo
   },
   playwright: {
     id: uuidV4(),
@@ -677,7 +696,7 @@ const technologies = {
     colorLayer1: '#dc594f',
     colorLayer2: '#2EAD33',
     ecosystem: ['design'],
-    state: 'aprendiendo'
+    state: states.aprendiendo
   },
   storybook: {
     id: uuidV4(),
@@ -691,7 +710,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#FF4785',
     ecosystem: ['design'],
-    state: 'pendiente'
+    state: states.pendientes
   },
   sass: {
     id: uuidV4(),
@@ -705,7 +724,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#CC6699',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   styledComp: {
     id: uuidV4(),
@@ -719,7 +738,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#DB7093',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   normalCss: {
     id: uuidV4(),
@@ -733,7 +752,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#E3695F',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   figma: {
     id: uuidV4(),
@@ -747,7 +766,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: '#5551ff',
     ecosystem: ['javascript', 'React.js'],
-    state: 'conocida'
+    state: states.conocidas
   },
   miro: {
     id: uuidV4(),
@@ -761,7 +780,7 @@ const technologies = {
     colorLayer1: '#ffdd33',
     colorLayer2: 'grey.800',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   illustrator: {
     id: uuidV4(),
@@ -775,7 +794,7 @@ const technologies = {
     colorLayer1: '#ff9a00',
     colorLayer2: '#330000',
     ecosystem: ['design'],
-    state: 'conocida'
+    state: states.conocidas
   },
   bem: {
     id: uuidV4(),
@@ -789,7 +808,7 @@ const technologies = {
     colorLayer1: 'grey.200',
     colorLayer2: 'grey.800',
     ecosystem: ['design methodologies'],
-    state: 'conocida'
+    state: states.conocidas
   },
   atomicDsg: {
     id: uuidV4(),
@@ -803,7 +822,7 @@ const technologies = {
     colorLayer1: 'grey.800',
     colorLayer2: '#bc6719',
     ecosystem: ['design methodologies'],
-    state: 'conocida'
+    state: states.conocidas
   }
 };
 

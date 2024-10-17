@@ -8,16 +8,16 @@ import { technologies } from '../../../../resources/data/baseFiles/technologies'
 function SectionKnowledge() {
   const [currentArea, setCurrentArea] = useState('Frontend');
   const [checked, setChecked] = useState({
-    conocida: true,
+    conocidas: true,
     aprendiendo: false,
-    pendiente: false
+    pendientes: false
   });
   const handleCheck = (key) => (event) => {
     setChecked({ ...checked, [key]: event.target.checked });
   };
 
   const filteredTechnologiesByState = Object.keys(technologies).reduce((acc, key) => {
-    if (checked[technologies[key].state]) {
+    if (checked[technologies[key].state.name]) {
       acc[key] = technologies[key];
     }
     return acc;

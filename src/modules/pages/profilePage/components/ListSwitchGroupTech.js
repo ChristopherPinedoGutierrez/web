@@ -8,12 +8,12 @@ function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
   return (
     <List sx={{ backgroundColor: 'background.paper' }}>
       <ListItem sx={{ p: 0 }}>
-        <ListItemButton onClick={() => handleCheck('conocida')({ target: { checked: !checkedObj.conocida } })}>
+        <ListItemButton onClick={() => handleCheck('conocidas')({ target: { checked: !checkedObj.conocidas } })}>
           <ListItemIcon sx={{ minWidth: '3rem' }}>
             <SchoolIcon />
           </ListItemIcon>
           <ListItemText>Conocidas</ListItemText>
-          <Switch edge="end" checked={checkedObj.conocida} />
+          <Switch edge="end" checked={checkedObj.conocidas} />
         </ListItemButton>
       </ListItem>
       <ListItem sx={{ p: 0 }}>
@@ -26,12 +26,12 @@ function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
         </ListItemButton>
       </ListItem>
       <ListItem sx={{ p: 0 }} disabled={disablePendientes}>
-        <ListItemButton onClick={() => handleCheck('pendiente')({ target: { checked: !checkedObj.pendiente } })}>
+        <ListItemButton onClick={() => handleCheck('pendientes')({ target: { checked: !checkedObj.pendientes } })}>
           <ListItemIcon sx={{ minWidth: '3rem' }}>
             <PendingIcon />
           </ListItemIcon>
           <ListItemText>Pendientes</ListItemText>
-          <Switch disabled={disablePendientes} edge="end" checked={checkedObj.pendiente} />
+          <Switch disabled={disablePendientes} edge="end" checked={checkedObj.pendientes} />
         </ListItemButton>
       </ListItem>
     </List>

@@ -16,16 +16,17 @@ import {
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function DrawerListFilters({ filters, handleFilters, handleToggleAllFilters }) {
-  const [openSections, setOpenSections] = useState({});
-
-  const theme = useTheme();
+  const [openSections, setOpenSections] = useState({ Tecnologías: true });
 
   const handleCollapseSections = (section) => {
     setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
   };
+
+  // useEffect(() => console.log(openSections), [openSections]);
 
   return (
     <Box>

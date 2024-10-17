@@ -62,7 +62,7 @@ import { ListSwitchGroupTech } from './ListSwitchGroupTech';
 function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendientes }) {
   const [openSections, setOpenSections] = useState({
     area: false,
-    estado: false
+    estado: true
   });
 
   const handleCollapseSections = (section) => {
@@ -76,7 +76,7 @@ function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendien
         </Box>
         <Box>
           <ListItemButton onClick={() => handleCollapseSections('area')}>
-            <ListItemText primary="Area" />
+            <ListItemText primary="Areas" />
             {openSections.area ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
           <Collapse in={openSections.area}>
@@ -84,7 +84,7 @@ function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendien
           </Collapse>
           <Divider />
           <ListItemButton onClick={() => handleCollapseSections('estado')}>
-            <ListItemText primary="Estado" />
+            <ListItemText primary="Estados" />
             {openSections.estado ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </ListItemButton>
           <Collapse in={openSections.estado}>

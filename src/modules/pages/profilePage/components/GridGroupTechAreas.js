@@ -2,7 +2,11 @@
 /* eslint-disable react/prop-types */
 import {
   Box,
+  Button,
   Card,
+  CardActions,
+  CardContent,
+  CardHeader,
   Chip,
   Divider,
   Grid,
@@ -22,18 +26,19 @@ import { Link as RouterLink } from 'react-router-dom';
 function GridTechAreas({ element }) {
   return (
     <Grid item key={element.id} xs={6} sm={4} lg={3}>
-      <Card sx={{ height: 1, borderRadius: 2 }}>
-        <Stack spacing={2} alignItems={'center'} sx={{ p: 2, pt: 3, position: 'relative' }}>
-          <Tooltip title="View related projects" placement="top">
-            <IconButton
-              disabled={!element.hasProjects}
-              sx={{ position: 'absolute', top: 8, right: 8 }}
-              component={RouterLink}
-              to={`/projects/:${element.id}`}
-            >
-              <OpenInBrowserIcon />
-            </IconButton>
-          </Tooltip>
+      <Card
+        sx={{ height: 1, borderRadius: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+      >
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+          <Box width={1}>
+            <Stack width={1} pb={1} gap={2} direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
+              <Typography variant="h6" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+                {element.name}
+              </Typography>
+              {element.state.icon}
+            </Stack>
+            <Divider flexItem orientation="horizontal" />
+          </Box>
           <Box
             sx={{
               borderRadius: 25,
@@ -47,10 +52,20 @@ function GridTechAreas({ element }) {
           >
             <SvgIcon sx={{ width: 40, height: 40, color: element.colorLayer2 }}>{element.icon}</SvgIcon>
           </Box>
-          <Typography variant="h6" align="center">
-            {element.name}
-          </Typography>
-        </Stack>
+        </CardContent>
+        <CardActions sx={{ display: 'flex', justifyContent: 'flex-end', padding: 2, paddingTop: 0 }}>
+          <Button
+            disabled={!element.hasProjects}
+            component={RouterLink}
+            to={`/projects/:${element.id}`}
+            endIcon={<OpenInBrowserIcon />}
+            variant="outlined"
+            fullWidth
+            // size="small"
+          >
+            View projects
+          </Button>
+        </CardActions>
       </Card>
     </Grid>
   );
@@ -74,12 +89,11 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
     setFilteredTechs(techListByArea);
   }, [projectsInfo, technologies]);
 
-  useEffect(() => console.log(filteredTechs), [filteredTechs]);
+  // useEffect(() => console.log(filteredTechs), [filteredTechs]);
 
   return (
     <>
       <Stack gap={2}>
-        {/* <Typography variant="h5">{area}</Typography> */}
         <Card
           sx={{
             borderRadius: 2,
@@ -90,13 +104,13 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
             gap: 2
           }}
         >
-          <Stack gap={1} direction={'row'} alignItems={'center'}>
+          <Stack gap={2} direction={'row'} alignItems={'center'}>
             <Typography variant="h5">{area.toLocaleUpperCase()}</Typography>
             <Chip label={filteredTechs.length} />
           </Stack>
           <Stack direction={'row'} gap={2} alignItems={'center'} divider={<Divider orientation="vertical" flexItem />}>
-            <Typography variant="subtitle2">Estado</Typography>
-            <Stack direction={'row'} gap={1} flexWrap={'wrap'}>
+            <Typography variant="subtitle2">Estados</Typography>
+            <Stack direction={'row'} gap={2} flexWrap={'wrap'}>
               {Object.entries(checkedObj).map(
                 (ele, i) => ele[1] === true && <Chip key={i} label={ele[0].toLocaleUpperCase()} />
               )}
