@@ -20,7 +20,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 function DrawerListFilters({ filters, handleFilters, handleToggleAllFilters }) {
-  const [openSections, setOpenSections] = useState({ Tecnologías: true });
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
+  const [openSections, setOpenSections] = useState({ Tecnologías: matchesMD ? true : false });
 
   const handleCollapseSections = (section) => {
     setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));

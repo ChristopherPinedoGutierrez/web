@@ -104,13 +104,26 @@ function GridGroupTechAreas({ area, technologies, checkedObj }) {
             gap: 2
           }}
         >
-          <Stack gap={2} direction={'row'} alignItems={'center'}>
+          <Stack
+            gap={2}
+            direction={'row'}
+            alignItems={'center'}
+            justifyContent={'space-between'}
+            width={{ xs: 1, sm: 'inherit' }}
+          >
             <Typography variant="h5">{area.toLocaleUpperCase()}</Typography>
             <Chip label={filteredTechs.length} />
           </Stack>
-          <Stack direction={'row'} gap={2} alignItems={'center'} divider={<Divider orientation="vertical" flexItem />}>
+          <Stack
+            direction={'row'}
+            gap={2}
+            alignItems={'center'}
+            justifyContent={'space-between'}
+            width={{ xs: 1, sm: 'inherit' }}
+            divider={<Divider flexItem orientation="vertical" />}
+          >
             <Typography variant="subtitle2">Estados</Typography>
-            <Stack direction={'row'} gap={2} flexWrap={'wrap'}>
+            <Stack flexGrow={1} direction={'row'} gap={2} flexWrap={'wrap'} justifyContent={'flex-end'}>
               {Object.entries(checkedObj).map(
                 (ele, i) => ele[1] === true && <Chip key={i} label={ele[0].toLocaleUpperCase()} />
               )}

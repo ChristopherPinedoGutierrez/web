@@ -60,9 +60,11 @@ import { ListSwitchGroupTech } from './ListSwitchGroupTech';
 // }
 
 function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendientes }) {
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
   const [openSections, setOpenSections] = useState({
     area: false,
-    estado: true
+    estado: matchesMD ? true : false
   });
 
   const handleCollapseSections = (section) => {

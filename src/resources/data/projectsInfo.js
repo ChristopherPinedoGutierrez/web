@@ -2,6 +2,7 @@
 import { technologies as tech } from './baseFiles/technologies';
 import { areas } from './baseFiles/areas';
 import frontendProjectsImage from '../images/frontendProjectsV1.JPG';
+import portafolioWebImage from '../images/portafolioWebV1.JPG';
 import { v4 as uuidV4 } from 'uuid';
 
 const projectLevels = {
@@ -57,7 +58,7 @@ const projectsInfo = [
     content: {
       name: 'Entry level frontend projects',
       description: 'Dashboard organizador de proyectos frontend de entrada.',
-      technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter]
+      technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter, tech.vite]
     }
   },
   {
@@ -75,7 +76,7 @@ const projectsInfo = [
     content: {
       name: 'IP Address tracker',
       description: 'Desafio de Frontend Mentor en el que se solicita una IP para obtener información sobre ella.',
-      technologies: [tech.js, tech.react, tech.tailwind]
+      technologies: [tech.js, tech.react, tech.tailwind, tech.vite]
     }
   },
   {
@@ -92,7 +93,24 @@ const projectsInfo = [
     content: {
       name: 'REST Countries web app',
       description: 'Desafio de Frontend Mentor en el que se muestra información sobre paises.',
-      technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery]
+      technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery, tech.vite]
+    }
+  },
+  {
+    id: uuidV4(),
+    config: {
+      image: portafolioWebImage,
+      area: areas.frontend,
+      level: projectLevels[3],
+      status: projectStates.prod,
+      source: 'Self taught',
+      repository: 'https://github.com/ChristopherPinedo/web',
+      url: 'https://christopherpinedo.github.io/web/'
+    },
+    content: {
+      name: 'Web personal y portafolio',
+      description: 'Aplicación SPA para mostrar información personal y laboral',
+      technologies: [tech.js, tech.react, tech.mui, tech.cra, tech.reactRouter]
     }
   },
   {
@@ -100,7 +118,7 @@ const projectsInfo = [
     config: {
       image: '',
       area: areas.fullstack,
-      level: projectLevels[3],
+      level: projectLevels[4],
       status: projectStates.dev,
       source: projectSources.myself,
       repository: '',
