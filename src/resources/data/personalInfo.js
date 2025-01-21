@@ -10,7 +10,7 @@ const personalInfo = {
   },
   variable: {
     shortName: 'Christopher Pinedo',
-    mainRole: 'Analista programador de sistemas',
+    mainRole: 'Desarrollador de software',
     presentationMessage1:
       'Me considero una persona proactiva, resiliente y entusiasta por la tecnología que busca aprender constantemente.',
     presentationMessage2:

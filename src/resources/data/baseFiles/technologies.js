@@ -58,6 +58,8 @@ import {
 import { TbAtom2 } from 'react-icons/tb';
 // import { GiDatabase } from 'react-icons/gi';
 
+import { FaShoelace } from 'react-icons/fa6';
+
 import SchoolIcon from '@mui/icons-material/School';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import PendingIcon from '@mui/icons-material/Pending';
@@ -683,6 +685,20 @@ const technologies = {
     colorLayer2: 'black',
     ecosystem: ['design'],
     state: states.aprendiendo
+  },
+  shoelace: {
+    id: uuidV4(),
+    name: 'Shoelace',
+    area: areas.frontend.name,
+    group: types.lib.name,
+    type: types.lib,
+    typeDef: types.lib.types.libComp,
+    icon: <FaShoelace />,
+    color: '#0ea5e9',
+    colorLayer1: '#0ea5e9',
+    colorLayer2: 'grey.200',
+    ecosystem: ['design'],
+    state: states.conocidas
   },
   playwright: {
     id: uuidV4(),

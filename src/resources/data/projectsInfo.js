@@ -26,73 +26,183 @@ const projectStates = {
     keyName: 'Production',
     color: 'success'
   }
-  // test: {
-  //   id: uuidV4(),
-  //   name: 'Testeo',
-  //   keyName: 'TEST',
-  //   color: 'warning'
-  // }
 };
 
 const projectSources = {
-  fm: {
-    name: 'Frontend Mentor'
+  frontendMentor: {
+    name: 'Frontend Mentor project'
   },
-  myself: {
-    name: 'Autónomo'
+  personal: {
+    name: 'Personal project'
   }
 };
 
 const projectsInfo = [
-  {
-    id: uuidV4(),
-    config: {
-      image: frontendProjectsImage,
-      area: areas.frontend,
-      level: projectLevels[2],
-      status: projectStates.prod,
-      source: 'Frontend Mentor',
-      repository: 'https://github.com/ChristopherPinedo/frontendProjects/',
-      url: 'https://christopherpinedo.github.io/frontendProjects/'
-    },
-    content: {
-      name: 'Entry level frontend projects',
-      description: 'Dashboard organizador de proyectos frontend de entrada.',
-      technologies: [tech.js, tech.ts, tech.react, tech.shadcn, tech.reactRouter, tech.vite]
-    }
-  },
+  // ______ NEWBIE
   {
     id: uuidV4(),
     config: {
       image:
-        'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1598711974%2FChallenges%2Fzfgce1seaqfllpuktpai.jpg&w=384&q=75',
+        'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/ouobx6tvyduidzio7wr7.jpg',
       area: areas.frontend,
       level: projectLevels[1],
       status: projectStates.prod,
-      source: 'Frontend Mentor',
-      repository: 'https://github.com/ChristopherPinedo/ipAddressTrackerApp',
-      url: 'https://christopherpinedo.github.io/ipAddressTrackerApp/'
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-orderSummaryComponent',
+      url: 'https://christopherpinedogutierrez.github.io/frontendMentor-orderSummaryComponent/'
     },
     content: {
-      name: 'IP Address tracker',
-      description: 'Desafio de Frontend Mentor en el que se solicita una IP para obtener información sobre ella.',
+      name: 'Order summary component',
+      description: 'A perfect project for newbies who are starting to build.',
       technologies: [tech.js, tech.react, tech.tailwind, tech.vite]
     }
   },
   {
     id: uuidV4(),
     config: {
-      // image: 'https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1554826345%2FChallenges%2Fyhq5ihanseyinzwblaw1.jpg&w=384&q=75',
+      image:
+        'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/bnjpxmx9fudsmerfj6eo.jpg',
+      area: areas.frontend,
+      level: projectLevels[1],
+      status: projectStates.prod,
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-socialProofSection',
+      url: 'https://christopherpinedogutierrez.github.io/frontendMentor-socialProofSection/'
+    },
+    content: {
+      name: 'Social proof section',
+      description:
+        "This project will test your layout skills. If you're starting to get confident with Flexbox or Grid.",
+      technologies: [tech.js, tech.react, tech.tailwind, tech.vite]
+    }
+  },
+  // ______ JUNIOR
+  {
+    id: uuidV4(),
+    config: {
+      image:
+        'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/jntqqksdinxs3qy8uyqb.jpg',
+      area: areas.frontend,
+      level: projectLevels[2],
+      status: projectStates.prod,
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-contactForm',
+      url: 'https://christopherpinedogutierrez.github.io/frontendMentor-contactForm/'
+    },
+    content: {
+      name: 'Contact form',
+      description: 'Building accessible forms is a crucial task for front-end developers.',
+      technologies: [tech.js, tech.react, tech.tailwind, tech.vite]
+    }
+  },
+  {
+    id: uuidV4(),
+    config: {
+      image:
+        'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/j1ocp59n25odoftocgpi.jpg',
+      area: areas.frontend,
+      level: projectLevels[2],
+      status: projectStates.prod,
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-timeTrackingDashboard',
+      url: 'https://christopherpinedogutierrez.github.io/frontendMentor-timeTrackingDashboard/'
+    },
+    content: {
+      name: 'Time tracking dashboard',
+      description: 'A perfect opportunity to practice your CSS Grid skills.',
+      technologies: [tech.js, tech.react, tech.tailwind, tech.vite]
+    }
+  },
+  {
+    id: uuidV4(),
+    config: {
+      // image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/mwjogovjjnkz6f6yzdkp.jpg',
       area: areas.frontend,
       level: projectLevels[2],
       status: projectStates.dev,
-      source: projectSources.fm
-      // repository: 'https://github.com/ChristopherPinedo/restCountriesWebApp',
-      // url: 'https://christopherpinedo.github.io/restCountriesWebApp/'
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-ageCalculatorApp'
+      // url: ''
     },
     content: {
-      name: 'REST Countries web app',
-      description: 'Desafio de Frontend Mentor en el que se muestra información sobre paises.',
+      name: 'Age calculator app',
+      description: 'This challenge is designed to sharpen your JavaScript and form validation skills.',
+      technologies: [tech.js, tech.react, tech.tailwind, tech.vite]
+    }
+  },
+  // ______ INTERMEDIATE
+  {
+    id: uuidV4(),
+    config: {
+      image:
+        'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/zfgce1seaqfllpuktpai.jpg',
+      area: areas.frontend,
+      level: projectLevels[3],
+      status: projectStates.prod,
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-ipAddressTrackerApp',
+      url: 'https://christopherpinedogutierrez.github.io/frontendMentor-ipAddressTrackerApp/'
+    },
+    content: {
+      name: 'IP Address Tracker',
+      description:
+        "In this challenge, you'll be using two separate APIs together to create an IP Address Tracking app.",
+      technologies: [tech.js, tech.css, tech.react, tech.vite]
+    }
+  },
+  {
+    id: uuidV4(),
+    config: {
+      image:
+        'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/katmpcijwnmclxyfw3wr.jpg',
+      area: areas.frontend,
+      level: projectLevels[3],
+      status: projectStates.dev,
+      source: projectSources.fm,
+      repository: '',
+      url: ''
+    },
+    content: {
+      name: 'URL shortening API landing page',
+      description:
+        'Integrate with the Clean URI link shortening API and play with browser storage in this landing page challenge.',
+      technologies: [tech.js, tech.css, tech.react, tech.vite]
+    }
+  },
+  // ______ ADVANCED
+  {
+    id: uuidV4(),
+    config: {
+      // image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/lpwvfibpdyycvjpukkec.jpg',
+      area: areas.frontend,
+      level: projectLevels[4],
+      status: projectStates.dev,
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-multiStepForm',
+      url: 'https://christopherpinedogutierrez.github.io/frontendMentor-multiStepForm/'
+    },
+    content: {
+      name: 'Multi-step form',
+      description:
+        'An excellent test for your form-building and JS skills, this project will pose many challenges along the way to completion.',
+      technologies: [tech.ts, tech.react, tech.tailwind, tech.vite, tech.reactHookForm]
+    }
+  },
+  {
+    id: uuidV4(),
+    config: {
+      // image: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_475/Challenges/yhq5ihanseyinzwblaw1.jpg',
+      area: areas.frontend,
+      level: projectLevels[4],
+      status: projectStates.dev,
+      source: projectSources.fm,
+      repository: 'https://github.com/ChristopherPinedoGutierrez/frontendMentor-restCountriesApp'
+      // url: ''
+    },
+    content: {
+      name: 'REST Countries API with color theme switcher',
+      description:
+        "If you're wanting to test your JavaScript skills this is the challenge for you. Use whichever JS framework you prefer and pull data from the REST Countries API.",
       technologies: [tech.ts, tech.react, tech.tailwind, tech.reactRouter, tech.tanStackQuery, tech.vite]
     }
   },
@@ -101,35 +211,19 @@ const projectsInfo = [
     config: {
       image: portafolioWebImage,
       area: areas.frontend,
-      level: projectLevels[3],
+      level: projectLevels[4],
       status: projectStates.prod,
       source: 'Self taught',
-      repository: 'https://github.com/ChristopherPinedo/web',
-      url: 'https://christopherpinedo.github.io/web/'
+      repository: 'https://github.com/ChristopherPinedoGutierrez/web',
+      url: 'https://christopherpinedogutierrez.github.io/web/'
     },
     content: {
       name: 'Web personal y portafolio',
       description: 'Aplicación SPA para mostrar información personal y laboral',
       technologies: [tech.js, tech.react, tech.mui, tech.cra, tech.reactRouter]
     }
-  },
-  {
-    id: uuidV4(),
-    config: {
-      image: '',
-      area: areas.fullstack,
-      level: projectLevels[4],
-      status: projectStates.dev,
-      source: projectSources.myself,
-      repository: '',
-      url: ''
-    },
-    content: {
-      name: 'Aplicación de control de gastos',
-      description: 'Aplicación de gestión y control de egresos e ingresos usando los servicios de firebase en Next.js.',
-      technologies: [tech.ts, tech.react, tech.tailwind, tech.firebase, tech.next, tech.nextUi, tech.redux]
-    }
   }
+  // ______ EXPERT
 ];
 
 export { projectsInfo, projectLevels, projectStates };

@@ -31,7 +31,7 @@ function DesktopAppBar({ children }) {
     <Box>
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{ backgroundColor: 'background.default', paddingY: 2 }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="xxl">
           <Stack direction={'row'} sx={{ justifyContent: 'space-between' }}>
             <Stack spacing={5} direction={'row'} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
               {dashboardMainRoutes.map((item, i) => (
