@@ -17,7 +17,7 @@ function RadarChartAptitudes({ aptitudes, aptitudesCount }) {
         }
         typeMap[typeName] += item.type.value;
       });
-      console.log(typeMap);
+      // console.log(typeMap);
       const formattedData = Object.keys(typeMap).map((type) => ({
         subject: type,
         A: typeMap[type]
@@ -31,7 +31,7 @@ function RadarChartAptitudes({ aptitudes, aptitudesCount }) {
 
   useEffect(() => {
     // console.log('aptitudes :', aptitudes);
-    console.log('processedData :', processedData);
+    // console.log('processedData :', processedData);
   }, [processedData]);
 
   return (

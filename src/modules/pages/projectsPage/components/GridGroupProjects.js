@@ -13,9 +13,9 @@ import {
   Rating,
   Skeleton,
   Stack,
+  Tooltip,
   Typography
 } from '@mui/material';
-import { PieChartTechnologies } from './PieChartTechnologies';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
@@ -25,7 +25,7 @@ import projectUnderConstructionImg from '../../../../resources/images/underConst
 import { useEffect } from 'react';
 
 function ProjectCard({ item }) {
-  useEffect(() => console.log(item), [item]);
+  // useEffect(() => console.log(item), [item]);
   return (
     <Grid item xs={12} lg={6} xxl={4}>
       <Card
@@ -111,12 +111,35 @@ function ProjectCard({ item }) {
             </Card>
             <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
               <Typography variant="body1">{item.content.description}</Typography>
+              <Typography variant="subtitle2">Tecnologías:</Typography>
+              <Stack direction={'row'} flexWrap={'wrap'} gap={1}>
+                {item.content.technologies.map((tech, index) => (
+                  <Tooltip key={index} title={tech.name} arrow>
+                    <Chip
+                      icon={tech.icon}
+                      size="medium"
+                      sx={{
+                        backgroundColor: tech.colorLayer1,
+                        color: tech.colorLayer2,
+                        fontWeight: 'medium',
+                        borderRadius: '50%',
+                        width: 40,
+                        height: 40,
+                        '& .MuiChip-icon': {
+                          color: tech.colorLayer2,
+                          fontSize: '1.2rem',
+                          margin: 0
+                        },
+                        '& .MuiChip-label': {
+                          display: 'none'
+                        }
+                      }}
+                    />
+                  </Tooltip>
+                ))}
+              </Stack>
             </Stack>
           </Stack>
-        </CardContent>
-        <Divider variant="middle" />
-        <CardContent>
-          <PieChartTechnologies item={item.content.technologies} />
         </CardContent>
         <Divider variant="middle" />
         <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>

@@ -5,7 +5,7 @@ import { DashboardMain } from '../../modules/dashboardMain';
 function Router() {
   return (
     <Routes>
-      <Route path="*" element={'<PageNotFound/>'} />
+      <Route path="*" element={<div>Página no encontrada</div>} />
       <Route path="/" element={<DashboardMain />}>
         <Route index element={<Navigate to="/profile" />} />
         {dashboardMainRoutes.map((item, i) => (

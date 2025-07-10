@@ -1,7 +1,7 @@
 const personalInfo = {
   fixed: {
     surnames: 'Pinedo Gutierrez',
-    names: 'Chrisopher David',
+    names: 'Christopher David',
     country: 'Perú',
     nationality: 'Peruana',
     docIdType: 'DNI',
@@ -26,8 +26,8 @@ const personalInfo = {
       linkedin: 'linkedin.com/in/christopher-pinedo-gutierrez/',
       github: 'github.com/christopherpinedogutierrez/',
       personalWeb: 'christopherpinedogutierrez.github.io/web/',
-      codewars: 'codewars.com/users/ChristopherPinedo/',
-      leetCode: 'leetcode.com/ChristopherPinedo/'
+      codewars: '',
+      leetCode: ''
     }
   }
 };
