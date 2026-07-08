@@ -1,0 +1,89 @@
+backend:
+  name: github
+  repo: ChristopherPinedoGutierrez/web
+  branch: main
+  site_domain: https://christopherpinedogutierrez.github.io/web/
+  base_url: https://api.decapcms.org
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "personalInfo"
+    label: "Información Personal"
+    files:
+      - file: "src/content/personalInfo.md"
+        label: "Datos Personales"
+        name: "personalInfo"
+        fields:
+          - { label: "Nombres", name: "names", widget: "string" }
+          - { label: "Apellidos", name: "surnames", widget: "string" }
+          - { label: "País", name: "country", widget: "string" }
+          - { label: "Nacionalidad", name: "nationality", widget: "string" }
+          - { label: "Tipo Doc", name: "docIdType", widget: "string" }
+          - { label: "Número Doc", name: "docIdNumber", widget: "string" }
+          - { label: "Género", name: "gender", widget: "string" }
+          - { label: "Nombre Corto", name: "shortName", widget: "string" }
+          - { label: "Rol Principal", name: "mainRole", widget: "string" }
+          - { label: "Mensaje Presentación 1", name: "presentationMessage1", widget: "text" }
+          - { label: "Mensaje Presentación 2", name: "presentationMessage2", widget: "text" }
+          - { label: "Mensaje Presentación 3", name: "presentationMessage3", widget: "text" }
+          - { label: "Teléfono", name: "phone", widget: "string" }
+          - { label: "Código País Teléfono", name: "phoneCountryCode", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn (Dominio/User)", name: "linkedin", widget: "string" }
+          - { label: "GitHub (Dominio/User)", name: "github", widget: "string" }
+          - { label: "Web Personal (Dominio/User)", name: "personalWeb", widget: "string" }
+
+  - name: "technologies"
+    label: "Tecnologías y Conocimientos"
+    folder: "src/content/technologies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre de la Tecnología", name: "name", widget: "string" }
+      - { label: "Área", name: "area", widget: "select", options: ["Frontend", "Backend", "Testing", "Design", "Management", "Artificial Intelligence"] }
+      - { label: "Grupo", name: "group", widget: "string", required: false }
+      - { label: "Tipo de Definición", name: "typeDef", widget: "string", required: false }
+      - { label: "Nombre de Icono (react-icons/si o fa)", name: "iconName", widget: "string" }
+      - { label: "Color Primario (Hex)", name: "color", widget: "string" }
+      - { label: "Color Fondo Capa 1 (Hex)", name: "colorLayer1", widget: "string", required: false }
+      - { label: "Color Capa 2 (Hex)", name: "colorLayer2", widget: "string", required: false }
+      - { label: "Ecosistema (Tags)", name: "ecosystem", widget: "list", required: false }
+      - { label: "Estado", name: "state", widget: "select", options: ["conocidas", "aprendiendo", "pendientes"] }
+      - { label: "Descripción", name: "body", widget: "markdown", required: false }
+
+  - name: "projects"
+    label: "Proyectos"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre del Proyecto", name: "title", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image", required: false }
+      - { label: "Área", name: "area", widget: "select", options: ["Frontend", "Backend", "FullStack"] }
+      - { label: "Nivel de Dificultad", name: "level", widget: "select", options: ["Newbie", "Junior", "Intermediate", "Advanced", "Expert"] }
+      - { label: "Estado de Desarrollo", name: "status", widget: "select", options: ["Desarrollo", "Producción"] }
+      - { label: "Origen / Tipo", name: "source", widget: "select", options: ["Frontend Mentor project", "Personal project", "Self taught"] }
+      - { label: "Repositorio GitHub (URL)", name: "repository", widget: "string", required: false }
+      - { label: "Enlace Demo (URL)", name: "url", widget: "string", required: false }
+      - { label: "Tecnologías Utilizadas (Keys)", name: "technologies", widget: "list" }
+      - { label: "Descripción del Proyecto", name: "body", widget: "markdown" }
+
+  - name: "experience"
+    label: "Experiencia Laboral"
+    folder: "src/content/experience"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Empresa", name: "company", widget: "string" }
+      - { label: "Cargo", name: "role", widget: "string" }
+      - { label: "Fecha Inicio", name: "startDate", widget: "string" }
+      - { label: "Fecha Fin", name: "endDate", widget: "string" }
+      - { label: "Duración", name: "duration", widget: "string" }
+      - { label: "Estado", name: "state", widget: "select", options: ["En curso", "Finalizado"] }
+      - { label: "Soft Skills (Keys)", name: "softSkills", widget: "list", required: false }
+      - { label: "Aptitudes (Keys)", name: "aptitudes", widget: "list", required: false }
+      - { label: "Funciones y Descripción", name: "body", widget: "markdown" }
