@@ -1,8 +1,6 @@
-import { v4 as uuidV4 } from 'uuid';
-
 const areas = {
   frontend: {
-    id: uuidV4(),
+    id: 'frontend',
     name: 'Frontend',
     color: 'primary',
     filterProfile: true,
@@ -10,7 +8,7 @@ const areas = {
     disabled: false
   },
   backend: {
-    id: uuidV4(),
+    id: 'backend',
     name: 'Backend',
     color: 'secondary',
     filterProfile: true,
@@ -18,7 +16,7 @@ const areas = {
     disabled: false
   },
   testing: {
-    id: uuidV4(),
+    id: 'testing',
     name: 'Testing',
     color: 'gray',
     filterProfile: true,
@@ -26,7 +24,7 @@ const areas = {
     disabled: false
   },
   design: {
-    id: uuidV4(),
+    id: 'design',
     name: 'Design',
     color: 'warning',
     filterProfile: true,
@@ -34,7 +32,7 @@ const areas = {
     disabled: false
   },
   management: {
-    id: uuidV4(),
+    id: 'management',
     name: 'Management',
     color: 'error',
     filterProfile: true,
@@ -43,14 +41,14 @@ const areas = {
   },
   // --------- NO FILTERABLE
   fullstack: {
-    id: uuidV4(),
+    id: 'fullstack',
     name: 'FullStack',
     color: 'success',
     filterProfile: false,
     filterProjects: true
   },
   development: {
-    id: uuidV4(),
+    id: 'development',
     name: 'Development',
     color: 'gray',
     filterProfile: false,
