@@ -71,19 +71,31 @@ export const projectsInfo = [
       "technologies": [
         {
           "id": "js",
-          "name": "Javascript"
+          "name": "Javascript",
+          "iconName": "SiJavascript",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#efd81d"
         },
         {
           "id": "react",
-          "name": "React"
+          "name": "React",
+          "iconName": "SiReact",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#5bd9fb"
         },
         {
           "id": "tailwind",
-          "name": "TailwindCss"
+          "name": "TailwindCss",
+          "iconName": "SiTailwindcss",
+          "colorLayer1": "grey.900",
+          "colorLayer2": "#38bdf8"
         },
         {
           "id": "vite",
-          "name": "Vite"
+          "name": "Vite",
+          "iconName": "SiVite",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#fca311"
         }
       ]
     }
@@ -119,19 +131,31 @@ export const projectsInfo = [
       "technologies": [
         {
           "id": "js",
-          "name": "Javascript"
+          "name": "Javascript",
+          "iconName": "SiJavascript",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#efd81d"
         },
         {
           "id": "react",
-          "name": "React"
+          "name": "React",
+          "iconName": "SiReact",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#5bd9fb"
         },
         {
           "id": "tailwind",
-          "name": "TailwindCss"
+          "name": "TailwindCss",
+          "iconName": "SiTailwindcss",
+          "colorLayer1": "grey.900",
+          "colorLayer2": "#38bdf8"
         },
         {
           "id": "vite",
-          "name": "Vite"
+          "name": "Vite",
+          "iconName": "SiVite",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#fca311"
         }
       ]
     }
@@ -167,19 +191,31 @@ export const projectsInfo = [
       "technologies": [
         {
           "id": "js",
-          "name": "Javascript"
+          "name": "Javascript",
+          "iconName": "SiJavascript",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#efd81d"
         },
         {
           "id": "react",
-          "name": "React"
+          "name": "React",
+          "iconName": "SiReact",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#5bd9fb"
         },
         {
           "id": "tailwind",
-          "name": "TailwindCss"
+          "name": "TailwindCss",
+          "iconName": "SiTailwindcss",
+          "colorLayer1": "grey.900",
+          "colorLayer2": "#38bdf8"
         },
         {
           "id": "vite",
-          "name": "Vite"
+          "name": "Vite",
+          "iconName": "SiVite",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#fca311"
         }
       ]
     }
@@ -215,15 +251,24 @@ export const projectsInfo = [
       "technologies": [
         {
           "id": "js",
-          "name": "Javascript"
+          "name": "Javascript",
+          "iconName": "SiJavascript",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#efd81d"
         },
         {
           "id": "react",
-          "name": "React"
+          "name": "React",
+          "iconName": "SiReact",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#5bd9fb"
         },
         {
           "id": "vite",
-          "name": "Vite"
+          "name": "Vite",
+          "iconName": "SiVite",
+          "colorLayer1": "grey.800",
+          "colorLayer2": "#fca311"
         }
       ]
     }

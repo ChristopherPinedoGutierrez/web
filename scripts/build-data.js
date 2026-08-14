@@ -220,7 +220,15 @@ projectFiles.forEach(file => {
         description: parsed.content,
         technologies: (parsed.data.technologies || []).map(t => {
           const matchedTech = technologiesObj[t];
-          return matchedTech ? { id: matchedTech.id, name: matchedTech.name } : { id: t, name: t };
+          return matchedTech
+            ? {
+                id: matchedTech.id,
+                name: matchedTech.name,
+                iconName: matchedTech.iconName || '',
+                colorLayer1: matchedTech.colorLayer1 || '#cccccc',
+                colorLayer2: matchedTech.colorLayer2 || '#ffffff'
+              }
+            : { id: t, name: t, iconName: '', colorLayer1: '#cccccc', colorLayer2: '#ffffff' };
         })
       }
     });

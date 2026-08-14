@@ -23,6 +23,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 
 import projectUnderConstructionImg from '../../../../resources/images/underConstruction.jpg';
 import { useEffect } from 'react';
+import { DynamicIcon } from '../../../../library/common/components/DynamicIcon';
 
 function ProjectCard({ item }) {
   // useEffect(() => console.log(item), [item]);
@@ -116,7 +117,7 @@ function ProjectCard({ item }) {
                 {item.content.technologies.map((tech, index) => (
                   <Tooltip key={index} title={tech.name} arrow>
                     <Chip
-                      icon={tech.icon}
+                      icon={<DynamicIcon name={tech.iconName} size={20} color={tech.colorLayer2} />}
                       size="medium"
                       sx={{
                         backgroundColor: tech.colorLayer1,
