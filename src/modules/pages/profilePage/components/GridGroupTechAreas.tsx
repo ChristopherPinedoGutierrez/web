@@ -2,35 +2,27 @@
 /* eslint-disable react/prop-types */
 import {
   Box,
-  Button,
   Card,
-  CardActions,
-  CardContent,
-  CardHeader,
+  CardActionArea,
   Chip,
-  Divider,
   Grid,
-  IconButton,
   Stack,
-  styled,
-  SvgIcon,
   Tooltip,
   Typography,
-  useTheme
 } from '@mui/material';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { projectsInfo } from '../../../../resources/data/projectsInfo';
 import { Link as RouterLink } from 'react-router-dom';
+import { DynamicIcon } from '../../../../library/common/components/DynamicIcon';
 import SchoolIcon from '@mui/icons-material/School';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import PendingIcon from '@mui/icons-material/Pending';
-import { DynamicIcon } from '../../../../library/common/components/DynamicIcon';
 
-function StateIcon({ name }: { name: string }) {
-  if (name === 'conocidas') return <SchoolIcon />;
-  if (name === 'aprendiendo') return <LocalLibraryIcon />;
-  return <PendingIcon />;
+function StateIcon({ name, size = 16 }: { name: string; size?: number }) {
+  if (name === 'conocidas') return <SchoolIcon sx={{ fontSize: size }} />;
+  if (name === 'aprendiendo') return <LocalLibraryIcon sx={{ fontSize: size }} />;
+  return <PendingIcon sx={{ fontSize: size }} />;
 }
 
 interface GridTechAreasProps {
@@ -39,64 +31,75 @@ interface GridTechAreasProps {
 
 function GridTechAreas({ element }: GridTechAreasProps) {
   return (
-    <Grid item key={element.id} xs={6} sm={4} lg={3}>
+    <Grid item key={element.id} xs={6} sm={4} md={4} lg={3} xl={2}>
       <Card
-        sx={{ height: 1, borderRadius: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative',
+          overflow: 'hidden',
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            transform: 'translateY(-4px)',
+            borderColor: 'primary.main',
+          }
+        }}
       >
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-          <Box width={1}>
-            <Stack width={1} pb={1} gap={2} direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-              <Typography variant="h6" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-                {element.name}
-              </Typography>
-              <StateIcon name={element.state.name} />
-            </Stack>
-            <Divider flexItem orientation="horizontal" />
+        <Tooltip title={`Estado: ${element.state.name}`} placement="top">
+          <Box sx={{ position: 'absolute', top: 8, right: 8, color: 'text.secondary', opacity: 0.5, zIndex: 1 }}>
+            <StateIcon name={element.state.name} />
           </Box>
+        </Tooltip>
+        <CardActionArea
+          component={RouterLink}
+          to={`/projects/:${element.id}`}
+          disabled={!element.hasProjects}
+          sx={{ height: '100%', p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+        >
           <Box
             sx={{
-              borderRadius: 25,
-              width: 80,
-              height: 80,
+              width: 56,
+              height: 56,
+              borderRadius: '50%',
               backgroundColor: element.colorLayer1,
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              mb: 1.5
             }}
           >
-            <DynamicIcon name={element.iconName} size={40} color={element.colorLayer2} />
+            <DynamicIcon name={element.iconName} size={28} color={element.colorLayer2} />
           </Box>
-        </CardContent>
-        <CardActions sx={{ display: 'flex', justifyContent: 'flex-end', padding: 2, paddingTop: 0 }}>
-          <Button
-            disabled={!element.hasProjects}
-            component={RouterLink}
-            to={`/projects/:${element.id}`}
-            endIcon={<OpenInBrowserIcon />}
-            variant="outlined"
-            fullWidth
-            // size="small"
-          >
-            View projects
-          </Button>
-        </CardActions>
+            <Typography variant="body2" fontWeight="600" textAlign="center" sx={{ mb: 1 }}>
+              {element.name}
+            </Typography>
+            {element.hasProjects ? (
+              <Typography variant="caption" color="primary" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                Ver proyectos <OpenInBrowserIcon fontSize="inherit" />
+              </Typography>
+            ) : (
+              <Typography variant="caption" color="text.secondary">
+                Sin proyectos
+              </Typography>
+            )}
+          </CardActionArea>
       </Card>
     </Grid>
   );
 }
 
 interface GridGroupTechAreasProps {
-  area: string;
+  checkedAreas: Record<string, boolean>;
   technologies: Record<string, any>;
   checkedObj: Record<string, boolean>;
 }
 
-function GridGroupTechAreas({ area, technologies, checkedObj }: GridGroupTechAreasProps) {
+function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGroupTechAreasProps) {
   const [filteredTechs, setFilteredTechs] = useState<any[]>([]);
 
   useEffect(() => {
     const techlist: Record<string, any> = {};
-    let techListByArea: any[] = [];
     Object.entries(technologies).forEach(([key, value]) => {
       const val = value as any;
       techlist[key] = {
@@ -106,64 +109,49 @@ function GridGroupTechAreas({ area, technologies, checkedObj }: GridGroupTechAre
         )
       };
     });
-    techListByArea = Object.values(techlist).filter((e) => e.area === area);
+    
+    // Filtramos por las áreas que están marcadas como true
+    let techListByArea = Object.values(techlist).filter((e) => checkedAreas[e.area]);
     setFilteredTechs(techListByArea);
-  }, [technologies, area]);
+  }, [technologies, checkedAreas]);
 
-  // useEffect(() => console.log(filteredTechs), [filteredTechs]);
+  // Agrupamos las tecnologías por su área.
+  const groupedTechs = useMemo(() => {
+    const groups: Record<string, any[]> = {};
+    filteredTechs.forEach(t => {
+      // Usar el nombre "bonito" del área si es posible para agrupar, pero "t.area" ya es Frontend, Backend, etc.
+      // Así que lo agrupamos por "t.area".
+      if (!groups[t.area]) groups[t.area] = [];
+      groups[t.area].push(t);
+    });
+    
+    // Sort keys alphabetically so areas are rendered in A-Z order
+    const sortedGroups = {};
+    Object.keys(groups).sort().forEach(key => {
+      sortedGroups[key] = groups[key];
+    });
+
+    return sortedGroups;
+  }, [filteredTechs]);
 
   return (
-    <>
-      <Stack gap={2}>
-        <Card
-          sx={{
-            borderRadius: 2,
-            padding: 2,
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: 2
-          }}
-        >
-          <Stack
-            gap={2}
-            direction={'row'}
-            alignItems={'center'}
-            justifyContent={'space-between'}
-            width={{ xs: 1, sm: 'inherit' }}
-          >
-            <Typography variant="h5">{area.toLocaleUpperCase()}</Typography>
-            <Chip label={filteredTechs.length} />
+    <Stack gap={4}>
+      {Object.entries(groupedTechs).map(([groupArea, techs]) => (
+        <Box key={groupArea}>
+          <Stack direction="row" alignItems="center" gap={1} sx={{ mb: 2, px: 1 }}>
+            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold" sx={{ textTransform: 'uppercase' }}>
+              {groupArea}
+            </Typography>
+            <Chip label={techs.length} size="small" variant="outlined" sx={{ height: 20, fontSize: '0.7rem' }} />
           </Stack>
-          <Stack
-            direction={'row'}
-            gap={2}
-            alignItems={'center'}
-            justifyContent={'space-between'}
-            width={{ xs: 1, sm: 'inherit' }}
-            divider={<Divider flexItem orientation="vertical" />}
-          >
-            <Typography variant="subtitle2">Estados</Typography>
-            <Stack flexGrow={1} direction={'row'} gap={2} flexWrap={'wrap'} justifyContent={'flex-end'}>
-              {Object.entries(checkedObj).map(
-                (ele, i) => ele[1] === true && <Chip key={i} label={ele[0].toLocaleUpperCase()} />
-              )}
-            </Stack>
-          </Stack>
-        </Card>
-        <Grid container spacing={{ xs: 2, md: 4 }}>
-          {/* {area === 'All'
-            ? Object.values(filteredTechs).map((ele) => <GridTechAreas key={ele.id} element={ele} />)
-            : Object.values(filteredTechs)
-                .filter((e) => e.area === area)
-                .map((ele) => <GridTechAreas key={ele.id} element={ele} />)
-          } */}
-          {filteredTechs.map((ele) => (
-            <GridTechAreas key={ele.id} element={ele} />
-          ))}
-        </Grid>
-      </Stack>
-    </>
+          <Grid container spacing={2}>
+            {techs.map((ele) => (
+              <GridTechAreas key={ele.id} element={ele} />
+            ))}
+          </Grid>
+        </Box>
+      ))}
+    </Stack>
   );
 }
 

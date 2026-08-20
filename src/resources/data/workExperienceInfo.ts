@@ -9,7 +9,7 @@ export const workExperienceInfo = [
       "state": "En curso"
     },
     "jobFunctions": "- Conceptualización, diseño arquitectónico y desarrollo Full-Stack de ecosistemas de software complejos (**NotificaPe** y **CalculaPe**).\n- Creación y refinamiento continuo del framework propietario **Spec-Driven Development (SDD)** para la orquestación de desarrollo con agentes de Inteligencia Artificial (Antigravity).\n- Administración integral del ciclo de vida del producto: desde el levantamiento de requisitos (Briefing, Blueprint) y modelado de datos, hasta la implementación técnica nativa y backend serverless.",
-    "softSkills": [
+    "coreCompetencies": [
       {
         "id": "mock-uuid",
         "name": "Liderazgo",
@@ -51,7 +51,7 @@ export const workExperienceInfo = [
         }
       }
     ],
-    "aptitudes": [
+    "technicalSkills": [
       {
         "id": "mock-uuid",
         "name": "Gestión de proyectos",
@@ -77,7 +77,7 @@ export const workExperienceInfo = [
         }
       }
     ],
-    "aptitudesCount": 30
+    "radarCount": 80
   },
   {
     "company": "Autonomo",
@@ -89,7 +89,7 @@ export const workExperienceInfo = [
       "state": "En curso"
     },
     "jobFunctions": "Desarrollo y mantenimiento de módulos y aplicaciones web usando servicios web.",
-    "softSkills": [
+    "coreCompetencies": [
       {
         "id": "mock-uuid",
         "name": "Adaptabilidad",
@@ -131,7 +131,7 @@ export const workExperienceInfo = [
         }
       }
     ],
-    "aptitudes": [
+    "technicalSkills": [
       {
         "id": "mock-uuid",
         "name": "Gestión de proyectos",
@@ -165,7 +165,7 @@ export const workExperienceInfo = [
         }
       }
     ],
-    "aptitudesCount": 40
+    "radarCount": 90
   },
   {
     "company": "All The Keys Of The Marketing SAC",
@@ -177,7 +177,7 @@ export const workExperienceInfo = [
       "state": "Finalizado"
     },
     "jobFunctions": "Gestión y control de procesos e información cumpliendo la función de vínculo entre mi sede y las áreas de recursos humanos, producción y procesos.",
-    "softSkills": [
+    "coreCompetencies": [
       {
         "id": "mock-uuid",
         "name": "Liderazgo",
@@ -235,7 +235,7 @@ export const workExperienceInfo = [
         }
       }
     ],
-    "aptitudes": [
+    "technicalSkills": [
       {
         "id": "mock-uuid",
         "name": "Gestión de proyectos",
@@ -325,6 +325,6 @@ export const workExperienceInfo = [
         }
       }
     ],
-    "aptitudesCount": 110
+    "radarCount": 180
   }
 ];

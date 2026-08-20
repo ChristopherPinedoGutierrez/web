@@ -17,9 +17,28 @@ export const technologies: Record<string, any> = {
     },
     "description": "Lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML."
   },
+  "docker": {
+    "id": "docker",
+    "name": "Docker",
+    "area": "DevOps",
+    "group": "Containers",
+    "typeDef": "Containerization",
+    "iconName": "SiDocker",
+    "color": "#2496ED",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#2496ED",
+    "ecosystem": [
+      "devops",
+      "backend"
+    ],
+    "state": {
+      "name": "pendientes"
+    },
+    "description": "Plataforma de software que permite crear, probar e implementar aplicaciones rápidamente mediante el empaquetado en contenedores estandarizados."
+  },
   "firebase": {
     "id": "firebase",
-    "name": "Firebase (FCM)",
+    "name": "Firebase",
     "area": "Backend",
     "group": "BaaS",
     "typeDef": "Cloud Messaging",
@@ -75,7 +94,7 @@ export const technologies: Record<string, any> = {
   "kotlin": {
     "id": "kotlin",
     "name": "Kotlin",
-    "area": "Backend",
+    "area": "Mobile",
     "group": "Language",
     "typeDef": "Programming Language",
     "iconName": "SiKotlin",
@@ -91,6 +110,25 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno."
+  },
+  "mysql": {
+    "id": "mysql",
+    "name": "MySQL",
+    "area": "Database",
+    "group": "Relational",
+    "typeDef": "RDBMS",
+    "iconName": "SiMysql",
+    "color": "#4479A1",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#4479A1",
+    "ecosystem": [
+      "database",
+      "backend"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en aplicaciones web tradicionales y arquitecturas monolíticas."
   },
   "nodejs": {
     "id": "nodejs",
@@ -129,10 +167,29 @@ export const technologies: Record<string, any> = {
     },
     "description": "Sistemas de Reconocimiento Óptico de Caracteres y Visión por Computadora para el análisis, procesamiento y extracción de datos estructurados a partir de imágenes en tiempo real."
   },
+  "postgresql": {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "area": "Database",
+    "group": "Relational",
+    "typeDef": "RDBMS",
+    "iconName": "SiPostgresql",
+    "color": "#4169E1",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#4169E1",
+    "ecosystem": [
+      "database",
+      "backend"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Sistema de base de datos relacional de código abierto, robusto y altamente escalable, utilizado frecuentemente en ecosistemas backend modernos y BaaS como Supabase."
+  },
   "react-native": {
     "id": "react-native",
     "name": "React Native",
-    "area": "Frontend",
+    "area": "Mobile",
     "group": "Framework",
     "typeDef": "Mobile Framework",
     "iconName": "SiReact",
@@ -174,7 +231,7 @@ export const technologies: Record<string, any> = {
     "area": "Management",
     "group": "Methodology",
     "typeDef": "Architecture Framework",
-    "iconName": "FaProjectDiagram",
+    "iconName": "FaDiagramProject",
     "color": "#FFFFFF",
     "colorLayer1": "grey.800",
     "colorLayer2": "#FFFFFF",

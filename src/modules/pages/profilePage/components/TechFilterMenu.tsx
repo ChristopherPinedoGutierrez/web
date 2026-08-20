@@ -2,104 +2,135 @@
 /* eslint-disable no-unused-vars */
 import {
   Box,
-  Collapse,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  ListSubheader,
-  Paper,
-  Stack,
-  Switch,
   Typography,
-  useMediaQuery,
-  useTheme
+  Stack,
+  Chip,
+  Divider,
+  Checkbox
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import PendingIcon from '@mui/icons-material/Pending';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { ListRadioButtonsGroupTechAreas } from './ListRadioButtonsGroupTechAreas';
-import { useState } from 'react';
-import { ListSwitchGroupTech } from './ListSwitchGroupTech';
+import { useMemo } from 'react';
 
-// function ListSwitchGroupTech({ checkedObj, handleCheck, disablePendientes }) {
-//   return (
-//     <List sx={{ backgroundColor: 'background.paper' }}>
-//       <ListItem>
-//         <ListItemIcon>
-//           <SchoolIcon />
-//         </ListItemIcon>
-//         <ListItemText>Conocidas</ListItemText>
-//         <Switch edge="end" checked={checkedObj.conocida} onChange={handleCheck('conocida')} />
-//       </ListItem>
-//       <ListItem>
-//         <ListItemIcon>
-//           <LocalLibraryIcon />
-//         </ListItemIcon>
-//         <ListItemText>Aprendiendo</ListItemText>
-//         <Switch edge="end" checked={checkedObj.aprendiendo} onChange={handleCheck('aprendiendo')} />
-//       </ListItem>
-//       <ListItem disabled={disablePendientes}>
-//         <ListItemIcon>
-//           <PendingIcon />
-//         </ListItemIcon>
-//         <ListItemText>Pendientes</ListItemText>
-//         <Switch
-//           disabled={disablePendientes}
-//           edge="end"
-//           checked={checkedObj.pendiente}
-//           onChange={handleCheck('pendiente')}
-//         />
-//       </ListItem>
-//     </List>
-//   );
-// }
+const STANDARD_AREAS = [
+  { id: 'Frontend', name: 'Frontend' },
+  { id: 'Backend', name: 'Backend' },
+  { id: 'Mobile', name: 'Mobile' },
+  { id: 'Database', name: 'Base de datos' },
+  { id: 'DevOps', name: 'DevOps' },
+  { id: 'Management', name: 'Management' }
+].sort((a, b) => a.name.localeCompare(b.name));
 
-function TechFilterMenu({ area, setArea, checkedObj, handleCheck, disablePendientes }) {
-  const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
-  const [openSections, setOpenSections] = useState({
-    area: false,
-    estado: matchesMD ? true : false
-  });
+const DOMAIN_STATES = [
+  { id: 'aprendiendo', name: 'Aprendiendo', Icon: LocalLibraryIcon },
+  { id: 'conocidas', name: 'Conocidas', Icon: SchoolIcon },
+  { id: 'pendientes', name: 'Pendientes', Icon: PendingIcon }
+].sort((a, b) => a.name.localeCompare(b.name));
 
-  const handleCollapseSections = (section) => {
-    setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
-  };
+function TechFilterMenu({ 
+  checkedAreas, handleCheckArea, handleToggleAllAreas, 
+  checkedObj, handleCheck, handleToggleAllStates, 
+  disablePendientes, technologies 
+}) {
+  const activeAreas = Object.values(checkedAreas).filter(Boolean).length;
+  const totalAreas = Object.keys(checkedAreas).length;
+  const isAllAreasChecked = activeAreas === totalAreas;
+  const isIndeterminateAreas = activeAreas > 0 && activeAreas < totalAreas;
+
+  const activeStates = Object.values(checkedObj).filter(Boolean).length;
+  const totalStates = Object.keys(checkedObj).length;
+  const isAllStatesChecked = activeStates === totalStates;
+  const isIndeterminateStates = activeStates > 0 && activeStates < totalStates;
+
+  // Calcula contadores
+  const counts = useMemo(() => {
+    const areaCount = {};
+    const stateCount = {};
+    Object.values(technologies || {}).forEach((tech: any) => {
+      // Si el elemento está visible según los filtros combinados, pero como 
+      // queremos el count TOTAL estático por categoría, contamos todos.
+      // Opcional: contar solo si el state opuesto está activo (se deja total por simplicidad).
+      areaCount[tech.area] = (areaCount[tech.area] || 0) + 1;
+      stateCount[tech.state.name] = (stateCount[tech.state.name] || 0) + 1;
+    });
+    return { areaCount, stateCount };
+  }, [technologies]);
+
   return (
-    <Box sx={{ height: 1, borderRadius: 2, overflow: 'auto', backgroundColor: 'background.paper' }}>
-      <Stack>
-        <Box sx={{ p: 2, backgroundColor: 'primary.main', color: 'primary.contrastText' }}>
-          <Typography variant="h5">Tecnologías</Typography>
-        </Box>
+    <Box sx={{ height: 1, borderRadius: 2, p: 3, bgcolor: 'background.paper', width: { md: '300px' } }}>
+      <Stack spacing={4}>
         <Box>
-          <ListItemButton onClick={() => handleCollapseSections('area')}>
-            <ListItemText primary="Areas" />
-            {openSections.area ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </ListItemButton>
-          <Collapse in={openSections.area}>
-            <ListRadioButtonsGroupTechAreas area={area} setArea={setArea} />
-          </Collapse>
-          <Divider />
-          <ListItemButton onClick={() => handleCollapseSections('estado')}>
-            <ListItemText primary="Estados" />
-            {openSections.estado ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </ListItemButton>
-          <Collapse in={openSections.estado}>
-            <ListSwitchGroupTech
-              checkedObj={checkedObj}
-              handleCheck={handleCheck}
-              disablePendientes={disablePendientes}
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
+            <Typography variant="subtitle2" color="text.secondary">ÁREA DE DESARROLLO</Typography>
+            <Checkbox
+              size="small"
+              checked={isAllAreasChecked}
+              indeterminate={isIndeterminateAreas}
+              onChange={() => handleToggleAllAreas(!(isAllAreasChecked || isIndeterminateAreas))}
+              sx={{ p: 0 }}
             />
-          </Collapse>
-          <Divider />
-          <List>
-            <ListItem></ListItem>
-          </List>
+          </Stack>
+          <Stack direction="row" flexWrap="wrap" gap={1}>
+            {STANDARD_AREAS.map((a) => {
+              const count = counts.areaCount[a.id] || 0;
+              return (
+                <Chip
+                  key={a.id}
+                  label={
+                    <Box component="span" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                      {a.name}
+                      <Box component="span" sx={{ fontSize: '0.7rem', opacity: 0.7, bgcolor: 'action.selected', px: 0.6, borderRadius: 1 }}>
+                        {count}
+                      </Box>
+                    </Box>
+                  }
+                  onClick={handleCheckArea(a.id)}
+                  color={checkedAreas[a.id] ? 'primary' : 'default'}
+                  variant={checkedAreas[a.id] ? 'filled' : 'outlined'}
+                />
+              );
+            })}
+          </Stack>
+        </Box>
+
+        <Divider />
+
+        <Box>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
+            <Typography variant="subtitle2" color="text.secondary">ESTADO DE DOMINIO</Typography>
+            <Checkbox
+              size="small"
+              checked={isAllStatesChecked}
+              indeterminate={isIndeterminateStates}
+              onChange={() => handleToggleAllStates(!(isAllStatesChecked || isIndeterminateStates))}
+              sx={{ p: 0 }}
+            />
+          </Stack>
+          <Stack direction="row" flexWrap="wrap" gap={1}>
+            {DOMAIN_STATES.map((state) => {
+              const count = counts.stateCount[state.id] || 0;
+              const isDisabled = disablePendientes && state.id === 'pendientes';
+              return (
+                <Chip
+                  key={state.id}
+                  icon={<state.Icon fontSize="small" />}
+                  label={
+                    <Box component="span" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                      {state.name}
+                      <Box component="span" sx={{ fontSize: '0.7rem', opacity: 0.7, bgcolor: 'action.selected', px: 0.6, borderRadius: 1 }}>
+                        {count}
+                      </Box>
+                    </Box>
+                  }
+                  onClick={isDisabled ? undefined : handleCheck(state.id)}
+                  disabled={isDisabled}
+                  color={checkedObj[state.id] ? 'primary' : 'default'}
+                  variant={checkedObj[state.id] ? 'filled' : 'outlined'}
+                />
+              );
+            })}
+          </Stack>
         </Box>
       </Stack>
     </Box>

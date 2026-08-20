@@ -88,7 +88,7 @@ export const projectsInfo = [
         },
         {
           "id": "firebase",
-          "name": "Firebase (FCM)",
+          "name": "Firebase",
           "iconName": "SiFirebase",
           "colorLayer1": "grey.800",
           "colorLayer2": "#FFCA28"
@@ -194,7 +194,7 @@ export const projectsInfo = [
         {
           "id": "sdd",
           "name": "Spec-Driven Development",
-          "iconName": "FaProjectDiagram",
+          "iconName": "FaDiagramProject",
           "colorLayer1": "grey.800",
           "colorLayer2": "#FFFFFF"
         }

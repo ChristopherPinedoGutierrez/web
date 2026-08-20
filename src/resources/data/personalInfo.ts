@@ -10,10 +10,10 @@ export const personalInfo = {
   },
   "variable": {
     "shortName": "Christopher Pinedo",
-    "mainRole": "Desarrollador de software",
-    "presentationMessage1": "Me considero una persona proactiva, resiliente y entusiasta por la tecnología que busca aprender constantemente.",
-    "presentationMessage2": "Como desarrollador de software estoy orientado a frontend web en el ecosistema de React.js con conocimiento en Backend con Node.js y Bases de datos SQL y NoSQL.",
-    "presentationMessage3": "En gestión de proyectos me he desempeñado en el area industrial a nivel de procesos administrativos y en la gestión de sistemas de información.",
+    "mainRole": "Platform Engineer / Full Stack AI Developer",
+    "presentationMessage1": "Me considero una persona resiliente y apasionada por la tecnología, en constante evolución y aprendizaje.",
+    "presentationMessage2": "Especializado en la creación de ecosistemas de software, integrando arquitecturas frontend modernas y backends serverless con Inteligencia Artificial.",
+    "presentationMessage3": "Lidero proyectos end-to-end bajo el paradigma Spec-Driven Development, garantizando escalabilidad y calidad desde la concepción hasta el despliegue.",
     "telephone": {
       "number": 978544045,
       "countryCode": 51

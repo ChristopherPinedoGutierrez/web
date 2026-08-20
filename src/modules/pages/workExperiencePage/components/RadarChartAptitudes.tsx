@@ -1,23 +1,29 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { useTheme } from '@mui/material/styles';
 
-function RadarChartAptitudes({ aptitudes, aptitudesCount }) {
+function RadarChartAptitudes({ skills, radarCount }) {
   const [processedData, setProcessedData] = useState([]);
+  const theme = useTheme();
+  
+  // Use primary main color for the radar chart fill
+  const radarColor = theme.palette.primary.main;
+  // Use text primary color for the labels
+  const textColor = theme.palette.text.primary;
 
   useEffect(() => {
     const processData = () => {
       const typeMap = {};
 
-      aptitudes.forEach((item) => {
+      skills.forEach((item) => {
         const typeName = item.type.name;
         if (!typeMap[typeName]) {
           typeMap[typeName] = 0;
         }
         typeMap[typeName] += item.type.value;
       });
-      // console.log(typeMap);
+
       const formattedData = Object.keys(typeMap).map((type) => ({
         subject: type,
         A: typeMap[type]
@@ -27,20 +33,15 @@ function RadarChartAptitudes({ aptitudes, aptitudesCount }) {
     };
 
     processData();
-  }, [aptitudes]);
-
-  useEffect(() => {
-    // console.log('aptitudes :', aptitudes);
-    // console.log('processedData :', processedData);
-  }, [processedData]);
+  }, [skills]);
 
   return (
-    <ResponsiveContainer width={'100%'} height={300}>
+    <ResponsiveContainer width={'100%'} height={250}>
       <RadarChart data={processedData}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis angle={0} domain={[0, aptitudesCount]} />
-        <Radar name="Aptitudes" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        <PolarGrid stroke={theme.palette.divider} />
+        <PolarAngleAxis dataKey="subject" tick={{ fill: textColor, fontSize: 12 }} />
+        <PolarRadiusAxis angle={0} domain={[0, radarCount]} tick={false} axisLine={false} />
+        <Radar name="Skills" dataKey="A" stroke={radarColor} fill={radarColor} fillOpacity={0.5} />
       </RadarChart>
     </ResponsiveContainer>
   );

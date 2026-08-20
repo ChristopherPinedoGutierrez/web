@@ -29,7 +29,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
-### [EN PROGRESO] Épica 2: Modelado de Datos y Contenido del CMS
+### [COMPLETADA] Épica 2: Modelado de Datos y Contenido del CMS
 * **Alcance:** Integrar nuevos proyectos estrella (NotificaPe, CalculaPe, SDD_CDPG_SPECS), actualizar tecnologías, experiencia laboral y soportar metadatos ocultos de sincronización.
 * **Impacto Core:** `[DATA]`, requiere alterar `build-data.js` (Decap CMS fue eliminado por sobreingeniería).
 
@@ -61,26 +61,28 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
-### [BACKLOG] Épica 4: Rediseño y Modernización de UI (Material UI)
+### [EN PROGRESO] Épica 4: Rediseño y Modernización de UI (Material UI)
 * **Alcance:** Modernizar el diseño visual del portafolio, ajustando el tema de Material UI (posible Bento Box, Dark Mode refinado).
 * **Impacto Core:** `[UI/UX]`.
 
 *Nota: Debatir si iremos por estilo Bento Box, Dark Mode refinado, etc. antes de programar.*
 
 **Tareas:**
-- [ ] **Task 4.1:** `[UI-01]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente (specs/03-ui-modernization.md)`
+- [x] **Task 4.1:** `[UI-01]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Crear especificación visual `specs/03-ui-modernization.md`.
-- [ ] **Task 4.2:** `[UI-02]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente`
+- [x] **Task 4.2:** `[UI-02]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Reconfigurar Theme de MUI eliminando estilos rígidos.
-- [ ] **Task 4.3:** `[UI-03]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente`
+- [ ] **Task 4.3:** `[UI-03]` | **Fecha Alta:** 2026-08-18 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Refactorizar layout de Proyectos para destacar Ecosistemas (ej. NotificaPe).
-- [ ] **Task 4.4:** `[UI-04]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente`
+- [x] **Task 4.4:** `[UI-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Refactorizar Perfil y Navbar.
 
 ---
 
 ## 📝 Histórico de Cambios (Changelog)
 
+* **2026-08-20:** `[UI/UX]` Finalizado refactor del Perfil de usuario, barra de tecnologías y unificación de anchos arquitectónicos.
+* **2026-08-20:** `[UI/UX]` Redacción de `specs/03-ui-modernization.md` y activación de la Épica 4.
 * **2026-08-20:** `[CORE]` Modificación de `AGENTS.md` y `BACKLOG.md` para implementar plantilla estricta y gobernanza del proyecto.
 * **2026-08-18:** `[DATA]` Definición estratégica de `specs/01-nuevos-datos.md` (NotificaPe, CalculaPe, SDD_CDPG).
 * **2026-08-18:** `[CORE]` Creación de capa Management (`AGENTS.md`, `BACKLOG.md`).

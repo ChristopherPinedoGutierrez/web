@@ -1,5 +1,5 @@
 ---
-name: "Firebase (FCM)"
+name: "Firebase"
 area: "Backend"
 group: "BaaS"
 typeDef: "Cloud Messaging"

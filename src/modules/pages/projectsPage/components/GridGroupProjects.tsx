@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Button,
   Card,
   CardActions,
@@ -11,125 +14,104 @@ import {
   Grid,
   IconButton,
   Rating,
-  Skeleton,
   Stack,
   Tooltip,
-  Typography
+  Typography,
+  Box
 } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CircleIcon from '@mui/icons-material/Circle';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import projectUnderConstructionImg from '../../../../resources/images/underConstruction.jpg';
-import { useEffect } from 'react';
 import { DynamicIcon } from '../../../../library/common/components/DynamicIcon';
 
+// Helper to parse markdown description into sections
+const parseDescription = (desc) => {
+  if (!desc) return [];
+  // Split by '## ' but keep the text
+  const parts = desc.split('## ').filter(Boolean);
+  // If no '## ' found, return as single block
+  if (parts.length === 1 && !desc.includes('## ')) {
+    return [{ title: 'Descripción', content: desc }];
+  }
+  return parts.map(part => {
+    const lines = part.split('\n');
+    const title = lines[0].trim();
+    const content = lines.slice(1).join('\n').trim();
+    return { title, content };
+  });
+};
+
 function ProjectCard({ item }) {
-  // useEffect(() => console.log(item), [item]);
+  const isEcosystem = item.config.projectType === 'ecosystem';
+  const isFramework = item.config.projectType === 'framework';
+  const gridSpan = isEcosystem ? 12 : (isFramework ? 8 : 6);
+  
+  const sections = parseDescription(item.content.description);
+
   return (
-    <Grid item xs={12} lg={6} xxl={4}>
+    <Grid item xs={12} md={gridSpan} xxl={isEcosystem ? 12 : 4}>
       <Card
         sx={{
-          height: 1,
-          maxWidth: '500px',
-          margin: 'auto',
-          // borderColor: `projectLevels.${item.config.level.name}`,
-          borderRadius: 2,
+          height: '100%',
           display: 'flex',
           flexDirection: 'column'
-          // justifyContent: 'space-between'
         }}
-        variant="outlined"
       >
         <CardContent>
-          <Stack justifyContent={'space-between'} gap={2} divider={<Divider flexItem orientation="horizontal" />}>
-            <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-              <Typography variant="subtitle2">NIVEL</Typography>
-              <Stack direction={'row'} gap={1}>
-                <Chip label={item.config.level.name} size="small" />
-                <Rating
-                  readOnly
-                  value={item.config.level.rating}
-                  sx={{ color: `projectLevels.${item.config.level.name}` }}
-                  icon={<CircleIcon />}
-                  emptyIcon={<RadioButtonUncheckedIcon />}
-                />
-              </Stack>
+          <Stack justifyContent={'space-between'} gap={2} direction={{ xs: 'column', sm: 'row' }}>
+            <Stack direction={'row'} gap={1} alignItems={'center'}>
+              <Chip label={item.config.level.name} size="small" variant="outlined" />
+              <Rating
+                readOnly
+                value={item.config.level.rating}
+                sx={{ color: `projectLevels.${item.config.level.name}` }}
+                icon={<CircleIcon fontSize="inherit" />}
+                emptyIcon={<RadioButtonUncheckedIcon fontSize="inherit" />}
+                size="small"
+              />
             </Stack>
-            <Stack
-              direction={'row'}
-              justifyContent={'space-between'}
-              divider={<Divider flexItem orientation="vertical" />}
-              gap={1}
-            >
-              <Stack gap={1} direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
-                <Typography variant="subtitle2">AREA</Typography>
-                <Chip label={item.config.area.name} color={item.config.area.color} size="small" />
-              </Stack>
-              <Stack gap={1} direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
-                <Typography variant="subtitle2">ESTADO</Typography>
-                <Chip label={item.config.status.keyName} color={item.config.status.color} size="small" />
-              </Stack>
+            <Stack direction={'row'} gap={1} alignItems={'center'}>
+              <Chip label={item.config.projectType.toUpperCase()} color="primary" size="small" />
+              <Chip label={item.config.status.keyName} color={item.config.status.color as any} size="small" />
             </Stack>
-            {/* <Grid container>
-              <Grid item xs={12} md={6}>
-                <Stack gap={1} direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
-                  <Typography variant="subtitle2">AREA</Typography>
-                  <Chip label={item.config.area.name} color={item.config.area.color} size="small" />
-                </Stack>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Stack gap={1} direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
-                  <Divider flexItem orientation="vertical" />
-                  <Typography variant="subtitle2">ESTADO</Typography>
-                  <Chip label={item.config.status.keyName} color={item.config.status.color} size="small" />
-                </Stack>
-              </Grid>
-            </Grid> */}
           </Stack>
         </CardContent>
-        <Divider variant="middle" />
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Stack spacing={2}>
-            <Typography variant="h5">{item.content.name}</Typography>
-            <Card elevation={0} variant="outlined" sx={{ borderRadius: 2 }}>
-              {item.config.image ? (
+        
+        <Divider />
+        
+        <CardContent sx={{ flexGrow: 1, p: 0 }}>
+          <Grid container sx={{ height: '100%' }}>
+            {/* Image & Tech Stack Section */}
+            <Grid item xs={12} md={isEcosystem ? 5 : 12} sx={{ p: 3, borderRight: (theme) => isEcosystem ? `1px solid ${theme.palette.divider}` : 'none' }}>
+              <Typography variant="h5" gutterBottom>{item.content.name}</Typography>
+              
+              <Box sx={{ borderRadius: 2, overflow: 'hidden', mb: 3 }}>
                 <CardMedia
                   component={'img'}
-                  height={200}
-                  image={item.config.image}
+                  height={220}
+                  image={item.config.image || projectUnderConstructionImg}
                   alt={`Image ${item.content.name}`}
+                  sx={{ objectFit: 'cover' }}
                 />
-              ) : (
-                <CardMedia
-                  component={'img'}
-                  height={200}
-                  image={projectUnderConstructionImg}
-                  alt={`Image Project under construction`}
-                />
-              )}
-            </Card>
-            <Stack spacing={{ xs: 1, md: 2 }} alignItems={'baseline'}>
-              <Typography variant="body1">{item.content.description}</Typography>
-              <Typography variant="subtitle2">Tecnologías:</Typography>
+              </Box>
+
+              <Typography variant="subtitle2" color="text.secondary" gutterBottom>STACK TECNOLÓGICO</Typography>
               <Stack direction={'row'} flexWrap={'wrap'} gap={1}>
                 {item.content.technologies.map((tech, index) => (
                   <Tooltip key={index} title={tech.name} arrow>
                     <Chip
-                      icon={<DynamicIcon name={tech.iconName} size={20} color={tech.colorLayer2} />}
+                      icon={<DynamicIcon name={tech.iconName} size={18} color={tech.colorLayer2} />}
                       size="medium"
                       sx={{
                         backgroundColor: tech.colorLayer1,
                         color: tech.colorLayer2,
-                        fontWeight: 'medium',
-                        borderRadius: '50%',
-                        width: 40,
-                        height: 40,
                         '& .MuiChip-icon': {
                           color: tech.colorLayer2,
-                          fontSize: '1.2rem',
-                          margin: 0
+                          ml: 1
                         },
                         '& .MuiChip-label': {
                           display: 'none'
@@ -139,24 +121,42 @@ function ProjectCard({ item }) {
                   </Tooltip>
                 ))}
               </Stack>
-            </Stack>
-          </Stack>
+            </Grid>
+
+            {/* Content Section (Tabs/Accordion) */}
+            <Grid item xs={12} md={isEcosystem ? 7 : 12} sx={{ p: 3 }}>
+              {sections.map((sec, idx) => (
+                <Accordion key={idx} disableGutters elevation={0} defaultExpanded={idx === 0} sx={{ '&:before': { display: 'none' }, borderBottom: (theme) => `1px solid ${theme.palette.divider}`, bgcolor: 'transparent' }}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography fontWeight={600}>{sec.title}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: 'pre-wrap' }}>
+                      {sec.content}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))}
+            </Grid>
+          </Grid>
         </CardContent>
-        <Divider variant="middle" />
+        
+        <Divider />
+        
         <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>
-          <IconButton href={item.config.repository} target="_blank" disabled={item.config.url ? false : true}>
+          <IconButton href={item.config.repository} target="_blank" disabled={!item.config.repository}>
             <GitHubIcon />
           </IconButton>
           <Button
             variant="contained"
             size="small"
-            color="inherit"
-            disabled={item.config.url ? false : true}
+            color="primary"
+            disabled={!item.config.url}
             href={item.config.url}
             target="_blank"
             endIcon={<OpenInBrowserIcon />}
           >
-            Visitar
+            Visitar App
           </Button>
         </CardActions>
       </Card>
@@ -165,7 +165,6 @@ function ProjectCard({ item }) {
 }
 
 function GridGroupProjects({ projects }) {
-  // console.log(projects);
   return (
     <Grid container spacing={{ xs: 2, md: 4 }}>
       {projects.map((item, i) => (

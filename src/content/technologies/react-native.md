@@ -1,6 +1,6 @@
 ---
 name: "React Native"
-area: "Frontend"
+area: "Mobile"
 group: "Framework"
 typeDef: "Mobile Framework"
 iconName: "SiReact"

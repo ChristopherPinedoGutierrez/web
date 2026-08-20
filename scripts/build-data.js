@@ -273,9 +273,9 @@ expFiles.forEach(file => {
         state: parsed.data.state || ''
       },
       jobFunctions: parsed.content,
-      softSkills: (parsed.data.softSkills || []).map(k => softSkillsMap[k] || { name: k }),
-      aptitudes: (parsed.data.aptitudes || []).map(k => aptitudesMap[k] || { name: k }),
-      aptitudesCount: (parsed.data.aptitudes || []).length * 10
+      coreCompetencies: (parsed.data.softSkills || []).map(k => softSkillsMap[k] || { id: 'uuid', name: k, type: { name: 'Skill', value: 5 } }),
+      technicalSkills: (parsed.data.aptitudes || []).map(k => aptitudesMap[k] || { id: 'uuid', name: k, type: { name: 'Skill', value: 10 } }),
+      radarCount: ((parsed.data.aptitudes || []).length + (parsed.data.softSkills || []).length) * 10
     });
   }
 });

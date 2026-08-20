@@ -20,7 +20,7 @@
   },
   "scripts": {
     "predev": "node scripts/build-data.js",
-    "dev": "concurrently \"npx decap-server\" \"vite\"",
+    "dev": "vite",
     "start": "vite",
     "prebuild": "node scripts/build-data.js",
     "build": "tsc && vite build",
