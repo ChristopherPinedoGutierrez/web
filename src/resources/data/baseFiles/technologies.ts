@@ -17,6 +17,25 @@ export const technologies: Record<string, any> = {
     },
     "description": "Lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML."
   },
+  "firebase": {
+    "id": "firebase",
+    "name": "Firebase (FCM)",
+    "area": "Backend",
+    "group": "BaaS",
+    "typeDef": "Cloud Messaging",
+    "iconName": "SiFirebase",
+    "color": "#FFCA28",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#FFCA28",
+    "ecosystem": [
+      "mobile",
+      "notifications"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Plataforma de desarrollo de aplicaciones de Google, enfocada principalmente en la arquitectura de notificaciones push (Cloud Messaging) en ecosistemas móviles."
+  },
   "html": {
     "id": "html",
     "name": "Html",
@@ -53,6 +72,26 @@ export const technologies: Record<string, any> = {
     },
     "description": "Lenguaje de programación interpretado dialecto del estándar ECMAScript."
   },
+  "kotlin": {
+    "id": "kotlin",
+    "name": "Kotlin",
+    "area": "Backend",
+    "group": "Language",
+    "typeDef": "Programming Language",
+    "iconName": "SiKotlin",
+    "color": "#7F52FF",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#7F52FF",
+    "ecosystem": [
+      "android",
+      "mobile",
+      "backend"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno."
+  },
   "nodejs": {
     "id": "nodejs",
     "name": "NodeJS",
@@ -70,6 +109,45 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Entorno de ejecución de JavaScript en el backend."
+  },
+  "ocr": {
+    "id": "ocr",
+    "name": "Computer Vision (OCR)",
+    "area": "Artificial Intelligence",
+    "group": "Concept",
+    "typeDef": "Machine Learning",
+    "iconName": "FaEye",
+    "color": "#FF5722",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#FF5722",
+    "ecosystem": [
+      "ai",
+      "mobile"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Sistemas de Reconocimiento Óptico de Caracteres y Visión por Computadora para el análisis, procesamiento y extracción de datos estructurados a partir de imágenes en tiempo real."
+  },
+  "react-native": {
+    "id": "react-native",
+    "name": "React Native",
+    "area": "Frontend",
+    "group": "Framework",
+    "typeDef": "Mobile Framework",
+    "iconName": "SiReact",
+    "color": "#61DAFB",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#61DAFB",
+    "ecosystem": [
+      "mobile",
+      "javascript",
+      "react"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Framework para crear aplicaciones nativas en Android e iOS utilizando el paradigma de React."
   },
   "react": {
     "id": "react",
@@ -89,6 +167,47 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario."
+  },
+  "sdd": {
+    "id": "sdd",
+    "name": "Spec-Driven Development",
+    "area": "Management",
+    "group": "Methodology",
+    "typeDef": "Architecture Framework",
+    "iconName": "FaProjectDiagram",
+    "color": "#FFFFFF",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#FFFFFF",
+    "ecosystem": [
+      "ai",
+      "architecture",
+      "agents"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Metodología de desarrollo propietario guiada por especificaciones técnicas, diseñada para orquestar y liderar la construcción de software complejo con agentes autónomos de Inteligencia Artificial."
+  },
+  "supabase": {
+    "id": "supabase",
+    "name": "Supabase",
+    "area": "Backend",
+    "group": "BaaS",
+    "typeDef": "Backend as a Service",
+    "iconName": "SiSupabase",
+    "color": "#3ECF8E",
+    "colorLayer1": "grey.800",
+    "colorLayer2": "#3ECF8E",
+    "ecosystem": [
+      "database",
+      "auth",
+      "realtime",
+      "postgresql"
+    ],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Alternativa open-source a Firebase. Plataforma BaaS sobre PostgreSQL con características de autenticación, base de datos en tiempo real y Edge Functions."
   },
   "tailwind": {
     "id": "tailwind",

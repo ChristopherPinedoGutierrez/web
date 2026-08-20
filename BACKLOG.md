@@ -36,9 +36,9 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 **Tareas:**
 - [x] **Task 2.1:** `[DATA-01]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-18 | **Spec:** `specs/01-nuevos-datos.md`
       *Descripción:* Redactar la especificación definiendo los nuevos proyectos y el soporte para `sync_source`.
-- [ ] **Task 2.2:** `[DATA-02]` | **Fecha Alta:** 2026-08-18 | **Spec:** `specs/01-nuevos-datos.md`
+- [x] **Task 2.2:** `[DATA-02]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/01-nuevos-datos.md`
       *Descripción:* Crear los archivos Markdown en `src/content/projects/` y `src/content/technologies/`.
-- [ ] **Task 2.3:** `[DATA-03]` | **Fecha Alta:** 2026-08-18 | **Spec:** `specs/01-nuevos-datos.md`
+- [x] **Task 2.3:** `[DATA-03]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/01-nuevos-datos.md`
       *Descripción:* Actualizar la Experiencia Laboral (6 meses I+D NotificaPe).
 - [x] **Task 2.4:** `[DATA-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `N/A`
       *Descripción:* Eliminar Decap CMS (`public/admin/`) por completo, por ser obsoleto para el flujo agentico. Modificar `build-data.js` para admitir `project_type`, `sync_source` y `modules`.

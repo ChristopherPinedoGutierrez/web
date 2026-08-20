@@ -1,5 +1,85 @@
 export const workExperienceInfo = [
   {
+    "company": "Desarrollo Independiente (I+D)",
+    "role": "Lead Developer / Product Owner",
+    "period": {
+      "startDate": "Enero 2026",
+      "endDate": "Actualidad",
+      "duration": "6 meses",
+      "state": "En curso"
+    },
+    "jobFunctions": "- Conceptualización, diseño arquitectónico y desarrollo Full-Stack de ecosistemas de software complejos (**NotificaPe** y **CalculaPe**).\n- Creación y refinamiento continuo del framework propietario **Spec-Driven Development (SDD)** para la orquestación de desarrollo con agentes de Inteligencia Artificial (Antigravity).\n- Administración integral del ciclo de vida del producto: desde el levantamiento de requisitos (Briefing, Blueprint) y modelado de datos, hasta la implementación técnica nativa y backend serverless.",
+    "softSkills": [
+      {
+        "id": "mock-uuid",
+        "name": "Liderazgo",
+        "type": {
+          "name": "Soft Skills",
+          "value": 5
+        }
+      },
+      {
+        "id": "mock-uuid",
+        "name": "Resolución de problemas",
+        "type": {
+          "name": "Soft Skills",
+          "value": 5
+        }
+      },
+      {
+        "id": "mock-uuid",
+        "name": "Pensamiento crítico",
+        "type": {
+          "name": "Soft Skills",
+          "value": 5
+        }
+      },
+      {
+        "id": "mock-uuid",
+        "name": "Resiliencia",
+        "type": {
+          "name": "Soft Skills",
+          "value": 5
+        }
+      },
+      {
+        "id": "mock-uuid",
+        "name": "Proactividad",
+        "type": {
+          "name": "Soft Skills",
+          "value": 5
+        }
+      }
+    ],
+    "aptitudes": [
+      {
+        "id": "mock-uuid",
+        "name": "Gestión de proyectos",
+        "type": {
+          "name": "Management",
+          "value": 10
+        }
+      },
+      {
+        "id": "mock-uuid",
+        "name": "Gestión de producto",
+        "type": {
+          "name": "Management",
+          "value": 10
+        }
+      },
+      {
+        "id": "mock-uuid",
+        "name": "Metodología orientada a objetos",
+        "type": {
+          "name": "Development",
+          "value": 10
+        }
+      }
+    ],
+    "aptitudesCount": 30
+  },
+  {
     "company": "Autonomo",
     "role": "Desarrollador frontend - Freelance",
     "period": {

@@ -1,5 +1,8 @@
 ---
 title: "Web personal y portafolio"
+project_type: "application"
+sync_source: ""
+modules: []
 image: ""
 area: "Frontend"
 level: "Advanced"
