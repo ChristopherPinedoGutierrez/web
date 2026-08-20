@@ -40,14 +40,18 @@ Cualquier agente debe **respetar** la estructura de carpetas y el flujo de datos
 
 ---
 
-## 4. Protocolo Spec-Driven Development (SDD)
+## 4. Protocolo Spec-Driven Development (SDD) y Gobernanza del Backlog
 
-Para mantener cada sesión de chat limpia y enfocada, el desarrollo se rige por las siguientes reglas:
+Para mantener el historial ordenado, escalable y evitar entropía a medida que el proyecto crece, el desarrollo se rige por reglas estrictas de gestión:
 
 1. **Lectura de Estado:** Antes de realizar cualquier cambio, el agente debe revisar `BACKLOG.md` para entender qué tarea está activa.
-2. **Uso de Especificaciones:** Las tareas complejas deben contar con una especificación detallada en la carpeta `specs/` (ej. `specs/01-dynamic-cv.md`).
-3. **Enfoque Finito:** Cada sesión de chat se dedica a resolver **una única tarea o especificación**. No se deben encadenar tareas no planificadas.
-4. **Actualización de Registro:** Al completar una tarea y verificar su correcto funcionamiento, el agente debe actualizar `BACKLOG.md` marcándola como completada `[x]`.
+2. **Gobernanza del BACKLOG.md:** Cualquier actualización o adición al Backlog **DEBE** seguir un formato estandarizado para mantener consistencia:
+   - **Épicas:** Deben incluir `[ESTADO]`, Título, Alcance e Impacto Core.
+   - **Tareas:** Cada tarea debe registrar: ID Corta, Fecha de Alta (`AAAA-MM-DD`), Fecha de Finalización (`AAAA-MM-DD`, si aplica), y Referencia al archivo Spec (ej. `specs/01-nuevos-datos.md`).
+   - **Historial (Changelog):** Cada entrada debe categorizarse con tags como `[CORE]`, `[DATA]`, `[UI/UX]`, `[FEATURE]`.
+3. **Uso de Especificaciones:** Las tareas complejas deben contar con una especificación detallada en la carpeta `specs/`. No se codifican cambios grandes directamente desde un requerimiento verbal.
+4. **Enfoque Finito:** Cada sesión de chat se dedica a resolver **una única tarea o especificación**. No se deben encadenar tareas no planificadas.
+5. **Modificación de AGENTS.md (Impacto Core):** Si un cambio requiere modificar cómo operan los agentes (agregar reglas o skills), la tarea debe etiquetarse como `[CORE-AGENT]` y ser documentada explícitamente. No alterar `AGENTS.md` sin justificación en el Backlog.
 
 ---
 
