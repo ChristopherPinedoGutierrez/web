@@ -31,7 +31,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ### [EN PROGRESO] Épica 2: Modelado de Datos y Contenido del CMS
 * **Alcance:** Integrar nuevos proyectos estrella (NotificaPe, CalculaPe, SDD_CDPG_SPECS), actualizar tecnologías, experiencia laboral y soportar metadatos ocultos de sincronización.
-* **Impacto Core:** `[DATA]`, requiere alterar `build-data.js` y `config.yml`.
+* **Impacto Core:** `[DATA]`, requiere alterar `build-data.js` (Decap CMS fue eliminado por sobreingeniería).
 
 **Tareas:**
 - [x] **Task 2.1:** `[DATA-01]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-18 | **Spec:** `specs/01-nuevos-datos.md`
@@ -40,8 +40,8 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
       *Descripción:* Crear los archivos Markdown en `src/content/projects/` y `src/content/technologies/`.
 - [ ] **Task 2.3:** `[DATA-03]` | **Fecha Alta:** 2026-08-18 | **Spec:** `specs/01-nuevos-datos.md`
       *Descripción:* Actualizar la Experiencia Laboral (6 meses I+D NotificaPe).
-- [ ] **Task 2.4:** `[DATA-04]` | **Fecha Alta:** 2026-08-18 | **Spec:** `specs/01-nuevos-datos.md`
-      *Descripción:* Modificar `config.yml` y `build-data.js` para admitir campos ocultos (`sync_source`).
+- [x] **Task 2.4:** `[DATA-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `N/A`
+      *Descripción:* Eliminar Decap CMS (`public/admin/`) por completo, por ser obsoleto para el flujo agentico. Modificar `build-data.js` para admitir `project_type`, `sync_source` y `modules`.
 
 ---
 

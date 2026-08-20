@@ -17,7 +17,7 @@ Este archivo define las reglas de desarrollo, arquitectura y protocolo de trabaj
 
 * **Core:** React 18, Vite, TypeScript.
 * **UI & Estilos:** `@mui/material` (Material UI v5), `@emotion/react`, `@emotion/styled`, `react-icons`.
-* **CMS & Contenido Estático:** Decap CMS (configurado en `public/admin/config.yml`), archivos Markdown en `src/content/`.
+* **Contenido Estático:** Archivos Markdown en `src/content/`. (Gestión directa por IA y Git, sin CMS visual).
 * **Compilación de Datos:** Script Node.js `scripts/build-data.js` ejecutado antes de `dev` y `build` (`npm run predev` / `npm run prebuild`).
 
 ---

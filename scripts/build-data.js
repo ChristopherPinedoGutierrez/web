@@ -204,9 +204,16 @@ projectFiles.forEach(file => {
     const levelKey = parsed.data.level === 'Newbie' ? 1 : parsed.data.level === 'Junior' ? 2 : parsed.data.level === 'Intermediate' ? 3 : parsed.data.level === 'Advanced' ? 4 : 5;
     const statusKey = parsed.data.status === 'Desarrollo' ? 'dev' : 'prod';
 
+    // Extrayendo campos del nuevo paradigma arquitectónico
+    const projectType = parsed.data.project_type || 'application';
+    const syncSource = parsed.data.sync_source || '';
+    const modules = parsed.data.modules || [];
+
     projectsList.push({
       id: key,
       config: {
+        projectType: projectType,
+        syncSource: syncSource,
         image: parsed.data.image || '',
         area: { id: parsed.data.area ? parsed.data.area.toLowerCase() : 'frontend', name: parsed.data.area || 'Frontend' },
         level: projectLevelsObj[levelKey],
@@ -218,6 +225,7 @@ projectFiles.forEach(file => {
       content: {
         name: parsed.data.title,
         description: parsed.content,
+        modules: modules,
         technologies: (parsed.data.technologies || []).map(t => {
           const matchedTech = technologiesObj[t];
           return matchedTech
