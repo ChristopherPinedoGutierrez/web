@@ -126,7 +126,7 @@ function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGrou
     });
     
     // Sort keys alphabetically so areas are rendered in A-Z order
-    const sortedGroups = {};
+    const sortedGroups: Record<string, any[]> = {};
     Object.keys(groups).sort().forEach(key => {
       sortedGroups[key] = groups[key];
     });

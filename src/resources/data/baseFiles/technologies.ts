@@ -15,7 +15,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML."
+    "description": "Lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML.\n"
   },
   "docker": {
     "id": "docker",
@@ -34,7 +34,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "pendientes"
     },
-    "description": "Plataforma de software que permite crear, probar e implementar aplicaciones rápidamente mediante el empaquetado en contenedores estandarizados."
+    "description": "Plataforma de software que permite crear, probar e implementar aplicaciones rápidamente mediante el empaquetado en contenedores estandarizados.\n"
   },
   "firebase": {
     "id": "firebase",
@@ -53,7 +53,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Plataforma de desarrollo de aplicaciones de Google, enfocada principalmente en la arquitectura de notificaciones push (Cloud Messaging) en ecosistemas móviles."
+    "description": "Plataforma de desarrollo de aplicaciones de Google, enfocada principalmente en la arquitectura de notificaciones push (Cloud Messaging) en ecosistemas móviles.\n"
   },
   "html": {
     "id": "html",
@@ -71,7 +71,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Lenguaje de marcado estándar para la creación de páginas web."
+    "description": "Lenguaje de marcado estándar para la creación de páginas web.\n"
   },
   "js": {
     "id": "js",
@@ -89,7 +89,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Lenguaje de programación interpretado dialecto del estándar ECMAScript."
+    "description": "Lenguaje de programación interpretado dialecto del estándar ECMAScript.\n"
   },
   "kotlin": {
     "id": "kotlin",
@@ -109,7 +109,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno."
+    "description": "Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno.\n"
   },
   "mysql": {
     "id": "mysql",
@@ -128,7 +128,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en aplicaciones web tradicionales y arquitecturas monolíticas."
+    "description": "Sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en aplicaciones web tradicionales y arquitecturas monolíticas.\n"
   },
   "nodejs": {
     "id": "nodejs",
@@ -146,7 +146,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Entorno de ejecución de JavaScript en el backend."
+    "description": "Entorno de ejecución de JavaScript en el backend.\n"
   },
   "ocr": {
     "id": "ocr",
@@ -165,7 +165,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Sistemas de Reconocimiento Óptico de Caracteres y Visión por Computadora para el análisis, procesamiento y extracción de datos estructurados a partir de imágenes en tiempo real."
+    "description": "Sistemas de Reconocimiento Óptico de Caracteres y Visión por Computadora para el análisis, procesamiento y extracción de datos estructurados a partir de imágenes en tiempo real.\n"
   },
   "postgresql": {
     "id": "postgresql",
@@ -184,7 +184,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Sistema de base de datos relacional de código abierto, robusto y altamente escalable, utilizado frecuentemente en ecosistemas backend modernos y BaaS como Supabase."
+    "description": "Sistema de base de datos relacional de código abierto, robusto y altamente escalable, utilizado frecuentemente en ecosistemas backend modernos y BaaS como Supabase.\n"
   },
   "react-native": {
     "id": "react-native",
@@ -204,7 +204,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Framework para crear aplicaciones nativas en Android e iOS utilizando el paradigma de React."
+    "description": "Framework para crear aplicaciones nativas en Android e iOS utilizando el paradigma de React.\n"
   },
   "react": {
     "id": "react",
@@ -223,7 +223,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario."
+    "description": "Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.\n"
   },
   "sdd": {
     "id": "sdd",
@@ -243,7 +243,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Metodología de desarrollo propietario guiada por especificaciones técnicas, diseñada para orquestar y liderar la construcción de software complejo con agentes autónomos de Inteligencia Artificial."
+    "description": "Metodología de desarrollo propietario guiada por especificaciones técnicas, diseñada para orquestar y liderar la construcción de software complejo con agentes autónomos de Inteligencia Artificial.\n"
   },
   "supabase": {
     "id": "supabase",
@@ -264,7 +264,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Alternativa open-source a Firebase. Plataforma BaaS sobre PostgreSQL con características de autenticación, base de datos en tiempo real y Edge Functions."
+    "description": "Alternativa open-source a Firebase. Plataforma BaaS sobre PostgreSQL con características de autenticación, base de datos en tiempo real y Edge Functions.\n"
   },
   "tailwind": {
     "id": "tailwind",
@@ -282,7 +282,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Framework CSS de utilidad que permite construir diseños personalizados rápidamente."
+    "description": "Framework CSS de utilidad que permite construir diseños personalizados rápidamente.\n"
   },
   "ts": {
     "id": "ts",
@@ -300,7 +300,7 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Superconjunto de JavaScript que añade tipado estático."
+    "description": "Superconjunto de JavaScript que añade tipado estático.\n"
   },
   "vite": {
     "id": "vite",
@@ -318,6 +318,6 @@ export const technologies: Record<string, any> = {
     "state": {
       "name": "conocidas"
     },
-    "description": "Herramienta de desarrollo frontend ultra-rápida."
+    "description": "Herramienta de desarrollo frontend ultra-rápida.\n"
   }
 };

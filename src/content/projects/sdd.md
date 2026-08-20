@@ -8,13 +8,13 @@ modules:
     repository: ""
     technologies: ["sdd"]
 image: "/assets/projects/sdd-mock.jpg"
-area: "Management"
-level: "Expert"
-status: "Producción"
+date: "2024-07"
+importance: 9
+status: "Production"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["sdd"]
+technologies: ["sdd", "markdown"]
 ---
 ## 🎯 El Problema
 En el desarrollo de software orquestado por múltiples agentes de Inteligencia Artificial (como Antigravity), la falta de estructura centralizada provoca la proliferación de código desincronizado, pérdida de contexto en los chats y toma de decisiones arquitectónicas erróneas sobre la marcha al carecer de un mapa de ruta técnico riguroso.

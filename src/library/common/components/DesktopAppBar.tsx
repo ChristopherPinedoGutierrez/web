@@ -27,8 +27,8 @@ function DesktopAppBar({ children }: DesktopAppBarProps) {
                   startIcon={item.icon}
                   component={RouterLink}
                   to={item.route}
-                  sx={location.pathname !== item.route ? { px: 2 } : {}}
-                  variant={location.pathname === item.route ? 'outlined' : 'text'}
+                  sx={{ px: 2 }}
+                  variant={location.pathname.startsWith(item.route) ? 'contained' : 'outlined'}
                 >
                   {item.label}
                 </Button>

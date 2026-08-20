@@ -1,48 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-
-// Parser manual ultra-ligero para Frontmatter YAML
-function parseMarkdown(fileContent) {
-  const match = fileContent.match(/^---\r?\n([\s\S]+?)\r?\n---(?:\r?\n([\s\S]*))?/);
-  if (!match) {
-    return { data: {}, content: fileContent.trim() };
-  }
-  const yamlText = match[1];
-  const bodyText = match[2] ? match[2].trim() : '';
-  const data = {};
-
-  yamlText.split('\n').forEach(line => {
-    const cleanLine = line.trim();
-    if (!cleanLine || cleanLine.startsWith('#')) return;
-    const separatorIndex = cleanLine.indexOf(':');
-    if (separatorIndex === -1) return;
-    const key = cleanLine.slice(0, separatorIndex).trim();
-    let val = cleanLine.slice(separatorIndex + 1).trim();
-
-    // Limpiar comillas
-    val = val.replace(/^['"]|['"]$/g, '');
-
-    // Parsear booleanos y números simples
-    if (val === 'true') val = true;
-    else if (val === 'false') val = false;
-    else if (!isNaN(val) && val !== '') val = Number(val);
-
-    // Parsear listas tipo YAML [a, b, c]
-    if (typeof val === 'string' && val.startsWith('[') && val.endsWith(']')) {
-      val = val.slice(1, -1).split(',').map(x => x.trim().replace(/^['"]|['"]$/g, ''));
-    }
-
-    data[key] = val;
-  });
-
-  return { data, content: bodyText };
-}
+const matter = require('gray-matter');
 
 // Cargar dinámicamente un archivo TypeScript de datos simulando el entorno
 function loadTsData(filePath) {
   if (!fs.existsSync(filePath)) return {};
   let content = fs.readFileSync(filePath, 'utf-8');
-  // Limpiar imports y exports
   content = content.replace(/import\s+.*?;/g, '');
   content = content.replace(/export\s+\{[\s\S]*?\};/g, '');
   
@@ -60,7 +23,6 @@ function loadTsData(filePath) {
 const contentDir = path.join(__dirname, '../src/content');
 const baseFilesDir = path.join(__dirname, '../src/resources/data/baseFiles');
 
-// Cargar las definiciones de softSkills y aptitudes
 const softSkillsMap = loadTsData(path.join(baseFilesDir, 'softSkills.ts'));
 const aptitudesMap = loadTsData(path.join(baseFilesDir, 'aptitudes.ts'));
 
@@ -98,7 +60,7 @@ let personalInfoData = {
 
 if (fs.existsSync(personalInfoPath)) {
   const content = fs.readFileSync(personalInfoPath, 'utf-8');
-  const parsed = parseMarkdown(content);
+  const parsed = matter(content);
   if (parsed.data.names) {
     personalInfoData = {
       fixed: {
@@ -147,7 +109,7 @@ const technologiesObj = {};
 
 techFiles.forEach(file => {
   const fileContent = fs.readFileSync(path.join(techFolder, file), 'utf-8');
-  const parsed = parseMarkdown(fileContent);
+  const parsed = matter(fileContent);
   const key = path.basename(file, '.md');
   
   if (parsed.data.name) {
@@ -182,32 +144,31 @@ const projectsFolder = path.join(contentDir, 'projects');
 const projectFiles = fs.readdirSync(projectsFolder).filter(file => file.endsWith('.md'));
 const projectsList = [];
 
-const projectLevelsObj = {
-  1: { id: "newbie", name: "Newbie", rating: 1 },
-  2: { id: "junior", name: "Junior", rating: 2 },
-  3: { id: "intermediate", name: "Intermediate", rating: 3 },
-  4: { id: "advanced", name: "Advanced", rating: 4 },
-  5: { id: "expert", name: "Expert", rating: 5 }
-};
-
 const projectStatesObj = {
-  dev: { id: "development", name: "Desarrollo", keyName: "Development", color: "secondary" },
-  prod: { id: "production", name: "Producción", keyName: "Production", color: "success" }
+  dev: { id: "development", name: "Development", keyName: "Development", color: "secondary" },
+  prod: { id: "production", name: "Production", keyName: "Production", color: "success" }
 };
 
 projectFiles.forEach(file => {
   const fileContent = fs.readFileSync(path.join(projectsFolder, file), 'utf-8');
-  const parsed = parseMarkdown(fileContent);
+  const parsed = matter(fileContent);
   const key = path.basename(file, '.md');
 
   if (parsed.data.title) {
-    const levelKey = parsed.data.level === 'Newbie' ? 1 : parsed.data.level === 'Junior' ? 2 : parsed.data.level === 'Intermediate' ? 3 : parsed.data.level === 'Advanced' ? 4 : 5;
     const statusKey = parsed.data.status === 'Desarrollo' ? 'dev' : 'prod';
 
-    // Extrayendo campos del nuevo paradigma arquitectónico
     const projectType = parsed.data.project_type || 'application';
     const syncSource = parsed.data.sync_source || '';
     const modules = parsed.data.modules || [];
+    
+    // Extract technologies: global + from modules
+    let rawTechs = new Set(parsed.data.technologies || []);
+    modules.forEach(m => {
+       if (m.technologies) {
+          m.technologies.forEach(t => rawTechs.add(t));
+       }
+    });
+    const allTechs = Array.from(rawTechs);
 
     projectsList.push({
       id: key,
@@ -215,18 +176,18 @@ projectFiles.forEach(file => {
         projectType: projectType,
         syncSource: syncSource,
         image: parsed.data.image || '',
-        area: { id: parsed.data.area ? parsed.data.area.toLowerCase() : 'frontend', name: parsed.data.area || 'Frontend' },
-        level: projectLevelsObj[levelKey],
         status: projectStatesObj[statusKey],
         source: { name: parsed.data.source || 'Personal project' },
         repository: parsed.data.repository || '',
-        url: parsed.data.url || ''
+        url: parsed.data.url || '',
+        date: parsed.data.date || '',
+        importance: parsed.data.importance || 0
       },
       content: {
         name: parsed.data.title,
         description: parsed.content,
         modules: modules,
-        technologies: (parsed.data.technologies || []).map(t => {
+        technologies: allTechs.map(t => {
           const matchedTech = technologiesObj[t];
           return matchedTech
             ? {
@@ -245,9 +206,7 @@ projectFiles.forEach(file => {
 
 fs.writeFileSync(
   path.join(__dirname, '../src/resources/data/projectsInfo.ts'),
-  `export const projectLevels = ${JSON.stringify(projectLevelsObj, null, 2)};
-export const projectStates = ${JSON.stringify(projectStatesObj, null, 2)};
-export const projectsInfo = ${JSON.stringify(projectsList, null, 2)};\n`,
+  `export const projectStates = ${JSON.stringify(projectStatesObj, null, 2)};\nexport const projectsInfo = ${JSON.stringify(projectsList, null, 2)};\n`,
   'utf-8'
 );
 
@@ -259,7 +218,7 @@ const experienceList = [];
 
 expFiles.forEach(file => {
   const fileContent = fs.readFileSync(path.join(experienceFolder, file), 'utf-8');
-  const parsed = parseMarkdown(fileContent);
+  const parsed = matter(fileContent);
   const key = path.basename(file, '.md');
 
   if (parsed.data.company) {
@@ -280,7 +239,6 @@ expFiles.forEach(file => {
   }
 });
 
-// Ordenar cronológicamente (En curso primero)
 experienceList.sort((a, b) => {
   if (a.period.endDate === 'Actualidad') return -1;
   if (b.period.endDate === 'Actualidad') return 1;

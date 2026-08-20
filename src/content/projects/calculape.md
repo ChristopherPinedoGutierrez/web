@@ -8,13 +8,13 @@ modules:
     repository: ""
     technologies: ["react-native", "supabase", "firebase", "ocr"]
 image: "/assets/projects/calculape-mock.jpg"
-area: "Frontend"
-level: "Advanced"
-status: "Desarrollo"
+date: "2024-05"
+importance: 8
+status: "Development"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["react-native", "supabase", "firebase", "ocr"]
+technologies: ["react-native", "expo", "react", "typescript", "javascript", "supabase", "postgres", "firebase", "ocr"]
 ---
 ## 🎯 El Problema
 La gestión y organización de finanzas personales o grupales implica una alta fricción debido a la necesidad de digitar manualmente cada gasto incurrido, además de la complejidad matemática y logística para repartir los gastos equitativa o proporcionalmente entre los miembros de una familia o grupo.

@@ -8,7 +8,7 @@ export const workExperienceInfo = [
       "duration": "6 meses",
       "state": "En curso"
     },
-    "jobFunctions": "- Conceptualización, diseño arquitectónico y desarrollo Full-Stack de ecosistemas de software complejos (**NotificaPe** y **CalculaPe**).\n- Creación y refinamiento continuo del framework propietario **Spec-Driven Development (SDD)** para la orquestación de desarrollo con agentes de Inteligencia Artificial (Antigravity).\n- Administración integral del ciclo de vida del producto: desde el levantamiento de requisitos (Briefing, Blueprint) y modelado de datos, hasta la implementación técnica nativa y backend serverless.",
+    "jobFunctions": "- Conceptualización, diseño arquitectónico y desarrollo Full-Stack de ecosistemas de software complejos (**NotificaPe** y **CalculaPe**).\n- Creación y refinamiento continuo del framework propietario **Spec-Driven Development (SDD)** para la orquestación de desarrollo con agentes de Inteligencia Artificial (Antigravity).\n- Administración integral del ciclo de vida del producto: desde el levantamiento de requisitos (Briefing, Blueprint) y modelado de datos, hasta la implementación técnica nativa y backend serverless.\n",
     "coreCompetencies": [
       {
         "id": "mock-uuid",
@@ -88,7 +88,7 @@ export const workExperienceInfo = [
       "duration": "-",
       "state": "En curso"
     },
-    "jobFunctions": "Desarrollo y mantenimiento de módulos y aplicaciones web usando servicios web.",
+    "jobFunctions": "Desarrollo y mantenimiento de módulos y aplicaciones web usando servicios web.\n",
     "coreCompetencies": [
       {
         "id": "mock-uuid",
@@ -176,7 +176,7 @@ export const workExperienceInfo = [
       "duration": "2 años 5 meses",
       "state": "Finalizado"
     },
-    "jobFunctions": "Gestión y control de procesos e información cumpliendo la función de vínculo entre mi sede y las áreas de recursos humanos, producción y procesos.",
+    "jobFunctions": "Gestión y control de procesos e información cumpliendo la función de vínculo entre mi sede y las áreas de recursos humanos, producción y procesos.\n",
     "coreCompetencies": [
       {
         "id": "mock-uuid",

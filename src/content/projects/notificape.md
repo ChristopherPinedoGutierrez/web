@@ -6,23 +6,23 @@ modules:
   - name: "Plataforma Web (Landing y SaaS Admin)"
     platform: "Web"
     repository: ""
-    technologies: ["react", "vite", "supabase"]
+    technologies: ["react", "vite", "supabase", "postgres", "typescript", "javascript"]
   - name: "NotificaPe Admin App"
     platform: "Android Native"
     repository: ""
-    technologies: ["kotlin"]
+    technologies: ["kotlin", "android"]
   - name: "NotificaPe Viewer App"
     platform: "Android Native"
     repository: ""
-    technologies: ["kotlin", "supabase"]
+    technologies: ["kotlin", "android", "supabase", "postgres"]
 image: "/assets/projects/notificape-mock.jpg"
-area: "FullStack"
-level: "Expert"
-status: "Desarrollo"
+date: "2024-01"
+importance: 10
+status: "Development"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["kotlin", "react", "supabase"]
+technologies: ["kotlin", "react", "vite", "supabase", "postgres", "typescript", "javascript", "android"]
 ---
 ## 🎯 El Problema
 Los negocios con múltiples puntos de venta o vendedores sufren desincronización y dependencia al confirmar pagos de billeteras digitales (Yape, Plin), exponiéndose a riesgos de fraude por comprobantes falsos al tener que consultar manualmente al dueño de la cuenta para validar la transacción.

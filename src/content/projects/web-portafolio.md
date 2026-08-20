@@ -4,12 +4,12 @@ project_type: "application"
 sync_source: ""
 modules: []
 image: ""
-area: "Frontend"
-level: "Advanced"
-status: "Producción"
+date: "2023-11"
+importance: 5
+status: "Production"
 source: "Personal project"
 repository: "https://github.com/ChristopherPinedoGutierrez/web"
 url: "https://christopherpinedogutierrez.github.io/web/"
-technologies: ["js", "react", "vite"]
+technologies: ["react", "typescript", "javascript", "vite", "mui", "html", "css"]
 ---
 Aplicación SPA para mostrar información personal y laboral
