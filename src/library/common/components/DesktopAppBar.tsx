@@ -48,7 +48,7 @@ function DesktopAppBar({ children }: DesktopAppBarProps) {
           </Stack>
         </Container>
       </AppBar>
-      <Box sx={{ minHeight: '100vh' }}>{children}</Box>
+      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>{children}</Box>
     </Box>
   );
 }

@@ -58,11 +58,22 @@ function TechFilterMenu({
   }, [technologies]);
 
   return (
-    <Box sx={{ height: 1, borderRadius: 2, p: 3, bgcolor: 'background.paper', width: { md: '300px' } }}>
+    <Box sx={{ 
+      borderRadius: 2, 
+      pt: 4,
+      pb: 4,
+      px: 3, 
+      bgcolor: 'background.paper', 
+      width: { md: '300px' },
+      position: { md: 'sticky' },
+      top: { md: 96 },
+      height: { md: 'calc(100vh - 128px)' },
+      overflowY: { md: 'auto' }
+    }}>
       <Stack spacing={4}>
         <Box>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
-            <Typography variant="subtitle2" color="text.secondary">ÁREA DE DESARROLLO</Typography>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
+            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">ÁREA DE DESARROLLO</Typography>
             <Checkbox
               size="small"
               checked={isAllAreasChecked}
@@ -97,8 +108,8 @@ function TechFilterMenu({
         <Divider />
 
         <Box>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
-            <Typography variant="subtitle2" color="text.secondary">ESTADO DE DOMINIO</Typography>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
+            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">ESTADO DE DOMINIO</Typography>
             <Checkbox
               size="small"
               checked={isAllStatesChecked}

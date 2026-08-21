@@ -129,6 +129,13 @@ function CustomTheme({ children }: CustomThemeProps) {
           }
         }
       },
+      MuiCssBaseline: {
+        styleOverrides: {
+          html: {
+            scrollBehavior: 'smooth'
+          }
+        }
+      },
       MuiPaper: {
         styleOverrides: {
           root: {

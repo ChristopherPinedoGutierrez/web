@@ -97,7 +97,7 @@ function ProjectCard({ item }) {
                 {item.content.technologies.map((tech, index) => (
                   <Tooltip key={index} title={tech.name} arrow>
                     <Chip
-                      icon={<DynamicIcon name={tech.iconName} size={18} color={tech.colorLayer2} />}
+                      icon={<DynamicIcon name={tech.iconName} size={18} />}
                       size="medium"
                       sx={{
                         backgroundColor: tech.colorLayer1,
@@ -136,7 +136,7 @@ function ProjectCard({ item }) {
                              return (
                                <Tooltip key={tId} title={techObj.name} arrow>
                                   <Chip
-                                    icon={<DynamicIcon name={techObj.iconName} size={14} color={techObj.colorLayer2} />}
+                                    icon={<DynamicIcon name={techObj.iconName} size={14} />}
                                     size="small"
                                     sx={{
                                       backgroundColor: techObj.colorLayer1,

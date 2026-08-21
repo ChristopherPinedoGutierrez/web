@@ -63,13 +63,14 @@ function GridTechAreas({ element }: GridTechAreasProps) {
               height: 56,
               borderRadius: '50%',
               backgroundColor: element.colorLayer1,
+              color: element.colorLayer2,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               mb: 1.5
             }}
           >
-            <DynamicIcon name={element.iconName} size={28} color={element.colorLayer2} />
+            <DynamicIcon name={element.iconName} size={28} />
           </Box>
             <Typography variant="body2" fontWeight="600" textAlign="center" sx={{ mb: 1 }}>
               {element.name}

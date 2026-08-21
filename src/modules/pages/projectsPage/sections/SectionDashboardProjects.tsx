@@ -33,7 +33,6 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
   
   const [sortAnchorEl, setSortAnchorEl] = useState<null | HTMLElement>(null);
   const [sortBy, setSortBy] = useState('relevance');
-  const [showFab, setShowFab] = useState(false);
   
   const [filters, setFilters] = useState<Filters>({
     Tipos: {},
@@ -42,14 +41,6 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
   });
   
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowFab(window.scrollY >= 72);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const typeFilters: Record<string, FilterItem> = {};
@@ -153,10 +144,6 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
     setSortAnchorEl(null);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <Box sx={{ display: 'flex', width: '100%', height: '100%' }}>
       {/* Drawer */}
@@ -253,17 +240,6 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
           <GridGroupProjects projects={filteredProjects} />
         </Box>
       </Box>
-
-      {showFab && (
-        <Fab 
-          color="primary" 
-          size="medium" 
-          onClick={scrollToTop}
-          sx={{ position: 'fixed', bottom: 32, right: 32, zIndex: 1300 }}
-        >
-          <KeyboardArrowUpIcon />
-        </Fab>
-      )}
     </Box>
   );
 }
