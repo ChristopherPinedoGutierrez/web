@@ -66,7 +66,6 @@ function ProjectCard({ item }) {
           <Stack justifyContent={'space-between'} gap={2} direction={{ xs: 'column', sm: 'row' }}>
             <Stack direction={'row'} gap={1} alignItems={'center'}>
               <Chip label={item.config.projectType.toUpperCase()} color="primary" size="small" />
-              {item.config.date && <Typography variant="caption" color="text.secondary">{item.config.date}</Typography>}
             </Stack>
             <Stack direction={'row'} gap={1} alignItems={'center'}>
               <Chip label={item.config.status.keyName} color={item.config.status.color as any} size="small" />

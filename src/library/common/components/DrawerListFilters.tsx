@@ -69,11 +69,11 @@ function DrawerListFilters({ filters, handleFilters, handleToggleAllFilters, isM
               <List>
                 {/*  */}
                 <ListItem key={`${sectionKey}-all`} disablePadding>
-                  <ListItemButton onClick={() => handleToggleAllFilters(sectionKey, allChecked)} sx={{ pl: '72px' }}>
+                  <ListItemButton onClick={() => handleToggleAllFilters(sectionKey, allChecked)} sx={{ pl: '48px' }}>
                     <ListItemIcon sx={{ minWidth: 0, mr: 2 }}>
                       <Checkbox checked={allChecked} indeterminate={!allChecked && someChecked} />
                     </ListItemIcon>
-                    <ListItemText primary="Seleccionar todas" />
+                    <ListItemText primary={sectionKey === 'Tecnologías' ? 'Todas' : 'Todos'} />
                   </ListItemButton>
                 </ListItem>
                 {/*  */}

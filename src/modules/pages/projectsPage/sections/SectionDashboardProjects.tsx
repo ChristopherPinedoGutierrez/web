@@ -32,7 +32,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
   const [open, setOpen] = useState(false);
   
   const [sortAnchorEl, setSortAnchorEl] = useState<null | HTMLElement>(null);
-  const [sortBy, setSortBy] = useState('recent');
+  const [sortBy, setSortBy] = useState('relevance');
   const [showFab, setShowFab] = useState(false);
   
   const [filters, setFilters] = useState<Filters>({
@@ -42,7 +42,6 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
   });
   
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
-  const [githubDates, setGithubDates] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,34 +49,6 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const fetchDates = async () => {
-      const dates: Record<string, string> = {};
-      for (const project of projectsInfo) {
-        if (project.config.repository && project.config.repository.includes('github.com')) {
-          try {
-            const parts = project.config.repository.replace(/\/$/, '').split('/');
-            const repo = parts.pop();
-            const owner = parts.pop();
-            const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-            if (res.ok) {
-              const data = await res.json();
-              dates[project.id] = data.pushed_at || project.config.date;
-            } else {
-              dates[project.id] = project.config.date;
-            }
-          } catch (e) {
-            dates[project.id] = project.config.date;
-          }
-        } else {
-          dates[project.id] = project.config.date;
-        }
-      }
-      setGithubDates(dates);
-    };
-    fetchDates();
   }, []);
 
   useEffect(() => {
@@ -127,16 +98,22 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
       });
 
       filtered.sort((a, b) => {
-        if (sortBy === 'recent') {
-          const dateA = githubDates[a.id] || a.config.date || '';
-          const dateB = githubDates[b.id] || b.config.date || '';
-          return new Date(dateB).getTime() - new Date(dateA).getTime();
-        } else if (sortBy === 'az') {
+        if (sortBy === 'relevance') {
+          const relevanceScore: Record<string, number> = {
+            ecosystem: 3,
+            application: 2,
+            framework: 1
+          };
+          const scoreA = relevanceScore[a.config.projectType] || 0;
+          const scoreB = relevanceScore[b.config.projectType] || 0;
+          if (scoreA !== scoreB) {
+            return scoreB - scoreA;
+          }
           return a.content.name.localeCompare(b.content.name);
         } else if (sortBy === 'za') {
           return b.content.name.localeCompare(a.content.name);
         }
-        return 0;
+        return a.content.name.localeCompare(b.content.name);
       });
       return filtered;
     };
@@ -144,7 +121,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
     if (Object.keys(filters.Estados).length > 0) {
       setFilteredProjects(filterProjects());
     }
-  }, [filters, sortBy, githubDates]);
+  }, [filters, sortBy]);
 
   const handleFilters = (section: keyof Filters, element: string) => {
     setFilters((prevFilters) => ({
@@ -264,7 +241,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
                 sx: { backgroundColor: '#111827', border: '1px solid rgba(255,255,255,0.08)' }
               }}
             >
-              <MenuItem onClick={() => handleSortClose('recent')} selected={sortBy === 'recent'}>Recientes (GitHub)</MenuItem>
+              <MenuItem onClick={() => handleSortClose('relevance')} selected={sortBy === 'relevance'}>Relevancia (Por defecto)</MenuItem>
               <MenuItem onClick={() => handleSortClose('az')} selected={sortBy === 'az'}>Alfabético (A-Z)</MenuItem>
               <MenuItem onClick={() => handleSortClose('za')} selected={sortBy === 'za'}>Alfabético (Z-A)</MenuItem>
             </Menu>
