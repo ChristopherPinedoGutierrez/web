@@ -146,6 +146,7 @@ const projectsList = [];
 
 const projectStatesObj = {
   dev: { id: "development", name: "Development", keyName: "Development", color: "secondary" },
+  testing: { id: "testing", name: "Testing", keyName: "Testing", color: "warning" },
   prod: { id: "production", name: "Production", keyName: "Production", color: "success" }
 };
 
@@ -155,11 +156,34 @@ projectFiles.forEach(file => {
   const key = path.basename(file, '.md');
 
   if (parsed.data.title) {
-    const statusKey = parsed.data.status === 'Desarrollo' ? 'dev' : 'prod';
+    let statusKey = 'prod';
+    const s = (parsed.data.status || '').toLowerCase();
+    if (s.includes('desarrollo') || s.includes('development')) statusKey = 'dev';
+    else if (s.includes('testing') || s.includes('prueba') || s.includes('beta')) statusKey = 'testing';
 
     const projectType = parsed.data.project_type || 'application';
     const syncSource = parsed.data.sync_source || '';
     const modules = parsed.data.modules || [];
+    const shortDescription = parsed.data.short_description || '';
+
+    // Auto-scan gallery images
+    let gallery = [];
+    const projectAssetsPath = path.join(__dirname, '../public/assets/projects', key);
+    if (fs.existsSync(projectAssetsPath)) {
+      const imgFiles = fs.readdirSync(projectAssetsPath)
+        .filter(f => /\.(jpe?g|png|webp|gif)$/i.test(f))
+        .sort((a, b) => a.localeCompare(b));
+      
+      let mainIndex = imgFiles.findIndex(f => f.toLowerCase().includes('main'));
+      if (mainIndex === -1 && imgFiles.length > 0) mainIndex = 0;
+      
+      if (mainIndex !== -1) {
+        // Move main image to the front
+        const mainImg = imgFiles.splice(mainIndex, 1)[0];
+        imgFiles.unshift(mainImg);
+      }
+      gallery = imgFiles.map(f => `/assets/projects/${key}/${f}`);
+    }
     
     // Extract technologies: global + from modules
     let rawTechs = new Set(parsed.data.technologies || []);
@@ -175,7 +199,7 @@ projectFiles.forEach(file => {
       config: {
         projectType: projectType,
         syncSource: syncSource,
-        image: parsed.data.image || '',
+        gallery: gallery,
         status: projectStatesObj[statusKey],
         source: { name: parsed.data.source || 'Personal project' },
         repository: parsed.data.repository || '',
@@ -185,6 +209,7 @@ projectFiles.forEach(file => {
       },
       content: {
         name: parsed.data.title,
+        shortDescription: shortDescription,
         description: parsed.content,
         modules: modules,
         technologies: allTechs.map(t => {

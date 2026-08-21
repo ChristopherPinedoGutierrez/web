@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
 import {
   Accordion,
   AccordionDetails,
@@ -23,9 +22,12 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import CircleIcon from '@mui/icons-material/Circle';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import { FaProjectDiagram, FaLayerGroup, FaLaptopCode } from 'react-icons/fa';
 
 import projectUnderConstructionImg from '../../../../resources/images/underConstruction.jpg';
 import { DynamicIcon } from '../../../../library/common/components/DynamicIcon';
+import { ProjectGalleryModal } from './ProjectGalleryModal';
 
 // Helper to parse markdown description into sections
 const parseDescription = (desc) => {
@@ -42,15 +44,56 @@ const parseDescription = (desc) => {
   });
 };
 
+const SimpleMarkdown = ({ text }) => {
+  const renderLine = (line) => {
+    const parts = line.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i} style={{ color: 'white' }}>{part.slice(2, -2)}</strong>;
+      }
+      return <span key={i}>{part}</span>;
+    });
+  };
+
+  const lines = text.split('\n');
+  return (
+    <Box sx={{ color: 'text.secondary', typography: 'body2', '& ul, & ol': { pl: 3, m: 0, mt: 0.5, mb: 1 } }}>
+      {lines.map((line, i) => {
+        const isBullet = line.trim().startsWith('- ');
+        const isNumber = /^\d+\.\s/.test(line.trim());
+        
+        if (isBullet || isNumber) {
+           const content = line.trim().replace(/^(- |\d+\.\s)/, '');
+           return (
+             <Box component={isBullet ? 'ul' : 'ol'} key={i} sx={{ my: 0.5 }}>
+               <li style={{ paddingLeft: '4px' }}>{renderLine(content)}</li>
+             </Box>
+           );
+        }
+
+        if (line.trim() === '') return <br key={i} />;
+        
+        return <Box key={i} sx={{ mb: 1 }}>{renderLine(line)}</Box>;
+      })}
+    </Box>
+  );
+};
+
 function ProjectCard({ item }) {
+  const [modalOpen, setModalOpen] = useState(false);
   const isEcosystem = item.config.projectType === 'ecosystem';
-  const isFramework = item.config.projectType === 'framework';
-  const gridSpan = isEcosystem ? 12 : (isFramework ? 8 : 6);
   
   const sections = parseDescription(item.content.description);
+  const gallery = item.config.gallery || [];
+  const hasImage = gallery.length > 0;
+  const mainImage = hasImage ? gallery[0] : '';
+
+  let ProjectIcon = FaLaptopCode;
+  if (item.config.projectType === 'ecosystem') ProjectIcon = FaProjectDiagram;
+  if (item.config.projectType === 'framework') ProjectIcon = FaLayerGroup;
 
   return (
-    <Grid item xs={12} md={gridSpan} xxl={isEcosystem ? 12 : 4}>
+    <Grid item xs={12}>
       <Card
         sx={{
           height: '100%',
@@ -58,7 +101,7 @@ function ProjectCard({ item }) {
           flexDirection: 'column',
           backgroundColor: '#111827',
           border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: 3,
+          borderRadius: 1,
           boxShadow: 'none'
         }}
       >
@@ -68,7 +111,7 @@ function ProjectCard({ item }) {
               <Chip label={item.config.projectType.toUpperCase()} color="primary" size="small" />
             </Stack>
             <Stack direction={'row'} gap={1} alignItems={'center'}>
-              <Chip label={item.config.status.keyName} color={item.config.status.color as any} size="small" />
+              <Chip label={item.config.status.keyName.toUpperCase()} color={item.config.status.color as any} size="small" />
             </Stack>
           </Stack>
         </CardContent>
@@ -79,45 +122,89 @@ function ProjectCard({ item }) {
           <Grid container sx={{ height: '100%' }}>
             
             {/* Left Column: Image & Tech Stack Section */}
-            <Grid item xs={12} md={isEcosystem ? 5 : 12} sx={{ p: 3, borderRight: (theme) => isEcosystem ? `1px solid rgba(255,255,255,0.08)` : 'none' }}>
+            <Grid item xs={12} md={4} sx={{ p: 3, borderRight: { md: '1px solid rgba(255,255,255,0.08)' } }}>
               <Typography variant="h5" color="text.primary" gutterBottom fontWeight="bold">{item.content.name}</Typography>
               
-              <Box sx={{ borderRadius: 2, overflow: 'hidden', mb: 3 }}>
-                <CardMedia
-                  component={'img'}
-                  height={220}
-                  image={item.config.image || projectUnderConstructionImg}
-                  alt={`Image ${item.content.name}`}
-                  sx={{ objectFit: 'cover' }}
-                />
+              <Box 
+                onClick={() => hasImage && setModalOpen(true)}
+                sx={{ 
+                  borderRadius: 1, 
+                  overflow: 'hidden', 
+                  mb: 2, 
+                  backgroundColor: 'rgba(255,255,255,0.02)', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  height: 220,
+                  position: 'relative',
+                  cursor: hasImage ? 'pointer' : 'default',
+                  '&:hover': hasImage ? { opacity: 0.9 } : {}
+                }}
+              >
+                {hasImage ? (
+                  <>
+                    <CardMedia
+                      component={'img'}
+                      height={220}
+                      image={mainImage}
+                      alt={`Image ${item.content.name}`}
+                      loading="lazy"
+                      sx={{ objectFit: 'cover' }}
+                    />
+                    {gallery.length > 1 && (
+                      <Box sx={{ 
+                        position: 'absolute', 
+                        bottom: 8, 
+                        right: 8, 
+                        bgcolor: 'rgba(0,0,0,0.7)', 
+                        color: 'white', 
+                        px: 1, 
+                        py: 0.5, 
+                        borderRadius: 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5
+                      }}>
+                        <PhotoLibraryIcon fontSize="small" />
+                        <Typography variant="caption" fontWeight="bold">+{gallery.length - 1}</Typography>
+                      </Box>
+                    )}
+                  </>
+                ) : (
+                  <ProjectIcon size={80} color="rgba(255,255,255,0.15)" />
+                )}
               </Box>
+
+              {item.content.shortDescription && (
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+                  {item.content.shortDescription}
+                </Typography>
+              )}
 
               <Typography variant="subtitle2" color="text.secondary" gutterBottom>STACK GLOBAL</Typography>
               <Stack direction={'row'} flexWrap={'wrap'} gap={1}>
                 {item.content.technologies.map((tech, index) => (
-                  <Tooltip key={index} title={tech.name} arrow>
-                    <Chip
-                      icon={<DynamicIcon name={tech.iconName} size={18} />}
-                      size="medium"
-                      sx={{
-                        backgroundColor: tech.colorLayer1,
+                  <Chip
+                    key={index}
+                    label={tech.name}
+                    icon={tech.iconName ? <DynamicIcon name={tech.iconName} size={18} /> : undefined}
+                    size="medium"
+                    sx={{
+                      backgroundColor: tech.colorLayer1,
+                      color: tech.colorLayer2,
+                      fontWeight: 500,
+                      '& .MuiChip-icon': {
                         color: tech.colorLayer2,
-                        '& .MuiChip-icon': {
-                          color: tech.colorLayer2,
-                          ml: 1
-                        },
-                        '& .MuiChip-label': {
-                          display: 'none'
-                        }
-                      }}
-                    />
-                  </Tooltip>
+                        ml: 1
+                      }
+                    }}
+                  />
                 ))}
               </Stack>
             </Grid>
 
             {/* Right Column: Content Section & Modules */}
-            <Grid item xs={12} md={isEcosystem ? 7 : 12} sx={{ p: 3, display: 'flex', flexDirection: 'column' }}>
+            <Grid item xs={12} md={8} sx={{ p: 3, display: 'flex', flexDirection: 'column' }}>
               
               {/* If Ecosystem, render Modules here */}
               {isEcosystem && item.content.modules && item.content.modules.length > 0 && (
@@ -134,19 +221,19 @@ function ProjectCard({ item }) {
                           {mod.technologies.map((tId) => {
                              const techObj = item.content.technologies.find(t => t.id === tId) || { name: tId, iconName: '', colorLayer1: '#ccc', colorLayer2: '#fff' };
                              return (
-                               <Tooltip key={tId} title={techObj.name} arrow>
-                                  <Chip
-                                    icon={<DynamicIcon name={techObj.iconName} size={14} />}
-                                    size="small"
-                                    sx={{
-                                      backgroundColor: techObj.colorLayer1,
-                                      color: techObj.colorLayer2,
-                                      height: 24,
-                                      '& .MuiChip-icon': { color: techObj.colorLayer2, ml: 1 },
-                                      '& .MuiChip-label': { display: 'none' }
-                                    }}
-                                  />
-                                </Tooltip>
+                                <Chip
+                                  key={tId}
+                                  label={techObj.name}
+                                  icon={techObj.iconName ? <DynamicIcon name={techObj.iconName} size={14} /> : undefined}
+                                  size="small"
+                                  sx={{
+                                    backgroundColor: techObj.colorLayer1,
+                                    color: techObj.colorLayer2,
+                                    height: 24,
+                                    fontWeight: 500,
+                                    '& .MuiChip-icon': { color: techObj.colorLayer2, ml: 1 }
+                                  }}
+                                />
                              );
                           })}
                         </Stack>
@@ -156,16 +243,14 @@ function ProjectCard({ item }) {
                 </Box>
               )}
 
-              <Box sx={{ mt: 'auto' }}>
+              <Box sx={{}}>
                 {sections.map((sec, idx) => (
                   <Accordion key={idx} disableGutters elevation={0} defaultExpanded={idx === 0} sx={{ '&:before': { display: 'none' }, borderBottom: `1px solid rgba(255,255,255,0.08)`, bgcolor: 'transparent' }}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'text.secondary' }} />}>
                       <Typography fontWeight={600} color="text.primary">{sec.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: 'pre-wrap' }}>
-                        {sec.content}
-                      </Typography>
+                      <SimpleMarkdown text={sec.content} />
                     </AccordionDetails>
                   </Accordion>
                 ))}
@@ -174,25 +259,38 @@ function ProjectCard({ item }) {
           </Grid>
         </CardContent>
         
-        <Divider sx={{ borderColor: 'rgba(255,255,255,0.08)' }} />
-        
-        <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>
-          <IconButton href={item.config.repository} target="_blank" disabled={!item.config.repository} sx={{ color: 'text.secondary', '&:hover': { color: 'text.primary' } }}>
-            <GitHubIcon />
-          </IconButton>
-          <Button
-            variant="contained"
-            size="small"
-            color="primary"
-            disabled={!item.config.url}
-            href={item.config.url}
-            target="_blank"
-            endIcon={<OpenInBrowserIcon />}
-          >
-            Visitar App
-          </Button>
-        </CardActions>
+        {(item.config.repository || item.config.url) && (
+          <>
+            <Divider sx={{ borderColor: 'rgba(255,255,255,0.08)' }} />
+            <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>
+              {item.config.repository ? (
+                <IconButton href={item.config.repository} target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'text.primary' } }}>
+                  <GitHubIcon />
+                </IconButton>
+              ) : <Box />}
+              
+              {item.config.url && (
+                <Button
+                  variant="contained"
+                  size="small"
+                  color="primary"
+                  href={item.config.url}
+                  target="_blank"
+                  endIcon={<OpenInBrowserIcon />}
+                >
+                  Visitar App
+                </Button>
+              )}
+            </CardActions>
+          </>
+        )}
       </Card>
+      
+      <ProjectGalleryModal 
+        open={modalOpen} 
+        onClose={() => setModalOpen(false)} 
+        gallery={gallery} 
+      />
     </Grid>
   );
 }
