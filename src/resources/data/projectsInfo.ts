@@ -50,6 +50,8 @@ export const projectsInfo = [
           "repository": "",
           "technologies": [
             "react-native",
+            "expo",
+            "zustand",
             "supabase",
             "firebase",
             "ocr"
@@ -61,13 +63,13 @@ export const projectsInfo = [
           "id": "react-native",
           "name": "React Native",
           "iconName": "SiReact",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#61DAFB"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "expo",
-          "name": "expo",
-          "iconName": "",
+          "name": "Expo",
+          "iconName": "SiExpo",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },
@@ -75,20 +77,27 @@ export const projectsInfo = [
           "id": "react",
           "name": "React",
           "iconName": "SiReact",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#5bd9fb"
-        },
-        {
-          "id": "typescript",
-          "name": "typescript",
-          "iconName": "",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },
         {
-          "id": "javascript",
-          "name": "javascript",
-          "iconName": "",
+          "id": "ts",
+          "name": "Typescript",
+          "iconName": "SiTypescript",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "js",
+          "name": "Javascript",
+          "iconName": "SiJavascript",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "zustand",
+          "name": "Zustand",
+          "iconName": "/zustand.svg",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },
@@ -96,13 +105,13 @@ export const projectsInfo = [
           "id": "supabase",
           "name": "Supabase",
           "iconName": "SiSupabase",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#3ECF8E"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
-          "id": "postgres",
-          "name": "postgres",
-          "iconName": "",
+          "id": "postgresql",
+          "name": "PostgreSQL",
+          "iconName": "SiPostgresql",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },
@@ -110,15 +119,15 @@ export const projectsInfo = [
           "id": "firebase",
           "name": "Firebase",
           "iconName": "SiFirebase",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#FFCA28"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "ocr",
-          "name": "Computer Vision (OCR)",
+          "name": "Computer Vision",
           "iconName": "FaEye",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#FF5722"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         }
       ]
     }
@@ -170,7 +179,8 @@ export const projectsInfo = [
           "repository": "",
           "technologies": [
             "kotlin",
-            "android"
+            "supabase",
+            "postgresql"
           ]
         },
         {
@@ -179,7 +189,6 @@ export const projectsInfo = [
           "repository": "",
           "technologies": [
             "kotlin",
-            "android",
             "supabase",
             "postgresql"
           ]
@@ -190,76 +199,69 @@ export const projectsInfo = [
           "id": "kotlin",
           "name": "Kotlin",
           "iconName": "SiKotlin",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#7F52FF"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "react",
           "name": "React",
           "iconName": "SiReact",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#5bd9fb"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "vite",
           "name": "Vite",
           "iconName": "SiVite",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#fca311"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "supabase",
           "name": "Supabase",
           "iconName": "SiSupabase",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#3ECF8E"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "postgresql",
           "name": "PostgreSQL",
           "iconName": "SiPostgresql",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#4169E1"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "ts",
           "name": "Typescript",
           "iconName": "SiTypescript",
-          "colorLayer1": "grey.200",
-          "colorLayer2": "#377cc8"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "js",
           "name": "Javascript",
           "iconName": "SiJavascript",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#efd81d"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "html",
           "name": "Html",
           "iconName": "SiHtml5",
-          "colorLayer1": "#ec7430",
-          "colorLayer2": "grey.200"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "css",
           "name": "Css",
           "iconName": "SiCss3",
-          "colorLayer1": "#2862e9",
-          "colorLayer2": "grey.200"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "tailwind",
-          "name": "TailwindCss",
+          "name": "Tailwind Css",
           "iconName": "SiTailwindcss",
-          "colorLayer1": "grey.900",
-          "colorLayer2": "#38bdf8"
-        },
-        {
-          "id": "android",
-          "name": "android",
-          "iconName": "",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         }
@@ -303,15 +305,15 @@ export const projectsInfo = [
       "technologies": [
         {
           "id": "sdd",
-          "name": "Spec-Driven Development",
-          "iconName": "FaDiagramProject",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#FFFFFF"
+          "name": "Spec-Driven Dev",
+          "iconName": "FaGear",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "markdown",
-          "name": "markdown",
-          "iconName": "",
+          "name": "Markdown",
+          "iconName": "SiMarkdown",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         }
@@ -348,34 +350,34 @@ export const projectsInfo = [
           "id": "react",
           "name": "React",
           "iconName": "SiReact",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#5bd9fb"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "ts",
           "name": "Typescript",
           "iconName": "SiTypescript",
-          "colorLayer1": "grey.200",
-          "colorLayer2": "#377cc8"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "js",
           "name": "Javascript",
           "iconName": "SiJavascript",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#efd81d"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "vite",
           "name": "Vite",
           "iconName": "SiVite",
-          "colorLayer1": "grey.800",
-          "colorLayer2": "#fca311"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "mui",
-          "name": "mui",
-          "iconName": "",
+          "name": "Material UI",
+          "iconName": "SiMui",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },
@@ -383,15 +385,15 @@ export const projectsInfo = [
           "id": "html",
           "name": "Html",
           "iconName": "SiHtml5",
-          "colorLayer1": "#ec7430",
-          "colorLayer2": "grey.200"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         },
         {
           "id": "css",
           "name": "Css",
           "iconName": "SiCss3",
-          "colorLayer1": "#2862e9",
-          "colorLayer2": "grey.200"
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         }
       ]
     }

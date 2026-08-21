@@ -6,7 +6,7 @@ modules:
   - name: "CalculaPe App"
     platform: "Mobile"
     repository: ""
-    technologies: ["react-native", "supabase", "firebase", "ocr"]
+    technologies: ["react-native", "expo", "zustand", "supabase", "firebase", "ocr"]
 short_description: "Aplicación de escaneo con IA (OCR) para automatizar el registro y división matemática de finanzas compartidas."
 date: "2024-05"
 importance: 8
@@ -14,7 +14,7 @@ status: "Development"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["react-native", "expo", "react", "typescript", "javascript", "supabase", "postgres", "firebase", "ocr"]
+technologies: ["react-native", "expo", "react", "ts", "js", "zustand", "supabase", "postgresql", "firebase", "ocr"]
 ---
 ## El Problema
 La gestión y organización de finanzas personales o grupales implica una alta fricción debido a la necesidad de digitar manualmente cada gasto incurrido, además de la complejidad matemática y logística para repartir los gastos equitativa o proporcionalmente entre los miembros de una familia o grupo.

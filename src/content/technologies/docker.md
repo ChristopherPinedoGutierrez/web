@@ -1,13 +1,14 @@
 ---
 name: "Docker"
-area: "DevOps"
-group: "Containers"
-typeDef: "Containerization"
+area: "DevOps & Tools"
+group: "Tool"
+typeDef: "Tool"
 iconName: "SiDocker"
-color: "#2496ED"
-colorLayer1: "grey.800"
-colorLayer2: "#2496ED"
-ecosystem: ["devops", "backend"]
-state: "pendientes"
+brandColor: "#2496ED"
+invertColors: true
+contrast: true
+monochrome: false
+ecosystem: []
+state: "aprendiendo"
 ---
 Plataforma de software que permite crear, probar e implementar aplicaciones rápidamente mediante el empaquetado en contenedores estandarizados.

@@ -9,6 +9,7 @@ import {
   Stack,
   Tooltip,
   Typography,
+  useTheme,
 } from '@mui/material';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { useEffect, useState, useMemo } from 'react';
@@ -30,6 +31,23 @@ interface GridTechAreasProps {
 }
 
 function GridTechAreas({ element }: GridTechAreasProps) {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === 'dark';
+
+  let bgColor = isDark ? 'grey.800' : 'grey.200';
+  let iconColor = element.brandColor || (isDark ? '#ffffff' : '#000000');
+
+  if (element.monochrome) {
+    bgColor = element.contrast ? '#ffffff' : (isDark ? 'grey.800' : 'grey.200');
+    iconColor = element.contrast ? '#000000' : (isDark ? '#f5f5f5' : '#222222');
+  } else if (element.invertColors) {
+    bgColor = element.brandColor;
+    iconColor = element.contrast ? '#ffffff' : (isDark ? 'grey.200' : 'grey.800');
+  } else {
+    bgColor = element.contrast ? '#ffffff' : (isDark ? 'grey.800' : 'grey.200');
+    iconColor = element.brandColor;
+  }
+
   return (
     <Grid item key={element.id} xs={6} sm={4} md={4} lg={3} xl={2}>
       <Card
@@ -62,15 +80,15 @@ function GridTechAreas({ element }: GridTechAreasProps) {
               width: 56,
               height: 56,
               borderRadius: '50%',
-              backgroundColor: element.colorLayer1,
-              color: element.colorLayer2,
+              backgroundColor: bgColor,
+              color: iconColor,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               mb: 1.5
             }}
           >
-            <DynamicIcon name={element.iconName} size={28} />
+            <DynamicIcon name={element.iconName} size={28} color={iconColor} />
           </Box>
             <Typography variant="body2" fontWeight="600" textAlign="center" sx={{ mb: 1 }}>
               {element.name}

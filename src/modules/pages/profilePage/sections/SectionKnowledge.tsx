@@ -11,8 +11,10 @@ function SectionKnowledge() {
     Backend: true,
     Mobile: true,
     Database: true,
-    DevOps: true,
-    Management: true
+    "DevOps & Tools": true,
+    Management: true,
+    Testing: true,
+    Design: true
   });
   
   const [checked, setChecked] = useState({

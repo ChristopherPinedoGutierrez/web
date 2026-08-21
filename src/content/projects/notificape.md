@@ -10,11 +10,11 @@ modules:
   - name: "NotificaPe Admin App"
     platform: "Android Native"
     repository: ""
-    technologies: ["kotlin", "android"]
+    technologies: ["kotlin", "supabase", "postgresql"]
   - name: "NotificaPe Viewer App"
     platform: "Android Native"
     repository: ""
-    technologies: ["kotlin", "android", "supabase", "postgresql"]
+    technologies: ["kotlin", "supabase", "postgresql"]
 short_description: "Sistema de sincronización Serverless y aplicación nativa para confirmar notificaciones de billeteras digitales en tiempo real."
 date: "2024-01"
 importance: 10
@@ -22,7 +22,7 @@ status: "Testing"
 source: "Personal project"
 repository: ""
 url: "https://notificape.ryctech.dev/"
-technologies: ["kotlin", "react", "vite", "supabase", "postgresql", "ts", "js", "html", "css", "tailwind", "android"]
+technologies: ["kotlin", "react", "vite", "supabase", "postgresql", "ts", "js", "html", "css", "tailwind"]
 ---
 ## El Problema
 Los negocios con múltiples puntos de venta o vendedores sufren desincronización y dependencia al confirmar pagos de billeteras digitales, exponiéndose a riesgos de fraude por comprobantes falsos al tener que consultar manualmente al dueño de la cuenta para validar la transacción.

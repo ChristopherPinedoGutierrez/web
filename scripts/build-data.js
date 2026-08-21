@@ -120,9 +120,10 @@ techFiles.forEach(file => {
       group: parsed.data.group || '',
       typeDef: parsed.data.typeDef || '',
       iconName: parsed.data.iconName || 'SiReact',
-      color: parsed.data.color || '#cccccc',
-      colorLayer1: parsed.data.colorLayer1 || '#cccccc',
-      colorLayer2: parsed.data.colorLayer2 || '#ffffff',
+      brandColor: parsed.data.brandColor || '#cccccc',
+      invertColors: parsed.data.invertColors || false,
+      monochrome: parsed.data.monochrome || false,
+      contrast: parsed.data.contrast || false,
       ecosystem: parsed.data.ecosystem || [],
       state: {
         name: parsed.data.state || 'conocidas'

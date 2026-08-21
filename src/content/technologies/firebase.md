@@ -1,13 +1,14 @@
 ---
 name: "Firebase"
 area: "Backend"
-group: "BaaS"
-typeDef: "Cloud Messaging"
+group: "Cloud"
+typeDef: "Cloud"
 iconName: "SiFirebase"
-color: "#FFCA28"
-colorLayer1: "grey.800"
-colorLayer2: "#FFCA28"
-ecosystem: ["mobile", "notifications"]
+brandColor: "#ffcd32"
+invertColors: false
+contrast: false
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Plataforma de desarrollo de aplicaciones de Google, enfocada principalmente en la arquitectura de notificaciones push (Cloud Messaging) en ecosistemas móviles.

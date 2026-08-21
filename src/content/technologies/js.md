@@ -2,12 +2,13 @@
 name: "Javascript"
 area: "Frontend"
 group: "Language"
-typeDef: "Programing language"
+typeDef: "Language"
 iconName: "SiJavascript"
-color: "#efd81d"
-colorLayer1: "grey.800"
-colorLayer2: "#efd81d"
-ecosystem: ["javascript"]
+brandColor: "#efd81d"
+invertColors: false
+contrast: false
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Lenguaje de programación interpretado dialecto del estándar ECMAScript.

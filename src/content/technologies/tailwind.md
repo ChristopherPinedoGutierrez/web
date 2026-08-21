@@ -1,13 +1,14 @@
 ---
-name: "TailwindCss"
+name: "Tailwind Css"
 area: "Frontend"
 group: "Library"
-typeDef: "Style library"
+typeDef: "Library"
 iconName: "SiTailwindcss"
-color: "#38bdf8"
-colorLayer1: "grey.900"
-colorLayer2: "#38bdf8"
-ecosystem: ["css"]
+brandColor: "#06B6D4"
+invertColors: false
+contrast: false
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Framework CSS de utilidad que permite construir diseños personalizados rápidamente.

@@ -28,6 +28,44 @@ import { FaProjectDiagram, FaLayerGroup, FaLaptopCode } from 'react-icons/fa';
 import projectUnderConstructionImg from '../../../../resources/images/underConstruction.jpg';
 import { DynamicIcon } from '../../../../library/common/components/DynamicIcon';
 import { ProjectGalleryModal } from './ProjectGalleryModal';
+import { useTheme } from '@mui/material/styles';
+
+function TechChip({ tech, size = "medium" }: { tech: any, size?: "small" | "medium" }) {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === 'dark';
+
+  let bgColor = isDark ? 'grey.800' : 'grey.200';
+  let iconColor = tech.brandColor || (isDark ? '#ffffff' : '#000000');
+
+  if (tech.monochrome) {
+    bgColor = tech.contrast ? '#ffffff' : (isDark ? 'grey.800' : 'grey.200');
+    iconColor = tech.contrast ? '#000000' : (isDark ? '#f5f5f5' : '#222222');
+  } else if (tech.invertColors) {
+    bgColor = tech.brandColor;
+    iconColor = tech.contrast ? '#ffffff' : (isDark ? 'grey.200' : 'grey.800');
+  } else {
+    bgColor = tech.contrast ? '#ffffff' : (isDark ? 'grey.800' : 'grey.200');
+    iconColor = tech.brandColor;
+  }
+
+  return (
+    <Chip
+      label={tech.name}
+      icon={tech.iconName ? <DynamicIcon name={tech.iconName} size={size === 'small' ? 14 : 18} color={iconColor} /> : undefined}
+      size={size}
+      sx={{
+        backgroundColor: bgColor,
+        color: iconColor,
+        height: size === 'small' ? 24 : undefined,
+        fontWeight: 500,
+        '& .MuiChip-icon': {
+          color: iconColor,
+          ml: 1
+        }
+      }}
+    />
+  );
+}
 
 // Helper to parse markdown description into sections
 const parseDescription = (desc) => {
@@ -184,21 +222,7 @@ function ProjectCard({ item }) {
               <Typography variant="subtitle2" color="text.secondary" gutterBottom>STACK GLOBAL</Typography>
               <Stack direction={'row'} flexWrap={'wrap'} gap={1}>
                 {item.content.technologies.map((tech, index) => (
-                  <Chip
-                    key={index}
-                    label={tech.name}
-                    icon={tech.iconName ? <DynamicIcon name={tech.iconName} size={18} /> : undefined}
-                    size="medium"
-                    sx={{
-                      backgroundColor: tech.colorLayer1,
-                      color: tech.colorLayer2,
-                      fontWeight: 500,
-                      '& .MuiChip-icon': {
-                        color: tech.colorLayer2,
-                        ml: 1
-                      }
-                    }}
-                  />
+                  <TechChip key={index} tech={tech} />
                 ))}
               </Stack>
             </Grid>
@@ -221,19 +245,7 @@ function ProjectCard({ item }) {
                           {mod.technologies.map((tId) => {
                              const techObj = item.content.technologies.find(t => t.id === tId) || { name: tId, iconName: '', colorLayer1: '#ccc', colorLayer2: '#fff' };
                              return (
-                                <Chip
-                                  key={tId}
-                                  label={techObj.name}
-                                  icon={techObj.iconName ? <DynamicIcon name={techObj.iconName} size={14} /> : undefined}
-                                  size="small"
-                                  sx={{
-                                    backgroundColor: techObj.colorLayer1,
-                                    color: techObj.colorLayer2,
-                                    height: 24,
-                                    fontWeight: 500,
-                                    '& .MuiChip-icon': { color: techObj.colorLayer2, ml: 1 }
-                                  }}
-                                />
+                                <TechChip key={tId} tech={techObj} size="small" />
                              );
                           })}
                         </Stack>

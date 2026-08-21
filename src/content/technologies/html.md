@@ -2,12 +2,13 @@
 name: "Html"
 area: "Frontend"
 group: "Language"
-typeDef: "Markup language"
+typeDef: "Language"
 iconName: "SiHtml5"
-color: "#ec7430"
-colorLayer1: "#ec7430"
-colorLayer2: "grey.200"
-ecosystem: ["html"]
+brandColor: "#ec7430"
+invertColors: true
+contrast: true
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Lenguaje de marcado estándar para la creación de páginas web.

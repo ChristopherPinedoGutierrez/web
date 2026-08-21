@@ -1,13 +1,14 @@
 ---
-name: "NodeJS"
+name: "Node.js"
 area: "Backend"
 group: "Runtime"
-typeDef: "Cross Platform Js Runtime"
-iconName: "SiNextdotjs"
-color: "#339933"
-colorLayer1: "grey.800"
-colorLayer2: "#339933"
-ecosystem: ["javascript"]
+typeDef: "Runtime"
+iconName: "SiNodedotjs"
+brandColor: "#58a149"
+invertColors: false
+contrast: false
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Entorno de ejecución de JavaScript en el backend.

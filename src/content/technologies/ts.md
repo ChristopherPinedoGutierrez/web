@@ -2,12 +2,13 @@
 name: "Typescript"
 area: "Frontend"
 group: "Language"
-typeDef: "Language superset"
+typeDef: "Language"
 iconName: "SiTypescript"
-color: "#377cc8"
-colorLayer1: "grey.200"
-colorLayer2: "#377cc8"
-ecosystem: ["javascript"]
+brandColor: "#377cc8"
+invertColors: false
+contrast: false
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Superconjunto de JavaScript que añade tipado estático.

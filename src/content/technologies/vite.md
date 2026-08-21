@@ -1,13 +1,14 @@
 ---
 name: "Vite"
 area: "Frontend"
-group: "Library"
-typeDef: "Build tool"
+group: "Build Tool"
+typeDef: "Build Tool"
 iconName: "SiVite"
-color: "#b940ff"
-colorLayer1: "grey.800"
-colorLayer2: "#fca311"
-ecosystem: ["javascript"]
+brandColor: "#a842f6"
+invertColors: true
+contrast: true
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Herramienta de desarrollo frontend ultra-rápida.

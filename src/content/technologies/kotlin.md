@@ -1,13 +1,14 @@
 ---
 name: "Kotlin"
-area: "Mobile"
+area: "Backend"
 group: "Language"
-typeDef: "Programming Language"
+typeDef: "Language"
 iconName: "SiKotlin"
-color: "#7F52FF"
-colorLayer1: "grey.800"
-colorLayer2: "#7F52FF"
-ecosystem: ["android", "mobile", "backend"]
+brandColor: "#7F52FF"
+invertColors: false
+contrast: false
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno.

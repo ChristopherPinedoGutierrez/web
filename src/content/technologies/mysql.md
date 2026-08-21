@@ -1,13 +1,14 @@
 ---
 name: "MySQL"
 area: "Database"
-group: "Relational"
-typeDef: "RDBMS"
+group: "Database"
+typeDef: "Database"
 iconName: "SiMysql"
-color: "#4479A1"
-colorLayer1: "grey.800"
-colorLayer2: "#4479A1"
-ecosystem: ["database", "backend"]
+brandColor: "#e48e00"
+invertColors: true
+contrast: true
+monochrome: false
+ecosystem: []
 state: "conocidas"
 ---
 Sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en aplicaciones web tradicionales y arquitecturas monolíticas.

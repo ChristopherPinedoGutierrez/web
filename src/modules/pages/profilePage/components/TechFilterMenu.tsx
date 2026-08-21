@@ -17,9 +17,11 @@ const STANDARD_AREAS = [
   { id: 'Frontend', name: 'Frontend' },
   { id: 'Backend', name: 'Backend' },
   { id: 'Mobile', name: 'Mobile' },
-  { id: 'Database', name: 'Base de datos' },
-  { id: 'DevOps', name: 'DevOps' },
-  { id: 'Management', name: 'Management' }
+  { id: 'Database', name: 'Database' },
+  { id: 'DevOps & Tools', name: 'DevOps & Tools' },
+  { id: 'Management', name: 'Management' },
+  { id: 'Testing', name: 'Testing' },
+  { id: 'Design', name: 'Design' }
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 const DOMAIN_STATES = [
@@ -68,7 +70,20 @@ function TechFilterMenu({
       position: { md: 'sticky' },
       top: { md: 96 },
       height: { md: 'calc(100vh - 128px)' },
-      overflowY: { md: 'auto' }
+      overflowY: { md: 'auto' },
+      '&::-webkit-scrollbar': {
+        width: '6px',
+      },
+      '&::-webkit-scrollbar-track': {
+        background: 'transparent',
+      },
+      '&::-webkit-scrollbar-thumb': {
+        background: 'rgba(255,255,255,0.1)',
+        borderRadius: '10px',
+      },
+      '&::-webkit-scrollbar-thumb:hover': {
+        background: 'rgba(255,255,255,0.2)',
+      }
     }}>
       <Stack spacing={4}>
         <Box>
