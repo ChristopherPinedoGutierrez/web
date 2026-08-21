@@ -61,7 +61,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
-### [EN PROGRESO] Épica 4: Rediseño y Modernización de UI (Material UI)
+### [COMPLETADA] Épica 4: Rediseño y Modernización de UI (Material UI)
 * **Alcance:** Modernizar el diseño visual del portafolio, ajustando el tema de Material UI (posible Bento Box, Dark Mode refinado).
 * **Impacto Core:** `[UI/UX]`.
 
@@ -72,8 +72,8 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
       *Descripción:* Crear especificación visual `specs/03-ui-modernization.md`.
 - [x] **Task 4.2:** `[UI-02]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Reconfigurar Theme de MUI eliminando estilos rígidos.
-- [ ] **Task 4.3:** `[UI-03]` | **Fecha Alta:** 2026-08-18 | **Spec:** `specs/03-ui-modernization.md`
-      *Descripción:* Refactorizar layout de Proyectos para destacar Ecosistemas (ej. NotificaPe).
+- [x] **Task 4.3:** `[UI-03]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-21 | **Spec:** `specs/03-ui-modernization.md`
+      *Descripción:* Refactorizar layout de Proyectos para destacar Ecosistemas (ej. NotificaPe). Implementación de galería Lightbox Modal y Markdown parser custom.
 - [x] **Task 4.4:** `[UI-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Refactorizar Perfil y Navbar.
 
@@ -81,6 +81,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ## 📝 Histórico de Cambios (Changelog)
 
+* **2026-08-21:** `[UI/UX]` Finalizado refactor del layout de Proyectos. Implementación de Modal Lightbox, limpieza de Markdowns y parseo nativo en tarjetas. Épica 4 completada.
 * **2026-08-20:** `[UI/UX]` Finalizado refactor del Perfil de usuario, barra de tecnologías y unificación de anchos arquitectónicos.
 * **2026-08-20:** `[UI/UX]` Redacción de `specs/03-ui-modernization.md` y activación de la Épica 4.
 * **2026-08-20:** `[CORE]` Modificación de `AGENTS.md` y `BACKLOG.md` para implementar plantilla estricta y gobernanza del proyecto.
