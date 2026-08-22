@@ -201,6 +201,7 @@ projectFiles.forEach(file => {
         projectType: projectType,
         syncSource: syncSource,
         gallery: gallery,
+        brandColor: parsed.data.brandColor || '',
         status: projectStatesObj[statusKey],
         source: { name: parsed.data.source || 'Personal project' },
         repository: parsed.data.repository || '',

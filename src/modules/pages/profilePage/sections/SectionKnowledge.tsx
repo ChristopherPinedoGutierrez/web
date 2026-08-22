@@ -14,7 +14,8 @@ function SectionKnowledge() {
     "DevOps & Tools": true,
     Management: true,
     Testing: true,
-    Design: true
+    Design: true,
+    "Architecture & Fundamentals": true
   });
   
   const [checked, setChecked] = useState({

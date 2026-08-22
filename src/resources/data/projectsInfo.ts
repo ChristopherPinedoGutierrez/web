@@ -25,6 +25,7 @@ export const projectsInfo = [
       "projectType": "application",
       "syncSource": "c:/Trabajo/Proyectos/CalculaPe/CalculaPe_Specs/management/1.2_briefing.md",
       "gallery": [],
+      "brandColor": "#10b981",
       "status": {
         "id": "development",
         "name": "Development",
@@ -48,13 +49,20 @@ export const projectsInfo = [
           "name": "CalculaPe App",
           "platform": "Mobile",
           "repository": "",
+          "description": "Cliente híbrido móvil centrado en la captura de cámara, reconocimiento óptico y gestión de datos offline-first.",
           "technologies": [
             "react-native",
             "expo",
             "zustand",
             "supabase",
             "firebase",
-            "ocr"
+            "ocr",
+            "designPatterns",
+            "oop",
+            "declarativeUi",
+            "sdd",
+            "git",
+            "github"
           ]
         }
       ],
@@ -128,6 +136,48 @@ export const projectsInfo = [
           "iconName": "FaEye",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "designPatterns",
+          "name": "Design Patterns",
+          "iconName": "FaPuzzlePiece",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "oop",
+          "name": "OOP",
+          "iconName": "FaCube",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "declarativeUi",
+          "name": "Declarative UI",
+          "iconName": "FaPaintbrush",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "sdd",
+          "name": "Spec-Driven Dev",
+          "iconName": "FaGear",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "git",
+          "name": "Git",
+          "iconName": "SiGit",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "github",
+          "name": "Github",
+          "iconName": "SiGithub",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         }
       ]
     }
@@ -138,6 +188,7 @@ export const projectsInfo = [
       "projectType": "ecosystem",
       "syncSource": "c:/Trabajo/Proyectos/NotificaPe/NotificaPe_Specs/management/1.2_briefing.md",
       "gallery": [],
+      "brandColor": "#3b82f6",
       "status": {
         "id": "testing",
         "name": "Testing",
@@ -155,12 +206,13 @@ export const projectsInfo = [
     "content": {
       "name": "NotificaPe",
       "shortDescription": "Sistema de sincronización Serverless y aplicación nativa para confirmar notificaciones de billeteras digitales en tiempo real.",
-      "description": "## El Problema\nLos negocios con múltiples puntos de venta o vendedores sufren desincronización y dependencia al confirmar pagos de billeteras digitales, exponiéndose a riesgos de fraude por comprobantes falsos al tener que consultar manualmente al dueño de la cuenta para validar la transacción.\n\n## La Solución\nUn sistema de sincronización en tiempo real que descentraliza la lectura de confirmación de pagos hacia los vendedores de manera segura. Emplea un ecosistema de tres plataformas interconectadas para capturar las notificaciones push del dispositivo administrador e inyectarlas inmediatamente a las pantallas de los vendedores.\n\n## Arquitectura Técnica\nLa infraestructura opera en arquitectura Serverless utilizando **Supabase** (PostgreSQL, Auth y Realtime WebSockets). El ecosistema consta de:\n1. Una aplicación web para gestión de suscripciones SaaS, planes y control de accesos.\n2. Una app emisora nativa (**Kotlin**) instalada en el dispositivo receptor del dinero, que lee las notificaciones del sistema operativo y las envía a la base de datos de manera segura mediante vinculación dinámica (código QR).\n3. Una app receptora nativa (**Kotlin**) para los vendedores que escucha las transacciones en tiempo real en salas de websocket, aplicando RLS (Row Level Security) estricto.\n\n## Impacto / Estado\nEn fase de pruebas cerradas. Diseñado para un rendimiento óptimo en dispositivos de gama baja mediante servicios en primer plano (Foreground Services) nativos y optimizado para el mercado comercial masivo.\n",
+      "description": "## El Problema\nLos negocios con múltiples puntos de venta sufren desincronización y riesgo de fraude al confirmar pagos digitales. Hasta ahora, dependían de capturas falsificables o de llamar al dueño para confirmar transacciones, ralentizando enormemente las ventas físicas.\n\n## La Solución\nUn ecosistema completo de sincronización Serverless. Intercepta de forma segura las notificaciones push del dispositivo administrador (Emisor) y las distribuye en tiempo real a las pantallas de los vendedores (Receptores). El proyecto abarca desde una Web Administrativa (SaaS) hasta clientes nativos Android de alto rendimiento.\n\n## Arquitectura Técnica y DevOps\nEl ecosistema completo utiliza infraestructura avanzada:\n- **Serverless & WebSockets:** Core backend apoyado en Supabase (Auth, Postgres, Realtime) y GCP.\n- **Mobile Native & Declarative UI:** Las apps Android están desarrolladas íntegramente con **Jetpack Compose**, empleando patrones MVI/MVVM, arquitecturas SOLID y programación orientada a objetos (OOP).\n- **Mobile DevOps (CI/CD):** Pipeline totalmente automatizado mediante **GitHub Actions** y *Release Please*. Cada merge aprueba y sube la nueva versión directamente a los tracks de testing de la **Google Play Console**.\n- **Infraestructura Web:** Desplegada en un VPS utilizando **Easypanel (Docker)**, garantizando integraciones continuas.\n\n## Impacto / Estado\nEn fase de pruebas cerradas. Demuestra un dominio no solo del desarrollo Full-Stack, sino del ciclo de vida DevOps completo (Mobile y Web), entregando productos escalables y resilientes a nivel de mercado masivo.\n",
       "modules": [
         {
-          "name": "Plataforma Web (Landing y SaaS Admin)",
+          "name": "Plataforma Web (SaaS Admin)",
           "platform": "Web",
           "repository": "",
+          "description": "Panel administrativo alojado en Easypanel (Docker) para gestionar suscripciones, cobros y monitorización de las apps.",
           "technologies": [
             "react",
             "vite",
@@ -170,27 +222,55 @@ export const projectsInfo = [
             "js",
             "html",
             "css",
-            "tailwind"
+            "tailwind",
+            "docker",
+            "easypanel",
+            "cicd",
+            "git",
+            "github",
+            "gcp"
           ]
         },
         {
           "name": "NotificaPe Admin App",
           "platform": "Android Native",
           "repository": "",
+          "description": "Aplicación nativa emisora que intercepta las notificaciones del OS y las sincroniza con Supabase en tiempo real.",
           "technologies": [
             "kotlin",
+            "jetpackCompose",
             "supabase",
-            "postgresql"
+            "postgresql",
+            "oop",
+            "solid",
+            "declarativeUi",
+            "cicd",
+            "githubActions",
+            "googlePlay",
+            "git",
+            "github",
+            "gcp"
           ]
         },
         {
           "name": "NotificaPe Viewer App",
           "platform": "Android Native",
           "repository": "",
+          "description": "Aplicación receptora segura que muestra las notificaciones a los vendedores usando WebSockets y UI Declarativa.",
           "technologies": [
             "kotlin",
+            "jetpackCompose",
             "supabase",
-            "postgresql"
+            "postgresql",
+            "oop",
+            "solid",
+            "declarativeUi",
+            "cicd",
+            "githubActions",
+            "googlePlay",
+            "git",
+            "github",
+            "gcp"
           ]
         }
       ],
@@ -264,6 +344,97 @@ export const projectsInfo = [
           "iconName": "SiTailwindcss",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "jetpackCompose",
+          "name": "Jetpack Compose",
+          "iconName": "SiJetpackcompose",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "oop",
+          "name": "OOP",
+          "iconName": "FaCube",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "solid",
+          "name": "SOLID",
+          "iconName": "FaCheckDouble",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "declarativeUi",
+          "name": "Declarative UI",
+          "iconName": "FaPaintbrush",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "sdd",
+          "name": "Spec-Driven Dev",
+          "iconName": "FaGear",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "docker",
+          "name": "Docker",
+          "iconName": "SiDocker",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "easypanel",
+          "name": "Easypanel",
+          "iconName": "FaServer",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "cicd",
+          "name": "CI / CD",
+          "iconName": "FaArrowsRotate",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "githubActions",
+          "name": "GitHub Actions",
+          "iconName": "SiGithubactions",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "googlePlay",
+          "name": "Play Console",
+          "iconName": "SiGoogleplay",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "git",
+          "name": "Git",
+          "iconName": "SiGit",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "github",
+          "name": "Github",
+          "iconName": "SiGithub",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "gcp",
+          "name": "Google Cloud (GCP)",
+          "iconName": "SiGooglecloud",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         }
       ]
     }
@@ -274,6 +445,7 @@ export const projectsInfo = [
       "projectType": "framework",
       "syncSource": "c:/Trabajo/Proyectos/SDD_CDPG/README.md",
       "gallery": [],
+      "brandColor": "#f59e0b",
       "status": {
         "id": "production",
         "name": "Production",
@@ -297,8 +469,12 @@ export const projectsInfo = [
           "name": "Plantilla Core y Lineamientos",
           "platform": "Framework",
           "repository": "",
+          "description": "Repositorio base inmutable que dicta las reglas de gobernanza para agentes de IA.",
           "technologies": [
-            "sdd"
+            "sdd",
+            "cleanArchitecture",
+            "git",
+            "github"
           ]
         }
       ],
@@ -316,6 +492,27 @@ export const projectsInfo = [
           "iconName": "SiMarkdown",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "cleanArchitecture",
+          "name": "Clean Architecture",
+          "iconName": "FaLayerGroup",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "git",
+          "name": "Git",
+          "iconName": "SiGit",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "github",
+          "name": "Github",
+          "iconName": "SiGithub",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
         }
       ]
     }
@@ -326,6 +523,7 @@ export const projectsInfo = [
       "projectType": "application",
       "syncSource": "",
       "gallery": [],
+      "brandColor": "#8b5cf6",
       "status": {
         "id": "production",
         "name": "Production",
@@ -392,6 +590,48 @@ export const projectsInfo = [
           "id": "css",
           "name": "Css",
           "iconName": "SiCss3",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "sdd",
+          "name": "Spec-Driven Dev",
+          "iconName": "FaGear",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "atomicDsg",
+          "name": "Atomic Design",
+          "iconName": "FaAtom",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "declarativeUi",
+          "name": "Declarative UI",
+          "iconName": "FaPaintbrush",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "nodejs",
+          "name": "Node.js",
+          "iconName": "SiNodedotjs",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "git",
+          "name": "Git",
+          "iconName": "SiGit",
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "github",
+          "name": "Github",
+          "iconName": "SiGithub",
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         }

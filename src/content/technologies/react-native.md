@@ -5,7 +5,7 @@ group: "Library"
 typeDef: "Library"
 iconName: "SiReact"
 brandColor: "#5bd9fb"
-invertColors: true
+invertColors: false
 contrast: false
 monochrome: false
 ecosystem: []

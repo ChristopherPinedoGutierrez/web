@@ -2,11 +2,13 @@
 title: "CalculaPe"
 project_type: "application"
 sync_source: "c:/Trabajo/Proyectos/CalculaPe/CalculaPe_Specs/management/1.2_briefing.md"
+brandColor: "#10b981"
 modules:
   - name: "CalculaPe App"
     platform: "Mobile"
     repository: ""
-    technologies: ["react-native", "expo", "zustand", "supabase", "firebase", "ocr"]
+    description: "Cliente híbrido móvil centrado en la captura de cámara, reconocimiento óptico y gestión de datos offline-first."
+    technologies: ["react-native", "expo", "zustand", "supabase", "firebase", "ocr", "designPatterns", "oop", "declarativeUi", "sdd", "git", "github"]
 short_description: "Aplicación de escaneo con IA (OCR) para automatizar el registro y división matemática de finanzas compartidas."
 date: "2024-05"
 importance: 8
@@ -14,7 +16,7 @@ status: "Development"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["react-native", "expo", "react", "ts", "js", "zustand", "supabase", "postgresql", "firebase", "ocr"]
+technologies: ["react-native", "expo", "react", "ts", "js", "zustand", "supabase", "postgresql", "firebase", "ocr", "designPatterns", "oop", "declarativeUi", "sdd", "git", "github"]
 ---
 ## El Problema
 La gestión y organización de finanzas personales o grupales implica una alta fricción debido a la necesidad de digitar manualmente cada gasto incurrido, además de la complejidad matemática y logística para repartir los gastos equitativa o proporcionalmente entre los miembros de una familia o grupo.

@@ -1,13 +1,13 @@
 ---
 name: "Atomic Design"
-area: "Design"
+area: "Architecture & Fundamentals"
 group: "Methodology"
 typeDef: "Methodology"
 iconName: "FaAtom"
 brandColor: "#bc6719"
-invertColors: true
-contrast: true
-monochrome: false
+invertColors: false
+contrast: false
+monochrome: true
 ecosystem: []
 state: "conocidas"
 ---

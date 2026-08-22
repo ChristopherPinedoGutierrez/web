@@ -1,6 +1,6 @@
 ---
 name: "Spec-Driven Dev"
-area: "Management"
+area: "Architecture & Fundamentals"
 group: "Methodology"
 typeDef: "Methodology"
 iconName: "FaGear"

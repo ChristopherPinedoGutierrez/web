@@ -1,6 +1,6 @@
 ---
 name: "BEM"
-area: "Design"
+area: "Architecture & Fundamentals"
 group: "Methodology"
 typeDef: "Methodology"
 iconName: "SiBem"

@@ -29,7 +29,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
-### [COMPLETADA] Épica 2: Modelado de Datos y Contenido del CMS
+### [EN PROGRESO] Épica 2: Modelado de Datos y Contenido del CMS
 * **Alcance:** Integrar nuevos proyectos estrella (NotificaPe, CalculaPe, SDD_CDPG_SPECS), actualizar tecnologías, experiencia laboral y soportar metadatos ocultos de sincronización.
 * **Impacto Core:** `[DATA]`, requiere alterar `build-data.js` (Decap CMS fue eliminado por sobreingeniería).
 
@@ -42,14 +42,18 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
       *Descripción:* Actualizar la Experiencia Laboral (6 meses I+D NotificaPe).
 - [x] **Task 2.4:** `[DATA-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `N/A`
       *Descripción:* Eliminar Decap CMS (`public/admin/`) por completo, por ser obsoleto para el flujo agentico. Modificar `build-data.js` para admitir `project_type`, `sync_source` y `modules`.
+- [x] **Task 2.5:** `[DATA-05]` | **Fecha Alta:** 2026-08-21 | **Completado:** 2026-08-21 | **Spec:** `N/A`
+      *Descripción:* Restauración masiva de tecnologías históricas (53+ items), normalización de áreas lógicas y flags adaptativos (`monochrome`, `invertColors`, `contrast`).
+- [ ] **Task 2.6:** `[DATA-06]` | **Fecha Alta:** 2026-08-22 | **Spec:** `N/A`
+      *Descripción:* Refinamiento y pulido final de tecnologías (completar descripciones pendientes, validación de tags y agregar faltantes).
 
 ---
 
 ### [BACKLOG] Épica 3: Generación Dinámica de CV
-* **Alcance:** Implementar un sistema de generación de PDF estático u on-the-fly que consuma la data unificada del portafolio.
+* **Alcance:** Implementar un sistema de generación de PDF estático u on-the-fly que consuma la data unificada del portafolio (Tecnologías, Experiencia y Proyectos normalizados).
 * **Impacto Core:** `[FEATURE]`.
 
-*Nota: Pendiente iterar sobre cómo queremos que se vea el PDF y qué información extraeremos exactamente antes de redactar el Spec.*
+*Nota: Se abordará una vez finalizado el modelado y pulido de datos y el rediseño de Experiencia, para que el PDF se alimente de la base de datos completa y homogénea.*
 
 **Tareas:**
 - [ ] **Task 3.1:** `[FEAT-01]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente (specs/02-dynamic-cv.md)`
@@ -61,11 +65,9 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
-### [COMPLETADA] Épica 4: Rediseño y Modernización de UI (Material UI)
+### [EN PROGRESO] Épica 4: Rediseño y Modernización de UI (Material UI)
 * **Alcance:** Modernizar el diseño visual del portafolio, ajustando el tema de Material UI (posible Bento Box, Dark Mode refinado).
 * **Impacto Core:** `[UI/UX]`.
-
-*Nota: Debatir si iremos por estilo Bento Box, Dark Mode refinado, etc. antes de programar.*
 
 **Tareas:**
 - [x] **Task 4.1:** `[UI-01]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
@@ -76,12 +78,16 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
       *Descripción:* Refactorizar layout de Proyectos para destacar Ecosistemas (ej. NotificaPe). Implementación de galería Lightbox Modal y Markdown parser custom.
 - [x] **Task 4.4:** `[UI-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Refactorizar Perfil y Navbar.
+- [ ] **Task 4.5:** `[UI-05]` | **Fecha Alta:** 2026-08-22 | **Spec:** `Pendiente (specs/03-ui-modernization.md)`
+      *Descripción:* Rediseño y modernización de la sección de Experiencia Laboral (`SectionExperience.tsx`).
 
 ---
 
 ## 📝 Histórico de Cambios (Changelog)
 
-* **2026-08-21:** `[UI/UX]` Finalizado refactor del layout de Proyectos. Implementación de Modal Lightbox, limpieza de Markdowns y parseo nativo en tarjetas. Épica 4 completada.
+* **2026-08-22:** `[MGMT]` Reorganización del Backlog: reactivación de Épica 4 con Task 4.5 para Experiencia Laboral y Task 2.6 para pulido de tecnologías previo a la Épica 3 (Dynamic CV).
+* **2026-08-21:** `[DATA/UI]` Estandarización masiva de 53+ tecnologías, áreas lógicas, soporte monochrome/contrast/invertColors y scrollbar en menú de filtros.
+* **2026-08-21:** `[UI/UX]` Finalizado refactor del layout de Proyectos. Implementación de Modal Lightbox, limpieza de Markdowns y parseo nativo en tarjetas.
 * **2026-08-20:** `[UI/UX]` Finalizado refactor del Perfil de usuario, barra de tecnologías y unificación de anchos arquitectónicos.
 * **2026-08-20:** `[UI/UX]` Redacción de `specs/03-ui-modernization.md` y activación de la Épica 4.
 * **2026-08-20:** `[CORE]` Modificación de `AGENTS.md` y `BACKLOG.md` para implementar plantilla estricta y gobernanza del proyecto.

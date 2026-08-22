@@ -5,7 +5,7 @@ group: "App"
 typeDef: "App"
 iconName: "SiMiro"
 brandColor: "#ffdd33"
-invertColors: true
+invertColors: false
 contrast: false
 monochrome: false
 ecosystem: []

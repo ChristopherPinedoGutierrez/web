@@ -21,7 +21,8 @@ const STANDARD_AREAS = [
   { id: 'DevOps & Tools', name: 'DevOps & Tools' },
   { id: 'Management', name: 'Management' },
   { id: 'Testing', name: 'Testing' },
-  { id: 'Design', name: 'Design' }
+  { id: 'Design', name: 'Design' },
+  { id: 'Architecture & Fundamentals', name: 'Architecture & Fundamentals' }
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 const DOMAIN_STATES = [

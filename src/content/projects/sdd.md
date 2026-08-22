@@ -2,11 +2,13 @@
 title: "Spec-Driven Development (SDD)"
 project_type: "framework"
 sync_source: "c:/Trabajo/Proyectos/SDD_CDPG/README.md"
+brandColor: "#f59e0b"
 modules:
   - name: "Plantilla Core y Lineamientos"
     platform: "Framework"
     repository: ""
-    technologies: ["sdd"]
+    description: "Repositorio base inmutable que dicta las reglas de gobernanza para agentes de IA."
+    technologies: ["sdd", "cleanArchitecture", "git", "github"]
 short_description: "Plantilla y metodología propietaria (SSOT) para orquestar y alinear Agentes de IA en arquitecturas complejas de software."
 date: "2024-07"
 importance: 9
@@ -14,7 +16,7 @@ status: "Production"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["sdd", "markdown"]
+technologies: ["sdd", "markdown", "cleanArchitecture", "git", "github"]
 ---
 ## El Problema
 En el desarrollo de software orquestado por múltiples agentes de Inteligencia Artificial (como Antigravity), la falta de estructura centralizada provoca la proliferación de código desincronizado, pérdida de contexto en los chats y toma de decisiones arquitectónicas erróneas sobre la marcha al carecer de un mapa de ruta técnico riguroso.

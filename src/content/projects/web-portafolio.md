@@ -2,6 +2,7 @@
 title: "Web personal y portafolio"
 project_type: "application"
 sync_source: ""
+brandColor: "#8b5cf6"
 modules: []
 short_description: "Hub digital estático compilado en runtime. Sirve de escaparate y playground para experimentar arquitecturas UI."
 date: "2023-11"
@@ -10,7 +11,7 @@ status: "Production"
 source: "Personal project"
 repository: "https://github.com/ChristopherPinedoGutierrez/web"
 url: "https://christopherpinedogutierrez.github.io/web/"
-technologies: ["react", "ts", "js", "vite", "mui", "html", "css"]
+technologies: ["react", "ts", "js", "vite", "mui", "html", "css", "sdd", "atomicDsg", "declarativeUi", "nodejs", "git", "github"]
 ---
 ## El Problema
 Los currículums estáticos en formato PDF limitan la capacidad de demostrar visualmente las habilidades técnicas y la evolución profesional de un desarrollador. Se requería una plataforma centralizada que no solo sirva de escaparate, sino que también actúe como un playground para experimentar con nuevas tecnologías y arquitecturas.

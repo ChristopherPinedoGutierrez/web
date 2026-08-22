@@ -118,6 +118,7 @@ const SimpleMarkdown = ({ text }) => {
 };
 
 function ProjectCard({ item }) {
+  const theme = useTheme();
   const [modalOpen, setModalOpen] = useState(false);
   const isEcosystem = item.config.projectType === 'ecosystem';
   
@@ -130,6 +131,10 @@ function ProjectCard({ item }) {
   if (item.config.projectType === 'ecosystem') ProjectIcon = FaProjectDiagram;
   if (item.config.projectType === 'framework') ProjectIcon = FaLayerGroup;
 
+  const brandColor = item.config.brandColor;
+  const isDark = theme.palette.mode === 'dark';
+  const cardBg = isDark ? '#111827' : '#ffffff';
+  
   return (
     <Grid item xs={12}>
       <Card
@@ -137,10 +142,13 @@ function ProjectCard({ item }) {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#111827',
-          border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: 1,
-          boxShadow: 'none'
+          backgroundColor: cardBg,
+          backgroundImage: brandColor ? `linear-gradient(to bottom right, ${brandColor}${isDark ? '15' : '10'}, transparent)` : 'none',
+          border: '1px solid',
+          borderColor: brandColor ? `${brandColor}${isDark ? '40' : '60'}` : (isDark ? theme.palette.divider : 'rgba(0,0,0,0.08)'),
+          borderTop: brandColor ? `3px solid ${brandColor}` : undefined,
+          borderRadius: 2,
+          boxShadow: isDark ? 'none' : '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
         }}
       >
         <CardContent>
@@ -154,7 +162,7 @@ function ProjectCard({ item }) {
           </Stack>
         </CardContent>
         
-        <Divider sx={{ borderColor: 'rgba(255,255,255,0.08)' }} />
+        <Divider sx={{ borderColor: theme.palette.divider }} />
         
         <CardContent sx={{ flexGrow: 1, p: 0 }}>
           <Grid container sx={{ height: '100%' }}>
@@ -234,22 +242,30 @@ function ProjectCard({ item }) {
               {isEcosystem && item.content.modules && item.content.modules.length > 0 && (
                 <Box sx={{ mb: 4 }}>
                   <Typography variant="subtitle2" color="text.secondary" gutterBottom>MÓDULOS DE LA ARQUITECTURA</Typography>
-                  <Stack gap={2} mt={2}>
+                  <Stack gap={1} mt={2}>
                     {item.content.modules.map((mod, midx) => (
-                      <Box key={midx} sx={{ p: 2, borderRadius: 2, backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                        <Stack direction="row" justifyContent="space-between" alignItems="center" mb={1}>
-                          <Typography variant="body2" color="text.primary" fontWeight="bold">{mod.name}</Typography>
-                          <Typography variant="caption" color="text.secondary">{mod.platform}</Typography>
-                        </Stack>
-                        <Stack direction="row" gap={1} flexWrap="wrap">
-                          {mod.technologies.map((tId) => {
-                             const techObj = item.content.technologies.find(t => t.id === tId) || { name: tId, iconName: '', colorLayer1: '#ccc', colorLayer2: '#fff' };
-                             return (
-                                <TechChip key={tId} tech={techObj} size="small" />
-                             );
-                          })}
-                        </Stack>
-                      </Box>
+                      <Accordion key={midx} sx={{ backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.03)', border: '1px solid rgba(255,255,255,0.05)', boxShadow: 'none', '&:before': { display: 'none' } }}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'text.secondary' }} />}>
+                          <Stack direction="row" gap={2} alignItems="center" width="100%">
+                            <DynamicIcon name={mod.platform.toLowerCase().includes('web') ? 'FaLaptopCode' : (mod.platform.toLowerCase().includes('android') || mod.platform.toLowerCase().includes('mobile') ? 'SiAndroid' : 'FaLayerGroup')} size={20} color={theme.palette.text.secondary} />
+                            <Typography variant="body2" color="text.primary" fontWeight="bold">{mod.name}</Typography>
+                            <Typography variant="caption" color="text.secondary" sx={{ ml: 'auto', mr: 2 }}>{mod.platform}</Typography>
+                          </Stack>
+                        </AccordionSummary>
+                        <AccordionDetails sx={{ borderTop: '1px solid rgba(255,255,255,0.05)', pt: 2 }}>
+                          {mod.description && (
+                            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{mod.description}</Typography>
+                          )}
+                          <Stack direction="row" gap={1} flexWrap="wrap">
+                            {mod.technologies.map((tId) => {
+                               const techObj = item.content.technologies.find(t => t.id === tId) || { name: tId, iconName: '', colorLayer1: '#ccc', colorLayer2: '#fff' };
+                               return (
+                                  <TechChip key={tId} tech={techObj} size="small" />
+                               );
+                            })}
+                          </Stack>
+                        </AccordionDetails>
+                      </Accordion>
                     ))}
                   </Stack>
                 </Box>
@@ -273,7 +289,7 @@ function ProjectCard({ item }) {
         
         {(item.config.repository || item.config.url) && (
           <>
-            <Divider sx={{ borderColor: 'rgba(255,255,255,0.08)' }} />
+            <Divider sx={{ borderColor: theme.palette.divider }} />
             <CardActions sx={{ justifyContent: 'space-between', padding: 2 }}>
               {item.config.repository ? (
                 <IconButton href={item.config.repository} target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'text.primary' } }}>

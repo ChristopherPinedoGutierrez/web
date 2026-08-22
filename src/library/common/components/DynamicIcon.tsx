@@ -2,6 +2,7 @@ import React from 'react';
 import * as SiIcons from 'react-icons/si';
 import * as FaIcons from 'react-icons/fa6';
 import * as MdIcons from 'react-icons/md';
+import * as TbIcons from 'react-icons/tb';
 
 interface DynamicIconProps {
   name: string;
@@ -41,6 +42,11 @@ export function DynamicIcon({ name, size, color, className }: DynamicIconProps) 
   // Buscar en Material Design Icons (md)
   if (!IconComponent) {
     IconComponent = (MdIcons as any)[name];
+  }
+
+  // Buscar en Tabler Icons (tb)
+  if (!IconComponent) {
+    IconComponent = (TbIcons as any)[name];
   }
   
   if (!IconComponent) {

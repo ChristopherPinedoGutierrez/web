@@ -1,6 +1,6 @@
 ---
 name: "Kotlin"
-area: "Backend"
+area: "Mobile"
 group: "Language"
 typeDef: "Language"
 iconName: "SiKotlin"
