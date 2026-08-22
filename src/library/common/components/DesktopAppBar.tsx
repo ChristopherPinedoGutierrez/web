@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { AppBar, Box, Button, Container, CssBaseline, Stack } from '@mui/material';
+import { AppBar, Box, Button, Container, CssBaseline, Stack, Slide, useScrollTrigger } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import { handleDescargarCV } from '../utils/functionUtils';
 import pdfFile from '../../../resources/data/curriculum/cv.pdf';
@@ -13,11 +13,18 @@ interface DesktopAppBarProps {
 
 function DesktopAppBar({ children }: DesktopAppBarProps) {
   const location = useLocation();
+  // Al bajar el threshold a 20, detecta el primer movimiento de la rueda del ratón (sincronizando con el FAB).
+  const trigger = useScrollTrigger({ threshold: 20 });
+  const isProfile = location.pathname.startsWith('/profile');
+  
+  // En perfil siempre se muestra. En otras vistas, se oculta al hacer scroll down y aparece al hacer scroll up.
+  const showNav = isProfile || !trigger;
 
   return (
     <Box>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ backgroundColor: 'background.default', paddingY: 2 }}>
+      <Slide appear={false} direction="down" in={showNav}>
+        <AppBar position="fixed" sx={{ backgroundColor: 'background.default', paddingY: 2, zIndex: 1300 }}>
         <Container maxWidth="xxl">
           <Stack direction={'row'} sx={{ justifyContent: 'space-between' }}>
             <Stack spacing={5} direction={'row'} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
@@ -48,6 +55,7 @@ function DesktopAppBar({ children }: DesktopAppBarProps) {
           </Stack>
         </Container>
       </AppBar>
+      </Slide>
       <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>{children}</Box>
     </Box>
   );
