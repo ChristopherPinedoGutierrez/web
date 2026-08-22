@@ -239,11 +239,13 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
         <Box sx={{ p: { xs: 2, md: 4 }, flexGrow: 1 }}>
           <GridGroupProjects projects={filteredProjects} />
         </Box>
+        <Box sx={{ height: '64px', width: '100%', flexShrink: 0 }} />
       </Box>
     </Box>
   );
 }
 
 export { SectionDashboardProjects };
+
 
 

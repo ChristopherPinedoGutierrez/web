@@ -8,9 +8,13 @@ function GlobalFooter() {
     <Box sx={{ 
       backgroundColor: '#111827', // Gris muy oscuro
       borderTop: '1px solid rgba(255,255,255,0.05)',
-      py: 2,
-      px: 2,
-      mt: 'auto',
+      height: '64px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      mt: '-64px',
+      position: 'relative',
+      zIndex: 1201,
       width: '100%'
     }}>
       <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
@@ -33,4 +37,5 @@ function GlobalFooter() {
 }
 
 export { GlobalFooter };
+
 
