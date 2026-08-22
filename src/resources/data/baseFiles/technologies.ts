@@ -220,6 +220,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\r\nParadigma donde se diseña la UI describiendo cómo debe verse según el estado actual.\r\n"
   },
+  "desGraph": {
+    "id": "desGraph",
+    "name": "Diseño gráfico",
+    "area": "Design",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nDiseño gráfico.\n"
+  },
   "designPatterns": {
     "id": "designPatterns",
     "name": "Design Patterns",
@@ -236,6 +253,91 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "\nSoluciones típicas a problemas comunes en el diseño de software (GoF).\n"
+  },
+  "desUI": {
+    "id": "desUI",
+    "name": "Diseño UI",
+    "area": "Design",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nDiseño UI.\n"
+  },
+  "desUX": {
+    "id": "desUX",
+    "name": "Diseño UX",
+    "area": "Design",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nDiseño UX.\n"
+  },
+  "devEvent": {
+    "id": "devEvent",
+    "name": "Metodología orientada a eventos",
+    "area": "Development",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nMetodología orientada a eventos.\n"
+  },
+  "devFunc": {
+    "id": "devFunc",
+    "name": "Metodología funcional",
+    "area": "Development",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nMetodología funcional.\n"
+  },
+  "devOop": {
+    "id": "devOop",
+    "name": "Metodología orientada a objetos",
+    "area": "Development",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nMetodología orientada a objetos.\n"
   },
   "docker": {
     "id": "docker",
@@ -322,6 +424,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\nInfraestructura web rápida, minimalista y flexible para Node.js.\n"
   },
+  "fiBonus": {
+    "id": "fiBonus",
+    "name": "Control de bonificaciones",
+    "area": "Finance",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nControl de bonificaciones.\n"
+  },
   "figma": {
     "id": "figma",
     "name": "Figma",
@@ -338,6 +457,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Descripción pendiente de Figma.\n"
+  },
+  "fiPayroll": {
+    "id": "fiPayroll",
+    "name": "Control de nómina salarial",
+    "area": "Finance",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nControl de nómina salarial.\n"
   },
   "firebase": {
     "id": "firebase",
@@ -491,6 +627,40 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "\nGestión de despliegues, testing tracks y automatización de releases para Android.\n"
+  },
+  "hrAtten": {
+    "id": "hrAtten",
+    "name": "Control de asistencia",
+    "area": "Human Resources",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nControl de asistencia.\n"
+  },
+  "hrSche": {
+    "id": "hrSche",
+    "name": "Control de horarios",
+    "area": "Human Resources",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nControl de horarios.\n"
   },
   "html": {
     "id": "html",
@@ -661,6 +831,91 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "\r\nPlataforma de pagos utilizada para procesar suscripciones y transacciones SaaS.\r\n"
+  },
+  "mgtAdms": {
+    "id": "mgtAdms",
+    "name": "Gestión de administrativa",
+    "area": "Management",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nGestión de administrativa.\n"
+  },
+  "mgtDocs": {
+    "id": "mgtDocs",
+    "name": "Gestión de documentos",
+    "area": "Management",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nGestión de documentos.\n"
+  },
+  "mgtProd": {
+    "id": "mgtProd",
+    "name": "Gestión de producto",
+    "area": "Management",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nGestión de producto.\n"
+  },
+  "mgtProj": {
+    "id": "mgtProj",
+    "name": "Gestión de proyectos",
+    "area": "Management",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nGestión de proyectos.\n"
+  },
+  "mgtTeam": {
+    "id": "mgtTeam",
+    "name": "Gestión de equipos",
+    "area": "Management",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nGestión de equipos.\n"
   },
   "microservices": {
     "id": "microservices",
@@ -1121,6 +1376,193 @@ export const technologies: Record<string, any> = {
     },
     "description": "Descripción pendiente de SQL Server.\n"
   },
+  "ssAdapt": {
+    "id": "ssAdapt",
+    "name": "Adaptabilidad",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nAdaptabilidad.\n"
+  },
+  "ssCommu": {
+    "id": "ssCommu",
+    "name": "Comunicación asertiva",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nComunicación asertiva.\n"
+  },
+  "ssCreaThink": {
+    "id": "ssCreaThink",
+    "name": "Pensamiento creativo",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nPensamiento creativo.\n"
+  },
+  "ssCritThink": {
+    "id": "ssCritThink",
+    "name": "Pensamiento crítico",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nPensamiento crítico.\n"
+  },
+  "ssEthi": {
+    "id": "ssEthi",
+    "name": "Ética laboral",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nÉtica laboral.\n"
+  },
+  "ssLead": {
+    "id": "ssLead",
+    "name": "Liderazgo",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nLiderazgo.\n"
+  },
+  "ssProac": {
+    "id": "ssProac",
+    "name": "Proactividad",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nProactividad.\n"
+  },
+  "ssResConf": {
+    "id": "ssResConf",
+    "name": "Resolución de conflictos",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nResolución de conflictos.\n"
+  },
+  "ssResil": {
+    "id": "ssResil",
+    "name": "Resiliencia",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nResiliencia.\n"
+  },
+  "ssResProb": {
+    "id": "ssResProb",
+    "name": "Resolución de problemas",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nResolución de problemas.\n"
+  },
+  "ssTeamW": {
+    "id": "ssTeamW",
+    "name": "Trabajo en equipo",
+    "area": "Soft Skills",
+    "group": "Competency",
+    "typeDef": "Competency",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nTrabajo en equipo.\n"
+  },
   "storybook": {
     "id": "storybook",
     "name": "Storybook",
@@ -1290,6 +1732,40 @@ export const technologies: Record<string, any> = {
       "name": "pendientes"
     },
     "description": "\nFramework progresivo para construir interfaces de usuario.\n"
+  },
+  "whInv": {
+    "id": "whInv",
+    "name": "Control de inventario",
+    "area": "Warehouse",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nControl de inventario.\n"
+  },
+  "whMgt": {
+    "id": "whMgt",
+    "name": "Administración de almacén",
+    "area": "Warehouse",
+    "group": "Aptitude",
+    "typeDef": "Aptitude",
+    "iconName": "FaLayerGroup",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nAdministración de almacén.\n"
   },
   "zustand": {
     "id": "zustand",

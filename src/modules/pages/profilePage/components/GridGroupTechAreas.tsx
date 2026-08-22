@@ -117,7 +117,7 @@ interface GridGroupTechAreasProps {
 
 function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGroupTechAreasProps) {
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 400); return () => clearTimeout(timer); }, []);
+  useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 300); return () => clearTimeout(timer); }, []);
   const [filteredTechs, setFilteredTechs] = useState<any[]>([]);
 
   useEffect(() => {
@@ -200,6 +200,8 @@ function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGrou
 }
 
 export { GridGroupTechAreas };
+
+
 
 
 

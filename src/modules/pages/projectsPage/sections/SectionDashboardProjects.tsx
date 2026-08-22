@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Drawer, Toolbar, Typography, Menu, MenuItem, Stack, IconButton, useTheme, useMediaQuery, AppBar, Fab, Divider } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Box, Drawer, Toolbar, Typography, Menu, MenuItem, Stack, IconButton, useTheme, useMediaQuery, AppBar, Fab, Divider, Chip } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import SortIcon from '@mui/icons-material/Sort';
@@ -27,6 +28,21 @@ interface Filters {
 }
 
 function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps) {
+  const navigate = useNavigate();
+  const cleanSelectedId = selectedId ? selectedId.replace(/^:/, '') : '';
+  const isProjectSelection = projectsInfo.some(p => p.id === cleanSelectedId);
+  const isTechSelection = !isProjectSelection && selectedId !== undefined && selectedId !== ':id';
+  
+  let selectedTechName = '';
+  if (isTechSelection) {
+    for (const p of projectsInfo) {
+      const foundTech = p.content.technologies.find((t: any) => t.id === cleanSelectedId);
+      if (foundTech) {
+        selectedTechName = foundTech.name;
+        break;
+      }
+    }
+  }
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
   const [open, setOpen] = useState(false);
@@ -56,15 +72,12 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
       return acc;
     }, {});
 
-    const cleanSelectedId = selectedId ? selectedId.replace(/^:/, '') : '';
-    const hasValidSelection = selectedId !== undefined && selectedId !== ':id';
-
     const techFilters = projectsInfo.reduce((acc: Record<string, FilterItem>, project: any) => {
       project.content.technologies.forEach((tech: any) => {
         if (!acc[tech.id]) {
           acc[tech.id] = { 
             name: tech.name, 
-            active: hasValidSelection ? tech.id === cleanSelectedId : true 
+            active: isTechSelection ? tech.id === cleanSelectedId : true 
           };
         }
       });
@@ -80,6 +93,10 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
 
   useEffect(() => {
     const filterProjects = () => {
+      if (isProjectSelection) {
+        return projectsInfo.filter(p => p.id === cleanSelectedId);
+      }
+
       let filtered = projectsInfo.filter((project: any) => {
         const typeMatch = filters.Tipos[project.config.projectType]?.active;
         const stateMatch = filters.Estados[project.config.status.id]?.active;
@@ -212,11 +229,32 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
             borderBottom: '1px solid '+ theme.palette.divider
           }}
         >
-          <Toolbar sx={{ minHeight: '64px !important', px: { xs: 2, md: 3 } }}>
-            <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
+          <Toolbar sx={{ minHeight: '64px !important', px: { xs: 2, md: 3 }, display: 'flex', alignItems: 'center' }}>
+            <Typography variant="h6" noWrap component="div" sx={{ fontWeight: 'bold' }}>
               Portafolio de proyectos
             </Typography>
             
+            {(isProjectSelection || isTechSelection) && (
+              <Stack direction="row" alignItems="center" spacing={1} sx={{ ml: 2, flexGrow: 1 }}>
+                <Typography variant="body1" color="text.secondary" sx={{ mx: 0.5 }}>|</Typography>
+                <Typography variant="body2" color="text.secondary" fontWeight="bold">
+                  {isProjectSelection ? 'Viendo proyecto:' : 'Filtrando por tecnología:'}
+                </Typography>
+                <Chip 
+                  label={isProjectSelection 
+                    ? projectsInfo.find(p => p.id === cleanSelectedId)?.content.name || cleanSelectedId
+                    : selectedTechName || cleanSelectedId
+                  }
+                  onDelete={() => navigate('/projects')}
+                  color={isProjectSelection ? "primary" : "secondary"}
+                  size="small"
+                  sx={{ fontWeight: 'bold' }}
+                />
+              </Stack>
+            )}
+
+            {!(isProjectSelection || isTechSelection) && <Box sx={{ flexGrow: 1 }} />}
+
             <IconButton color="inherit" onClick={handleSortClick} sx={{ flexShrink: 0, width: 40, height: 40 }}>
               <SortIcon />
             </IconButton>
@@ -246,6 +284,9 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
 }
 
 export { SectionDashboardProjects };
+
+
+
 
 
 

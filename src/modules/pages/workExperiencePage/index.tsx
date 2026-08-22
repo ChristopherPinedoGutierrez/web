@@ -1,20 +1,19 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import { Box, Card, CardContent, CardHeader, Divider, Grid, Stack, Typography } from '@mui/material';
-import React from 'react';
-import { workExperienceInfo } from '../../../resources/data/workExperienceInfo';
-import { BasePageLayout } from '../../layouts/BasePageLayout';
+﻿import React from 'react';
+import { Box, Container, useTheme } from '@mui/material';
 import { SectionDashboardExperience } from './sections/SectionDashboardExperience';
-// import { renderChips } from '../../../library/common/utils/jsxUtils';
-// import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
 
 function WorkExperiencePage() {
+  const theme = useTheme();
+  const background = theme.palette.mode === 'light' ? (theme as any).custom.svgBackgroundLight : (theme as any).custom.svgBackgroundDark;
+
   return (
-    <BasePageLayout>
-      <Grid item xs={12}>
-        <SectionDashboardExperience />
-      </Grid>
-    </BasePageLayout>
+    <Box sx={{ backgroundImage: background, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Container maxWidth="xxl" disableGutters>
+        <Box sx={{ mt: { xs: '56px', sm: '64px' }, pb: 0, display: 'flex', flexGrow: 1 }}>
+          <SectionDashboardExperience />
+        </Box>
+      </Container>
+    </Box>
   );
 }
 

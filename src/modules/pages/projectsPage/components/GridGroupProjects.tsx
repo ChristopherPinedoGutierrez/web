@@ -323,7 +323,7 @@ function ProjectCard({ item }) {
 
 function GridGroupProjects({ projects }) {
   const [isLoading, setIsLoading] = React.useState(true);
-  React.useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 400); return () => clearTimeout(timer); }, []);
+  React.useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 300); return () => clearTimeout(timer); }, []);
 
   if (isLoading) {
     return (
@@ -346,4 +346,6 @@ function GridGroupProjects({ projects }) {
 }
 
 export { GridGroupProjects };
+
+
 

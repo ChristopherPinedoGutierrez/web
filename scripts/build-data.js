@@ -23,9 +23,6 @@ function loadTsData(filePath) {
 const contentDir = path.join(__dirname, '../src/content');
 const baseFilesDir = path.join(__dirname, '../src/resources/data/baseFiles');
 
-const softSkillsMap = loadTsData(path.join(baseFilesDir, 'softSkills.ts'));
-const aptitudesMap = loadTsData(path.join(baseFilesDir, 'aptitudes.ts'));
-
 console.log('Procesando contenidos Markdown...');
 
 // 1. COMPILAR INFORMACIÓN PERSONAL
@@ -254,6 +251,10 @@ expFiles.forEach(file => {
 
   if (parsed.data.company) {
     experienceList.push({
+      id: key,
+      type: parsed.data.type || 'work',
+      linkedProjects: parsed.data.linkedProjects || [],
+      links: parsed.data.links || [],
       company: parsed.data.company,
       role: parsed.data.role,
       period: {
@@ -263,18 +264,20 @@ expFiles.forEach(file => {
         state: parsed.data.state || ''
       },
       jobFunctions: parsed.content,
-      coreCompetencies: (parsed.data.softSkills || []).map(k => softSkillsMap[k] || { id: 'uuid', name: k, type: { name: 'Skill', value: 5 } }),
-      technicalSkills: (parsed.data.aptitudes || []).map(k => aptitudesMap[k] || { id: 'uuid', name: k, type: { name: 'Skill', value: 10 } }),
-      radarCount: ((parsed.data.aptitudes || []).length + (parsed.data.softSkills || []).length) * 10
+      coreCompetencies: (parsed.data.softSkills || []).map(k => {
+        const t = technologiesObj[k];
+        return t ? { id: t.id, name: t.name, area: t.area, type: { name: t.area, value: 5 } } : { id: k, name: k, area: 'Soft Skills', type: { name: 'Soft Skills', value: 5 } };
+      }),
+      technicalSkills: (parsed.data.aptitudes || []).map(k => {
+        const t = technologiesObj[k];
+        return t ? { id: t.id, name: t.name, area: t.area, type: { name: t.area, value: 10 } } : { id: k, name: k, area: 'Management', type: { name: 'Management', value: 10 } };
+      }),
+      order: parsed.data.order || 99
     });
   }
 });
 
-experienceList.sort((a, b) => {
-  if (a.period.endDate === 'Actualidad') return -1;
-  if (b.period.endDate === 'Actualidad') return 1;
-  return b.period.startDate.localeCompare(a.period.startDate);
-});
+experienceList.sort((a, b) => a.order - b.order);
 
 fs.writeFileSync(
   path.join(__dirname, '../src/resources/data/workExperienceInfo.ts'),

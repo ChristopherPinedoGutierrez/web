@@ -103,6 +103,15 @@ function CustomTheme({ children }: CustomThemeProps) {
       }
     },
     components: {
+        MuiSkeleton: {
+          styleOverrides: {
+            root: {
+              '&::after': {
+                animationDelay: '0s !important',
+              }
+            }
+          }
+        },
       MuiCard: {
         styleOverrides: {
           root: {
@@ -168,3 +177,4 @@ function CustomTheme({ children }: CustomThemeProps) {
 }
 
 export { CustomTheme, ThemeContext };
+

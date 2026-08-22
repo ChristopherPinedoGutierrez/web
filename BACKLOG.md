@@ -78,14 +78,21 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
       *Descripción:* Refactorizar layout de Proyectos para destacar Ecosistemas (ej. NotificaPe). Implementación de galería Lightbox Modal y Markdown parser custom.
 - [x] **Task 4.4:** `[UI-04]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-20 | **Spec:** `specs/03-ui-modernization.md`
       *Descripción:* Refactorizar Perfil y Navbar.
-- [ ] **Task 4.5:** `[UI-05]` | **Fecha Alta:** 2026-08-22 | **Spec:** `Pendiente (specs/03-ui-modernization.md)`
-      *Descripción:* Rediseño y modernización de la sección de Experiencia Laboral (`SectionExperience.tsx`).
+- [x] **Task 4.5.1:** `[DATA-07]` | **Fecha Alta:** 2026-08-22 | **Completado:** 2026-08-22 | **Spec:** `N/A`
+      *Descripción:* Refactor del Modelo de Datos de Experiencia (Migración de skills a Markdown y build-data.js).
+- [x] **Task 4.5.2:** `[DATA-08]` | **Fecha Alta:** 2026-08-22 | **Completado:** 2026-08-22 | **Spec:** `N/A`
+      *Descripción:* Redacción de Hitos Profesionales y enlace con proyectos en los archivos Markdown.
+- [x] **Task 4.5.3:** `[UI-05]` | **Fecha Alta:** 2026-08-22 | **Completado:** 2026-08-22 | **Spec:** `Pendiente (specs/03-ui-modernization.md)`
+      *Descripción:* Rediseño de Experiencia Laboral a Timeline interactivo con Scroll-Snap.
 
 ---
 
-## 📝 Histórico de Cambios (Changelog)
+## 📜 Histórico de Cambios (Changelog)
 
-* **2026-08-22:** `[MGMT]` Reorganización del Backlog: reactivación de Épica 4 con Task 4.5 para Experiencia Laboral y Task 2.6 para pulido de tecnologías previo a la Épica 3 (Dynamic CV).
+* **2026-08-22:** `[UI/UX]` Rediseño de la sección Experiencia Laboral transformándola en un Timeline interactivo con Scroll-Snap y Drawer de filtros. Gráfico de radar reemplazado por chips tipados dinámicamente.
+* **2026-08-22:** `[DATA/UI]` Unificación del modelo de datos de competencias y aptitudes (28 items migrados a Markdown) en el ecosistema global de tecnologías, actualizando `build-data.js` para consumir la nueva fuente de verdad.
+* **2026-08-22:** `[DATA]` Creación de metadatos `type` y `linkedProjects` en Experiencia Laboral y adición del hito de Formación Superior (Egresado).
+* **2026-08-22:** `[MGMT]` Reorganización del Backlog: reactivación de Épica 4 con Task 4.5 dividida (Data/Content/UI) para Experiencia Laboral y Task 2.6 para pulido de tecnologías.
 * **2026-08-21:** `[DATA/UI]` Estandarización masiva de 53+ tecnologías, áreas lógicas, soporte monochrome/contrast/invertColors y scrollbar en menú de filtros.
 * **2026-08-21:** `[UI/UX]` Finalizado refactor del layout de Proyectos. Implementación de Modal Lightbox, limpieza de Markdowns y parseo nativo en tarjetas.
 * **2026-08-20:** `[UI/UX]` Finalizado refactor del Perfil de usuario, barra de tecnologías y unificación de anchos arquitectónicos.
