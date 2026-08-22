@@ -143,10 +143,7 @@ function ProjectCard({ item }) {
           display: 'flex',
           flexDirection: 'column',
           backgroundColor: cardBg,
-          backgroundImage: brandColor ? `linear-gradient(to bottom right, ${brandColor}${isDark ? '15' : '10'}, transparent)` : 'none',
-          border: '1px solid',
-          borderColor: brandColor ? `${brandColor}${isDark ? '40' : '60'}` : (isDark ? theme.palette.divider : 'rgba(0,0,0,0.08)'),
-          borderTop: brandColor ? `3px solid ${brandColor}` : undefined,
+          border: `1px solid ${theme.palette.divider}`,
           borderRadius: 2,
           boxShadow: isDark ? 'none' : '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
         }}

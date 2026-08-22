@@ -2,7 +2,6 @@
 title: "Web personal y portafolio"
 project_type: "application"
 sync_source: ""
-brandColor: "#8b5cf6"
 modules: []
 short_description: "Hub digital estático compilado en runtime. Sirve de escaparate y playground para experimentar arquitecturas UI."
 date: "2023-11"
@@ -20,7 +19,10 @@ Los currículums estáticos en formato PDF limitan la capacidad de demostrar vis
 Un portafolio web interactivo (Single Page Application) que centraliza proyectos, experiencia laboral y mapa de habilidades. Sirve como prueba viviente de las capacidades de desarrollo Frontend y de integración con flujos automatizados, ofreciendo una experiencia de usuario rápida y moderna.
 
 ## Arquitectura Técnica
-Desarrollado como una aplicación estática utilizando **React** y **Vite** para una carga ultrarrápida. La UI está construida con **Material UI (MUI v5)** implementando un sistema de temas personalizado (Dark Mode). Los datos de contenido se gestionan de forma declarativa mediante archivos Markdown y se precompilan mediante un script de Node (`build-data.js`) en tiempo de construcción, eliminando la necesidad de un servidor o base de datos en tiempo de ejecución.
+Desarrollado como una aplicación estática utilizando **React** (**UI Declarativa**) y **Vite** para una carga ultrarrápida. La UI está construida con **Material UI (MUI v5)**.
+- Adopta metodologías organizativas como **Atomic Design** para estructurar sus componentes y abstraer la lógica.
+- Los datos de contenido se gestionan de forma declarativa mediante archivos Markdown, versionados vía **Git/GitHub**.
+- Se compilan estáticamente mediante un script avanzado en **Node.js** (`build-data.js`) en tiempo de construcción, eliminando la necesidad de un servidor o base de datos en tiempo de ejecución.
 
 ## Impacto / Estado
-En producción continua. Actúa como el hub principal para centralizar todos mis proyectos (como NotificaPe y CalculaPe). Actualmente se está migrando hacia un diseño modular tipo *Bento Box* liderado bajo el framework Spec-Driven Development (SDD).
+En producción continua. Actúa como el hub principal para centralizar todos mis proyectos. Actualmente se está migrando hacia un diseño modular tipo *Bento Box* liderado estrictamente bajo el framework **Spec-Driven Development (SDD)**, apoyado por agentes de IA autónomos.

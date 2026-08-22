@@ -221,11 +221,15 @@ projectFiles.forEach(file => {
                 id: matchedTech.id,
                 name: matchedTech.name,
                 iconName: matchedTech.iconName || '',
+                brandColor: matchedTech.brandColor || '',
+                invertColors: matchedTech.invertColors || false,
+                contrast: matchedTech.contrast || false,
+                monochrome: matchedTech.monochrome || false,
                 colorLayer1: matchedTech.colorLayer1 || '#cccccc',
                 colorLayer2: matchedTech.colorLayer2 || '#ffffff'
               }
             : { id: t, name: t, iconName: '', colorLayer1: '#cccccc', colorLayer2: '#ffffff' };
-        })
+        }).sort((a, b) => a.name.localeCompare(b.name))
       }
     });
   }

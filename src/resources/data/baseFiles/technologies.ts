@@ -1,4 +1,21 @@
 export const technologies: Record<string, any> = {
+  "admob": {
+    "id": "admob",
+    "name": "AdMob",
+    "area": "DevOps & Tools",
+    "group": "Platform",
+    "typeDef": "Service",
+    "iconName": "SiGoogleadmob",
+    "brandColor": "#EA4335",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nPlataforma de monetización de aplicaciones móviles de Google.\n"
+  },
   "angular": {
     "id": "angular",
     "name": "Angular",
@@ -441,6 +458,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\nAutomatización de flujos de trabajo de software directamente desde GitHub (CI/CD).\n"
   },
+  "googlePay": {
+    "id": "googlePay",
+    "name": "Google Pay",
+    "area": "DevOps & Tools",
+    "group": "Platform",
+    "typeDef": "Service",
+    "iconName": "SiGooglepay",
+    "brandColor": "#ffffff",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nSistema de pago nativo de Google utilizado para suscripciones in-app.\n"
+  },
   "googlePlay": {
     "id": "googlePlay",
     "name": "Play Console",
@@ -610,6 +644,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Lenguaje de marcado ligero creado para la escritura de texto con formato de manera sencilla.\n"
+  },
+  "mercadopago": {
+    "id": "mercadopago",
+    "name": "Mercado Pago",
+    "area": "DevOps & Tools",
+    "group": "Platform",
+    "typeDef": "Service",
+    "iconName": "SiMercadopago",
+    "brandColor": "#00B1EA",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nPlataforma de pagos utilizada para procesar suscripciones y transacciones SaaS.\n"
   },
   "microservices": {
     "id": "microservices",
