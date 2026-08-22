@@ -162,8 +162,8 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
               duration: open ? theme.transitions.duration.enteringScreen : theme.transitions.duration.leavingScreen,
             }),
             overflowX: 'hidden',
-            backgroundColor: '#0A0F1C',
-            borderRight: '1px solid rgba(255,255,255,0.05)',
+            backgroundColor: theme.palette.mode === 'dark' ? '#0A0F1C' : theme.palette.background.paper,
+            borderRight: '1px solid '+ theme.palette.divider,
             position: 'sticky',
             top: 0, // Sticks to top of viewport when scrolling
             height: '100vh',
@@ -185,7 +185,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
             {open ? <ChevronLeftIcon /> : <MenuIcon />}
           </IconButton>
         </Box>
-        <Divider sx={{ borderColor: 'rgba(255,255,255,0.05)' }} />
+        <Divider sx={{ borderColor: theme.palette.divider }} />
         
         <Box sx={{ flexGrow: 1, overflowY: 'auto', overflowX: 'hidden', pt: 2 }}>
           <DrawerListFilters
@@ -207,9 +207,9 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
           sx={{
             top: 0,
             zIndex: 1199,
-            backgroundColor: '#111827',
+            backgroundColor: theme.palette.mode === 'dark' ? '#111827' : theme.palette.background.paper,
             backgroundImage: 'none',
-            borderBottom: '1px solid rgba(255,255,255,0.05)'
+            borderBottom: '1px solid '+ theme.palette.divider
           }}
         >
           <Toolbar sx={{ minHeight: '64px !important', px: { xs: 2, md: 3 } }}>
@@ -225,7 +225,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
               open={Boolean(sortAnchorEl)}
               onClose={() => handleSortClose()}
               PaperProps={{
-                sx: { backgroundColor: '#111827', border: '1px solid rgba(255,255,255,0.08)' }
+                sx: { backgroundColor: theme.palette.mode === 'dark' ? '#111827' : theme.palette.background.paper, border: '1px solid '+ theme.palette.divider }
               }}
             >
               <MenuItem onClick={() => handleSortClose('relevance')} selected={sortBy === 'relevance'}>Relevancia (Por defecto)</MenuItem>
@@ -245,3 +245,5 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
 }
 
 export { SectionDashboardProjects };
+
+

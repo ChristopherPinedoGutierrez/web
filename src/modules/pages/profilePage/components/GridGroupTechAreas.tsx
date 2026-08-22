@@ -156,15 +156,25 @@ function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGrou
     return sortedGroups;
   }, [filteredTechs]);
 
-  if (isLoading) {
+    if (isLoading) {
     return (
-      <Grid container spacing={2} sx={{ pt: 2 }}>
-        {Array.from(new Array(18)).map((_, index) => (
-          <Grid item key={index} xs={6} sm={4} md={4} lg={3} xl={2}>
-            <Skeleton variant="rounded" height={130} animation="wave" sx={{ borderRadius: 2 }} />
-          </Grid>
+      <Stack gap={4}>
+        {[1, 2, 3].map((groupIndex) => (
+          <Box key={groupIndex}>
+            <Stack direction="row" alignItems="center" gap={1} sx={{ mb: 2, px: 1 }}>
+              <Skeleton variant="text" width={120} height={32} animation="wave" />
+              <Skeleton variant="rounded" width={24} height={20} animation="wave" sx={{ borderRadius: 1 }} />
+            </Stack>
+            <Grid container spacing={2}>
+              {Array.from(new Array(6)).map((_, index) => (
+                <Grid item key={index} xs={6} sm={4} md={4} lg={3} xl={2}>
+                  <Skeleton variant="rounded" height={130} animation="wave" sx={{ borderRadius: 2 }} />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Stack>
     );
   }
 
@@ -190,4 +200,6 @@ function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGrou
 }
 
 export { GridGroupTechAreas };
+
+
 
