@@ -16,7 +16,8 @@ import {
   Stack,
   Tooltip,
   Typography,
-  Box
+  Box,
+  Skeleton
 } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
@@ -321,6 +322,20 @@ function ProjectCard({ item }) {
 }
 
 function GridGroupProjects({ projects }) {
+  const [isLoading, setIsLoading] = React.useState(true);
+  React.useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 400); return () => clearTimeout(timer); }, []);
+
+  if (isLoading) {
+    return (
+      <Grid container spacing={{ xs: 2, md: 4 }}>
+        {Array.from(new Array(2)).map((_, i) => (
+          <Grid item xs={12} key={i}>
+            <Skeleton variant="rounded" height={350} animation="wave" sx={{ borderRadius: 2 }} />
+          </Grid>
+        ))}
+      </Grid>
+    );
+  }
   return (
     <Grid container spacing={{ xs: 2, md: 4 }}>
       {projects.map((item, i) => (
@@ -331,3 +346,4 @@ function GridGroupProjects({ projects }) {
 }
 
 export { GridGroupProjects };
+

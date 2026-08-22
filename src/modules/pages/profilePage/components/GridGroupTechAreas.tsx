@@ -10,6 +10,7 @@ import {
   Tooltip,
   Typography,
   useTheme,
+  Skeleton,
 } from '@mui/material';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { useEffect, useState, useMemo } from 'react';
@@ -115,6 +116,8 @@ interface GridGroupTechAreasProps {
 }
 
 function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGroupTechAreasProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => { const timer = setTimeout(() => setIsLoading(false), 400); return () => clearTimeout(timer); }, []);
   const [filteredTechs, setFilteredTechs] = useState<any[]>([]);
 
   useEffect(() => {
@@ -153,6 +156,18 @@ function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGrou
     return sortedGroups;
   }, [filteredTechs]);
 
+  if (isLoading) {
+    return (
+      <Grid container spacing={2} sx={{ pt: 2 }}>
+        {Array.from(new Array(18)).map((_, index) => (
+          <Grid item key={index} xs={6} sm={4} md={4} lg={3} xl={2}>
+            <Skeleton variant="rounded" height={130} animation="wave" sx={{ borderRadius: 2 }} />
+          </Grid>
+        ))}
+      </Grid>
+    );
+  }
+
   return (
     <Stack gap={4}>
       {Object.entries(groupedTechs).map(([groupArea, techs]) => (
@@ -175,3 +190,4 @@ function GridGroupTechAreas({ checkedAreas, technologies, checkedObj }: GridGrou
 }
 
 export { GridGroupTechAreas };
+

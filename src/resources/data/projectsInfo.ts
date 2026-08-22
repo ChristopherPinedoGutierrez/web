@@ -524,8 +524,8 @@ export const projectsInfo = [
           "name": "Mercado Pago",
           "iconName": "SiMercadopago",
           "brandColor": "#00B1EA",
-          "invertColors": false,
-          "contrast": false,
+          "invertColors": true,
+          "contrast": true,
           "monochrome": false,
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"

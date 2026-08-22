@@ -4,10 +4,10 @@ area: "DevOps & Tools"
 group: "Ecosystem"
 typeDef: "Tool"
 iconName: "SiAmazonaws"
-brandColor: "#232F3E"
-invertColors: false
-contrast: false
-monochrome: true
+brandColor: "#f78a04"
+invertColors: true
+contrast: true
+monochrome: false
 ecosystem: []
 state: "pendientes"
 ---

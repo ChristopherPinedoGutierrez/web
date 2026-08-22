@@ -5,8 +5,8 @@ group: "Platform"
 typeDef: "Service"
 iconName: "SiMercadopago"
 brandColor: "#00B1EA"
-invertColors: false
-contrast: false
+invertColors: true
+contrast: true
 monochrome: false
 ecosystem: []
 state: "conocidas"

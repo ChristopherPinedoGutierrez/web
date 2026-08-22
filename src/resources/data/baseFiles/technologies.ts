@@ -57,15 +57,15 @@ export const technologies: Record<string, any> = {
     "group": "Ecosystem",
     "typeDef": "Tool",
     "iconName": "SiAmazonaws",
-    "brandColor": "#232F3E",
-    "invertColors": false,
-    "monochrome": true,
-    "contrast": false,
+    "brandColor": "#f78a04",
+    "invertColors": true,
+    "monochrome": false,
+    "contrast": true,
     "ecosystem": [],
     "state": {
       "name": "pendientes"
     },
-    "description": "\nPlataforma de servicios de nube segura y amplia de Amazon.\n"
+    "description": "\r\nPlataforma de servicios de nube segura y amplia de Amazon.\r\n"
   },
   "azure": {
     "id": "azure",
@@ -653,14 +653,14 @@ export const technologies: Record<string, any> = {
     "typeDef": "Service",
     "iconName": "SiMercadopago",
     "brandColor": "#00B1EA",
-    "invertColors": false,
+    "invertColors": true,
     "monochrome": false,
-    "contrast": false,
+    "contrast": true,
     "ecosystem": [],
     "state": {
       "name": "conocidas"
     },
-    "description": "\nPlataforma de pagos utilizada para procesar suscripciones y transacciones SaaS.\n"
+    "description": "\r\nPlataforma de pagos utilizada para procesar suscripciones y transacciones SaaS.\r\n"
   },
   "microservices": {
     "id": "microservices",
