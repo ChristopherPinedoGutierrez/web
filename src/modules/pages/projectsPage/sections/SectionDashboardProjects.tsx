@@ -165,15 +165,17 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
     <Box sx={{ display: 'flex', width: '100%', height: '100%' }}>
       {/* Drawer */}
       <Drawer
-        variant="permanent"
+        variant={matchesMD ? "permanent" : "temporary"}
         open={open}
+        onClose={() => setOpen(false)}
+        ModalProps={{ keepMounted: true }} // Better open performance on mobile
         sx={{
-          width: open ? drawerWidth : miniDrawerWidth,
+          width: matchesMD ? (open ? drawerWidth : miniDrawerWidth) : drawerWidth,
           flexShrink: 0,
           whiteSpace: 'nowrap',
           boxSizing: 'border-box',
           '& .MuiDrawer-paper': {
-            width: open ? drawerWidth : miniDrawerWidth,
+            width: matchesMD ? (open ? drawerWidth : miniDrawerWidth) : drawerWidth,
             transition: theme.transitions.create('width', {
               easing: theme.transitions.easing.sharp,
               duration: open ? theme.transitions.duration.enteringScreen : theme.transitions.duration.leavingScreen,
@@ -181,15 +183,15 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
             overflowX: 'hidden',
             backgroundColor: theme.palette.mode === 'dark' ? '#0A0F1C' : theme.palette.background.paper,
             borderRight: '1px solid '+ theme.palette.divider,
-            position: 'sticky',
-            top: 0, // Sticks to top of viewport when scrolling
+            position: matchesMD ? 'sticky' : 'fixed',
+            top: 0,
             height: '100vh',
             zIndex: 1200,
           },
         }}
       >
-        {/* Drawer Header: exact height 64px to match AppBar */}
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: open ? 'flex-end' : 'center', minHeight: '64px', px: open ? 1 : 0 }}>
+        {/* Drawer Header */}
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: (matchesMD && !open) ? 'center' : 'flex-end', minHeight: '64px', px: 1 }}>
           <IconButton 
             onClick={() => setOpen(!open)} 
             sx={{ 
@@ -199,7 +201,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
               flexShrink: 0
             }}
           >
-            {open ? <ChevronLeftIcon /> : <MenuIcon />}
+            {(!matchesMD || open) ? <ChevronLeftIcon /> : <MenuIcon />}
           </IconButton>
         </Box>
         <Divider sx={{ borderColor: theme.palette.divider }} />
@@ -209,14 +211,14 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
             filters={filters}
             handleFilters={handleFilters}
             handleToggleAllFilters={handleToggleAllFilters}
-            isMini={!open}
+            isMini={matchesMD && !open}
             onOpenDrawer={() => setOpen(true)}
           />
         </Box>
       </Drawer>
 
       {/* Main Content Area */}
-      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', width: `calc(100% - ${open ? drawerWidth : miniDrawerWidth}px)` }}>
+      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', width: matchesMD ? `calc(100% - ${open ? drawerWidth : miniDrawerWidth}px)` : '100%' }}>
         {/* AppBar beside the Drawer */}
         <AppBar
           position="sticky"
@@ -230,6 +232,11 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
           }}
         >
           <Toolbar sx={{ minHeight: '64px !important', px: { xs: 2, md: 3 }, display: 'flex', alignItems: 'center' }}>
+            {!matchesMD && (
+              <IconButton onClick={() => setOpen(true)} edge="start" sx={{ mr: 1, color: 'text.primary' }}>
+                <MenuIcon />
+              </IconButton>
+            )}
             <Typography variant="h6" noWrap component="div" sx={{ fontWeight: 'bold' }}>
               Portafolio de proyectos
             </Typography>
@@ -277,7 +284,7 @@ function SectionDashboardProjects({ selectedId }: SectionDashboardProjectsProps)
         <Box sx={{ p: { xs: 2, md: 4 }, flexGrow: 1 }}>
           <GridGroupProjects projects={filteredProjects} />
         </Box>
-        <Box sx={{ height: '64px', width: '100%', flexShrink: 0 }} />
+        <Box sx={{ height: { xs: 0, md: '64px' }, width: '100%', flexShrink: 0 }} />
       </Box>
     </Box>
   );

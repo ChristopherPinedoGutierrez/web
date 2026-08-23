@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography, Tooltip, IconButton, useTheme, ToggleButtonGroup, ToggleButton, AppBar, Toolbar } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
@@ -59,7 +59,7 @@ function SectionDashboardExperience() {
   };
 
   return (
-    <Box sx={{ width: '100%', position: 'relative', pb: 8 }}>
+    <Box sx={{ width: '100%', position: 'relative', pb: { xs: 0, md: 8 } }}>
       
       <AppBar
         position="sticky"
@@ -148,13 +148,13 @@ function SectionDashboardExperience() {
         </Toolbar>
       </AppBar>
 
-      <Box sx={{ display: 'flex', position: 'relative', width: '100%', pt: 3, px: { xs: 2, md: 3 } }}>
+      <Box sx={{ display: 'flex', position: 'relative', width: '100%', pt: 0, px: { xs: 2, md: 3 } }}>
         
-        <Box sx={{ flexGrow: 1, pr: { xs: 2, md: 3 } }}>
+        <Box sx={{ flexGrow: 1, pr: { xs: 0, md: 3 } }}>
           <GridGroupExperience experience={filteredExperience} />
         </Box>
 
-        <Box sx={{ width: { xs: 40, md: 60 }, flexShrink: 0, position: 'relative' }}>
+        <Box sx={{ width: { xs: 40, md: 60 }, flexShrink: 0, position: 'relative', display: { xs: 'none', md: 'block' } }}>
           <Box
             sx={{
               position: 'sticky',

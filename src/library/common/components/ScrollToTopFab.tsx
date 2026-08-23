@@ -23,7 +23,7 @@ function ScrollToTopFab() {
     <Fab 
       color="primary"
       onClick={scrollToTop}
-      sx={{ position: 'fixed', bottom: 32, right: 32, zIndex: 1301 }}
+      sx={{ position: 'fixed', bottom: { xs: 72, md: 32 }, right: { xs: 16, md: 32 }, zIndex: 1301 }}
     >
       <KeyboardArrowUpIcon />
     </Fab>
@@ -31,4 +31,3 @@ function ScrollToTopFab() {
 }
 
 export { ScrollToTopFab };
-

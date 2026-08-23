@@ -9,7 +9,7 @@ function ProjectsPage() {
   const background = theme.palette.mode === 'light' ? (theme as any).custom.svgBackgroundLight : (theme as any).custom.svgBackgroundDark;
 
   return (
-    <Box sx={{ display: 'flex', mt: '72px', minHeight: 'calc(100vh - 72px)', backgroundImage: background, justifyContent: 'center' }}>
+    <Box sx={{ display: 'flex', mt: { xs: '56px', sm: '64px' }, minHeight: { xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }, backgroundImage: background, justifyContent: 'center' }}>
       <Container maxWidth="xxl" disableGutters sx={{ display: 'flex', flexGrow: 1 }}>
         <SectionDashboardProjects selectedId={id} />
       </Container>

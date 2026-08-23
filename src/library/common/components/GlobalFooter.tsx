@@ -12,13 +12,12 @@ function GlobalFooter() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      mt: '-64px',
       position: 'relative',
-      zIndex: 1201,
+      zIndex: 900,
       width: '100%'
     }}>
-      <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-        <Typography variant="body2" sx={{ color: '#ffffff' }}>
+      <Stack direction="row" justifyContent={{ xs: 'flex-start', sm: 'center' }} alignItems="center" spacing={1} sx={{ width: '100%', px: { xs: 2, sm: 0 } }}>
+        <Typography variant="body2" sx={{ color: '#ffffff', fontSize: { xs: '0.65rem', sm: '0.875rem' } }}>
           Desarrollado por Christopher Pinedo Gutiérrez - 2026
         </Typography>
         <IconButton 

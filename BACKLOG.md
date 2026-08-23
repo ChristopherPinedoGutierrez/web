@@ -85,10 +85,14 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 - [x] **Task 4.5.3:** `[UI-05]` | **Fecha Alta:** 2026-08-22 | **Completado:** 2026-08-22 | **Spec:** `Pendiente (specs/03-ui-modernization.md)`
       *Descripción:* Rediseño de Experiencia Laboral a Timeline interactivo con Scroll-Snap.
 
+- [x] **Task 4.6:** `[UI-06]` | **Fecha Alta:** 2026-08-22 | **Completado:** 2026-08-22 | **Spec:** `N/A`
+      *Descripción:* Refactorización responsiva integral (Mobile UI Polish). Ajustes de padding, FAB, colapso de márgenes, timeline responsivo y limpieza de scroll horizontal.
+
 ---
 
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-08-22:** `[UI/UX]` **Refactorización Móvil Completa.** Eliminación de colapsos de márgenes, rediseño de barra lateral de filtros (Drawer Oculto), ajuste matemático de la línea de tiempo en Experiencia y reubicación dinámica del FAB para lograr una experiencia nativa sin scroll horizontal.
 * **2026-08-22:** `[DATA/UI]` **Finalización Épica 2**. Refinamiento masivo de tecnologías: integración de IA y SDD (Antigravity, Gemini, Claude) a proyectos core. Actualización forzada de `react-icons@5.7.0`, migración de logotipos deprecados por licencias (Microsoft, Amazon, Adobe) y fix definitivo del algoritmo de paginación del CV en `react-pdf` (eliminación de espacios en blanco y texto cortado).
 * **2026-08-22:** `[FEATURE/DATA]` **Finalización Épica 3**. Implementación de Generador Dinámico de CV con `@react-pdf/renderer`. Refactor de datos a modelo híbrido Web/PDF para mejorar posicionamiento analítico y de Backend. Creación de hitos educativos unificados.
 * **2026-08-22:** `[UI/UX]` Rediseño de la sección Experiencia Laboral transformándola en un Timeline interactivo con Scroll-Snap y Drawer de filtros. Gráfico de radar reemplazado por chips tipados dinámicamente.

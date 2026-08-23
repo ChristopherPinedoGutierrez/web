@@ -156,7 +156,7 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
         <Box 
           sx={{
             position: 'absolute',
-            left: { xs: '140px', sm: '180px', md: '240px' }, 
+            left: { xs: '15px', sm: '180px', md: '240px' }, 
             top: -24,
             bottom: -64,
             width: '2px',
@@ -182,22 +182,23 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
               {/* Left Column Skeleton */}
               <Box 
                 sx={{ 
-                  width: { xs: '140px', sm: '180px', md: '240px' }, 
+                  width: { xs: '32px', sm: '180px', md: '240px' }, 
                   flexShrink: 0,
                   position: 'relative', 
                   display: 'flex', 
                   flexDirection: 'column', 
                   justifyContent: 'center', 
                   alignItems: 'flex-start',
-                  pr: { xs: 2, md: 3 }, 
+                  pr: { xs: 0, sm: 2, md: 3 }, 
                 }}
               >
                 <Box 
                   sx={{
                     position: 'absolute',
-                    right: '-9px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
+                    right: { xs: 'auto', sm: '-9px' },
+                    left: { xs: '7px', sm: 'auto' },
+                    top: { xs: 24, sm: '50%' },
+                    transform: { xs: 'none', sm: 'translateY(-50%)' },
                     width: 18,
                     height: 18,
                     borderRadius: '50%',
@@ -206,13 +207,15 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
                     zIndex: 2
                   }}
                 />
-                <Skeleton variant="text" width="80%" height={28} animation="wave" />
-                <Skeleton variant="text" width="60%" height={20} animation="wave" sx={{ mb: 1 }} />
-                <Skeleton variant="rounded" width={90} height={24} animation="wave" sx={{ borderRadius: 4 }} />
+                <Box sx={{ display: { xs: 'none', sm: 'block' }, width: '100%' }}>
+                  <Skeleton variant="text" width="80%" height={28} animation="wave" />
+                  <Skeleton variant="text" width="60%" height={20} animation="wave" sx={{ mb: 1 }} />
+                  <Skeleton variant="rounded" width={90} height={24} animation="wave" sx={{ borderRadius: 4 }} />
+                </Box>
               </Box>
 
               {/* Right Column Skeleton */}
-              <Box sx={{ flexGrow: 1, pl: { xs: 3, md: 4 }, pr: 0 }}>
+              <Box sx={{ flexGrow: 1, pl: { xs: 1, sm: 3, md: 4 }, pr: 0 }}>
                 <Skeleton variant="rounded" width="100%" height={320} animation="wave" sx={{ borderRadius: 3 }} />
               </Box>
             </Box>
@@ -228,7 +231,7 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
       <Box 
         sx={{
           position: 'absolute',
-          left: { xs: '140px', sm: '180px', md: '240px' }, 
+          left: { xs: '15px', sm: '180px', md: '240px' }, 
           top: -24, // Conecta con el AppBar
           bottom: -64, // Conecta con el Footer
           width: '2px',
@@ -258,14 +261,14 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
             {/* Columna Izquierda: Tiempo y Tipo */}
             <Box 
               sx={{ 
-                width: { xs: '140px', sm: '180px', md: '240px' }, 
+                width: { xs: '32px', sm: '180px', md: '240px' }, 
                 flexShrink: 0,
                 position: 'relative', 
                 display: 'flex', 
                 flexDirection: 'column', 
                 justifyContent: 'center', 
                 alignItems: 'flex-start',
-                pr: { xs: 2, md: 3 }, 
+                pr: { xs: 0, sm: 2, md: 3 }, 
                 textAlign: 'left'
               }}
             >
@@ -273,9 +276,10 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
               <Box 
                 sx={{
                   position: 'absolute',
-                  right: '-9px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
+                  right: { xs: 'auto', sm: '-9px' },
+                  left: { xs: '7px', sm: 'auto' },
+                  top: { xs: 24, sm: '50%' },
+                  transform: { xs: 'none', sm: 'translateY(-50%)' },
                   width: 18,
                   height: 18,
                   borderRadius: '50%',
@@ -286,11 +290,11 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
                 }}
               />
               
-              <Box>
-                <Typography variant="h5" fontWeight="900" color="primary.main" sx={{ fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' } }}>
+              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                <Typography variant="h5" fontWeight="900" color="primary.main" sx={{ fontSize: { sm: '1.15rem', md: '1.25rem' } }}>
                   {item.period.startDate} — {item.period.endDate}
                 </Typography>
-                <Typography variant="subtitle1" color="text.secondary" fontWeight="bold" sx={{ mb: 1, fontSize: { xs: '0.85rem', md: '0.95rem' } }}>
+                <Typography variant="subtitle1" color="text.secondary" fontWeight="bold" sx={{ mb: 1, fontSize: { md: '0.95rem' } }}>
                   {item.period.duration}
                 </Typography>
                 <Chip 
@@ -305,7 +309,7 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
             </Box>
 
             {/* Columna Derecha: Tarjeta de Contenido */}
-            <Box sx={{ flexGrow: 1, pl: { xs: 3, md: 4 }, pr: 0 }}>
+            <Box sx={{ flexGrow: 1, pl: { xs: 1, sm: 3, md: 4 }, pr: 0 }}>
               <Card 
                 elevation={4}
                 sx={{ 
@@ -324,6 +328,26 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
                 }}
               >
                 <Box sx={{ p: { xs: 2.5, md: 3 }, pb: 1.5 }}>
+                  {/* Información de Tiempo (Solo Móvil) */}
+                  <Box sx={{ display: { xs: 'block', sm: 'none' }, mb: 2 }}>
+                    <Typography variant="h5" fontWeight="900" color="primary.main" sx={{ fontSize: '1.1rem' }}>
+                      {item.period.startDate} — {item.period.endDate}
+                    </Typography>
+                    <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 0.5 }}>
+                      <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">
+                        {item.period.duration}
+                      </Typography>
+                      <Chip 
+                        icon={getTypeIcon(item.type)} 
+                        label={getTypeName(item.type)} 
+                        variant="outlined" 
+                        color={getTypeColor(item.type)}
+                        size="small"
+                        sx={{ fontWeight: 'bold' }} 
+                      />
+                    </Stack>
+                  </Box>
+
                   <Typography variant="h4" fontWeight="900" color="primary.main" gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '1.75rem' } }}>
                     {item.role}
                   </Typography>

@@ -12,7 +12,7 @@ function DashboardMain() {
   const matchesMD = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', pb: matchesMD ? 0 : '56px' }}>
       <Box sx={{ flexGrow: 1 }}>
         {matchesMD ? (
           <DesktopAppBar>

@@ -7,9 +7,9 @@ function BasePageLayout({ children }) {
   const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
 
   return (
-    <Box sx={{ backgroundImage: background, minHeight: '100vh' }}>
+    <Box sx={{ backgroundImage: background, minHeight: { xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }, mt: { xs: '56px', sm: '64px' }, pt: { xs: 2, md: 3 } }}>
       <Container maxWidth="xxl">
-        <Grid container spacing={4} mt={8} pb={12}>
+        <Grid container spacing={{ xs: 2, md: 3 }} pb={{ xs: 2, md: 3 }}>
           {children}
         </Grid>
       </Container>
