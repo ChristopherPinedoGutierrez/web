@@ -11,9 +11,9 @@ export const personalInfo = {
   "variable": {
     "shortName": "Christopher Pinedo",
     "mainRole": "Platform Engineer / Full Stack AI Developer",
-    "presentationMessage1": "Me considero una persona resiliente y apasionada por la tecnología, en constante evolución y aprendizaje.",
-    "presentationMessage2": "Especializado en la creación de ecosistemas de software, integrando arquitecturas frontend modernas y backends serverless con Inteligencia Artificial.",
-    "presentationMessage3": "Lidero proyectos end-to-end bajo el paradigma Spec-Driven Development, garantizando escalabilidad y calidad desde la concepción hasta el despliegue.",
+    "presentationMessage1": "Desarrollador Fullstack orientado a resultados, con experiencia en desarrollo web y móvil, construcción de soluciones backend y manejo de datos.",
+    "presentationMessage2": "Especializado en la creación de ecosistemas de software para producción, integrando arquitecturas frontend modernas, backends serverless e Inteligencia Artificial.",
+    "presentationMessage3": "Lidero proyectos end-to-end bajo el paradigma Spec-Driven Development, combinando desarrollo técnico con entendimiento del negocio, calidad de software y automatización de procesos.",
     "telephone": {
       "number": "978544045",
       "countryCode": "+51"

@@ -24,6 +24,8 @@ function SectionKnowledge() {
     pendientes: true
   });
 
+  const [searchQuery, setSearchQuery] = useState('');
+
   const handleCheckArea = (key) => () => {
     setCheckedAreas(prev => ({ ...prev, [key]: !prev[key] }));
   };
@@ -49,8 +51,12 @@ function SectionKnowledge() {
   };
 
   const filteredTechnologiesByState = Object.keys(technologies).reduce((acc, key) => {
-    if (checked[technologies[key].state.name]) {
-      acc[key] = technologies[key];
+    const tech = technologies[key];
+    const matchesState = checked[tech.state.name];
+    const matchesSearch = !searchQuery || tech.name.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    if (matchesState && matchesSearch) {
+      acc[key] = tech;
     }
     return acc;
   }, {});
@@ -67,6 +73,8 @@ function SectionKnowledge() {
           handleToggleAllStates={handleToggleAllStates}
           disablePendientes={false}
           technologies={technologies}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
         />
       </Grid>
       <Grid item xs={12} md sx={{ flexGrow: 1 }}>

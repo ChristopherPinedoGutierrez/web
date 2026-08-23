@@ -3,7 +3,7 @@ name: "SQL Server"
 area: "Database"
 group: "Database"
 typeDef: "Database"
-iconName: "SiMicrosoftsqlserver"
+iconName: "TbSql"
 brandColor: "#ef372e"
 invertColors: true
 contrast: true

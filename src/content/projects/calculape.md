@@ -15,7 +15,7 @@ status: "Development"
 source: "Personal project"
 repository: ""
 url: ""
-technologies: ["react-native", "expo", "react", "ts", "js", "zustand", "supabase", "postgresql", "firebase", "ocr", "designPatterns", "oop", "declarativeUi", "sdd", "gcp", "git", "github", "googlePay", "admob"]
+technologies: ["react-native", "expo", "react", "ts", "js", "zustand", "supabase", "postgresql", "firebase", "ocr", "designPatterns", "oop", "declarativeUi", "sdd", "antigravity", "gemini", "claude", "androidStudio", "gcp", "git", "github", "googlePay", "admob"]
 ---
 ## El Problema
 La gestión y organización de finanzas personales o grupales implica una alta fricción debido a la necesidad de digitar manualmente cada gasto incurrido, además de la complejidad matemática y logística para repartir los gastos equitativa o proporcionalmente entre los miembros de una familia o grupo.

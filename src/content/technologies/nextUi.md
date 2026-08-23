@@ -1,9 +1,9 @@
 ---
-name: "Next UI"
+name: "HeroUI (NextUI)"
 area: "Frontend"
 group: "Library"
 typeDef: "Library"
-iconName: "SiNextui"
+iconName: "SiHeroui"
 brandColor: "#000000"
 invertColors: false
 contrast: false

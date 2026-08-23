@@ -3,7 +3,7 @@ name: "Azure"
 area: "DevOps & Tools"
 group: "Ecosystem"
 typeDef: "Tool"
-iconName: "SiMicrosoftazure"
+iconName: "TbBrandAzure"
 brandColor: "#0089D6"
 invertColors: false
 contrast: false

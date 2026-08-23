@@ -10,7 +10,7 @@ status: "Production"
 source: "Personal project"
 repository: "https://github.com/ChristopherPinedoGutierrez/web"
 url: "https://christopherpinedogutierrez.github.io/web/"
-technologies: ["react", "ts", "js", "vite", "mui", "html", "css", "sdd", "atomicDsg", "declarativeUi", "nodejs", "git", "github"]
+technologies: ["react", "ts", "js", "vite", "mui", "html", "css", "sdd", "antigravity", "gemini", "claude", "atomicDsg", "declarativeUi", "nodejs", "git", "github"]
 ---
 ## El Problema
 Los currículums estáticos en formato PDF limitan la capacidad de demostrar visualmente las habilidades técnicas y la evolución profesional de un desarrollador. Se requería una plataforma centralizada que no solo sirva de escaparate, sino que también actúe como un playground para experimentar con nuevas tecnologías y arquitecturas.

@@ -3,7 +3,7 @@ name: "Css"
 area: "Frontend"
 group: "Language"
 typeDef: "Language"
-iconName: "SiCss3"
+iconName: "SiCss"
 brandColor: "#2862e9"
 invertColors: true
 contrast: true

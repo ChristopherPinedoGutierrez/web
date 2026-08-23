@@ -29,7 +29,7 @@ export default function FixedBottomNavigation({ children }: FixedBottomNavigatio
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'space-between', backgroundColor: 'background.default', alignItems: 'center' }}>
           <ToggleThemeSwitch />
-          <Button size="small" variant="outlined" endIcon={<DownloadIcon />} onClick={() => handleDescargarCV(pdfFile)}>
+          <Button size="small" variant="outlined" endIcon={<DownloadIcon />} onClick={() => handleDescargarCV()}>
             Descargar CV
           </Button>
         </Toolbar>

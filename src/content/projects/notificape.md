@@ -25,7 +25,7 @@ status: "Testing"
 source: "Personal project"
 repository: ""
 url: "https://notificape.ryctech.dev/"
-technologies: ["kotlin", "react", "vite", "supabase", "postgresql", "ts", "js", "html", "css", "tailwind", "jetpackCompose", "oop", "solid", "declarativeUi", "sdd", "docker", "easypanel", "cicd", "githubActions", "googlePlay", "git", "github", "gcp", "mercadopago"]
+technologies: ["kotlin", "react", "vite", "supabase", "postgresql", "ts", "js", "html", "css", "tailwind", "jetpackCompose", "oop", "solid", "declarativeUi", "sdd", "antigravity", "gemini", "claude", "androidStudio", "docker", "easypanel", "cicd", "githubActions", "googlePlay", "git", "github", "gcp", "mercadopago"]
 ---
 ## El Problema
 Los negocios con múltiples puntos de venta sufren desincronización y riesgo de fraude al confirmar pagos digitales. Hasta ahora, dependían de capturas falsificables o de llamar al dueño para confirmar transacciones, ralentizando enormemente las ventas físicas.

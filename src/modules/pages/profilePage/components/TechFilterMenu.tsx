@@ -6,11 +6,18 @@ import {
   Stack,
   Chip,
   Divider,
-  Checkbox
+  Checkbox,
+  TextField,
+  InputAdornment,
+  Tooltip,
+  IconButton
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import PendingIcon from '@mui/icons-material/Pending';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useMemo } from 'react';
 
 const STANDARD_AREAS = [
@@ -34,7 +41,8 @@ const DOMAIN_STATES = [
 function TechFilterMenu({ 
   checkedAreas, handleCheckArea, handleToggleAllAreas, 
   checkedObj, handleCheck, handleToggleAllStates, 
-  disablePendientes, technologies 
+  disablePendientes, technologies,
+  searchQuery, setSearchQuery
 }) {
   const activeAreas = Object.values(checkedAreas).filter(Boolean).length;
   const totalAreas = Object.keys(checkedAreas).length;
@@ -46,19 +54,21 @@ function TechFilterMenu({
   const isAllStatesChecked = activeStates === totalStates;
   const isIndeterminateStates = activeStates > 0 && activeStates < totalStates;
 
-  // Calcula contadores
+  // Calcula contadores dinámicos basados en la búsqueda
   const counts = useMemo(() => {
     const areaCount = {};
     const stateCount = {};
     Object.values(technologies || {}).forEach((tech: any) => {
-      // Si el elemento está visible según los filtros combinados, pero como 
-      // queremos el count TOTAL estático por categoría, contamos todos.
-      // Opcional: contar solo si el state opuesto está activo (se deja total por simplicidad).
-      areaCount[tech.area] = (areaCount[tech.area] || 0) + 1;
-      stateCount[tech.state.name] = (stateCount[tech.state.name] || 0) + 1;
+      const matchesSearch = !searchQuery || tech.name.toLowerCase().includes(searchQuery.toLowerCase());
+      if (matchesSearch) {
+        areaCount[tech.area] = (areaCount[tech.area] || 0) + 1;
+        stateCount[tech.state.name] = (stateCount[tech.state.name] || 0) + 1;
+      }
     });
     return { areaCount, stateCount };
-  }, [technologies]);
+  }, [technologies, searchQuery]);
+
+  const totalTechs = Object.keys(technologies || {}).length;
 
   return (
     <Box sx={{ 
@@ -86,10 +96,48 @@ function TechFilterMenu({
         background: 'rgba(255,255,255,0.2)',
       }
     }}>
-      <Stack spacing={4}>
+      <Stack spacing={3}>
         <Box>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
-            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">ÁREA DE DESARROLLO</Typography>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1.5 }}>
+            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">BUSCAR CONOCIMIENTO</Typography>
+            <Box component="span" sx={{ fontSize: '0.75rem', opacity: 0.7, bgcolor: 'action.selected', px: 0.8, py: 0.2, borderRadius: 1, fontWeight: 'bold' }}>
+              {totalTechs}
+            </Box>
+          </Stack>
+          <TextField
+            fullWidth
+            size="small"
+            placeholder=""
+            value={searchQuery || ''}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" />
+                </InputAdornment>
+              ),
+              endAdornment: searchQuery ? (
+                <InputAdornment position="end">
+                  <IconButton size="small" onClick={() => setSearchQuery('')} edge="end">
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              ) : null,
+            }}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 1,
+                fontSize: '0.875rem',
+              }
+            }}
+          />
+        </Box>
+
+        <Divider />
+
+        <Box>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1.5 }}>
+            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">ÁREAS DE CONOCIMIENTO</Typography>
             <Checkbox
               size="small"
               checked={isAllAreasChecked}
@@ -101,6 +149,7 @@ function TechFilterMenu({
           <Stack direction="row" flexWrap="wrap" gap={1}>
             {STANDARD_AREAS.map((a) => {
               const count = counts.areaCount[a.id] || 0;
+              const isDisabled = count === 0;
               return (
                 <Chip
                   key={a.id}
@@ -112,7 +161,8 @@ function TechFilterMenu({
                       </Box>
                     </Box>
                   }
-                  onClick={handleCheckArea(a.id)}
+                  onClick={isDisabled ? undefined : handleCheckArea(a.id)}
+                  disabled={isDisabled}
                   color={checkedAreas[a.id] ? 'primary' : 'default'}
                   variant={checkedAreas[a.id] ? 'filled' : 'outlined'}
                 />
@@ -124,8 +174,10 @@ function TechFilterMenu({
         <Divider />
 
         <Box>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
-            <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">ESTADO DE DOMINIO</Typography>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1.5 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">ESTADO DE DOMINIO</Typography>
+            </Box>
             <Checkbox
               size="small"
               checked={isAllStatesChecked}
@@ -134,19 +186,30 @@ function TechFilterMenu({
               sx={{ p: 0 }}
             />
           </Stack>
-          <Stack direction="row" flexWrap="wrap" gap={1}>
+          <Stack direction="column" gap={1}>
             {DOMAIN_STATES.map((state) => {
               const count = counts.stateCount[state.id] || 0;
-              const isDisabled = disablePendientes && state.id === 'pendientes';
+              const isDisabled = (disablePendientes && state.id === 'pendientes') || count === 0;
+              
+              let tooltipText = "";
+              if (state.id === 'conocidas') tooltipText = "Tecnologías que conozco por estudios académicos o tengo proyectos relacionados.";
+              else if (state.id === 'aprendiendo') tooltipText = "Tecnologías que estoy aprendiendo en curso mediante el desarrollo de proyectos actuales.";
+              else if (state.id === 'pendientes') tooltipText = "Tecnologías con las que siento afinidad y están en mi lista para desarrollar nuevas soluciones.";
+
               return (
                 <Chip
                   key={state.id}
                   icon={<state.Icon fontSize="small" />}
                   label={
-                    <Box component="span" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                      {state.name}
-                      <Box component="span" sx={{ fontSize: '0.7rem', opacity: 0.7, bgcolor: 'action.selected', px: 0.6, borderRadius: 1 }}>
-                        {count}
+                    <Box component="span" sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexGrow: 1, justifyContent: 'space-between' }}>
+                      <Box component="span">{state.name}</Box>
+                      <Box component="span" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                        <Box component="span" sx={{ fontSize: '0.7rem', opacity: 0.7, bgcolor: 'action.selected', px: 0.6, borderRadius: 1 }}>
+                          {count}
+                        </Box>
+                        <Tooltip title={<Typography variant="body2">{tooltipText}</Typography>} placement="top">
+                          <InfoOutlinedIcon sx={{ fontSize: 15, opacity: 0.4, cursor: 'help' }} />
+                        </Tooltip>
                       </Box>
                     </Box>
                   }
@@ -154,6 +217,7 @@ function TechFilterMenu({
                   disabled={isDisabled}
                   color={checkedObj[state.id] ? 'primary' : 'default'}
                   variant={checkedObj[state.id] ? 'filled' : 'outlined'}
+                  sx={{ width: '100%', justifyContent: 'flex-start', '& .MuiChip-label': { flexGrow: 1, pr: 1 } }}
                 />
               );
             })}

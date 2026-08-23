@@ -3,7 +3,7 @@ name: "C#"
 area: "Backend"
 group: "Language"
 typeDef: "Language"
-iconName: "SiCsharp"
+iconName: "TbBrandCSharp"
 brandColor: "#9078e3"
 invertColors: true
 contrast: true

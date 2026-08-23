@@ -47,7 +47,7 @@ function DesktopAppBar({ children }: DesktopAppBarProps) {
                 sx={{ height: 40 }}
                 variant="contained"
                 endIcon={<DownloadIcon />}
-                onClick={() => handleDescargarCV(pdfFile)}
+                onClick={() => handleDescargarCV()}
               >
                 Descargar CV
               </Button>

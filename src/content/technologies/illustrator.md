@@ -3,7 +3,7 @@ name: "Adobe Illustrator"
 area: "Design"
 group: "App"
 typeDef: "App"
-iconName: "SiAdobeillustrator"
+iconName: "TbBrandAdobeIllustrator"
 brandColor: "#ff9a00"
 invertColors: false
 contrast: false

@@ -82,6 +82,39 @@ export const projectsInfo = [
           "colorLayer2": "#ffffff"
         },
         {
+          "id": "androidStudio",
+          "name": "Android Studio",
+          "iconName": "SiAndroidstudio",
+          "brandColor": "#3DDC84",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "antigravity",
+          "name": "Antigravity AI",
+          "iconName": "FaRocket",
+          "brandColor": "#000000",
+          "invertColors": true,
+          "contrast": true,
+          "monochrome": true,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "claude",
+          "name": "Claude",
+          "iconName": "SiClaude",
+          "brandColor": "#d97757",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
           "id": "ocr",
           "name": "Computer Vision",
           "iconName": "FaEye",
@@ -119,7 +152,7 @@ export const projectsInfo = [
           "name": "Expo",
           "iconName": "SiExpo",
           "brandColor": "#000000",
-          "invertColors": false,
+          "invertColors": true,
           "contrast": false,
           "monochrome": true,
           "colorLayer1": "#cccccc",
@@ -130,6 +163,17 @@ export const projectsInfo = [
           "name": "Firebase",
           "iconName": "SiFirebase",
           "brandColor": "#ffcd32",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "iconName": "SiGooglegemini",
+          "brandColor": "#1a73e8",
           "invertColors": false,
           "contrast": false,
           "monochrome": false,
@@ -377,6 +421,28 @@ export const projectsInfo = [
       ],
       "technologies": [
         {
+          "id": "androidStudio",
+          "name": "Android Studio",
+          "iconName": "SiAndroidstudio",
+          "brandColor": "#3DDC84",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "antigravity",
+          "name": "Antigravity AI",
+          "iconName": "FaRocket",
+          "brandColor": "#000000",
+          "invertColors": true,
+          "contrast": true,
+          "monochrome": true,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
           "id": "cicd",
           "name": "CI / CD",
           "iconName": "FaArrowsRotate",
@@ -388,9 +454,20 @@ export const projectsInfo = [
           "colorLayer2": "#ffffff"
         },
         {
+          "id": "claude",
+          "name": "Claude",
+          "iconName": "SiClaude",
+          "brandColor": "#d97757",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
           "id": "css",
           "name": "Css",
-          "iconName": "SiCss3",
+          "iconName": "SiCss",
           "brandColor": "#2862e9",
           "invertColors": true,
           "contrast": true,
@@ -428,6 +505,17 @@ export const projectsInfo = [
           "invertColors": false,
           "contrast": false,
           "monochrome": true,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "iconName": "SiGooglegemini",
+          "brandColor": "#1a73e8",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },
@@ -769,6 +857,17 @@ export const projectsInfo = [
       "modules": [],
       "technologies": [
         {
+          "id": "antigravity",
+          "name": "Antigravity AI",
+          "iconName": "FaRocket",
+          "brandColor": "#000000",
+          "invertColors": true,
+          "contrast": true,
+          "monochrome": true,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
           "id": "atomicDsg",
           "name": "Atomic Design",
           "iconName": "FaAtom",
@@ -780,9 +879,20 @@ export const projectsInfo = [
           "colorLayer2": "#ffffff"
         },
         {
+          "id": "claude",
+          "name": "Claude",
+          "iconName": "SiClaude",
+          "brandColor": "#d97757",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
           "id": "css",
           "name": "Css",
-          "iconName": "SiCss3",
+          "iconName": "SiCss",
           "brandColor": "#2862e9",
           "invertColors": true,
           "contrast": true,
@@ -798,6 +908,17 @@ export const projectsInfo = [
           "invertColors": false,
           "contrast": false,
           "monochrome": true,
+          "colorLayer1": "#cccccc",
+          "colorLayer2": "#ffffff"
+        },
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "iconName": "SiGooglegemini",
+          "brandColor": "#1a73e8",
+          "invertColors": false,
+          "contrast": false,
+          "monochrome": false,
           "colorLayer1": "#cccccc",
           "colorLayer2": "#ffffff"
         },

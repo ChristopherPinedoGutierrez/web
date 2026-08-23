@@ -16,6 +16,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\nPlataforma de monetización de aplicaciones móviles de Google.\n"
   },
+  "androidStudio": {
+    "id": "androidStudio",
+    "name": "Android Studio",
+    "area": "Mobile",
+    "group": "IDE",
+    "typeDef": "Tool",
+    "iconName": "SiAndroidstudio",
+    "brandColor": "#3DDC84",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Entorno de desarrollo integrado (IDE) oficial para la plataforma Android. Utilizado intensivamente para la construcción de interfaces, integración de IA (Gemini) y depuración profunda.\n"
+  },
   "angular": {
     "id": "angular",
     "name": "Angular",
@@ -32,6 +49,40 @@ export const technologies: Record<string, any> = {
       "name": "pendientes"
     },
     "description": "\nFramework de desarrollo web en TypeScript.\n"
+  },
+  "antigravity": {
+    "id": "antigravity",
+    "name": "Antigravity AI",
+    "area": "DevOps & Tools",
+    "group": "AI Tools",
+    "typeDef": "Tool",
+    "iconName": "FaRocket",
+    "brandColor": "#000000",
+    "invertColors": true,
+    "monochrome": true,
+    "contrast": true,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Ecosistema de agentes de IA autónomos (CLI e IDE) enfocado en el paradigma Spec-Driven Development. Orquesta y ejecuta arquitecturas complejas de software de forma autónoma.\n"
+  },
+  "astro": {
+    "id": "astro",
+    "name": "Astro",
+    "area": "Frontend",
+    "group": "Ecosystem",
+    "typeDef": "Tool",
+    "iconName": "SiAstro",
+    "brandColor": "#FF5D01",
+    "invertColors": false,
+    "monochrome": true,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "pendientes"
+    },
+    "description": "Framework web enfocado en la generación de sitios estáticos ultrarrápidos (SSG), integrando múltiples frameworks UI como React o Vue mediante su arquitectura de \"islas\".\n"
   },
   "atomicDsg": {
     "id": "atomicDsg",
@@ -56,7 +107,7 @@ export const technologies: Record<string, any> = {
     "area": "DevOps & Tools",
     "group": "Ecosystem",
     "typeDef": "Tool",
-    "iconName": "SiAmazonaws",
+    "iconName": "FaAws",
     "brandColor": "#f78a04",
     "invertColors": true,
     "monochrome": false,
@@ -73,7 +124,7 @@ export const technologies: Record<string, any> = {
     "area": "DevOps & Tools",
     "group": "Ecosystem",
     "typeDef": "Tool",
-    "iconName": "SiMicrosoftazure",
+    "iconName": "TbBrandAzure",
     "brandColor": "#0089D6",
     "invertColors": false,
     "monochrome": false,
@@ -135,6 +186,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\r\nIntegración Continua y Despliegue Continuo. Prácticas para automatizar la integración de código y su entrega.\r\n"
   },
+  "claude": {
+    "id": "claude",
+    "name": "Claude",
+    "area": "DevOps & Tools",
+    "group": "AI Tools",
+    "typeDef": "Tool",
+    "iconName": "SiClaude",
+    "brandColor": "#d97757",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Asistente de inteligencia artificial de Anthropic, implementado para soporte en pair programming, resolución de errores complejos y optimización de arquitectura de código.\n"
+  },
   "cleanArchitecture": {
     "id": "cleanArchitecture",
     "name": "Clean Architecture",
@@ -175,7 +243,7 @@ export const technologies: Record<string, any> = {
     "area": "Backend",
     "group": "Language",
     "typeDef": "Language",
-    "iconName": "SiCsharp",
+    "iconName": "TbBrandCSharp",
     "brandColor": "#9078e3",
     "invertColors": true,
     "monochrome": false,
@@ -192,7 +260,7 @@ export const technologies: Record<string, any> = {
     "area": "Frontend",
     "group": "Language",
     "typeDef": "Language",
-    "iconName": "SiCss3",
+    "iconName": "SiCss",
     "brandColor": "#2862e9",
     "invertColors": true,
     "monochrome": false,
@@ -390,6 +458,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\nPaaS moderno impulsado por Docker para gestionar servidores y despliegues.\n"
   },
+  "excel": {
+    "id": "excel",
+    "name": "Excel",
+    "area": "Management",
+    "group": "Herramientas",
+    "typeDef": "Software",
+    "iconName": "FaFileExcel",
+    "brandColor": "#217346",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Hoja de cálculo avanzada utilizada intensivamente para el análisis de datos operativos, macros y reportería automatizada.\n"
+  },
   "expo": {
     "id": "expo",
     "name": "Expo",
@@ -398,7 +483,7 @@ export const technologies: Record<string, any> = {
     "typeDef": "Library",
     "iconName": "SiExpo",
     "brandColor": "#000000",
-    "invertColors": false,
+    "invertColors": true,
     "monochrome": true,
     "contrast": false,
     "ecosystem": [],
@@ -543,6 +628,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "\nSuite de servicios de computación en la nube de Google.\n"
   },
+  "gemini": {
+    "id": "gemini",
+    "name": "Gemini",
+    "area": "DevOps & Tools",
+    "group": "AI Tools",
+    "typeDef": "Tool",
+    "iconName": "SiGooglegemini",
+    "brandColor": "#1a73e8",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Familia de modelos de lenguaje grande (LLM) de Google, utilizada como motor cognitivo para la automatización, asistencia de código y análisis avanzado en el desarrollo de software.\n"
+  },
   "git": {
     "id": "git",
     "name": "Git",
@@ -593,6 +695,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "\nAutomatización de flujos de trabajo de software directamente desde GitHub (CI/CD).\n"
+  },
+  "google-sheets": {
+    "id": "google-sheets",
+    "name": "Google Sheets",
+    "area": "Management",
+    "group": "Herramientas",
+    "typeDef": "Software",
+    "iconName": "SiGooglesheets",
+    "brandColor": "#34A853",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Hoja de cálculo en la nube orientada a la colaboración en tiempo real, manipulación de datos y vinculación de flujos de trabajo (Apps Script).\n"
   },
   "googlePay": {
     "id": "googlePay",
@@ -685,7 +804,7 @@ export const technologies: Record<string, any> = {
     "area": "Design",
     "group": "App",
     "typeDef": "App",
-    "iconName": "SiAdobeillustrator",
+    "iconName": "TbBrandAdobeIllustrator",
     "brandColor": "#ff9a00",
     "invertColors": false,
     "monochrome": false,
@@ -797,6 +916,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno.\n"
+  },
+  "make": {
+    "id": "make",
+    "name": "Make (Integromat)",
+    "area": "DevOps & Tools",
+    "group": "Automation",
+    "typeDef": "Tool",
+    "iconName": "SiMake",
+    "brandColor": "#7414DF",
+    "invertColors": true,
+    "monochrome": true,
+    "contrast": true,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Plataforma visual de automatización para diseñar, construir y automatizar tareas conectando múltiples aplicaciones y APIs.\n"
   },
   "markdown": {
     "id": "markdown",
@@ -985,6 +1121,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "Sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en aplicaciones web tradicionales y arquitecturas monolíticas.\n"
   },
+  "n8n": {
+    "id": "n8n",
+    "name": "n8n",
+    "area": "DevOps & Tools",
+    "group": "Automation",
+    "typeDef": "Tool",
+    "iconName": "SiN8N",
+    "brandColor": "#EA4B71",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Herramienta de automatización de flujos de trabajo basada en nodos, ideal para integrar APIs y servicios con lógica compleja (orquestación serverless).\n"
+  },
   "nestjs": {
     "id": "nestjs",
     "name": "NestJS",
@@ -1021,11 +1174,11 @@ export const technologies: Record<string, any> = {
   },
   "nextUi": {
     "id": "nextUi",
-    "name": "Next UI",
+    "name": "HeroUI (NextUI)",
     "area": "Frontend",
     "group": "Library",
     "typeDef": "Library",
-    "iconName": "SiNextui",
+    "iconName": "SiHeroui",
     "brandColor": "#000000",
     "invertColors": false,
     "monochrome": true,
@@ -1078,7 +1231,7 @@ export const technologies: Record<string, any> = {
     "typeDef": "App",
     "iconName": "SiNotion",
     "brandColor": "#000000",
-    "invertColors": false,
+    "invertColors": true,
     "monochrome": true,
     "contrast": false,
     "ecosystem": [],
@@ -1127,7 +1280,7 @@ export const technologies: Record<string, any> = {
     "area": "Testing",
     "group": "Library",
     "typeDef": "Library",
-    "iconName": "SiPlaywright",
+    "iconName": "FaMasksTheater",
     "brandColor": "#1c8921",
     "invertColors": true,
     "monochrome": false,
@@ -1154,6 +1307,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Sistema de base de datos relacional de código abierto, robusto y altamente escalable, utilizado frecuentemente en ecosistemas backend modernos y BaaS como Supabase.\n"
+  },
+  "power-bi": {
+    "id": "power-bi",
+    "name": "Power BI",
+    "area": "Management",
+    "group": "Herramientas",
+    "typeDef": "Software",
+    "iconName": "FaChartSimple",
+    "brandColor": "#F2C811",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Herramienta analítica y de inteligencia de negocios para modelado, transformación y visualización interactiva de datos.\n"
   },
   "react-native": {
     "id": "react-native",
@@ -1365,7 +1535,7 @@ export const technologies: Record<string, any> = {
     "area": "Database",
     "group": "Database",
     "typeDef": "Database",
-    "iconName": "SiMicrosoftsqlserver",
+    "iconName": "TbSql",
     "brandColor": "#ef372e",
     "invertColors": true,
     "monochrome": false,
@@ -1681,6 +1851,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Superconjunto de JavaScript que añade tipado estático.\n"
+  },
+  "vba": {
+    "id": "vba",
+    "name": "Visual Basic for Applications",
+    "area": "Management",
+    "group": "Lenguajes",
+    "typeDef": "Lenguaje de Programación",
+    "iconName": "TbBrandVscode",
+    "brandColor": "#0078D7",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "Lenguaje de programación basado en eventos empleado para la automatización profunda de macros avanzadas en Excel y procesamiento de datos.\n"
   },
   "vite": {
     "id": "vite",

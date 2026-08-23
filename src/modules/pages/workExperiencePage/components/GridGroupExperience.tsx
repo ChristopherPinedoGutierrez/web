@@ -52,6 +52,67 @@ const SimpleMarkdown = ({ text }: { text: string }) => {
   );
 };
 
+const CollapsibleChipList = ({ 
+  title, 
+  items, 
+  visibleCount = 3 
+}: { 
+  title: string; 
+  items: any[]; 
+  visibleCount?: number;
+}) => {
+  const theme = useTheme();
+  const [expanded, setExpanded] = useState(false);
+  
+  if (!items || items.length === 0) return null;
+
+  const visibleItems = expanded ? items : items.slice(0, visibleCount);
+  const hiddenCount = items.length - visibleCount;
+  const hasHidden = hiddenCount > 0;
+
+  return (
+    <Box>
+      <Typography variant="overline" color="text.secondary" fontWeight="bold" letterSpacing={1.2} gutterBottom sx={{ display: 'block' }}>
+        {title}
+      </Typography>
+      <Stack direction="row" flexWrap="wrap" gap={1} mt={1}>
+        {visibleItems.map((skill: any, idx: number) => (
+          <Chip 
+            key={idx} 
+            icon={skill.iconName ? <DynamicIcon name={skill.iconName} size={14} /> : undefined}
+            label={skill.name} 
+            variant="outlined" 
+            size="small"
+            sx={{ 
+              px: 0.25, 
+              py: 1.5, 
+              borderRadius: 1.5, 
+              borderColor: theme.palette.divider, 
+              backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)',
+              fontWeight: 500
+            }}
+          />
+        ))}
+        {hasHidden && (
+          <Chip 
+            label={expanded ? "Ver menos" : `+ ${hiddenCount} más`}
+            variant="filled" 
+            size="small"
+            onClick={() => setExpanded(!expanded)}
+            color={expanded ? "default" : "primary"}
+            sx={{ 
+              px: 0.25, 
+              py: 1.5, 
+              borderRadius: 1.5, 
+              fontWeight: 'bold',
+              cursor: 'pointer'
+            }}
+          />
+        )}
+      </Stack>
+    </Box>
+  );
+};
 
 interface GridGroupExperienceProps {
   experience: any[];
@@ -330,59 +391,21 @@ function GridGroupExperience({ experience }: GridGroupExperienceProps) {
 
                     <Box sx={{ flex: 1 }}>
                       <Stack spacing={3}>
-                        {item.technicalSkills && item.technicalSkills.length > 0 && (
-                          <Box>
-                            <Typography variant="overline" color="text.secondary" fontWeight="bold" letterSpacing={1.2} gutterBottom>
-                              TECHNICAL SKILLS & APTITUDES
-                            </Typography>
-                            <Stack direction="row" flexWrap="wrap" gap={1} mt={1}>
-                              {item.technicalSkills.map((skill: any, idx: number) => (
-                                <Chip 
-                                  key={idx} 
-                                  icon={skill.iconName ? <DynamicIcon name={skill.iconName} size={14} /> : undefined}
-                                  label={skill.name} 
-                                  variant="outlined" 
-                                  size="small"
-                                  sx={{ 
-                                    px: 0.25, 
-                                    py: 1.5, 
-                                    borderRadius: 1.5, 
-                                    borderColor: theme.palette.divider, 
-                                    backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)',
-                                    fontWeight: 500
-                                  }}
-                                />
-                              ))}
-                            </Stack>
-                          </Box>
-                        )}
-                        
-                        {item.coreCompetencies && item.coreCompetencies.length > 0 && (
-                          <Box>
-                            <Typography variant="overline" color="text.secondary" fontWeight="bold" letterSpacing={1.2} gutterBottom>
-                              CORE COMPETENCIES (SOFT SKILLS)
-                            </Typography>
-                            <Stack direction="row" flexWrap="wrap" gap={1} mt={1}>
-                              {item.coreCompetencies.map((skill: any, idx: number) => (
-                                <Chip 
-                                  key={idx} 
-                                  icon={skill.iconName ? <DynamicIcon name={skill.iconName} size={14} /> : undefined}
-                                  label={skill.name} 
-                                  variant="outlined" 
-                                  size="small"
-                                  sx={{ 
-                                    px: 0.25, 
-                                    py: 1.5, 
-                                    borderRadius: 1.5, 
-                                    borderColor: theme.palette.divider, 
-                                    backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)',
-                                    fontWeight: 500
-                                  }}
-                                />
-                              ))}
-                            </Stack>
-                          </Box>
-                        )}
+                        <CollapsibleChipList 
+                          title="HABILIDADES TÉCNICAS Y APTITUDES" 
+                          items={item.technicalSkills} 
+                          visibleCount={10} 
+                        />
+                        <CollapsibleChipList 
+                          title="COMPETENCIAS FUNDAMENTALES (SOFT SKILLS)" 
+                          items={item.coreCompetencies} 
+                          visibleCount={10} 
+                        />
+                        <CollapsibleChipList 
+                          title="STACK TECNOLÓGICO" 
+                          items={item.stack} 
+                          visibleCount={10} 
+                        />
                       </Stack>
                     </Box>
                   </Box>

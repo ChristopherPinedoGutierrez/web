@@ -1,11 +1,11 @@
-﻿---
+---
 company: "Instituto San Ignacio Loyola (ISIL)"
-role: "Egresado en Ing. de Sistemas de Información"
+role: "Estudios culminados en Ingeniería de Sistemas de Información"
 type: "education"
 linkedProjects: []
 links: 
   - title: "Logros y Certificados en LinkedIn"
-    url: "https://www.linkedin.com/in/christopher-pinedo-gutierrez/"
+    url: "https://linkedin.com/in/christopher-pinedo-gutierrez/details/certifications/"
 startDate: "Ago/2024"
 endDate: "Dic/2025"
 duration: "1 año 5 meses"

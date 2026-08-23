@@ -6,7 +6,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ## 🎯 Estado General del Proyecto
 
-* **Fase Actual:** Management & SDD Inicial completado. Ejecución de la Épica 2 (Modelado de Datos).
+* **Fase Actual:** Épica 2 (Datos) y Épica 3 (Generador CV) completadas. Ejecución final de la Épica 4 (Rediseño y Modernización UI).
 * **Objetivo:** Reposicionar el portafolio personal (Platform Engineer & AI Developer Profile).
 
 ---
@@ -44,24 +44,24 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
       *Descripción:* Eliminar Decap CMS (`public/admin/`) por completo, por ser obsoleto para el flujo agentico. Modificar `build-data.js` para admitir `project_type`, `sync_source` y `modules`.
 - [x] **Task 2.5:** `[DATA-05]` | **Fecha Alta:** 2026-08-21 | **Completado:** 2026-08-21 | **Spec:** `N/A`
       *Descripción:* Restauración masiva de tecnologías históricas (53+ items), normalización de áreas lógicas y flags adaptativos (`monochrome`, `invertColors`, `contrast`).
-- [ ] **Task 2.6:** `[DATA-06]` | **Fecha Alta:** 2026-08-22 | **Spec:** `N/A`
+- [x] **Task 2.6:** `[DATA-06]` | **Fecha Alta:** 2026-08-22 | **Completado:** 2026-08-22 | **Spec:** `N/A`
       *Descripción:* Refinamiento y pulido final de tecnologías (completar descripciones pendientes, validación de tags y agregar faltantes).
 
 ---
 
-### [BACKLOG] Épica 3: Generación Dinámica de CV
+### [COMPLETADA] Épica 3: Generación Dinámica de CV
 * **Alcance:** Implementar un sistema de generación de PDF estático u on-the-fly que consuma la data unificada del portafolio (Tecnologías, Experiencia y Proyectos normalizados).
 * **Impacto Core:** `[FEATURE]`.
 
-*Nota: Se abordará una vez finalizado el modelado y pulido de datos y el rediseño de Experiencia, para que el PDF se alimente de la base de datos completa y homogénea.*
+*Nota: Se abordó usando @react-pdf/renderer para generación dinámica (on-the-fly).*
 
 **Tareas:**
-- [ ] **Task 3.1:** `[FEAT-01]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente (specs/02-dynamic-cv.md)`
-      *Descripción:* Crear la especificación `specs/02-dynamic-cv.md` (Evaluar @react-pdf/renderer u otras opciones).
-- [ ] **Task 3.2:** `[FEAT-02]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente`
-      *Descripción:* Implementar lógica de generación del CV.
-- [ ] **Task 3.3:** `[FEAT-03]` | **Fecha Alta:** 2026-08-18 | **Spec:** `Pendiente`
-      *Descripción:* Conectar botón de descarga en la UI.
+- [x] **Task 3.1:** `[FEAT-01]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-22 | **Spec:** `specs/02-dynamic-cv.md`
+      *Descripción:* Crear la especificación `specs/02-dynamic-cv.md` estableciendo el modelo híbrido de datos y el motor de PDF.
+- [x] **Task 3.2:** `[FEAT-02]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-22 | **Spec:** `specs/02-dynamic-cv.md`
+      *Descripción:* Implementar lógica de generación del CV con `<CVDocument />`.
+- [x] **Task 3.3:** `[FEAT-03]` | **Fecha Alta:** 2026-08-18 | **Completado:** 2026-08-22 | **Spec:** `specs/02-dynamic-cv.md`
+      *Descripción:* Conectar botón de descarga en la UI para generar y descargar el blob dinámico.
 
 ---
 
@@ -89,6 +89,8 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-08-22:** `[DATA/UI]` **Finalización Épica 2**. Refinamiento masivo de tecnologías: integración de IA y SDD (Antigravity, Gemini, Claude) a proyectos core. Actualización forzada de `react-icons@5.7.0`, migración de logotipos deprecados por licencias (Microsoft, Amazon, Adobe) y fix definitivo del algoritmo de paginación del CV en `react-pdf` (eliminación de espacios en blanco y texto cortado).
+* **2026-08-22:** `[FEATURE/DATA]` **Finalización Épica 3**. Implementación de Generador Dinámico de CV con `@react-pdf/renderer`. Refactor de datos a modelo híbrido Web/PDF para mejorar posicionamiento analítico y de Backend. Creación de hitos educativos unificados.
 * **2026-08-22:** `[UI/UX]` Rediseño de la sección Experiencia Laboral transformándola en un Timeline interactivo con Scroll-Snap y Drawer de filtros. Gráfico de radar reemplazado por chips tipados dinámicamente.
 * **2026-08-22:** `[DATA/UI]` Unificación del modelo de datos de competencias y aptitudes (28 items migrados a Markdown) en el ecosistema global de tecnologías, actualizando `build-data.js` para consumir la nueva fuente de verdad.
 * **2026-08-22:** `[DATA]` Creación de metadatos `type` y `linkedProjects` en Experiencia Laboral y adición del hito de Formación Superior (Egresado).

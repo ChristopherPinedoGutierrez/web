@@ -4,7 +4,7 @@ import React from 'react';
 import { SectionKnowledge } from './sections/SectionKnowledge';
 import { SectionIntro } from './sections/SectionIntro';
 import { BasePageLayout } from '../../layouts/BasePageLayout';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 function ProfilePage() {
   return (

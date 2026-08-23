@@ -250,10 +250,32 @@ expFiles.forEach(file => {
   const key = path.basename(file, '.md');
 
   if (parsed.data.company) {
+    const linkedProjects = parsed.data.linkedProjects || [];
+    const expTechs = new Set(parsed.data.technologies || []);
+
+    // Recolectar techs de linkedProjects
+    linkedProjects.forEach(projId => {
+      const p = projectsList.find(p => p.id === projId);
+      if (p) {
+        p.content.technologies.forEach(t => expTechs.add(t.id));
+      }
+    });
+    
+    const stack = Array.from(expTechs).map(tId => {
+       const t = technologiesObj[tId];
+       return t ? {
+          id: t.id,
+          name: t.name,
+          iconName: t.iconName || '',
+          brandColor: t.brandColor || '',
+          invertColors: t.invertColors || false
+       } : { id: tId, name: tId, iconName: '', brandColor: '' };
+    }).sort((a, b) => a.name.localeCompare(b.name));
+
     experienceList.push({
       id: key,
       type: parsed.data.type || 'work',
-      linkedProjects: parsed.data.linkedProjects || [],
+      linkedProjects: linkedProjects,
       links: parsed.data.links || [],
       company: parsed.data.company,
       role: parsed.data.role,
@@ -263,15 +285,17 @@ expFiles.forEach(file => {
         duration: parsed.data.duration || '',
         state: parsed.data.state || ''
       },
+      cvHighlights: parsed.data.cvHighlights || [],
       jobFunctions: parsed.content,
       coreCompetencies: (parsed.data.softSkills || []).map(k => {
         const t = technologiesObj[k];
-        return t ? { id: t.id, name: t.name, area: t.area, type: { name: t.area, value: 5 } } : { id: k, name: k, area: 'Soft Skills', type: { name: 'Soft Skills', value: 5 } };
+        return t ? { id: t.id, name: t.name, area: t.area, iconName: t.iconName || '', type: { name: t.area, value: 5 } } : { id: k, name: k, area: 'Soft Skills', type: { name: 'Soft Skills', value: 5 } };
       }),
       technicalSkills: (parsed.data.aptitudes || []).map(k => {
         const t = technologiesObj[k];
-        return t ? { id: t.id, name: t.name, area: t.area, type: { name: t.area, value: 10 } } : { id: k, name: k, area: 'Management', type: { name: 'Management', value: 10 } };
+        return t ? { id: t.id, name: t.name, area: t.area, iconName: t.iconName || '', type: { name: t.area, value: 10 } } : { id: k, name: k, area: 'Management', type: { name: 'Management', value: 10 } };
       }),
+      stack: stack,
       order: parsed.data.order || 99
     });
   }

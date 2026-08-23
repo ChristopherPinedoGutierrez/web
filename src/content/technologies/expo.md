@@ -5,7 +5,7 @@ group: "Library"
 typeDef: "Library"
 iconName: "SiExpo"
 brandColor: "#000000"
-invertColors: false
+invertColors: true
 contrast: false
 monochrome: true
 ecosystem: []

@@ -3,7 +3,7 @@ name: "AWS"
 area: "DevOps & Tools"
 group: "Ecosystem"
 typeDef: "Tool"
-iconName: "SiAmazonaws"
+iconName: "FaAws"
 brandColor: "#f78a04"
 invertColors: true
 contrast: true
