@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, Tooltip, IconButton, useTheme, ToggleButtonGroup, ToggleButton, AppBar, Toolbar } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import { GridGroupExperience } from '../components/GridGroupExperience';
 import { workExperienceInfo } from '../../../../resources/data/workExperienceInfo';
 
@@ -13,33 +12,44 @@ function SectionDashboardExperience() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const [filter, setFilter] = useState('all');
-  
+
   const filteredExperience = filter === 'all' 
     ? workExperienceInfo 
     : workExperienceInfo.filter((item: any) => item.type === filter);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute('data-index'));
-            setActiveStep(index);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '-40% 0px -40% 0px',
-        threshold: 0
-      }
-    );
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.experience-step-card');
+      if (elements.length === 0) return;
 
-    const elements = document.querySelectorAll('.experience-step-card');
-    elements.forEach((el) => observer.observe(el));
+      // Si el usuario llega al final de la página, activar el último hito
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60;
+      if (isAtBottom) {
+        setActiveStep(elements.length - 1);
+        return;
+      }
+
+      const triggerPosition = window.scrollY + window.innerHeight * 0.35;
+      let currentActive = 0;
+
+      elements.forEach((el) => {
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (triggerPosition >= top) {
+          currentActive = Number(el.getAttribute('data-index') || 0);
+        }
+      });
+
+      setActiveStep(currentActive);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Sincronizar tras el montaje del Skeleton loader (300ms)
+    const timer = setTimeout(handleScroll, 350);
 
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, [filteredExperience]);
 
@@ -75,9 +85,9 @@ function SectionDashboardExperience() {
           borderRadius: 0 
         }}
       >
-        <Toolbar sx={{ minHeight: '64px !important', px: { xs: 2, md: 3 }, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, py: { xs: 1, md: 0 }, gap: 2 }}>
+        <Toolbar sx={{ minHeight: '64px !important', px: { xs: 2, md: 3 }, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, py: { xs: 2, md: 0 }, gap: 2 }}>
           
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontWeight: '900', color: 'primary.main', fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
+          <Typography variant="h5" component="div" sx={{ width: { xs: '100%', md: 'auto' }, textAlign: { xs: 'center', md: 'left' }, flexGrow: 1, fontWeight: '900', color: 'primary.main', fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
             Línea de Tiempo Profesional
           </Typography>
           
@@ -88,17 +98,20 @@ function SectionDashboardExperience() {
             aria-label="Filtro de experiencia"
             size="small"
             sx={{
+              width: { xs: '100%', md: 'auto' },
               backgroundColor: theme.palette.background.paper,
               '& .MuiToggleButton-root': {
-                px: { xs: 2, md: 3 },
-                py: 0.5,
+                flex: { xs: 1, md: 'initial' },
+                px: { xs: 1, md: 3 },
+                py: 0.75,
                 textTransform: 'none',
                 fontWeight: 'bold',
                 borderColor: theme.palette.divider,
                 color: 'text.secondary',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 1
+                justifyContent: 'center',
+                gap: 0.75
               }
             }}
           >
@@ -177,12 +190,18 @@ function SectionDashboardExperience() {
                   onClick={() => handleScrollTo(index)}
                   size="small"
                   sx={{ 
+                    p: 0.5,
                     color: activeStep === index ? 'primary.main' : 'text.disabled',
-                    transition: 'all 0.3s ease',
-                    transform: activeStep === index ? 'scale(1.2)' : 'scale(1)'
+                    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transform: activeStep === index ? 'scale(1.25)' : 'scale(0.85)',
+                    filter: activeStep === index ? `drop-shadow(0 0 5px ${theme.palette.primary.main})` : 'none',
+                    '&:hover': {
+                      color: activeStep === index ? 'primary.main' : 'text.primary',
+                      transform: 'scale(1.25)'
+                    }
                   }}
                 >
-                  {activeStep === index ? <CircleIcon fontSize="small" /> : <CircleOutlinedIcon fontSize="small" />}
+                  <CircleIcon sx={{ fontSize: 14 }} />
                 </IconButton>
               </Tooltip>
             ))}

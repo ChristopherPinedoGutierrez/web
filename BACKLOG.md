@@ -92,6 +92,7 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-08-24:** `[UI/UX]` **Pulido de Navegación y Cabeceras Móviles.** Implementación de scroll-trigger reveal para la barra superior móvil (descarga de CV y tema en scroll-up), selector de filtros de experiencia en `fullWidth` con padding homogéneo de 16px, título centrado y estandarización de la animación del selector de hitos.
 * **2026-08-22:** `[UI/UX]` **Refactorización Móvil Completa.** Eliminación de colapsos de márgenes, rediseño de barra lateral de filtros (Drawer Oculto), ajuste matemático de la línea de tiempo en Experiencia y reubicación dinámica del FAB para lograr una experiencia nativa sin scroll horizontal.
 * **2026-08-22:** `[DATA/UI]` **Finalización Épica 2**. Refinamiento masivo de tecnologías: integración de IA y SDD (Antigravity, Gemini, Claude) a proyectos core. Actualización forzada de `react-icons@5.7.0`, migración de logotipos deprecados por licencias (Microsoft, Amazon, Adobe) y fix definitivo del algoritmo de paginación del CV en `react-pdf` (eliminación de espacios en blanco y texto cortado).
 * **2026-08-22:** `[FEATURE/DATA]` **Finalización Épica 3**. Implementación de Generador Dinámico de CV con `@react-pdf/renderer`. Refactor de datos a modelo híbrido Web/PDF para mejorar posicionamiento analítico y de Backend. Creación de hitos educativos unificados.
