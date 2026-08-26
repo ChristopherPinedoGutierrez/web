@@ -90,8 +90,21 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
+### [COMPLETADA] Épica 5: Sistema de Mapeo y Gestión de Postulaciones Laborales (Job Application Engine)
+* **Alcance:** Implementar un sistema de análisis, generación de speech, calibración salarial y registro de postulaciones laborales sincronizado con Google Drive (`C:\Trabajo\Drive\JobApplications\`).
+* **Impacto Core:** `[CORE-AGENT]`, define protocolo estandarizado de trabajo y base de conocimiento dinámico (roles, glosario y fichas).
+
+**Tareas:**
+- [x] **Task 5.1:** `[CORE-AGENT]` | **Fecha Alta:** 2026-08-26 | **Completado:** 2026-08-26 | **Spec:** `specs/04-job-applications-tracker.md`
+      *Descripción:* Definir protocolo de 4 fases en `AGENTS.md` y redactar la especificación `specs/04-job-applications-tracker.md`.
+- [x] **Task 5.2:** `[FEAT-04]` | **Fecha Alta:** 2026-08-26 | **Completado:** 2026-08-26 | **Spec:** `specs/04-job-applications-tracker.md`
+      *Descripción:* Inicializar base de conocimiento en Google Drive (`roles_playbook.md`, `glossary.md`, `template.md` y carpeta `entries/`).
+
+---
+
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-08-26:** `[CORE-AGENT/FEAT]` **Finalización Épica 5.** Creación e inicialización del motor de postulaciones y base de conocimiento en Google Drive (`C:\Trabajo\Drive\JobApplications\`). Protocolo de 4 fases documentado en `AGENTS.md` y `specs/04-job-applications-tracker.md`.
 * **2026-08-24:** `[UI/UX]` **Pulido de Navegación y Cabeceras Móviles.** Implementación de scroll-trigger reveal para la barra superior móvil (descarga de CV y tema en scroll-up), selector de filtros de experiencia en `fullWidth` con padding homogéneo de 16px, título centrado y estandarización de la animación del selector de hitos.
 * **2026-08-22:** `[UI/UX]` **Refactorización Móvil Completa.** Eliminación de colapsos de márgenes, rediseño de barra lateral de filtros (Drawer Oculto), ajuste matemático de la línea de tiempo en Experiencia y reubicación dinámica del FAB para lograr una experiencia nativa sin scroll horizontal.
 * **2026-08-22:** `[DATA/UI]` **Finalización Épica 2**. Refinamiento masivo de tecnologías: integración de IA y SDD (Antigravity, Gemini, Claude) a proyectos core. Actualización forzada de `react-icons@5.7.0`, migración de logotipos deprecados por licencias (Microsoft, Amazon, Adobe) y fix definitivo del algoritmo de paginación del CV en `react-pdf` (eliminación de espacios en blanco y texto cortado).

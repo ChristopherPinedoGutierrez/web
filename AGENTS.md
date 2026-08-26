@@ -60,3 +60,24 @@ Para mantener el historial ordenado, escalable y evitar entropía a medida que e
 * **Material UI Modernizado:** Mantener el uso de `@mui/material`, pero evitando estilos rígidos o anticuados. Usar temas personalizados (`createTheme`), layouts fluidos con `sx`, bordes suaves y paletas de color pulidas.
 * **Buenas Prácticas TypeScript:** Tipado explícito, evitar `any` cuando sea posible, mantener componentes modularizados y limpios.
 * **No Alterar sin Documentar:** Si se requiere un cambio estructural en el esquema de datos o scripts de compilación, se debe justificar e integrar primero en el `BACKLOG.md` y `specs/`.
+
+---
+
+## 6. Protocolo de Análisis y Registro de Ofertas Laborales (Job Application Engine)
+
+Cuando el usuario solicite analizar una oferta laboral o postulación, el agente debe ejecutar el siguiente protocolo estructurado de 4 fases de forma obligatoria:
+
+1. **Lectura y Contextualización:**
+   - Leer `C:\Trabajo\Drive\JobApplications\roles_playbook.md` y `C:\Trabajo\Drive\JobApplications\glossary.md`.
+   - Evaluar el fit con los arquetipos de perfil (Frontend, Fullstack/AI, Platform) o detectar necesidades de roles híbridos.
+2. **Diagnóstico & Calibración de Mercado:**
+   - Estimar el fit (%) con el stack del usuario.
+   - Recomendar la banda salarial en PEN (Perú) o USD (Remoto) según el tipo de empresa (Corporación vs Startup vs Consultora).
+3. **Generación de Respuestas y Speech:**
+   - Redactar respuestas a las preguntas del formulario listas para copiar y pegar.
+   - Redactar un *Speech de 30 segundos* masticado para llamadas de reclutadores.
+4. **Persistencia Sincronizada (Google Drive):**
+   - Escribir la ficha completa e íntegra en `C:\Trabajo\Drive\JobApplications\entries\YYYY-MM-DD_empresa_rol.md`.
+   - Si la oferta contiene términos técnicos o corporativos nuevos, actualizar inmediatamente `C:\Trabajo\Drive\JobApplications\glossary.md`.
+   - Si la oferta define un rol híbrido/nuevo, actualizar `C:\Trabajo\Drive\JobApplications\roles_playbook.md`.
+
