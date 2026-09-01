@@ -1,6 +1,6 @@
 ---
 name: "Claude"
-area: "DevOps & Tools"
+area: "AI Engineering"
 group: "AI Tools"
 typeDef: "Tool"
 iconName: "SiClaude"

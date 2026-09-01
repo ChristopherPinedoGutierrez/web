@@ -53,7 +53,7 @@ export const technologies: Record<string, any> = {
   "antigravity": {
     "id": "antigravity",
     "name": "Antigravity AI",
-    "area": "DevOps & Tools",
+    "area": "AI Engineering",
     "group": "AI Tools",
     "typeDef": "Tool",
     "iconName": "FaRocket",
@@ -189,7 +189,7 @@ export const technologies: Record<string, any> = {
   "claude": {
     "id": "claude",
     "name": "Claude",
-    "area": "DevOps & Tools",
+    "area": "AI Engineering",
     "group": "AI Tools",
     "typeDef": "Tool",
     "iconName": "SiClaude",
@@ -631,7 +631,7 @@ export const technologies: Record<string, any> = {
   "gemini": {
     "id": "gemini",
     "name": "Gemini",
-    "area": "DevOps & Tools",
+    "area": "AI Engineering",
     "group": "AI Tools",
     "typeDef": "Tool",
     "iconName": "SiGooglegemini",
@@ -917,6 +917,23 @@ export const technologies: Record<string, any> = {
     },
     "description": "Lenguaje de programación estático, interoperable con Java y principal tecnología nativa para el desarrollo Android moderno.\n"
   },
+  "llmOrchestration": {
+    "id": "llmOrchestration",
+    "name": "LLM & Agent Orchestration",
+    "area": "AI Engineering",
+    "group": "Framework",
+    "typeDef": "Methodology",
+    "iconName": "FaRobot",
+    "brandColor": "#6366F1",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nPatrones de diseño y orquestación de sistemas de agentes autónomos y multi-agentes (ReAct, Plan-and-Solve, Tool Calling, Subagents). Coordina flujos de ejecución iterativos, recuperación ante errores y división de tareas complejas en subtareas especializadas.\n"
+  },
   "make": {
     "id": "make",
     "name": "Make (Integromat)",
@@ -950,6 +967,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Lenguaje de marcado ligero creado para la escritura de texto con formato de manera sencilla.\n"
+  },
+  "mcp": {
+    "id": "mcp",
+    "name": "Model Context Protocol (MCP)",
+    "area": "AI Engineering",
+    "group": "Protocol",
+    "typeDef": "Protocol",
+    "iconName": "SiAnthropic",
+    "brandColor": "#D97706",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "aprendiendo"
+    },
+    "description": "\nEstándar abierto de conectividad universal que permite a los modelos y agentes de IA conectarse e interactuar de forma segura con herramientas, bases de datos empresariales, sistemas de archivos y APIs externas a través de servidores MCP estandarizados, eliminando la necesidad de conectores propietarios.\n"
   },
   "mercadopago": {
     "id": "mercadopago",
@@ -1243,7 +1277,7 @@ export const technologies: Record<string, any> = {
   "ocr": {
     "id": "ocr",
     "name": "Computer Vision",
-    "area": "Backend",
+    "area": "AI Engineering",
     "group": "AI",
     "typeDef": "AI",
     "iconName": "FaEye",
@@ -1324,6 +1358,40 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Herramienta analítica y de inteligencia de negocios para modelado, transformación y visualización interactiva de datos.\n"
+  },
+  "promptEngineering": {
+    "id": "promptEngineering",
+    "name": "Prompt Engineering & Structured Outputs",
+    "area": "AI Engineering",
+    "group": "Technique",
+    "typeDef": "Methodology",
+    "iconName": "SiGooglecloud",
+    "brandColor": "#4285F4",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "conocidas"
+    },
+    "description": "\nDiseño y optimización sistemática de directivas para modelos de lenguaje. Incluye técnicas avanzadas como Few-Shot Prompting, Chain-of-Thought (CoT), System Prompts deterministas, generación de esquemas tipados (Structured Outputs / JSON Schema) y reducción de alucinaciones.\n"
+  },
+  "rag": {
+    "id": "rag",
+    "name": "RAG",
+    "area": "AI Engineering",
+    "group": "Architecture",
+    "typeDef": "Methodology",
+    "iconName": "SiOpenai",
+    "brandColor": "#10A37F",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "aprendiendo"
+    },
+    "description": "\nPatrón de arquitectura que combina modelos de lenguaje con sistemas de recuperación de información externa (bases de datos vectoriales y embeddings). Permite a los modelos responder consultas con datos privados, actualizados y auditables sin necesidad de reentrenamiento, eliminando alucinaciones y reduciendo costos operativos.\n"
   },
   "react-native": {
     "id": "react-native",
@@ -1868,6 +1936,23 @@ export const technologies: Record<string, any> = {
       "name": "conocidas"
     },
     "description": "Lenguaje de programación basado en eventos empleado para la automatización profunda de macros avanzadas en Excel y procesamiento de datos.\n"
+  },
+  "vectorDbs": {
+    "id": "vectorDbs",
+    "name": "Vector DBs & Embeddings",
+    "area": "AI Engineering",
+    "group": "Database",
+    "typeDef": "Database",
+    "iconName": "SiPostgresql",
+    "brandColor": "#336791",
+    "invertColors": false,
+    "monochrome": false,
+    "contrast": false,
+    "ecosystem": [],
+    "state": {
+      "name": "aprendiendo"
+    },
+    "description": "\nMecanismos de representación numérica multidimensional (embeddings) y almacenamiento optimizado en bases de datos vectoriales (pgvector, Pinecone, Chroma, Qdrant). Permiten búsquedas por similitud semántica en tiempo récord para alimentar pipelines de RAG y memorias a largo plazo en agentes.\n"
   },
   "vite": {
     "id": "vite",

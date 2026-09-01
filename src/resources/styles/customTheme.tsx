@@ -92,6 +92,10 @@ function CustomTheme({ children }: CustomThemeProps) {
         default: mode === 'dark' ? '#0B0F19' : '#F9FAFB',
         paper: mode === 'dark' ? '#111827' : '#FFFFFF',
       },
+      text: {
+        primary: mode === 'dark' ? '#F9FAFB' : '#111827',
+        secondary: mode === 'dark' ? '#9CA3AF' : '#4B5563',
+      },
       divider: mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
       projectLevels: {
         Newbie: '#6abecd',

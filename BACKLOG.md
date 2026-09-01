@@ -102,8 +102,29 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
+### [COMPLETADA] Épica 6: Hub de Postulaciones y Ecosistema de Conocimiento Interconectado (AI & Job Vault)
+* **Alcance:** Integrar el área de conocimiento `AI Engineering`, centralizar las 13 fichas de postulaciones bajo cifrado AES-256-GCM con PIN de 6 dígitos, y crear la vista `/postulaciones` con Master-Detail y Drawer Contextual de Cheat Sheet / Glosario.
+* **Impacto Core:** `[DATA]`, `[CORE-BUILD]`, `[FEATURE]`, `[UI/UX]`.
+
+**Tareas:**
+- [x] **Task 6.1:** `[DATA-09]` | **Fecha Alta:** 2026-09-01 | **Completado:** 2026-09-01 | **Spec:** `specs/05-ai-engineering-and-vault.md`
+      *Descripción:* Crear fichas de tecnologías de IA (`rag.md`, `mcp.md`, `vectorDbs.md`, `llmOrchestration.md`, `promptEngineering.md`) y reasignar área `AI Engineering`.
+- [x] **Task 6.2:** `[DATA-10]` | **Fecha Alta:** 2026-09-01 | **Completado:** 2026-09-01 | **Spec:** `specs/05-ai-engineering-and-vault.md`
+      *Descripción:* Migración y normalización de las 13 fichas de postulaciones a `src/content/jobApplications/`.
+- [x] **Task 6.3:** `[CORE-01]` | **Fecha Alta:** 2026-09-01 | **Completado:** 2026-09-01 | **Spec:** `specs/05-ai-engineering-and-vault.md`
+      *Descripción:* Compilación y cifrado AES-256-GCM con PBKDF2 en `scripts/build-data.js` generando `jobApplicationsEncrypted.ts`.
+- [x] **Task 6.4:** `[FEAT-05]` | **Fecha Alta:** 2026-09-01 | **Completado:** 2026-09-01 | **Spec:** `specs/05-ai-engineering-and-vault.md`
+      *Descripción:* Implementación de utilidad `vaultCrypto.ts` para descifrado en memoria usando Web Crypto API.
+- [x] **Task 6.5:** `[UI-07]` | **Fecha Alta:** 2026-09-01 | **Completado:** 2026-09-01 | **Spec:** `specs/05-ai-engineering-and-vault.md`
+      *Descripción:* Construcción de la vista `/postulaciones` (`PinUnlockDialog`, `JobApplicationsList`, `JobApplicationDetail` con Speech 30s y `JobTechContextDrawer` de Glosario y Tips).
+- [x] **Task 6.6:** `[UI-08]` | **Fecha Alta:** 2026-09-01 | **Completado:** 2026-09-01 | **Spec:** `specs/05-ai-engineering-and-vault.md`
+      *Descripción:* Integración de la ruta `/postulaciones` en `dashboardMainRoutes.tsx` y actualización de filtros en `TechFilterMenu.tsx` y `SectionKnowledge.tsx`.
+
+---
+
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-09-01:** `[FEATURE/DATA/UI]` **Finalización Épica 6 (AI Engineering Hub & Job Vault).** Creación del área formal `AI Engineering` (RAG, MCP, Vector DBs, LLM Orchestration, Prompt Engineering). Migración y cifrado AES-256-GCM de 13 fichas de postulaciones en `src/content/jobApplications/`. Creación de la página `/postulaciones` con arquitectura de Persistent Double Drawer de Material UI protegida por PIN de 6 dígitos con tarjeta de Speech de 30 segundos, calibración salarial, selector de empresas/estados en 2 filas, ordenamiento por fecha con hora y Drawer contextual de glosario y tips de entrevista. Saneamiento UTF-8 y límites acotados a `maxWidth="xxl"`.
 * **2026-08-26:** `[CORE-AGENT/FEAT]` **Finalización Épica 5.** Creación e inicialización del motor de postulaciones y base de conocimiento en Google Drive (`C:\Trabajo\Drive\JobApplications\`). Protocolo de 4 fases documentado en `AGENTS.md` y `specs/04-job-applications-tracker.md`.
 * **2026-08-24:** `[UI/UX]` **Pulido de Navegación y Cabeceras Móviles.** Implementación de scroll-trigger reveal para la barra superior móvil (descarga de CV y tema en scroll-up), selector de filtros de experiencia en `fullWidth` con padding homogéneo de 16px, título centrado y estandarización de la animación del selector de hitos.
 * **2026-08-22:** `[UI/UX]` **Refactorización Móvil Completa.** Eliminación de colapsos de márgenes, rediseño de barra lateral de filtros (Drawer Oculto), ajuste matemático de la línea de tiempo en Experiencia y reubicación dinámica del FAB para lograr una experiencia nativa sin scroll horizontal.

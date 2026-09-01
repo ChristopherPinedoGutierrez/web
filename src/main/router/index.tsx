@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { dashboardMainRoutes } from './routes/dashboardMainRoutes';
 import { DashboardMain } from '../../modules/dashboardMain';
 import { ProjectsPage } from '../../modules/pages/projectsPage';
+import { JobApplicationsPage } from '../../modules/pages/jobApplicationsPage';
 
 function Router() {
   return (
@@ -15,6 +16,8 @@ function Router() {
         ))}
         {/* Ruta para capturar parámetros de tecnología en proyectos */}
         <Route path="/projects/:id" element={<ProjectsPage />} />
+        {/* Ruta privada para el Vault de Postulaciones Laborales */}
+        <Route path="/postulaciones" element={<JobApplicationsPage />} />
       </Route>
     </Routes>
   );

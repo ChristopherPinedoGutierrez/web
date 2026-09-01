@@ -21,6 +21,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { useMemo } from 'react';
 
 const STANDARD_AREAS = [
+  { id: 'AI Engineering', name: 'AI Engineering' },
   { id: 'Frontend', name: 'Frontend' },
   { id: 'Backend', name: 'Backend' },
   { id: 'Mobile', name: 'Mobile' },

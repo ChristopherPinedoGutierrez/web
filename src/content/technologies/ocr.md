@@ -1,6 +1,6 @@
 ---
 name: "Computer Vision"
-area: "Backend"
+area: "AI Engineering"
 group: "AI"
 typeDef: "AI"
 iconName: "FaEye"

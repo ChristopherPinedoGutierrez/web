@@ -2,6 +2,22 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
+// Cargar variables de entorno locales desde .env si existe
+const envPath = path.join(__dirname, '../.env');
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf-8');
+  envContent.split('\n').forEach(line => {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const [key, ...valParts] = trimmed.split('=');
+      const val = valParts.join('=').trim().replace(/^["']|["']$/g, '');
+      if (key && val) {
+        process.env[key.trim()] = val;
+      }
+    }
+  });
+}
+
 // Cargar dinámicamente un archivo TypeScript de datos simulando el entorno
 function loadTsData(filePath) {
   if (!fs.existsSync(filePath)) return {};
@@ -306,6 +322,107 @@ experienceList.sort((a, b) => a.order - b.order);
 fs.writeFileSync(
   path.join(__dirname, '../src/resources/data/workExperienceInfo.ts'),
   `export const workExperienceInfo = ${JSON.stringify(experienceList, null, 2)};\n`,
+  'utf-8'
+);
+
+
+// 5. COMPILAR Y CIFRAR POSTULACIONES LABORALES (JOB APPLICATIONS)
+const jobFolder = path.join(contentDir, 'jobApplications');
+let jobApplicationsEncryptedData = {
+  saltHex: '',
+  ivHex: '',
+  authTagHex: '',
+  ciphertextHex: '',
+  count: 0
+};
+
+if (fs.existsSync(jobFolder)) {
+  const jobFiles = fs.readdirSync(jobFolder).filter(file => file.endsWith('.md'));
+  const jobsList = [];
+
+  jobFiles.forEach(file => {
+    const fileContent = fs.readFileSync(path.join(jobFolder, file), 'utf-8');
+    const parsed = matter(fileContent);
+    const key = path.basename(file, '.md');
+
+    if (parsed.data.company || parsed.data.role) {
+      const rawTechs = parsed.data.technologies || [];
+      const resolvedTechs = rawTechs.map(tId => {
+        const t = technologiesObj[tId];
+        return t ? {
+          id: t.id,
+          name: t.name,
+          area: t.area,
+          iconName: t.iconName || '',
+          brandColor: t.brandColor || '',
+          invertColors: t.invertColors || false,
+          description: t.description || ''
+        } : { id: tId, name: tId, area: 'General', iconName: '', brandColor: '', description: '' };
+      });
+
+      const rawProjects = parsed.data.linkedProjects || [];
+      const resolvedProjects = rawProjects.map(pId => {
+        const p = projectsList.find(proj => proj.id === pId);
+        return p ? {
+          id: p.id,
+          name: p.content.name,
+          shortDescription: p.content.shortDescription,
+          repository: p.config.repository,
+          url: p.config.url
+        } : { id: pId, name: pId, shortDescription: '', repository: '', url: '' };
+      });
+
+      jobsList.push({
+        id: key,
+        company: parsed.data.company || 'Empresa',
+        role: parsed.data.role || 'Rol Técnico',
+        area: parsed.data.area || 'Ingeniería / TI',
+        location: parsed.data.location || 'Lima, Perú (Híbrido)',
+        status: parsed.data.status || 'review',
+        date: parsed.data.date || key.slice(0, 10),
+        salaryRange: parsed.data.salaryRange || 'A convenir',
+        lastSalaryRef: parsed.data.lastSalaryRef || '',
+        jobUrl: parsed.data.jobUrl || '',
+        technologies: resolvedTechs,
+        linkedProjects: resolvedProjects,
+        markdownContent: parsed.content
+      });
+    }
+  });
+
+  jobsList.sort((a, b) => b.date.localeCompare(a.date));
+
+  const crypto = require('crypto');
+  const vaultPin = process.env.VAULT_PIN || '721822';
+  const salt = crypto.randomBytes(16);
+  const key = crypto.pbkdf2Sync(vaultPin, salt, 100000, 32, 'sha256');
+  const iv = crypto.randomBytes(12);
+  const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
+
+  let ciphertext = cipher.update(JSON.stringify(jobsList), 'utf8', 'hex');
+  ciphertext += cipher.final('hex');
+  const authTag = cipher.getAuthTag().toString('hex');
+
+  jobApplicationsEncryptedData = {
+    saltHex: salt.toString('hex'),
+    ivHex: iv.toString('hex'),
+    authTagHex: authTag,
+    ciphertextHex: ciphertext,
+    count: jobsList.length
+  };
+}
+
+fs.writeFileSync(
+  path.join(__dirname, '../src/resources/data/jobApplicationsEncrypted.ts'),
+  `export interface EncryptedVaultPayload {
+  saltHex: string;
+  ivHex: string;
+  authTagHex: string;
+  ciphertextHex: string;
+  count: number;
+}
+
+export const jobApplicationsEncrypted: EncryptedVaultPayload = ${JSON.stringify(jobApplicationsEncryptedData, null, 2)};\n`,
   'utf-8'
 );
 

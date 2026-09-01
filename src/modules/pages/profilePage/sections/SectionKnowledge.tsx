@@ -7,6 +7,7 @@ import { technologies } from '../../../../resources/data/baseFiles/technologies'
 
 function SectionKnowledge() {
   const [checkedAreas, setCheckedAreas] = useState({
+    "AI Engineering": true,
     Frontend: true,
     Backend: true,
     Mobile: true,

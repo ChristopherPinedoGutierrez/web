@@ -20,10 +20,29 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { personalInfo } from '../../../../resources/data/personalInfo';
 import profileFace11 from '../../../../resources/images/ProfilePic-1-1.jpg';
 import ReactWhatsapp from 'react-whatsapp';
+import { useNavigate } from 'react-router-dom';
 
 function SectionIntro() {
   const theme = useTheme();
+  const navigate = useNavigate();
   const background = theme.palette.mode === 'light' ? theme.custom.svgBackgroundLight : theme.custom.svgBackgroundDark;
+
+  const clickCountRef = React.useRef(0);
+  const clickTimerRef = React.useRef<any>(null);
+
+  const handleAvatarSecretClick = () => {
+    clickCountRef.current += 1;
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+
+    if (clickCountRef.current >= 5) {
+      clickCountRef.current = 0;
+      navigate('/postulaciones');
+    } else {
+      clickTimerRef.current = setTimeout(() => {
+        clickCountRef.current = 0;
+      }, 2000);
+    }
+  };
 
   return (
     <Grid container spacing={3} sx={{ flexWrap: { xs: 'wrap', md: 'nowrap' } }}>
@@ -46,10 +65,17 @@ function SectionIntro() {
             >
               <Avatar 
                 src={profileFace11} 
+                onClick={handleAvatarSecretClick}
                 sx={{ 
                   width: { xs: 150, md: 180 }, 
                   height: { xs: 150, md: 180 }, 
-                  boxShadow: theme.shadows[3] 
+                  boxShadow: theme.shadows[3],
+                  cursor: 'pointer',
+                  userSelect: 'none',
+                  transition: 'transform 0.15s ease',
+                  '&:active': {
+                    transform: 'scale(0.97)'
+                  }
                 }} 
               />
               <Stack
