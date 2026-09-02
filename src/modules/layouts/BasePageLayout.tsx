@@ -9,7 +9,7 @@ function BasePageLayout({ children }) {
   return (
     <Box sx={{ backgroundImage: background, minHeight: { xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }, mt: { xs: '56px', sm: '64px' }, pt: { xs: 2, md: 3 } }}>
       <Container maxWidth="xxl">
-        <Grid container spacing={{ xs: 2, md: 3 }} pb={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} pb={{ xs: 3, md: 4 }}>
           {children}
         </Grid>
       </Container>

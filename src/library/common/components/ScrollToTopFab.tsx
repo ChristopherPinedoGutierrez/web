@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Fab } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useLocation } from 'react-router-dom';
 
 function ScrollToTopFab() {
   const [showFab, setShowFab] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +19,8 @@ function ScrollToTopFab() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (!showFab) return null;
+  // Ocultar el FAB en la vista de postulaciones para no solapar los drawers ni el glosario
+  if (!showFab || location.pathname.startsWith('/postulaciones')) return null;
 
   return (
     <Fab 

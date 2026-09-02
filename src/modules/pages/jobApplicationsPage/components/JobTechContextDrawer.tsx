@@ -5,7 +5,6 @@ import {
   Stack,
   Chip,
   Card,
-  CardContent,
   Divider,
   Button,
   useTheme
@@ -35,7 +34,23 @@ export function JobTechContextDrawer({
   const selectedTech = application.technologies.find(t => t.id === selectedTechId) || application.technologies[0] || null;
 
   return (
-    <Box sx={{ p: 2.5, display: 'flex', flexDirection: 'column', height: '100%', boxSizing: 'border-box' }}>
+    <Box
+      sx={{
+        p: 2.5,
+        pb: 3,
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        boxSizing: 'border-box',
+        overflowY: 'auto',
+        pr: 1.5,
+        '&::-webkit-scrollbar': { width: 5 },
+        '&::-webkit-scrollbar-thumb': {
+          background: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)',
+          borderRadius: 4
+        }
+      }}
+    >
       {/* Cabecera */}
       <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
         <AutoAwesomeIcon color="primary" fontSize="small" />
@@ -77,9 +92,9 @@ export function JobTechContextDrawer({
         })}
       </Stack>
 
-      {/* Detalle de la Tecnología Seleccionada (Directo, sin Card contenedor exterior) */}
+      {/* Detalle de la Tecnología Seleccionada (Flujo único vertical continuo) */}
       {selectedTech ? (
-        <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           {/* Identificador de la Tecnología */}
           <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2 }}>
             <Box

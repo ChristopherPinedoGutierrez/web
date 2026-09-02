@@ -110,8 +110,8 @@ export function JobApplicationsPage() {
     <Box
       sx={{
         display: 'flex',
-        minHeight: { xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 74px)', md: 'calc(100vh - 76px)' },
-        mt: { xs: '56px', sm: '74px', md: '76px' },
+        minHeight: { xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' },
+        mt: { xs: '56px', sm: '64px' },
         backgroundImage: background,
         justifyContent: 'center',
         width: '100%'
@@ -273,10 +273,11 @@ export function JobApplicationsPage() {
                 </Toolbar>
               </AppBar>
 
-              {/* Contenedor Principal Acotado con Scroll Único */}
+              {/* Contenedor Principal Acotado con Scroll Único y Margen Inferior Estandarizado */}
               <Box
                 sx={{
-                  py: { xs: 2.5, md: 3.5 },
+                  py: { xs: 2, md: 3 },
+                  pb: { xs: 3, md: 4 },
                   px: { xs: 2, md: 3 },
                   flexGrow: 1,
                   display: 'flex',
