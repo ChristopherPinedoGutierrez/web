@@ -1,25 +1,25 @@
-﻿# SPEC-04: Sistema de Mapeo y Gestión de Postulaciones Laborales (Job Application Engine)
+# SPEC-04: Sistema de Mapeo y Gestión de Postulaciones Laborales (Job Vault Nativo)
 
 ## 1. Visión General
-Permitir a Christopher Pinedo analizar convocatorias laborales de forma sistemática, generar speeches adaptados, respuestas listas para formularios, calibrar bandas salariales de mercado y mantener un registro estructurado sincronizado con Google Drive para consulta móvil en tiempo real.
+Permitir a Christopher Pinedo analizar convocatorias laborales de forma sistemática, generar speeches adaptados, respuestas listas para formularios, calibrar bandas salariales de mercado y mantener un registro estructurado dentro del propio repositorio web, protegido por cifrado AES-256-GCM y accesible desde la vista `/postulaciones`.
 
 ---
 
-## 2. Arquitectura de Almacenamiento
+## 2. Arquitectura de Almacenamiento (Nativo en Repositorio)
 
-Ubicación raíz en disco sincronizada con Google Drive:
-C:\Trabajo\Drive\JobApplications\
+Ubicación de origen en el repositorio:
+`src/content/jobApplications/`
 
 Estructura:
-* oles_playbook.md: Catálogo de arquetipos de roles (Frontend, Fullstack/AI, Platform, Híbridos), speeches base y rangos de sueldo.
-* glossary.md: Diccionario de conceptos técnicos corporativos y de nicho con analogías a los proyectos del autor.
-* 	emplate.md: Estructura unificada para las fichas de postulación.
-* entries/: Directorio donde residen los archivos YYYY-MM-DD_empresa_rol.md.
+* Archivos Markdown individuales: `src/content/jobApplications/YYYY-MM-DD_empresa_rol.md`.
+* Frontmatter con metadatos estructurados (`id`, `company`, `role`, `status`, `technologies`, `salaryRange`, etc.).
+* Cifrado en build-time vía `scripts/build-data.js` $\rightarrow$ `src/resources/data/jobApplicationsEncrypted.ts`.
+* Visualizador seguro en frontend: `src/modules/pages/jobApplicationsPage/` con desbloqueo por PIN de 6 dígitos.
 
 ---
 
 ## 3. Protocolo de Ejecución del Agente
-1. **Contexto:** Consultar oles_playbook.md y glossary.md.
-2. **Diagnóstico:** Evaluar fit técnico y sugerir banda salarial.
+1. **Contexto:** Analizar la oferta, identificar arquetipo de rol y tecnologías requeridas.
+2. **Diagnóstico:** Evaluar fit técnico y recomendar banda salarial.
 3. **Generación:** Redactar respuestas a formulario y speech de 30 segundos.
-4. **Persistencia:** Guardar la ficha en entries/ y actualizar glosario o playbook si surgen nuevos conceptos o roles.
+4. **Persistencia y Build:** Guardar la ficha en `src/content/jobApplications/` y ejecutar `node scripts/build-data.js` para cifrar y actualizar el Job Vault.

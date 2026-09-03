@@ -4,7 +4,7 @@ company: "BBVA Perú"
 role: "Software Solutions Development Associate I (JR00112596)"
 area: "Client Solutions / Engineering (Fábrica Digital de Software)"
 location: "San Isidro, Lima (Híbrido)"
-status: "review"
+status: "interview"
 date: "2026-08-28 17:30"
 salaryRange: "S/. 6,500 – S/. 7,000 bruto mensual (Rango ideal para nivel Associate I en banca)."
 lastSalaryRef: "S/. 4,500 (Honorarios / Facturación independiente por proyectos)."
@@ -21,7 +21,7 @@ linkedProjects: ["notificape","calculape"]
 - **Sede:** San Isidro, Lima (Híbrido)
 - **Arquetipo / Enfoque Asignado:** Full Stack Developer & Software Engineer (Desarrollo End-to-End, Refinamiento Ágil, Testing, Reducción de Deuda Técnica y Reliability)
 - **Pretensión Salarial Recomendada:** S/. 6,500 – S/. 7,500 bruto mensual (Nivel Associate I en BBVA)
-- **Estado Actual:** Postulado / En Evaluación
+- **Estado Actual:** En Proceso - Videoentrevista y Evaluaciones Completadas (2026-09-02)
 - **Link de la Vacante:** https://bbva.wd3.myworkdayjobs.com/es/BBVA/job/Lima-San-Isidro/SOFTWARE-SOLUTIONS-DEVELOPMENT-ASSOCIATE-I_JR00112596
 
 ---

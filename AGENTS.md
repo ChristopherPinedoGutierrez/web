@@ -63,21 +63,25 @@ Para mantener el historial ordenado, escalable y evitar entropía a medida que e
 
 ---
 
-## 6. Protocolo de Análisis y Registro de Ofertas Laborales (Job Application Engine)
+## 6. Protocolo de Análisis y Registro de Ofertas Laborales (Job Vault Nativo)
 
-Cuando el usuario solicite analizar una oferta laboral o postulación, el agente debe ejecutar el siguiente protocolo estructurado de 4 fases de forma obligatoria:
+Cuando el usuario comparta una oferta laboral o postulación, el agente debe ejecutar el siguiente flujo estructurado en **dos etapas**:
 
-1. **Lectura y Contextualización:**
-   - Leer `C:\Trabajo\Drive\JobApplications\roles_playbook.md` y `C:\Trabajo\Drive\JobApplications\glossary.md`.
-   - Evaluar el fit con los arquetipos de perfil (Frontend, Fullstack/AI, Platform) o detectar necesidades de roles híbridos.
-2. **Diagnóstico & Calibración de Mercado:**
-   - Estimar el fit (%) con el stack del usuario.
-   - Recomendar la banda salarial en PEN (Perú) o USD (Remoto) según el tipo de empresa (Corporación vs Startup vs Consultora).
-3. **Generación de Respuestas y Speech:**
-   - Redactar respuestas a las preguntas del formulario listas para copiar y pegar.
-   - Redactar un *Speech de 30 segundos* masticado para llamadas de reclutadores.
-4. **Persistencia Sincronizada (Google Drive):**
-   - Escribir la ficha completa e íntegra en `C:\Trabajo\Drive\JobApplications\entries\YYYY-MM-DD_empresa_rol.md`.
-   - Si la oferta contiene términos técnicos o corporativos nuevos, actualizar inmediatamente `C:\Trabajo\Drive\JobApplications\glossary.md`.
-   - Si la oferta define un rol híbrido/nuevo, actualizar `C:\Trabajo\Drive\JobApplications\roles_playbook.md`.
+### Fase 1: Diagnóstico Previo & Asesoría de Postulación (Go / No-Go)
+Antes de crear cualquier archivo, el agente analiza la convocatoria y entrega al usuario un diagnóstico ejecutivo:
+1. **Fit con el Perfil (%):** Alineación con los arquetipos de Christopher (Frontend Specialist, Full Stack / AI Product Developer, Platform Engineer, Technical PO).
+2. **Recomendación (¿Conviene postular?):** Veredicto claro (*Recomendado / Con precauciones / No recomendado*) con pros, contras y tecnologías requeridas vs dominadas.
+3. **Estrategia & Banda Salarial:** Rango salarial sugerido (PEN / USD) según tipo de empresa (Corporación vs Startup vs Consultora) y anclaje con S/. 4,500 de referencia anterior.
+4. **Espera de Confirmación:** El agente espera a que el usuario confirme si procederá con la postulación.
+
+### Fase 2: Generación de Respuestas, Persistencia y Cifrado (Post-Confirmación)
+Una vez que el usuario confirma la postulación:
+1. **Asistencia de Formulario:** Redactar respuestas a las preguntas del formulario listas para copiar y pegar, proponer valores de sueldo y respuestas de filtro.
+2. **Persistencia de Ficha Enriquecida:** Crear el archivo `src/content/jobApplications/YYYY-MM-DD_empresa_rol.md` con:
+   - **Frontmatter completo:** `id`, `company`, `role`, `area`, `location`, `status: "applied"`, `date`, `salaryRange`, `lastSalaryRef`, `jobUrl`, `technologies`, `linkedProjects`.
+   - **Sección 1 (Snapshot & Requisitos de la Oferta):** Resumen detallado e inmutable de lo que pedía la vacante (misión, responsabilidades, requisitos obligatorios/deseables) por si el link original caduca.
+   - **Sección 2 (Registro de Formulario & Respuestas Enviadas):** Copia exacta de montos, checkboxes y respuestas enviadas en el formulario de postulación.
+   - **Sección 3 (Speech de 30 Segundos & Puntos Fuertes):** Argumentario masticado para llamadas de RRHH/Tech Lead.
+   - **Sección 4 (Glosario Técnico & Cheat Sheet):** Términos clave y su defensa técnica con proyectos del portafolio.
+3. **Compilación y Cifrado Automático:** Ejecutar `node scripts/build-data.js` para cifrar la ficha con **AES-256-GCM** en `src/resources/data/jobApplicationsEncrypted.ts`, dejándola disponible de inmediato en `/postulaciones`.
 
