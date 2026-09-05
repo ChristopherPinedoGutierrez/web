@@ -124,6 +124,12 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-09-04:** `[DATA]` **Registro Masivo de Postulaciones en Job Vault (4 Nuevas Fichas Enriquecidas).** Incorporación y cifrado AES-256-GCM de 4 postulaciones estratégicas del ecosistema AI & Software:
+  1. *Interbank* - `Integration Engineer AI` (APIs REST, OpenAPI, OAuth2, eventos y cloud bancario).
+  2. *SEIDOR Innovativa* - `AI Engineer` (LLMs, RAG, FastAPI, PostgreSQL y soluciones educativas).
+  3. *Multiplica Talent* - `Desarrollador Fullstack AI` (React, Node.js, TypeScript, SQL e integración GenAI para sector financiero).
+  4. *UTP (Grupo Intercorp)* - `Fullstack Developer` (React Web, React Native / Kotlin Mobile, Node/Python y RAG/Agentes).
+  5. *Deploy Gurú* - `Full-Stack Engineer Semisenior — Agentes de IA` (React 19, TypeScript estricto, Zustand, Tailwind, FastAPI, Celery, Redis, PostgreSQL multi-tenant y WhatsApp Cloud API).
 * **2026-09-02:** `[UI/UX/FEATURE]` **Filtro Interactivo de Calendario en Job Vault.** Integración de botón y popover de calendario con límites dinámicos (`minDate` = fecha más antigua registrada, `maxDate` = hoy/fecha máxima), indicadores de cantidad de postulaciones por día, selección atómica de fechas y chip de limpieza rápida en `src/modules/pages/jobApplicationsPage/components/JobApplicationsList.tsx`.
 * **2026-09-02:** `[DATA]` **Registro de Postulación Senior Frontend Developer AI & Contact Center en NTT DATA Perú.** Creación de ficha enriquecida e inmutable para React, TypeScript, WebSockets, integración de SDKs (Genesys Cloud) e IA en `src/content/jobApplications/2026-09-02_nttdata_senior_frontend_ai_genesys.md`. Cifrado automático con AES-256-GCM en el Job Vault.
 * **2026-09-02:** `[DATA]` **Registro de Postulación Ingeniero de Software IA en Apuesta Total.** Creación de ficha enriquecida e inmutable para AI Coding, orquestación de subagentes, gobernanza con `AGENTS.md`/`CLAUDE.md`, `SKILL.md` y servidores `MCP` en `src/content/jobApplications/2026-09-02_apuestatotal_software_engineer_ia.md`. Cifrado automático con AES-256-GCM en el Job Vault.
