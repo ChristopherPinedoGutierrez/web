@@ -4,7 +4,7 @@ company: "NTT DATA Perú"
 role: "Senior Software Engineer – Frontend Developer AI & Contact Center Integration"
 area: "Digital Experience / AI & Contact Center Engineering"
 location: "Lima, Perú (Híbrido / Remoto)"
-status: "applied"
+status: "rejected"
 date: "2026-09-02 19:42"
 salaryRange: "S/. 6,000 bruto mensual (Planilla Régimen General, contrato indeterminado, EPS 100% + Bono Alimentos)."
 lastSalaryRef: "S/. 4,500 (Honorarios / Consultoría independiente por proyectos)."
@@ -21,7 +21,7 @@ linkedProjects: ["web-portafolio","notificape","calculape"]
 - **Sede:** Lima, Perú (Esquema Corporativo Híbrido / Remoto)
 - **Arquetipo / Enfoque Asignado:** Frontend Specialist / UI Engineer & Full Stack AI Developer (React 18, TypeScript, WebSockets en Tiempo Real, Integración de SDKs de Contact Center e IA Generativa)
 - **Pretensión Salarial Registrada:** S/. 6,000 bruto mensual (Planilla Régimen General, Contrato Indeterminado desde día 1)
-- **Estado Actual:** Postulado (2026-09-02)
+- **Estado Actual:** Descartado en Filtro Inicial (2026-09-06)
 - **Link de la Vacante:** https://www.nttdata.com
 
 ---
@@ -95,3 +95,23 @@ Desarrollar interfaces de usuario avanzadas, reactivas y de alto rendimiento uti
 ### Google Cloud Run & Firebase en Arquitecturas Frontend
 * **Definición en la vacante:** Servicios de Google Cloud para hospedar contenedores serverless ligeros y servicios de autenticación/base de datos en tiempo real.
 * **Tu defensa:** *Despliego aplicaciones y microservicios desacoplados en Cloud Run mediante contenedores Docker multi-stage optimizados, integrando autenticación segura y baja latencia.*
+
+---
+
+## 📌 5. Diagnóstico de Descarte en Filtro Inicial & Conclusiones (Post-Mortem)
+
+- **Fecha de Notificación / Actualización:** 2026-09-06
+- **Fase de Descarte:** Filtro Inicial / Screening Curricular y ATS (sin contacto técnico ni llamada de RRHH).
+
+### Factores Determinantes del Descarte:
+1. **Discrepancia en Requisito Excluyente de Nicho (Genesys Cloud / Enreach):**
+   - *Causa raíz:* Aunque en el formulario de postulación se marcó positivamente la casilla de experiencia en Genesys Cloud para superar el filtro booleano, la vacante exigía perentoriamente experiencia demostrable en producción consumiendo SDKs/APIs de Contact Center corporativo. Al contrastar el formulario con el CV (parseo ATS o revisión del recruiter), no figuraban proyectos previos específicos con plataformas CTI propietarias (Genesys CX / PureCloud).
+   - *Impacto:* Para un puesto con nivel **Senior** asignado a clientes corporativos de NTT DATA, las consultoras priorizan perfiles que ya hayan operado la herramienta de contact center para evitar curva de aprendizaje.
+2. **Seniority Declarado en Años Formales:**
+   - Se declararon 4 años de experiencia en frontend. En consultoras multinacionales de primer nivel como NTT DATA, el baremo formal para la categoría `Senior Software Engineer` suele establecerse en un umbral mínimo de 5 a 6 años comprobables.
+3. **Calibración Salarial (S/. 6,000 bruto):**
+   - El monto pretendido correspondía a una banda salarial senior competitiva. Al no contar con el stack de nicho (Genesys) certificado o visible en el CV, el algoritmo ATS y el reclutador descartan el perfil en favor de postulantes con experiencia nativa en la herramienta o menores pretensiones.
+
+### Conclusiones & Aprendizajes:
+* **Filtro decisivo del lado de ellos:** El descarte fue provocado por el requisito duro y excluyente de plataforma (**Genesys Cloud / Enreach**) y el seniority estricto para clientes corporativos de contact center.
+* **Lección estratégica:** En convocatorias donde una tecnología propietaria de nicho (Genesys, Salesforce, SAP, etc.) es el núcleo del servicio de la vacante, marcar "Sí" en el formulario sin respaldo explícito en el CV genera un descarte inmediato en el screening curricular. Es preferible enfocar los esfuerzos en vacantes de **Frontend Specialist / Full Stack AI Developer** de propósito general o plataformas web modernas donde el stack (React, Next.js, Node, TS, WebSockets, LLMs) sea el 100% de la propuesta de valor.

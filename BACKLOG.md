@@ -124,6 +124,10 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-09-06:** `[DATA]` **Actualización de Estado y Diagnóstico de Descarte en Filtro Inicial (Job Vault).** Transición de estado a `rejected` (Descartado) y redacción de la sección *Post-Mortem & Diagnóstico* en las fichas:
+  1. *NTT DATA Perú* - `Senior Frontend Developer AI & Contact Center`: Descarte en screening inicial por discrepancia en el requisito excluyente de nicho (*Genesys Cloud / Enreach CTI SDKs*) frente al CV y baremo de seniority formal corporativo.
+  2. *Tata Consultancy Services (TCS)* - `Ingeniero de Prompts & Agentes de IA`: Descarte automatizado en ATS atribuible a la respuesta en formulario del filtro cuantitativo (*2 años declarados en GenAI vs >3 años obligatorios requeridos*) y sesgo hacia certificaciones/ecosistema Azure empresarial.
+  Compilación y recifrado AES-256-GCM exitoso con `build-data.js`.
 * **2026-09-04:** `[DATA]` **Registro Masivo de Postulaciones en Job Vault (4 Nuevas Fichas Enriquecidas).** Incorporación y cifrado AES-256-GCM de 4 postulaciones estratégicas del ecosistema AI & Software:
   1. *Interbank* - `Integration Engineer AI` (APIs REST, OpenAPI, OAuth2, eventos y cloud bancario).
   2. *SEIDOR Innovativa* - `AI Engineer` (LLMs, RAG, FastAPI, PostgreSQL y soluciones educativas).

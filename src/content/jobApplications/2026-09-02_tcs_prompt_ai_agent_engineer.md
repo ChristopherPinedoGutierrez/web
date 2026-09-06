@@ -4,7 +4,7 @@ company: "Tata Consultancy Services (TCS Perú)"
 role: "Ingeniero de Prompts & Agentes de Inteligencia Artificial"
 area: "Centro de Excelencia (COE) de Ingeniería de Software / Transformación TI"
 location: "Lima, Perú (Híbrido / Remoto)"
-status: "applied"
+status: "rejected"
 date: "2026-09-02 18:55"
 salaryRange: "S/. 6,000 bruto mensual (Planilla Régimen General, 14 sueldos + CTS + EPS)."
 lastSalaryRef: "S/. 4,500 (Honorarios / Consultoría independiente por proyectos)."
@@ -21,7 +21,7 @@ linkedProjects: ["sdd","notificape","calculape"]
 - **Sede:** Lima, Perú (Esquema Corporativo Híbrido / Remoto)
 - **Arquetipo / Enfoque Asignado:** Platform Engineer & AI Developer / AI Governance Specialist (Gobierno de IA en SDLC, Catálogos de Prompts, Orquestación de Agentes y Estandarización)
 - **Pretensión Salarial Registrada:** S/. 6,000 bruto mensual (Planilla Régimen General 14 sueldos)
-- **Estado Actual:** Postulado (2026-09-02)
+- **Estado Actual:** Descartado en Filtro Inicial (2026-09-06)
 - **Link de la Vacante:** https://www.tcs.com
 
 ---
@@ -92,3 +92,24 @@ Contribuir al Centro de Excelencia (COE) de Ingeniería de Software de TCS Perú
 ### Métricas de Efectividad y Adopción de IA
 * **Definición en la vacante:** Indicadores clave de rendimiento (KPIs) para medir la velocidad de entrega, reducción de bugs y tasa de aceptación del código asistido por IA.
 * **Tu defensa:** *Mido la efectividad evaluando la reducción de retrabajos, cobertura de pruebas automáticas y coherencia de los contratos técnicos entregados en cada iteración.*
+
+---
+
+## 📌 5. Diagnóstico de Descarte en Filtro Inicial & Conclusiones (Post-Mortem)
+
+- **Fecha de Notificación / Actualización:** 2026-09-06
+- **Fase de Descarte:** Filtro Inicial / Screening Automatizado ATS (sin contacto técnico ni llamada del COE).
+
+### Factores Determinantes del Descarte:
+1. **Filtro Numérico Excluyente de Años de Experiencia en Formulario / ATS:**
+   - *Causa raíz:* La vacante establecía textualmente como requisito técnico obligatorio: *"Más de 3 años de experiencia en desarrollo de software, automatización o soluciones basadas en IA"*. En el formulario de postulación se registraron de forma honesta y conservadora **2 años de experiencia en GenAI / Prompts / Agentes**.
+   - *Impacto:* Los sistemas de seguimiento de candidatos (ATS) de consultoras globales como Tata Consultancy Services (TCS iBegin / Taleo) aplican descarte automatizado inmediato mediante reglas condicionales duras cuando un campo numérico es inferior al mínimo configurado en la vacante (`años < 3`).
+2. **Desalineación de Ecosistema Tecnológico (Azure Enterprise vs Open/Frontier AI Stack):**
+   - La vacante de TCS estaba orientada a clientes corporativos basados en tecnologías Microsoft (Azure OpenAI Service, Copilot Studio, Azure AI Search, Power Platform) y valoraba certificaciones oficiales Azure (AI-102, AI-900).
+   - Aunque Christopher posee conocimientos sólidos en gobernanza agéntica, SDD, Anthropic Claude, Gemini y MCP, la ausencia de certificaciones corporativas oficiales de Microsoft o experiencia previa formal en un COE tradicional de multinacional restó puntuación en el algoritmo de matching del ATS.
+3. **Filtro de Inglés Corporativo / Bilingüe:**
+   - Para asignaciones dentro del COE de TCS que brindan soporte transversal a cuentas globales (USA / Latam), el inglés intermedio-avanzado suele ser un filtro eliminatorio en screening inicial.
+
+### Conclusiones & Aprendizajes:
+* **Filtro decisivo del lado de ellos:** El descarte fue casi con certeza un rechazo automatizado por regla algorítmica del ATS debido a la respuesta de años de experiencia en el formulario (2 años vs >3 solicitados) y el sesgo del perfil hacia el stack Microsoft Azure corporativo.
+* **Lección estratégica:** En futuras postulaciones para roles de IA en integradoras o corporaciones que pregunten *"Años de experiencia en desarrollo de software o soluciones basadas en IA"*, se debe computar la experiencia total en desarrollo de software con automatización (4 años globales en ingeniería de software) en lugar de aislar únicamente la ventana temporal de GenAI moderna (2 años), evitando que un bot descarte un perfil que en la práctica técnica sí cumple holgadamente con el criterio de desarrollo de software y orquestación.
