@@ -4,7 +4,7 @@ company: "Scotiabank Perú"
 role: "Experto TI (Technology Engineering - Continuidad y Disponibilidad)"
 area: "Ingeniería / TI"
 location: "Lima, Perú (Híbrido)"
-status: "applied"
+status: "rejected"
 date: "2026-08-26 17:45"
 salaryRange: "A convenir"
 lastSalaryRef: "Honorarios"
@@ -20,14 +20,14 @@ linkedProjects: ["notificape","calculape"]
 - **Arquetipo / Enfoque Asignado:** Platform Engineer / Systems Analyst & Tech Lead Jr-Mid (Híbrido: Análisis de Sistemas + Gobernanza + Desarrollo)
 - **Modalidad / Ubicación:** Híbrido (Lima, Perú)
 - **Tipo de Contrato:** Indeterminado (Planilla completa)
-- **- **Pretensión Salarial Indicada: S/. 7,500 bruto mensual
+- **Pretensión Salarial Indicada:** S/. 7,500 bruto mensual
 - **Banda Interna Esperada:** S/. 7,000 – S/. 8,500 bruto mensual
-- **Estado Actual:** Postulado / En Evaluación
+- **Estado Actual:** Descartado en Filtro Inicial / Convocatoria Cerrada (2026-09-15)
 - **Link de la Vacante:** https://jobs.scotiabank.com/job/Lima-EXPERTO-TI-LIM/605524017/
 
 ---
 
-## ? 1. Resumen Ejecutivo & Speech de 30 Segundos (Para llamadas de RRHH)
+## ⚡ 1. Resumen Ejecutivo & Speech de 30 Segundos (Para llamadas de RRHH)
 > *Hola, soy Christopher Pinedo. Egresado de Ingeniería con experiencia en diseño de arquitecturas de software, análisis de sistemas y metodologías de desarrollo estructurado (SDD). Cuento con sólida base en especificación de requerimientos, estimación técnica y despliegue seguro a producción. Me interesa la posición en Scotiabank porque combina el rigor de continuidad operativa e ingeniería de requerimientos en banca con la capacidad de diseñar soluciones escalables y gobernadas.*
 
 ### Puntos Fuertes a Mencionar en Entrevista:
@@ -37,7 +37,7 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 2. Preguntas Críticas de Filtro / Psicología y Percepción de Valor
+## 💡 2. Preguntas Críticas de Filtro / Psicología y Percepción de Valor
 
 ### P: ¿Cuál fue tu último salario y por qué este salto salarial?
 > **Estrategia / Mindset:** Esta pregunta mide tu seguridad, autoestima y criterio de mercado. Nunca justifiques pidiendo disculpas; justifícalo con el cambio de estatus profesional (egresado) y el nivel de responsabilidad y valor que aportas hoy.
@@ -47,7 +47,7 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 3. Preguntas del Formulario y Respuestas Enviadas
+## 📝 3. Preguntas del Formulario y Respuestas Enviadas
 
 ### P1: Rango Salarial / Pretensiones
 > **Opción Marcada:** 7000 a 10000
@@ -60,7 +60,7 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 4. Glosario Rápido y Conceptos Corporativos Bancarios de esta Oferta
+## 📚 4. Glosario Rápido y Conceptos Corporativos Bancarios de esta Oferta
 
 - **Continuidad y Disponibilidad TI (Business Continuity):** Estrategias y arquitecturas para garantizar que los sistemas bancarios nunca dejen de operar o se recuperen en minutos ante caídas.
 - **Ingeniería de Requerimientos:** Proceso formal de elicitación, análisis, especificación y validación de necesidades del negocio antes de programar (la base de tu enfoque SDD).
@@ -69,8 +69,25 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 5. Requisitos Originales de la Oferta (Scotiabank)
+## 📋 5. Requisitos Originales de la Oferta (Scotiabank)
 - **Carrera:** Completa de Ingeniería de Sistemas, Informática, Computación o afines.
 - **Experiencia:** Mínimo 3 años como analista o analista programador / 1 año como diseñador de sistemas / 1 año como especialista.
 - **Conocimientos:** Metodología para análisis de sistemas, estimación de esfuerzo, ingeniería de requerimientos, modelamiento de procesos, técnicas de programación, inglés intermedio.
 - **Misión:** Contribuir al éxito general de Continuidad y Disponibilidad de Servicios TI, diseñar sistemas de modo integral, atender auditorías SBS/SUNAT y gestionar iniciativas con usuarios y proveedores.
+
+---
+
+## 📌 6. Diagnóstico de Descarte en Filtro Inicial & Conclusiones (Post-Mortem)
+
+- **Fecha de Notificación / Actualización:** 2026-09-15
+- **Fase de Descarte:** Filtro Inicial / Screening Curricular y Convocatoria en ATS SuccessFactors de Scotiabank.
+
+### Factores Determinantes del Descarte:
+1. **Requisito Excluyente de Seniority y Años Formales en Roles de Análisis/Especialista:**
+   - La vacante exigía de forma explícita *"Mínimo 3 años como analista o analista programador / 1 año como diseñador de sistemas / 1 año como especialista"*. En estructuras bancarias tradicionales, el rol "Experto TI" se reserva comúnmente para profesionales con 5+ años de trayectoria comprobada en entornos financieros corporativos.
+2. **Orientación a Continuidad Operacional vs. Ingeniería de Producto:**
+   - El rol tenía un peso sustancial en atención de auditorías de la SBS, regulaciones bancarias y mesas de gestión de incidentes/continuidad de servicios legacy, apartándose del perfil de construcción ágil de software e ingeniería de producto/IA en el que Christopher destaca con mayor fuerza.
+
+### Conclusiones & Aprendizajes:
+* **Filtro esperado por perfil de cargo:** El descarte responde al desalineamiento entre un rol netamente burocrático/regulatorio de continuidad operativa y el perfil de desarrollo, arquitectura y entrega continua.
+* **Lección estratégica:** Priorizar roles de ingeniería directa de software, integración de APIs y arquitectura digital en banca donde el stack moderno y la capacidad técnica sean el factor determinante de contratación.

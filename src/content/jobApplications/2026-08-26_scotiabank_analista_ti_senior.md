@@ -4,7 +4,7 @@ company: "Scotiabank Perú"
 role: "Analista TI Senior (Desarrollo, Mantenimiento y Evolución de Aplicaciones Bancarias)"
 area: "Ingeniería / TI"
 location: "Lima (San Isidro / Híbrido)"
-status: "applied"
+status: "rejected"
 date: "2026-08-26 15:00"
 salaryRange: "S/. 8,000 bruto mensual (Negociable según paquete de beneficios corporativos)"
 lastSalaryRef: "Honorarios"
@@ -20,13 +20,13 @@ linkedProjects: ["notificape","calculape"]
 - **Sede:** Lima (San Isidro / Híbrido)
 - **Arquetipo / Enfoque Asignado:** Full Stack / UI Application Engineer (Especialidad: React / TypeScript / Node / APIs)
 - **Modalidad / Tipo de Contrato:** Híbrido / Indeterminado
-- **Pretensión Salarial Indicada en Formulario: S/. 8,000 bruto mensual (Negociable según paquete de beneficios corporativos)
-- **Estado Actual:** Postulado / En Evaluación
+- **Pretensión Salarial Indicada en Formulario:** S/. 8,000 bruto mensual (Negociable según paquete de beneficios corporativos)
+- **Estado Actual:** Descartado en Filtro Inicial / Convocatoria Cerrada (2026-09-15)
 - **Link de la Vacante:** https://jobs.scotiabank.com/job/Lima-Analista-Ti-Senior-LIM/605565117/
 
 ---
 
-## ?? Comparativa Clave: ¿Experto TI vs. Analista TI Senior?
+## ⚖️ Comparativa Clave: ¿Experto TI vs. Analista TI Senior?
 
 | Factor | Experto TI (Continuidad y Disponibilidad) | Analista TI Senior (Desarrollo y Evolución) |
 | :--- | :--- | :--- |
@@ -36,7 +36,7 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ? 1. Resumen Ejecutivo & Speech de 30 Segundos (Para llamadas)
+## ⚡ 1. Resumen Ejecutivo & Speech de 30 Segundos (Para llamadas)
 > *Hola, soy Christopher Pinedo. Ingeniero de software con sólida experiencia en desarrollo de aplicaciones modernas con React, TypeScript y JavaScript, así como en diseño de arquitecturas escalables y metodologías ágiles (Scrum). Cuento con experiencia en todo el ciclo de vida del software: análisis de requerimientos, desarrollo frontend modular, testing y despliegue continuo. Me interesa la vacante de Analista TI Senior en Scotiabank para aportar en la evolución técnica y calidad de las aplicaciones bancarias.*
 
 ### Puntos Fuertes a Mencionar:
@@ -46,7 +46,7 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 2. Preguntas del Formulario y Respuestas Estratégicas
+## 📝 2. Preguntas del Formulario y Respuestas Estratégicas
 
 ### P1: Pretensión Salarial Bruta Mensual
 > **Dropdown / Selección:** 7000 a 10000  
@@ -57,7 +57,7 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 3. Glosario Técnico Bancario de esta Oferta
+## 📚 3. Glosario Técnico Bancario de esta Oferta
 - **Pruebas IST / UAT:**
   - *IST (Integrated System Testing):* Pruebas integrales de sistemas entre distintos módulos del banco.
   - *UAT (User Acceptance Testing):* Pruebas de aceptación por parte del usuario final/negocio antes de salir a producción.
@@ -65,14 +65,14 @@ linkedProjects: ["notificape","calculape"]
 
 ---
 
-## ?? 4. Preguntas Técnicas Clave para esta Postulación
+## 💡 4. Preguntas Técnicas Clave para esta Postulación
 
 ### P: ¿Cuál es tu experiencia con React moderno vs. bases de código heredadas (Class Components)?
 > **Respuesta:** Domino la arquitectura moderna de React basada en Functional Components, Custom Hooks y TypeScript. Comprendo a profundidad los ciclos de vida subyacentes del framework (montaje, actualización y desmontaje), lo que me permite tanto mantener y refactorizar componentes basados en clases legacy como diseñar aplicaciones modernas, modulares y de alto rendimiento.
 
 ---
 
-## ?? Respuestas Exactas Enviadas en las Preguntas de Filtro ATS
+## 📋 5. Respuestas Exactas Enviadas en las Preguntas de Filtro ATS
 
 1. **Herramientas de programación (Java / JS / React) y coordinación técnica:**
    - **Respuesta:** SÍ
@@ -91,3 +91,19 @@ linkedProjects: ["notificape","calculape"]
    - *Detalle:* Lectura fluida de documentación técnica, especificaciones en inglés y comunicación profesional.
 6. **Formación Universitaria (Egresado / Bachiller / Titulado en Ingeniería):**
    - **Respuesta:** SÍ
+
+---
+
+## 📌 6. Diagnóstico de Descarte en Filtro Inicial & Conclusiones (Post-Mortem)
+
+- **Fecha de Notificación / Actualización:** 2026-09-15
+- **Fase de Descarte:** Filtro Inicial / Screening Curricular ATS (SuccessFactors).
+
+### Factores Determinantes del Descarte:
+1. **Baremo Estricto de Seniority Bancario Tradicional:**
+   - El título del cargo "Analista TI Senior" en banca tradicional como Scotiabank exige típicamente más de 5 años de trayectoria formal en nómina corporativa bancaria. En el filtrado inicial del ATS, postulantes con mayor cantidad de años de experiencia cronológica en banca o lenguaje backend histórico (Java/Spring Boot o .NET corporativo) obtienen mayor puntuación en el corte algorítmico frente a un perfil con fuerte especialización en frontend y arquitectura moderna de producto.
+2. **Pretensión Salarial (S/. 8,000):**
+   - La postulación se registró en S/. 8,000 bruto mensual. Aunque se encontraba dentro del rango dropdown seleccionado (7,000 a 10,000), las bandas de entrada para analistas pueden haber estado acotadas a rangos inferiores o reservadas internamente para promociones.
+
+### Conclusiones & Aprendizajes:
+* **Lección estratégica:** En banca tradicional, los roles clasificados como "Senior" suelen tener una barrera de entrada rígida por antigüedad cronológica en CV. En contraste, en posiciones de nivel Mid o Associate (como el proceso activo de *Associate I* en BBVA) el encaje técnico, la agilidad y las competencias de producto generan un tránsito mucho más fluido y efectivo.
