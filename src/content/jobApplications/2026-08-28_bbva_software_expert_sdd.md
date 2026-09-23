@@ -4,7 +4,7 @@ company: "BBVA Perú"
 role: "Software Expert (JR00112698)"
 area: "Client Solutions / Engineering & Software Architecture"
 location: "San Isidro, Lima (Híbrido)"
-status: "applied"
+status: "interview"
 date: "2026-08-28 14:15"
 salaryRange: "S/. 8,500 – S/. 9,500 bruto mensual (Nivel Expert en BBVA)"
 lastSalaryRef: "`S/. 4,500` (Honorarios profesionales independientes / consultoría)."
@@ -21,7 +21,7 @@ linkedProjects: ["notificape","calculape"]
 - **Sede:** San Isidro, Lima (Híbrido)
 - **Arquetipo / Enfoque Asignado:** Platform Engineer & AI Tech Lead (Spec-Driven Development, Orquestación de Agentes, APIs y CI/CD)
 - **Pretensión Salarial Recomendada:** S/. 8,500 – S/. 9,500 bruto mensual (Nivel Expert en BBVA)
-- **Estado Actual:** Postulado / En Evaluación
+- **Estado Actual:** En Proceso - Convocatoria Activa / Convocado a Evaluaciones en Plataforma Genoma Work (2026-09-23)
 - **Link de la Vacante:** https://bbva.wd3.myworkdayjobs.com/es/BBVA/job/Lima-San-Isidro/SOFTWARE-EXPERT_JR00112698
 
 ---
@@ -55,3 +55,16 @@ linkedProjects: ["notificape","calculape"]
 - **Spec-Driven Development (SDD):** Metodología donde la especificación formal y los contratos de datos guían y validan el desarrollo antes de la codificación, reduciendo retrabajos.
 - **Arquitectura Agéntica Orquestada:** Sistemas donde múltiples agentes de IA especializados colaboran resolviendo tareas complejas de forma coordinada y auditable.
 - **Reliability & Debt Reduction:** Prácticas de ingeniería enfocadas en estabilidad del servicio en producción y eliminación continua de código obsoleto o mal diseñado.
+
+---
+
+## 🚀 4. Registro de Avance: Convocatoria a Evaluaciones en Plataforma Genoma Work (2026-09-23)
+
+- **Fecha de Notificación:** 2026-09-23
+- **Plataforma / Canal:** Genoma Work (BBVA Talent Assessment & Behavioral Screening)
+- **Estado de la Convocatoria:** Segunda fase activa en paralelo dentro de BBVA.
+- **Alcance de la Fase en Genoma Work:**
+  - Evaluaciones gamificadas de habilidades cognitivas (atención, resolución ágil de problemas, flexibilidad cognitiva y memoria de trabajo).
+  - Cuestionario de ajuste conductual y valores corporativos BBVA (*Cliente primero, Pensamos en grande, Somos un solo equipo*).
+  - Módulos de videoentrevista asincrónica y preguntas de calibración competencial para el nivel **Software Expert**.
+
