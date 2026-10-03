@@ -4,9 +4,10 @@ company: "Farmacias Peruanas (Inkafarma & Mifarma - Grupo Intercorp)"
 role: "AI Engineer"
 area: "Dirección de Innovación y Omnicanalidad"
 location: "Lima, Perú (100% Remoto)"
-status: "applied"
+status: "screening"
 date: "2026-09-23 13:25"
-salaryRange: "S/. 6,000 – S/. 7,500 bruto mensual (Planilla Completa Intercorp)"
+screeningDate: "2026-10-02"
+salaryRange: "S/. 5,000 – S/. 6,000 bruto mensual en planilla completa (Negociable)"
 lastSalaryRef: "6000"
 jobUrl: "https://www.bumeran.com.pe/empleos-modalidad-remoto.html"
 technologies: ["n8n", "make", "ts", "python", "restApis", "graphQL", "postgresql", "openAI", "anthropic", "gemini", "rag", "promptEngineering"]
@@ -18,9 +19,10 @@ linkedProjects: ["notificape", "calculape", "sdd"]
 - **Empresa:** Farmacias Peruanas (Inkafarma / Mifarma) – Grupo Intercorp
 - **Área:** Dirección de Innovación y Omnicanalidad
 - **Rol Vacante:** AI Engineer
-- **Sede / Modalidad:** 100% Remoto (Perú)
-- **Pretensión Salarial Registrada:** S/. 6,000 bruto mensual
-- **Estado Actual:** Postulado (Bumeran)
+- **Sede / Modalidad:** Híbrido (3 días presenciales en Víctor Alzamora 147, La Victoria / 2 virtuales)
+- **Pretensión Salarial Registrada:** S/. 5,000 – S/. 6,000 bruto mensual (Negociable)
+- **Contacto Selección:** Natalia Benavides (WhatsApp)
+- **Estado Actual:** Screening Completado (Forms enviado el 2026-10-02)
 
 ---
 
@@ -38,8 +40,10 @@ linkedProjects: ["notificape", "calculape", "sdd"]
 
 ## 📝 2. Registro de Formulario & Respuestas Enviadas
 
-- **Expectativa Salarial Ingresada:** S/. 6,000 brutos mensuales en planilla completa (alineado a la banda media de Innovación en Intercorp).
-- **Enfoque de Perfil:** AI Engineer & Automation Specialist con dominio directo de n8n, orquestación de agentes con LLMs y desarrollo Full-Stack en TypeScript/Node.js.
+- **Fecha de Screening:** 2026-10-02 (Contacto por WhatsApp por Natalia Benavides).
+- **Expectativa Salarial Ingresada:** S/. 5,000 a S/. 6,000 brutos mensuales en planilla completa (Negociable según el paquete de beneficios).
+- **Modalidad Aceptada:** Sí a esquema híbrido (3 días en Víctor Alzamora 147, La Victoria / 2 días virtual).
+- **Última Empresa/Posición:** Desarrollo Independiente (I+D) – AI Engineer & Full Stack Developer.
 
 ---
 
