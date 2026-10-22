@@ -85,3 +85,24 @@ Una vez que el usuario confirma la postulación:
    - **Sección 4 (Glosario Técnico & Cheat Sheet):** Términos clave y su defensa técnica con proyectos del portafolio.
 3. **Compilación y Cifrado Automático:** Ejecutar `node scripts/build-data.js` para cifrar la ficha con **AES-256-GCM** en `src/resources/data/jobApplicationsEncrypted.ts`, dejándola disponible de inmediato en `/postulaciones`.
 
+---
+
+## 7. Contexto Operativo Activo: "Mi Empleo en SMI" (Planta Arca Continental Pucusana)
+
+* **Entorno y Empleador:** **San Miguel Industrias (SMI)**, operando in-house dentro de la mega-planta embotelladora de **Arca Continental en Pucusana**.
+* **Posición Formal:** Personal Operativo / Ayudante de planta (ingreso estratégico por cercanía geográfica y acceso táctico in-situ a datos y operaciones reales).
+* **Directiva de Privacidad & Aislamiento:** **NO registrar en `src/content/`, NO compilar en el bundle web, NO mostrar en `/postulaciones` ni en el CV**. Este contexto vive de forma privada en el archivo local de conocimiento `knowledge/smi_operaciones_pucusana.md`. No se publicará nada en el portafolio hasta que exista un ascenso formal o una decisión explícita de convertir las soluciones en un caso de estudio.
+* **Ecosistema Tecnológico de Planta:**
+  * **Microsoft 365:** Excel omnipresente (generado por máquinas y áreas de Arca Continental), Power BI (reportes gerenciales/supervisión), SharePoint/OneDrive/Teams.
+  * **ERP Corporativo:** SAP (órdenes de fabricación, movimientos de inventario, consumos y mermas).
+  * **Perfil del Usuario de Planta:** Personal netamente operativo y no técnico que consume y manipula archivos Excel de manera manual y repetitiva.
+* **Directriz de Soluciones y Arquitectura:**
+  * **Cero Intrusión / No Invasivo:** SMI y Arca Continental son corporaciones rígidas y estructuradas con estrictas políticas de ciberseguridad. Está **terminantemente descartado proponer código arbitrario no autorizado, software no corporativo o infraestructuras externas**.
+  * **Quick Wins & Caballo de Troya Estratégico:** Priorizar soluciones nativas de alta eficiencia y cero fricción:
+    1. *Nivel 1 (Nativo):* Plantillas optimizadas de Excel con Power Query (ETL local sin macros bloqueables), fórmulas dinámicas (`XLOOKUP`, `LET`, `LAMBDA`, `FILTER`) y conciliaciones automáticas.
+    2. *Nivel 2 (Automatización):* Macros VBA limpias y autocontenidas para consolidar lotes de archivos exportados de máquinas.
+    3. *Nivel 3 (Analítica):* Modelos de datos y dashboards en Power BI listos para conectar a las fuentes limpias.
+    4. *Nivel 4 (Integración):* Flujos con Power Automate o compatibilidad de ingesta/salida con los reportes exportados de SAP.
+* **Activación por el Usuario:** Cuando el usuario haga referencia a *"mi empleo en SMI"*, los agentes deben situarse automáticamente en este contexto, aplicando estas directrices y restricciones corporativas para analizar flujos, cuellos de botella y diseñar propuestas de optimización.
+
+

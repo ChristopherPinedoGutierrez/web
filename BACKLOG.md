@@ -122,8 +122,21 @@ Este documento registra el mapa de ruta y el estado de avance del proyecto, rigi
 
 ---
 
+### [PAUSADA / EN ESPERA] Épica 7: Iniciativa de Optimización Operativa In-House (SMI / Planta Arca Continental)
+* **Alcance:** Banco de conocimiento interno para mapeo de flujos, análisis de cuellos de botella en Excel/SAP, y diseño de propuestas de automatización y BI no invasivas.
+* **Impacto Core:** `[INTERNAL-KNOWLEDGE]`. Totalmente desacoplado de la web pública y del CV.
+
+**Tareas:**
+- [x] **Task 7.1:** `[CORE-AGENT]` | **Fecha Alta:** 2026-10-21 | **Completado:** 2026-10-21 | **Spec:** `knowledge/smi_operaciones_pucusana.md`
+      *Descripción:* Creación del documento de conocimiento operativo interno `knowledge/smi_operaciones_pucusana.md` y formalización de la Sección 7 en `AGENTS.md` (aislado al 100% de la web, del bundle y del CV).
+- [ ] **Task 7.2:** `[FUTURE-EVAL]` | **Fecha Alta:** 2026-10-21 | **Completado:** Pendiente | **Spec:** `N/A`
+      *Descripción:* Evaluación de ascenso formal en SMI o formalización de caso de estudio técnico para inclusión en portafolio/CV público (bloqueado hasta confirmación de línea de carrera o hito de alto impacto).
+
+---
+
 ## 📜 Histórico de Cambios (Changelog)
 
+* **2026-10-21:** `[INTERNAL/CORE-AGENT]` **Aislamiento y Registro del Contexto Operativo SMI en Knowledge Base Local.** Creación del banco de conocimiento privado `knowledge/smi_operaciones_pucusana.md` fuera de `src/content/` (garantizando 0% de impacto en el bundle web, 0% en el CV público y 0% en `/postulaciones`). Actualización de la Sección 7 de `AGENTS.md` para reconocer el contexto de planta y restricciones corporativas. Adición de tarea pendiente en Backlog para futura evaluación de publicación solo tras formalizar ascenso o caso de estudio de impacto.
 * **2026-10-02:** `[DATA]` **Actualización de Postulación Farmacias Peruanas (AI Engineer) a Fase Screening.** Recepción de contacto de RRHH (Natalia Benavides) tras 7 días hábiles. Registro de formulario screening con aceptación de esquema híbrido (3 presenciales en La Victoria / 2 virtuales) y calibración salarial competitiva en S/. 5,000 – S/. 6,000 brutos mensuales en planilla completa. Actualización de estado en el Job Vault a `screening` y recifrado automático con AES-256-GCM.
 * **2026-09-25:** `[DATA]` **Registro de Postulación Analista de Gobierno y Calidad de Datos en Adecco Perú.** Ejecución del protocolo de 2 fases (Diagnóstico Go/No-Go y Ficha Enriquecida). Calibración y respuestas anti-filtro ATS para vacante corporativa en Consumo Masivo (3 años en integración de datos, apalancamiento de 2.5 años in-house Arca Continental Lindley, SQL avanzado, Python intermedio para ETL/Pandas, y gobierno/calidad de datos). Pretensión salarial calibrada en S/. 4,530 bruto mensual bajo planilla de Régimen General Adecco. Evaluación y descarte estratégico previo de 2 convocatorias desalineadas (Generalista TI presencial en Surco y Java/Angular por RxH en El Derby). Creación de ficha inmutable, compilación y cifrado automático con AES-256-GCM en el Job Vault.
 * **2026-09-23:** `[DATA/CORE]` **Diversificación Estratégica de Postulaciones y Creación del Job Search Playbook.** Creación del manual operativo `JOB_SEARCH_PLAYBOOK.md` para prospección rápida en LinkedIn, Bumeran y Computrabajo abarcando Datos, BI, Automatización y TI. Ejecución del protocolo de 2 fases (Diagnóstico Go/No-Go y Ficha Enriquecida) con 5 nuevas postulaciones registradas y cifradas con AES-256-GCM en el Job Vault:
