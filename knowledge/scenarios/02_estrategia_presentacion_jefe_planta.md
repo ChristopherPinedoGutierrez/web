@@ -95,3 +95,39 @@ Cuando el jefe o supervisor vea el consolidado (en Excel exportado o en el table
 2. **Si el entorno es ultraconservador o indiferente:**  
    No habrás arriesgado nada: no violaste políticas, no impusiste nada a tus compañeros y no dependiste de la aprobación de nadie para que tu trabajo diario sea más eficiente.  
    Y lo más importante: **te quedas con un caso de estudio real de alto impacto**, con métricas de una mega-planta industrial (Arca Continental / SMI), documentado de forma intachable para defender en entrevistas externas de *Platform Engineer*, *Data Engineer* o *AI Developer*.
+
+---
+
+## 5. Protocolo de Gestión Social y Control de Fricción con Compañeros de Turno
+
+> [!WARNING]
+> **REGLA DE SUPERVIVENCIA EN PISO INDUSTRIAL:**
+> En un entorno de operarios de planta, **la tecnología individual no autorizada genera sospecha y fricción inmediata**. 
+> Si los compañeros empiezan a comentar en los pasillos que *"el nuevo está usando una app para registrar cajas"*, el rumor mutará rápidamente a:
+> 1. *"Nos quieren poner más trabajo o medir cuánto tardamos en cada caja."*
+> 2. *"Está de sobonazo con la supervisión / se cree superior."*
+> 3. *"¿Por qué él saca el celular en la tolva si a nosotros nos pueden amonestar?"*
+
+### A. Diagnóstico del Incidente: ¿Por qué NO debes abrirles el acceso todavía?
+1. **Pérdida de Control de la Narrativa y del Software:**
+   * Si les das acceso con login de Google, **pierdes el control del piloto**. Si a uno de ellos se le corta la señal a las 3:00 a.m., no sabe qué botón tocar o se le duplica un HU por apurado, culpará a la app frente al supervisor y dirá que *"esa vaina no sirve"*.
+2. **El Teléfono Malogrado con la Supervisión:**
+   * El compañero que *"se fue de boca"* no tiene lenguaje técnico. Al contarlo a otros operarios o a un líder, puede distorsionar el mensaje (*"Christopher tiene un programa en la nube donde registra la producción"*), lo cual puede activar alarmas de ciberseguridad o disciplina antes de que tú muestres los resultados en Excel.
+3. **El Contraste de Métodos:**
+   * Tu flujo es infinitamente superior: preparas las cajas a un lado, las escaneas en bloque y sabes en tu celular cuál fue la última, mientras ellos pegan stickers en el fierro de la tolva (corriendo el riesgo de que se desprendan, se ensucien con grasa o se desordenen). Si intentas imponerles tu herramienta antes de tiempo, generas rechazo defensivo.
+
+### B. El Guion de Contención Inmediata (Control de Daños con Compañeros)
+A partir de hoy, si ese compañero u otro se acerca a preguntar o si alguien te dice *"oye, me dijeron que tienes un sistema en el celular"*, **debes bajarle el perfil radicalmente**:
+
+* **QUÉ NO DECIR NUNCA:**
+  * ❌ *"Hice una aplicación en la nube con Supabase."*
+  * ❌ *"Les puedo crear un usuario para que ustedes también lo usen."*
+  * ❌ *"Esto es para modernizar el papel y los stickers."*
+
+* **EL DISCURSO DE BLINDAJE (Bajo Perfil / Coartada Humilde):**
+  * ✅ *"No causa, ¿qué sistema va a ser? Es un bloc de notas / formulario básico que me armé para mí mismo porque soy bien despistado con los números y el otro día casi se me cae un sticker del fierro de la tolva. Para no hacerme bolas con las horas ni equivocarme en la hoja de papel, me lo anoto aquí primero. Es solo mi machete personal para no regarla en mi turno."*
+
+### C. La Regla de los Tres Círculos de Confianza
+1. **Círculo 1 (Tú solo - Activo):** Por los próximos 10 a 14 días, **la app es 100% de uso privado para tu propia guardia**. No compartas enlaces ni crees cuentas a terceros.
+2. **Círculo 2 (El Compañero Aliado):** Si haces mancuerna fija con un compañero de confianza en tu línea y ves que se enreda con las tiras de stickers, puedes ayudarle tú directamente (*"pásame la tira y yo te apunto los números en mi libreta para que no te atrases"*), pero **siempre operándolo desde tu propio teléfono**.
+3. **Círculo 3 (La Jefatura / Formalización):** La apertura a otros operarios **solo ocurrirá cuando el jefe de planta o el líder de turno lo autorice formalmente como piloto oficial tras ver el reporte en Excel**. En ese momento ya no serás *"el compañero que se corta solo"*, sino *"el facilitador de una mejora aprobada por la jefatura"*.
